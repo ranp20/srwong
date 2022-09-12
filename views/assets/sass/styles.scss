@@ -1,0 +1,19 @@
+/* IMPORTAR LOS ESTILOS BASE */
+@import 'bases/bases';
+/* HOJAS DE ESTILOS PARA LA CALCULADORA */
+@import 'theme/login';
+//@import 'theme/404';
+/* HOJAS DE COMPLEMENTO (ARCHIVOS CSS A SASS) */
+@import 'complements/animate';
+@import 'complements/bootstrap.min';
+@import 'complements/chosen.min';
+@import 'complements/font-awesome.min';
+@import 'complements/ionicons.min';
+@import 'complements/jquery-ui';
+@import 'complements/magnific-popup';
+@import 'complements/meanmenu.min';
+@import 'complements/owl.carousel.min';
+@import 'complements/responsive';
+@import 'complements/simple-line-icons';
+@import 'complements/slick';
+@import 'complements/style';

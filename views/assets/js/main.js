@@ -1,6 +1,12 @@
 (function($) {
     'use strict';
     
+    /* Login options toggle active */
+    $(".header-login #listcards_logg").on("click", function(e) {
+        e.preventDefault();
+        $(this).parent().find('.listoptions-login-content').slideToggle('medium');
+    })
+
     /* Cart Currency Search toggle active */
     $(".header-cart a").on("click", function(e) {
         e.preventDefault();

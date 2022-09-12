@@ -1,4 +1,4 @@
 <?php 
 session_start();
-unset($_SESSION['user_camel']);
+unset($_SESSION['usr-logg_srwong']);
 header('Location: ./');

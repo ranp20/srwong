@@ -1686,6 +1686,66 @@ textarea:focus {
 .cart-text > span.digit {
     margin-bottom: 6px;
 }
+/* CONTENIDO - LOGIN Y REGISTRO (INICIO) */
+.header-login > a .header-icon-style span {
+    background-color: #e02c2b;
+    border-radius: 100%;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 22px;
+    left: 0;
+    line-height: 22px;
+    margin: 0 auto;
+    position: absolute;
+    right: -28px;
+    text-align: center;
+    top: -3px;
+    width: 22px;
+}
+.header-login {
+    display: inline-block;
+    position: relative;
+}
+.listoptions-login-content {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 167%;
+    width: 250px;
+    z-index: 9999;
+    display: none;
+}
+.listoptions-login-content ul li {
+    border-bottom: 1px solid #ebebeb;
+    //display: flex;
+    flex-wrap: wrap;
+}
+.listoptions-login-content ul li:last-child{
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}
+.listoptions-login-content ul li a{
+    display: block;    
+    // margin-bottom: 12px;
+    padding: 20px 34px;
+    font-size: 0.95rem;
+}
+.listoptions-login-content ul li a:hover{
+    background-color: #F5F5F5;
+}
+.listoptions-login-content ul li a I{
+    font-size: 20px;
+}
+.listoptions-login-content ul li a span{
+    margin-left: 0.5rem;
+}
+/* CONTENIDO - LOGIN Y REGISTRO (FIN) */
 .header-cart > a .header-icon-style span {
     background-color: #e02c2b;
     border-radius: 100%;

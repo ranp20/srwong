@@ -1,8 +1,19 @@
+<?php
+//COMPRIMIR ARCHIVOS DE TEXTO...
+(substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
+session_start();
+if(isset($_SESSION['usr-logg_srwong'])){
+  header("Location: ./");
+}
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
   <title>SrWong - Deliveries y Pedidos</title>
   <?php require_once 'includes/inc-header_links.php';?>
+  <!-- INCLUIR SWEET ALERT 2 -->
+  <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
+  <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
   <?php require_once 'includes/inc-header_top.php';?>
@@ -33,9 +44,15 @@
               <div id="lg1" class="tab-pane active">
                 <div class="login-form-container">
                   <div class="login-register-form">
-                    <form action="javascript:void(0);" method="post">
-                      <input type="text" name="user-name" placeholder="Username">
-                      <input type="password" name="user-password" placeholder="Password">
+                    <form action="" method="POST" id="frm_1-Log">
+                      <div class="mb-3">
+                        <input class="form-control mb-0" type="text" id="u-email" name="u-email" placeholder="Email" required>
+                        <span class="ml-1 txt-noti-req"></span>
+                      </div>
+                      <div class="mb-3">
+                        <input class="form-control mb-0" type="password" id="u-password" name="u-password" placeholder="Password" required>
+                        <span class="ml-1 txt-noti-req"></span>
+                      </div>
                       <div class="button-box">
                         <div class="login-toggle-btn">
                           <input type="checkbox">
@@ -51,10 +68,23 @@
               <div id="lg2" class="tab-pane">
                 <div class="login-form-container">
                   <div class="login-register-form">
-                    <form action="javascript:void(0);" method="post">
-                      <input type="text" name="user-name" placeholder="Username">
-                      <input type="password" name="user-password" placeholder="Password">
-                      <input name="user-email" placeholder="Email" type="email">
+                    <form action="" method="POST" id="frm_2-Reg">
+                      <div class="mb-3">
+                        <input class="form-control mb-0" type="text" id="u-reg_name" name="u-reg_name" placeholder="Username" required>
+                        <span class="ml-1 txt-noti-req"></span>
+                      </div>
+                      <div class="mb-3">
+                        <input class="form-control mb-0" type="email" id="u-reg_email" name="u-reg_email" placeholder="Email" required>
+                        <span class="ml-1 txt-noti-req"></span>
+                      </div>
+                      <div class="mb-3">
+                        <input class="form-control mb-0" type="password" id="u-reg_password" name="u-reg_password" placeholder="Password" required>
+                        <span class="ml-1 txt-noti-req"></span>
+                      </div>
+                      <div class="mb-3">
+                        <input class="form-control mb-0" type="password" id="u-reg_passwordtwo" name="u-reg_passwordtwo" placeholder="Password repeat" required>
+                        <span class="ml-1 txt-noti-req"></span>
+                      </div>
                       <div class="button-box">
                         <button type="submit"><span>Register</span></button>
                       </div>
@@ -170,16 +200,7 @@
         </div>
       </div>
     </div>
-  </div>		
-  <!-- all js here -->
-  <script src="<?= $url;?>assets/js/vendor/jquery-1.12.0.min.js"></script>
-  <script src="<?= $url;?>assets/js/popper.js"></script>
-  <script src="<?= $url;?>assets/js/bootstrap.min.js"></script>
-  <script src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
-  <script src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
-  <script src="<?= $url;?>assets/js/ajax-mail.js"></script>
-  <script src="<?= $url;?>assets/js/owl.carousel.min.js"></script>
-  <script src="<?= $url;?>assets/js/plugins.js"></script>
-  <script src="<?= $url;?>assets/js/main.js"></script>
+  </div>
+  <script src="<?= $url;?>assets/js/actions/login-user.js"></script>
 </body>
 </html>

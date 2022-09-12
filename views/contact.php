@@ -1,3 +1,8 @@
+<?php
+//COMPRIMIR ARCHIVOS DE TEXTO...
+(substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
+session_start();
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>    
@@ -204,13 +209,13 @@
         
 		
 		<!-- all js here -->
-        <script src="<?= $url;?>assets/js/vendor/jquery-1.12.0.min.js"></script>
+        
         <script src="<?= $url;?>assets/js/popper.js"></script>
-        <script src="<?= $url;?>assets/js/bootstrap.min.js"></script>
+        
         <script src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
         <script src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
         <script src="<?= $url;?>assets/js/ajax-mail.js"></script>
-        <script src="<?= $url;?>assets/js/owl.carousel.min.js"></script>
+        
         <script src="<?= $url;?>assets/js/plugins.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo"></script>
 		<script>

@@ -1,0 +1,81 @@
+/* IMPORTAR LAS VARABLES Y MIXINS A UTILIZAR EN EL TEMA */
+@import 'variables';
+@import 'mixins';
+
+:root,
+*,
+*::before,
+*::before{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: $font-family-1 !important;
+}
+a{
+	text-decoration: none;
+}
+div{
+	&[aria-expanded="true"],
+	&[aria-visibility="show"]{
+		display: none;
+		pointer-events: none;
+		opacity: 0;
+	}
+}
+ul, li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+img{
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+/* CLASS UTILITIES */
+.box{
+	@include max-width($max-width);
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.box-redx{
+	@include max-width($max-width-redx);
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	@media (min-width: 1024px){
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+}
+.box-redx_wtout-p{
+	@include max-width($max-width-redx);
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.one-hidden > option:first-child{
+	display: none !important;
+}
+.mgb-1{
+	margin-bottom: 1rem;
+}
+.mgb-2{
+	margin-bottom: 2rem;
+}
+.talign-c{
+	text-align: center;
+}
+.txt-noti-req{
+	color: red;
+	font-size: 0.85rem;
+}
