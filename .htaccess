@@ -1,0 +1,36 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteBase /srwong/
+
+############ PAGES USERS
+RewriteRule ^/?$ index.php
+#RewriteRule ^index-2?$ index-2.php
+RewriteRule ^about-us?$ views/about-us.php
+RewriteRule ^blog?$ views/blog.php
+RewriteRule ^shop?$ views/shop.php
+RewriteRule ^testimonial?$ views/testimonial.php
+RewriteRule ^login-register?$ views/login-register.php
+RewriteRule ^wishlist?$ views/wishlist.php
+RewriteRule ^my-account?$ views/my-account.php
+RewriteRule ^product-details?$ views/product-details.php
+RewriteRule ^shop-list?$ views/shop-list.php
+RewriteRule ^checkout?$ views/checkout.php
+RewriteRule ^contact?$ views/contact.php
+RewriteRule ^cart-page?$ views/cart-page.php
+RewriteRule ^blog-details?$ views/blog-details.php
+RewriteRule ^blog-details-gallery?$ views/blog-details-gallery.php
+RewriteRule ^blog-details-video?$ views/blog-details-video.php
+RewriteRule ^blog-rightsidebar?$ views/blog-rightsidebar.php
+
+############ PAGES ADMIN
+#RewriteRule admin?$ admin/index.php
+#RewriteRule dashboard?$ admin/views/dashboard.php
+#RewriteRule logout-adm?$ admin/controllers/prcss_logout-adm.php
+
+############# EVITAR QUE SE INGRESE A LAS CARPETAS
+Options -Indexes
+
+############# MENSAJE DE ERROR PERSONALIZADO
+#RewriteRule 404?$ views/404.php
+ErrorDocument 404 /views/404.php
