@@ -41,3 +41,5 @@ $url_admin = $actual_link . "/admin/";
 <link rel="stylesheet" href="<?= $url;?>assets/css/styles.min.css">
 <!-- MODERNIZR 2.8.3 -->
 <script type="text/javascript" src="<?= $url;?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
+<!---->
+<input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" id="u-s_regclient-sis" value="<?= (isset($_SESSION['usr-logg_srwong'])) ? $_SESSION['usr-logg_srwong']['id'] : '';?>">

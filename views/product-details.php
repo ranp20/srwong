@@ -15,7 +15,7 @@ session_start();
             <div class="container">
                 <div class="breadcrumb-content">
                     <ul>
-                        <li><a href="index">Home</a></li>
+                        <li><a href="./">Home</a></li>
                         <li class="active">Product Details </li>
                     </ul>
                 </div>

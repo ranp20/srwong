@@ -69,7 +69,7 @@
                   <div class='listoptions-login-content'>
                     <ul>
                       <li class='single-listoptions-login'>
-                        <a href='javascript:void(0);'>
+                        <a href='my-account'>
                           <i class='icon-user icons'></i>
                           <span>Mi cuenta</span>
                         </a>
@@ -151,8 +151,8 @@
                   <h4>Total : <span class="shop-total">$260.00</span></h4>
                 </div>
                 <div class="shopping-cart-btn">
-                  <a href="cart-page">view cart</a>
-                  <a href="checkout">checkout</a>
+                  <a href="cart-page" id="lk_cart">view cart</a>
+                  <a href="checkout" id="lk_checkout">checkout</a>
                 </div>
               </div>
             </div>

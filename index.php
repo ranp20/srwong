@@ -8,11 +8,10 @@ session_start();
 <head>
   <?php require_once 'views/includes/inc-header_links.php';?>
   <title>SrWong - Deliveries y Pedidos</title>
-  <!-- INCLUIR OWL CAROUSEL 2 -->
-  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
-  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
+  <!-- INCLUIR CRYPTO-JS -->
+  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
   <!-- INCLUIR SCROLLUP -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
   <!-- INCLUIR SLICK -->
@@ -28,6 +27,9 @@ session_start();
   <!-- INCLUIR MAGNIFIC-POP-UP -->
   <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/Magnific-Popup/magnific-popup.css">
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+  <!-- INCLUIR OWL CAROUSEL 2 -->
+  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
 </head>
 <body>
   <?php require_once 'views/includes/inc-header_top.php';?>
@@ -62,19 +64,19 @@ session_start();
       <div class="banner-left-side mb-20">
         <div class="single-banner">
           <div class="hover-style">
-            <a href="#"><img src="<?= $url;?>assets/img/banner/banner-1.jpg" alt=""></a>
+            <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/banner/banner-1.jpg" alt=""></a>
           </div>
         </div>
       </div>
       <div class="banner-right-side mb-20">
         <div class="single-banner mb-20">
           <div class="hover-style">
-            <a href="#"><img src="<?= $url;?>assets/img/banner/banner-2.jpg" alt=""></a>
+            <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/banner/banner-2.jpg" alt=""></a>
           </div>
         </div>
         <div class="single-banner">
           <div class="hover-style">
-            <a href="#"><img src="<?= $url;?>assets/img/banner/banner-3.jpg" alt=""></a>
+            <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/banner/banner-3.jpg" alt=""></a>
           </div>
         </div>
       </div>
@@ -98,7 +100,7 @@ session_start();
       </div>
       <div class="tab-content jump">
         <div id="tab1" class="tab-pane active">
-          <div class="row">
+          <div class="owl-theme row">
             <div class="custom-col-5">
                 <div class="product-wrapper mb-25">
                     <div class="product-img">
@@ -107,11 +109,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -134,11 +136,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -160,11 +162,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -187,11 +189,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -213,11 +215,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -240,11 +242,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -266,11 +268,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -293,11 +295,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -319,11 +321,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -346,11 +348,11 @@ session_start();
                         </a>
                         <div class="product-action">
                             <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                             </div>
                             <div class="pro-action-right">
                                 <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                             </div>
                         </div>
                     </div>
@@ -376,11 +378,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -403,11 +405,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -429,11 +431,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -456,11 +458,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -482,11 +484,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -509,11 +511,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -535,11 +537,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -562,11 +564,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -588,11 +590,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -615,11 +617,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -645,11 +647,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -672,11 +674,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -698,11 +700,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -725,11 +727,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -751,11 +753,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -778,11 +780,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -804,11 +806,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -831,11 +833,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -857,11 +859,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -884,11 +886,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -914,7 +916,7 @@ session_start();
           <h3>It’s Time To Start <br>Your Own Revolution By Laurent</h3>
           <p>Exclusive Offer -10% Off This Week</p>
           <div class="banner-btn">
-            <a href="#">Order Now</a>
+            <a href="javascript:void(0);">Order Now</a>
           </div>
         </div>
       </div>
@@ -926,7 +928,7 @@ session_start();
         <div class="best-food-width-1">
           <div class="single-banner">
             <div class="hover-style">
-              <a href="#"><img src="<?= $url;?>assets/img/banner/banner-5.jpg" alt=""></a>
+              <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/banner/banner-5.jpg" alt=""></a>
             </div>
           </div>
         </div>
@@ -957,11 +959,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -982,11 +984,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -1006,11 +1008,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -1031,11 +1033,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -1059,11 +1061,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -1084,11 +1086,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -1108,11 +1110,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -1133,11 +1135,11 @@ session_start();
                           </a>
                           <div class="product-action">
                               <div class="pro-action-left">
-                                  <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                  <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                               </div>
                               <div class="pro-action-right">
                                   <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                  <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                               </div>
                           </div>
                       </div>
@@ -1161,11 +1163,11 @@ session_start();
                             </a>
                             <div class="product-action">
                                 <div class="pro-action-left">
-                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                    <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                                 </div>
                                 <div class="pro-action-right">
                                     <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1186,11 +1188,11 @@ session_start();
                             </a>
                             <div class="product-action">
                                 <div class="pro-action-left">
-                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                    <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                                 </div>
                                 <div class="pro-action-right">
                                     <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1210,11 +1212,11 @@ session_start();
                             </a>
                             <div class="product-action">
                                 <div class="pro-action-left">
-                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                    <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                                 </div>
                                 <div class="pro-action-right">
                                     <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1235,11 +1237,11 @@ session_start();
                             </a>
                             <div class="product-action">
                                 <div class="pro-action-left">
-                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
+                                    <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
                                 </div>
                                 <div class="pro-action-right">
                                     <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
+                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1259,7 +1261,7 @@ session_start();
         <div class="best-food-width-1 mrg-small-35">
           <div class="single-banner">
             <div class="hover-style">
-              <a href="#"><img src="<?= $url;?>assets/img/banner/banner-6.jpg" alt=""></a>
+              <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/banner/banner-6.jpg" alt=""></a>
             </div>
           </div>
         </div>
@@ -1303,7 +1305,7 @@ session_start();
                           </div>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
                           <div class="payment-img">
-                              <a href="#">
+                              <a href="javascript:void(0);">
                                   <img src="<?= $url;?>assets/img/icon-img/payment.png" alt="">
                               </a>
                           </div>
@@ -1317,11 +1319,11 @@ session_start();
                           <div class="footer-content">
                               <ul>
                                   <li><a href="about-us">About Us</a></li>
-                                  <li><a href="#">Delivery Information</a></li>
-                                  <li><a href="#">Privacy Policy</a></li>
-                                  <li><a href="#">Terms & Conditions</a></li>
-                                  <li><a href="#">Customer Service</a></li>
-                                  <li><a href="#">Return Policy</a></li>
+                                  <li><a href="javascript:void(0);">Delivery Information</a></li>
+                                  <li><a href="javascript:void(0);">Privacy Policy</a></li>
+                                  <li><a href="javascript:void(0);">Terms & Conditions</a></li>
+                                  <li><a href="javascript:void(0);">Customer Service</a></li>
+                                  <li><a href="javascript:void(0);">Return Policy</a></li>
                               </ul>
                           </div>
                       </div>
@@ -1334,11 +1336,11 @@ session_start();
                           <div class="footer-content">
                               <ul>
                                   <li><a href="my-account">My Account</a></li>
-                                  <li><a href="#">Order History</a></li>
+                                  <li><a href="javascript:void(0);">Order History</a></li>
                                   <li><a href="wishlist">Wish List</a></li>
-                                  <li><a href="#">Newsletter</a></li>
-                                  <li><a href="#">Order History</a></li>
-                                  <li><a href="#">International Orders</a></li>
+                                  <li><a href="javascript:void(0);">Newsletter</a></li>
+                                  <li><a href="javascript:void(0);">Order History</a></li>
+                                  <li><a href="javascript:void(0);">International Orders</a></li>
                               </ul>
                           </div>
                       </div>
@@ -1352,7 +1354,7 @@ session_start();
                               <ul>
                                   <li>Address: 123 Main Street, Anytown, CA 12345 - USA.</li>
                                   <li>Telephone Enquiry: (012) 800 456 789-987 </li>
-                                  <li>Email: <a href="#">Info@example.com</a></li>
+                                  <li>Email: <a href="javascript:void(0);">Info@example.com</a></li>
                               </ul>
                           </div>
                           <div class="mt-35 footer-title mb-22">
@@ -1374,18 +1376,18 @@ session_start();
               <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-7">
                       <div class="copyright">
-                          <p>Copyright © <a href="#">Fudink.</a> . All Right Reserved.</p>
+                          <p>Copyright © <a href="javascript:void(0);">Fudink.</a> . All Right Reserved.</p>
                       </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-5">
                       <div class="footer-social">
                           <ul>
-                              <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                              <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                              <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                              <li><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
-                              <li><a href="#"><i class="ion-social-rss"></i></a></li>
-                              <li><a href="#"><i class="ion-social-dribbble-outline"></i></a></li>
+                              <li><a href="javascript:void(0);"><i class="ion-social-facebook"></i></a></li>
+                              <li><a href="javascript:void(0);"><i class="ion-social-twitter"></i></a></li>
+                              <li><a href="javascript:void(0);"><i class="ion-social-instagram-outline"></i></a></li>
+                              <li><a href="javascript:void(0);"><i class="ion-social-googleplus-outline"></i></a></li>
+                              <li><a href="javascript:void(0);"><i class="ion-social-rss"></i></a></li>
+                              <li><a href="javascript:void(0);"><i class="ion-social-dribbble-outline"></i></a></li>
                           </ul>
                       </div>
                   </div>
@@ -1473,12 +1475,7 @@ session_start();
       </div>
   </div>
   <!-- Modal end -->
-	<!-- all js here -->
-  <script src="<?= $url;?>assets/js/popper.js"></script>
-  <script src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
-  <script src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
-  <script src="<?= $url;?>assets/js/ajax-mail.js"></script>
-  <script src="<?= $url;?>assets/js/plugins.js"></script>
-  <script src="<?= $url;?>assets/js/main.js"></script>
+<!-- all js here -->
+  <script src="<?= $url;?>assets/js/actions/home-settings.js"></script>
 </body>
 </html>

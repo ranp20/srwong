@@ -65,7 +65,7 @@ $(document).on("submit", "#frm_2-Reg", function(e){
               <div class='listoptions-login-content'>
                 <ul>
                   <li class='single-listoptions-login'>
-                    <a href='javascript:void(0);'>
+                    <a href='my-account'>
                       <i class='icon-user icons'></i>
                       <span>Mi cuenta</span>
                     </a>
@@ -264,7 +264,7 @@ $(document).on("submit", "#frm_1-Log", function(e){
             <div class='listoptions-login-content'>
               <ul>
                 <li class='single-listoptions-login'>
-                  <a href='javascript:void(0);'>
+                  <a href='my-account'>
                     <i class='icon-user icons'></i>
                     <span>Mi cuenta</span>
                   </a>
