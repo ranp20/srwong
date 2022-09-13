@@ -35,8 +35,8 @@ $url_admin = $actual_link . "/admin/";
 <!-- JQUERY COMPRESSED -->
 <script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js"></script>
 <!-- BOOTSTRAP UNCOMPRESSED -->
-<link rel="stylesheet" href="<?= $url;?>assets/js/plugins/bootstrap/css/bootstrap.min.css">
-<script type="text/javascript" src="<?= $url;?>assets/js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?= $url;?>assets/js/plugins/bootstrap-4.6.2/css/bootstrap.min.css">
+<script type="text/javascript" src="<?= $url;?>assets/js/plugins/bootstrap-4.6.2/js/bootstrap.min.js"></script>
 <!-- STYLESSHEET -->
 <link rel="stylesheet" href="<?= $url;?>assets/css/styles.min.css">
 <!-- MODERNIZR 2.8.3 -->

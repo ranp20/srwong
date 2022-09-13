@@ -4,7 +4,7 @@
 session_start();
 ?>
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="es">
 <head>
     <title>SrWong - Deliveries y Pedidos</title>
     <?php require_once 'includes/inc-header_links.php';?>

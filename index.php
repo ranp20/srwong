@@ -4,13 +4,30 @@
 session_start();
 ?>
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="es">
 <head>
   <?php require_once 'views/includes/inc-header_links.php';?>
   <title>SrWong - Deliveries y Pedidos</title>
   <!-- INCLUIR OWL CAROUSEL 2 -->
   <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
+  <!-- INCLUIR MEANMENU -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
+  <!-- INCLUIR SCROLLUP -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
+  <!-- INCLUIR SLICK -->
+  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick.css">
+  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick-theme.css">
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/slick/slick.min.js"></script>
+  <!-- INCLUIR WAYPOINTS -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/waypoints/noframework.waypoints.min.js"></script>
+  <!-- INCLUIR COUNTER-UP -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/Counter-Up/jquery.counterup.min.js"></script>
+  <!-- INCLUIR ELEVATEZOOM -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/elevatezoom/jquery.elevateZoom-3.0.8.min.js"></script>
+  <!-- INCLUIR MAGNIFIC-POP-UP -->
+  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/Magnific-Popup/magnific-popup.css">
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/Magnific-Popup/jquery.magnific-popup.min.js"></script>
 </head>
 <body>
   <?php require_once 'views/includes/inc-header_top.php';?>
