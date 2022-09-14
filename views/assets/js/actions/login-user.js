@@ -47,12 +47,16 @@ $(document).on("submit", "#frm_2-Reg", function(e){
 					    confirmButtonText: 'Aceptar',
 					    allowOutsideClick: false,
 					    allowEscapeKey:false,
-					    allowEnterKey:true
+					    allowEnterKey:true,
+					    timer: 1000
 				    });
 				    $(document).on('click', '.SwalBtn1', function() {
 					    swal.clickConfirm();
 					    window.location.href = "./";
 					  });
+					  setTimeout(function(){
+					  	window.location.href = "./";
+					  }, 1000);
 		        $("#header-login").html(`
 		        	<a href='javascript:void(0);'>
                 <div class='header-icon-style'>
@@ -224,8 +228,6 @@ $(document).on("submit", "#frm_1-Log", function(e){
       contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
       data: form
     }).done((e) => {
-      console.log(e);
-      
       if(e != "" && e != "[]"){
 	      if(e.r == "true"){
 	      	Swal.fire({
@@ -235,7 +237,7 @@ $(document).on("submit", "#frm_1-Log", function(e){
 				              <h3>¡Éxito!</h3>
 				            </div>
 				            <div class="alertSwal__cText">
-				              <p>Se inicio sesión correctamente.</strong></p>
+				              <p>El usuario ha iniciado sesión correctamente.</strong></p>
 				            </div>
 				            <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
 				          </div>`,
@@ -246,12 +248,16 @@ $(document).on("submit", "#frm_1-Log", function(e){
 				    confirmButtonText: 'Aceptar',
 				    allowOutsideClick: false,
 				    allowEscapeKey:false,
-				    allowEnterKey:true
+				    allowEnterKey:true,
+				    timer: 1000
 			    });
 			    $(document).on('click', '.SwalBtn1', function() {
 				    swal.clickConfirm();
 				    window.location.href = "./";
 				  });
+				  setTimeout(function(){
+				  	window.location.href = "./";
+				  }, 1000);
 	        $("#header-login").html(`
 	        	<a href='javascript:void(0);'>
               <div class='header-icon-style'>
@@ -413,5 +419,4 @@ $(document).on("submit", "#frm_1-Log", function(e){
 	    swal.clickConfirm();
 	  });
   }
-
 });
