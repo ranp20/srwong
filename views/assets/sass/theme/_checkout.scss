@@ -1,0 +1,25 @@
+.tablink--fill{
+	flex: 1;
+	background-color: $theme-clr-btns-tabs;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	transition: all ease-in-out .1s;
+	padding: 1.15rem 2rem;
+	border-radius: 10px;
+	span{
+		display: block;
+		color: $theme-clr-icons-tabs;
+		&:nth-child(2){
+			font-size: 1rem;
+		}
+	}
+	svg{
+		fill: $theme-clr-icons-tabs;
+		max-width: 70px;
+		width: 95%;
+	}
+	&:hover{
+		background-color: darken($theme-clr-btns-tabs, 10%);
+	}
+}

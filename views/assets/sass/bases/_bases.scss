@@ -90,12 +90,12 @@ img{
 	}
 	&__cIcon{
 		svg{
-			fill: $theme-clr-icons;
+			fill: $theme-clr-btns-tabs;
 		}
 	}
 	&__cTitle{
 		margin-bottom: 1.15rem;
-		color: $theme-clr-icons;
+		color: $theme-clr-btns-tabs;
 		h1,h2,h3,h4,h5,h6,p{
 			font-size: 1.75rem;
 		}
@@ -195,4 +195,217 @@ img{
 /* CONFIGURACIONES DE LOS CAROUSELS */
 .owl-carousel__tabfilter{
 	// background-color: red;
+}
+
+
+/* CONTAINERS PERSONALIZABLES */
+$form-container: "frm-cont" !default;
+/* CHECKOUT DE SELECCIÓN DE MÉTODO DE PEDIDO */
+.chcksel-{
+	&#{$form-container}{
+		padding: 1rem;
+		@media (min-width: 991px){		
+			background: transparent none repeat scroll 0 0;
+		  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+		  padding: 80px;
+		  text-align: left;
+		}
+		label{
+			color: #242424;
+	    font-size: 15px;
+	    font-weight: 400;
+		}
+		input{
+			background-color: rgba(0,0,0,0);
+	    border: 1px solid #ebebeb;
+	    color: #666;
+	    font-size: 14px;
+	    height: 50px;
+	    margin-bottom: 15px;
+	    padding: 0 15px;
+		}
+		input[type=checkbox]{
+			height: 15px;
+	    margin: 0;
+	    position: relative;
+	    top: 1px;
+	    width: 17px;
+		}
+		textarea{
+			height: 250px;
+    	padding: 20px 20px;
+    	background: #fff none repeat scroll 0 0;
+	    border: 1px solid #eaeaea;
+	    color: #454545;
+	    height: 45px;
+	    padding-left: 20px;
+	    font-size: 14px;
+		}
+		select{
+			background: #fff url(../../assets/img/icon-img/shop.png) no-repeat scroll right 10px center;
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+	    cursor: pointer;
+	    border: 1px solid #ebebeb;
+	    border-radius: 5px;
+	    color: #242424;
+	    height: calc(2.25rem + 14px) !important;
+	    padding: 0 15px;
+		}
+		.button-box{
+			button{
+				display: block;
+				margin-left: auto;
+				padding: 1rem 2.5rem;
+			}
+		}
+		.control-pls-search{
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			position: relative;
+			.la-icon-ref{
+				position: absolute;
+				top: 10px;
+				left: 10px;
+			}
+			input{
+				padding-left: 45px;
+				border-top: none;
+				border-bottom: 1px solid #ebebeb;
+				border-left: none;
+				border-right: none;
+			}
+			.fk-icon-sub{
+				cursor: pointer;
+				margin-left: 5px;
+				height: 50px;
+				margin-bottom: 15px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: 0 10px;
+				border-radius: 8px;
+				background-color: $theme-clr-secondary;
+				svg{
+					position: relative;
+					top: 2px;
+					fill: #fff;
+				}
+				&:hover{
+					background-color: darken($theme-clr-secondary, 6%);
+				}
+			}
+		}
+	}
+	&toggle-btn{
+		padding: 10px 0 19px;
+		& > a{
+		  color: #242424;
+	    float: right;
+	    font-size: 15px;
+	    transition: all .3s ease 0s;
+		}
+	}
+	&reg-tab-list{
+		display: flex;
+		flex-flow: wrap row;
+		align-items: flex-start;
+		justify-content: center;
+		margin-bottom: 40px !important;
+		flex: 0 0 100%;
+		margin-left: auto;
+		margin-right: auto;
+		@media (min-width: 991px){
+			max-width: 460px;
+		}
+	}
+	&list-result{
+		.l-menu{
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			flex-flow: wrap row;
+			flex: 0 0 100%;
+		}
+		.l-item{
+			flex: auto;
+	    max-width: 290px;
+	    padding: 25px;
+	    border: 2px solid #D8D9D8;
+	    border-radius: 10px;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    margin-bottom: 15px;
+	    @media (min-width: 768px){
+	    	flex: 1;
+	    }
+		}
+		.l-item-title{
+			display: block;
+			h4{
+				color: $theme-clr-secondary;
+				font-weight: 600;
+			}
+		}
+		.l-item-address{
+			display: block;
+		}
+		.l-item-distance{
+			display: block;
+			p{
+				font-weight: 600;
+				color: #CDCDCD;
+			}
+		}
+		.l-item-telephone{
+			display: block;
+			span{
+				svg{
+					fill: $theme-clr-secondary;
+				}
+				&:nth-child(2){
+					margin-left: 0.25rem;
+				}
+			}
+		}
+		.l-item-schedule{
+			display: block;
+			span{
+				svg{
+					fill: $theme-clr-secondary;
+				}
+				&:nth-child(2){
+					margin-left: 0.25rem;
+				}
+			}
+		}
+		.l-item-link{
+			display: block;
+			max-width: 200px;
+			width: 100%;
+			margin-top: 15px;
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: 12px;
+			border: 1px solid $theme-clr-secondary;
+			text-align: center;
+			padding: 10px 15px;
+			transition: all ease-in-out .1s;
+			span{
+				font-weight: 600;
+				color: $theme-clr-secondary;
+			}
+			@media (min-width: 991px){
+				width: 95%;
+			}
+			&:hover{
+				background-color: $theme-clr-secondary;
+				span{
+					color: #fff;
+				}
+			}
+		}
+	}
 }
