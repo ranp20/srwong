@@ -14,24 +14,12 @@ function isNumeric(variable){return !isNaN(parseInt(variable));}
 
 $(() => {
 
-  /* ENCRIPTACIÓN DE INPUTS */
+  // ------------ ENCRIPTACIÓN DE INPUTS
   var encrypt_v_idgencoderand = $("#u-s_regclient-sis").val(encryptValuesIpts($("#u-s_regclient-sis").val()));
-  /* DESENCRIPTACIÓN DE INPUTS */
+  // ------------ DESENCRIPTACIÓN DE INPUTS
   var v_idgencoderand = decryptValuesIpts(encrypt_v_idgencoderand.val());
 
-  /* Login options toggle active */
-  $(".header-login #listcards_logg").on("click", function(e){
-    e.preventDefault();
-    $(this).parent().find('.listoptions-login-content').slideToggle('medium');
-  });
-
-  /* Cart Currency Search toggle active */
-  $(".header-cart a").on("click", function(e){
-    e.preventDefault();
-    $(this).parent().find('.shopping-cart-content').slideToggle('medium');
-  });
-
-  /* Slider active */
+  // ------------ Slider active
   $('.slider-active').owlCarousel({
     loop: true,
     nav: true,
@@ -54,7 +42,7 @@ $(() => {
     }
   });
 
-  /* Best selling active */
+  // ------------ Best selling active
   $('.product-slider-active').owlCarousel({
     loop: true,
     nav: true,
@@ -82,17 +70,7 @@ $(() => {
     }
   });
 
-  /*--------------------------
-      ScrollUp
-  ---------------------------- */
-  $.scrollUp({
-    scrollText: '<i class="fa fa-angle-double-up"></i>',
-    easingType: 'linear',
-    scrollSpeed: 900,
-    animation: 'fade'
-  });
-
-  /* Brand logo active */
+  // ------------ Brand logo active
   $('.brand-logo-active').owlCarousel({
     loop: true,
     nav: false,
@@ -123,9 +101,7 @@ $(() => {
     }
   });
 
-  /*-------------------------------------
-      Thumbnail Product activation
-  --------------------------------------*/
+  // ------------ Thumbnail Product activation
   $('.thumb-menu').owlCarousel({
     loop: true,
     navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
@@ -154,7 +130,7 @@ $(() => {
     $('.thumb-menu a').removeClass('active');
   });
 
-  /* Product filter by category */
+  // ------------ Product filter by category
   $('.owl-carousel__tabfilter').owlCarousel({
     items:4,
     lazyLoad:true,
@@ -192,10 +168,6 @@ $(() => {
   //   owl.trigger('next.owl.carousel', [300]);
   // });
 
-  // ------------ IR HACIA LA PÁGINA - CART LIST
-  $(document).on("click","#lk_cart",function(){window.location.href = "./cart-page";});
-  // ------------ IR HACIA LA PÁGINA - CHECKOUT
-  $(document).on("click","#lk_checkout",function(){window.location.href = "./checkout";});
   // ------------ AGREGAR UN PRODUCTO AL CARRITO
   $(document).on("click",".a__tocart",function(e){
     e.preventDefault();

@@ -769,5 +769,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
 </body>
 </html>

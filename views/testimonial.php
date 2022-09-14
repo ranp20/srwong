@@ -8,6 +8,9 @@ session_start();
 <head>
     <title>SrWong - Deliveries y Pedidos</title>
     <?php require_once 'includes/inc-header_links.php';?>
+    <!-- INCLUIR OWL CAROUSEL 2 -->
+    <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
+    <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
 </head>
     <body>
         <?php require_once 'includes/inc-header_top.php';?>
@@ -360,24 +363,7 @@ session_start();
                 </div>
             </div>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-		
 		<!-- all js here -->
-        
-        <script src="<?= $url;?>assets/js/popper.js"></script>
-        
-        <script src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
-        <script src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
-        <script src="<?= $url;?>assets/js/ajax-mail.js"></script>
-        
-        <script src="<?= $url;?>assets/js/plugins.js"></script>
-        <script src="<?= $url;?>assets/js/main.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/actions/testimonials.js"></script>
     </body>
 </html>

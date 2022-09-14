@@ -31,9 +31,11 @@ $url_admin = $actual_link . "/admin/";
 <link rel="shortcut icon" type="image/x-icon" href="<?= $url;?>assets/img/favicon.png"/>
 <!-- PRELOADER FILES -->
 <link rel="preload" href="<?= $url;?>assets/css/styles.min.css" as="style"/>
-<link rel="preload" href="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js" as="script"/>
+<!-- <link rel="preload" href="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js" as="script"/> -->
+<link rel="preload" href="<?= $url;?>assets/js/plugins/jquery/jquery-1.12.4.min.js" as="script"/>
 <!-- JQUERY COMPRESSED -->
-<script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js"></script>
+<!-- <script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js"></script> -->
+<script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-1.12.4.min.js"></script>
 <!-- BOOTSTRAP UNCOMPRESSED -->
 <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/bootstrap-4.6.2/css/bootstrap.min.css">
 <script type="text/javascript" src="<?= $url;?>assets/js/plugins/bootstrap-4.6.2/js/bootstrap.min.js"></script>

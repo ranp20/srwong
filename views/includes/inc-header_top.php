@@ -152,7 +152,7 @@
                 </div>
                 <div class="shopping-cart-btn">
                   <a href="cart-page" id="lk_cart">view cart</a>
-                  <a href="checkout" id="lk_checkout">checkout</a>
+                  <!-- <a href="checkout" id="lk_checkout">checkout</a> -->
                 </div>
               </div>
             </div>
@@ -162,101 +162,101 @@
     </div>
   </div>
   <div class="header-bottom transparent-bar black-bg">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 col-md-12 col-12">
-                  <div class="main-menu">
-                      <nav>
-                          <ul>
-                              <li class="top-hover"><a href="./">home <i class="ion-chevron-down"></i></a>
-                                  <ul class="submenu">
-                                      <li><a href="./">home version 1</a></li>
-                                      <li><a href="index-2">home version 2</a></li>
-                                  </ul>
-                              </li>
-                              <li><a href="about-us">about</a></li>
-                              <li class="mega-menu-position top-hover"><a href="shop">shop <i class="ion-chevron-down"></i></a>
-                                  <ul class="mega-menu">
-                                      <li>
-                                          <ul>
-                                              <li class="mega-menu-title"><a href="javascript:void(0);">Categories 01</a></li>
-                                              <li><a href="shop">salad</a></li>
-                                              <li><a href="shop">sandwich</a></li>
-                                              <li><a href="shop">bread</a></li>
-                                              <li><a href="shop">steak</a></li>
-                                              <li><a href="shop">tuna steak</a></li>
-                                              <li><a href="shop">spaghetti </a></li>
-                                          </ul>
-                                      </li>
-                                      <li>
-                                          <ul>
-                                              <li class="mega-menu-title"><a href="javascript:void(0);">Categories 02</a></li>
-                                              <li><a href="shop">rice</a></li>
-                                              <li><a href="shop">pizza</a></li>
-                                              <li><a href="shop">hamburger</a></li>
-                                              <li><a href="shop">eggs</a></li>
-                                              <li><a href="shop">sausages</a></li>
-                                              <li><a href="shop">apple juice</a></li>
-                                          </ul>
-                                      </li>
-                                      <li>
-                                          <ul>
-                                              <li class="mega-menu-title"><a href="javascript:void(0);">Categories 03</a></li>
-                                              <li><a href="shop">milk</a></li>
-                                              <li><a href="shop">grape juice</a></li>
-                                              <li><a href="shop">cookie</a></li>
-                                              <li><a href="shop">candy</a></li>
-                                              <li><a href="shop">cake</a></li>
-                                              <li><a href="shop">cupcake</a></li>
-                                          </ul>
-                                      </li>
-                                      <li>
-                                          <ul>
-                                              <li class="mega-menu-title"><a href="javascript:void(0);">Categories 04</a></li>
-                                              <li><a href="shop">pie</a></li>
-                                              <li><a href="shop">stoberry</a></li>
-                                              <li><a href="shop">sandwich</a></li>
-                                              <li><a href="shop">bread</a></li>
-                                              <li><a href="shop">steak</a></li>
-                                              <li><a href="shop">hamburger</a></li>
-                                          </ul>
-                                      </li>
-                                  </ul>
-                              </li>
-                              <li class="top-hover"><a href="blog-rightsidebar">blog <i class="ion-chevron-down"></i></a>
-                                  <ul class="submenu">
-                                      <li><a href="blog">Blog No sidebar</a></li>
-                                      <li><a href="blog-rightsidebar">Blog sidebar</a></li>
-                                      <li><a href="blog-details">Blog details</a></li>
-                                      <li><a href="blog-details-gallery">Blog details gallery</a></li>
-                                      <li><a href="blog-details-video">Blog details video</a></li>
-                                  </ul>
-                              </li>
-                              <li class="top-hover"><a href="javascript:void(0);">pages <i class="ion-chevron-down"></i></a>
-                                  <ul class="submenu">
-                                      <li><a href="about-us">about us </a></li>
-                                      <li><a href="shop">shop Grid</a></li>
-                                      <li><a href="shop-list">shop list</a></li>
-                                      <li><a href="product-details">product details</a></li>
-                                      <li><a href="cart-page">cart page</a></li>
-                                      <li><a href="checkout">checkout</a></li>
-                                      <li><a href="wishlist">wishlist</a></li>
-                                      <li><a href="my-account">my account</a></li>
-                                      <li><a href="login-register">login / register</a></li>
-                                      <li><a href="contact">contact</a></li>
-                                      <li><a href="testimonial">Testimonials</a></li>
-                                  </ul>
-                              </li>
-                              <li><a href="contact">contact us</a></li>
-                              <li><a href="shop">burger</a></li>
-                              <li><a href="shop">pizza</a></li>
-                              <li><a href="shop">cold drink</a></li>
-                          </ul>
-                      </nav>
-                  </div>
-              </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+          <div class="main-menu">
+            <nav>
+              <ul>
+                <li class="top-hover"><a href="./">home <i class="ion-chevron-down"></i></a>
+                  <ul class="submenu">
+                    <li><a href="./">home version 1</a></li>
+                    <li><a href="index-2">home version 2</a></li>
+                  </ul>
+                </li>
+                <li><a href="about-us">about</a></li>
+                <li class="mega-menu-position top-hover"><a href="shop">shop <i class="ion-chevron-down"></i></a>
+                  <ul class="mega-menu">
+                    <li>
+                      <ul>
+                        <li class="mega-menu-title"><a href="javascript:void(0);">Categories 01</a></li>
+                        <li><a href="shop">salad</a></li>
+                        <li><a href="shop">sandwich</a></li>
+                        <li><a href="shop">bread</a></li>
+                        <li><a href="shop">steak</a></li>
+                        <li><a href="shop">tuna steak</a></li>
+                        <li><a href="shop">spaghetti </a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul>
+                        <li class="mega-menu-title"><a href="javascript:void(0);">Categories 02</a></li>
+                        <li><a href="shop">rice</a></li>
+                        <li><a href="shop">pizza</a></li>
+                        <li><a href="shop">hamburger</a></li>
+                        <li><a href="shop">eggs</a></li>
+                        <li><a href="shop">sausages</a></li>
+                        <li><a href="shop">apple juice</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul>
+                        <li class="mega-menu-title"><a href="javascript:void(0);">Categories 03</a></li>
+                        <li><a href="shop">milk</a></li>
+                        <li><a href="shop">grape juice</a></li>
+                        <li><a href="shop">cookie</a></li>
+                        <li><a href="shop">candy</a></li>
+                        <li><a href="shop">cake</a></li>
+                        <li><a href="shop">cupcake</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <ul>
+                        <li class="mega-menu-title"><a href="javascript:void(0);">Categories 04</a></li>
+                        <li><a href="shop">pie</a></li>
+                        <li><a href="shop">stoberry</a></li>
+                        <li><a href="shop">sandwich</a></li>
+                        <li><a href="shop">bread</a></li>
+                        <li><a href="shop">steak</a></li>
+                        <li><a href="shop">hamburger</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="top-hover"><a href="blog-rightsidebar">blog <i class="ion-chevron-down"></i></a>
+                  <ul class="submenu">
+                    <li><a href="blog">Blog No sidebar</a></li>
+                    <li><a href="blog-rightsidebar">Blog sidebar</a></li>
+                    <li><a href="blog-details">Blog details</a></li>
+                    <li><a href="blog-details-gallery">Blog details gallery</a></li>
+                    <li><a href="blog-details-video">Blog details video</a></li>
+                  </ul>
+                </li>
+                <li class="top-hover"><a href="javascript:void(0);">pages <i class="ion-chevron-down"></i></a>
+                  <ul class="submenu">
+                    <li><a href="about-us">about us </a></li>
+                    <li><a href="shop">shop Grid</a></li>
+                    <li><a href="shop-list">shop list</a></li>
+                    <li><a href="product-details">product details</a></li>
+                    <li><a href="cart-page">cart page</a></li>
+                    <li><a href="checkout">checkout</a></li>
+                    <li><a href="wishlist">wishlist</a></li>
+                    <li><a href="my-account">my account</a></li>
+                    <li><a href="login-register">login / register</a></li>
+                    <li><a href="contact">contact</a></li>
+                    <li><a href="testimonial">Testimonials</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact">contact us</a></li>
+                <li><a href="shop">burger</a></li>
+                <li><a href="shop">pizza</a></li>
+                <li><a href="shop">cold drink</a></li>
+              </ul>
+            </nav>
           </div>
+        </div>
       </div>
+    </div>
   </div>
   <!-- mobile-menu-area-start -->
   <div class="mobile-menu-area">
@@ -269,75 +269,75 @@
   						<li><a href="./">Home</a>
   							<ul>
   								<li><a href="./">home version 1</a></li>
-                                          <li><a href="index-2">home version 2</a></li>
+                  <li><a href="index-2">home version 2</a></li>
   							</ul>
   						</li>
   						<li><a href="javascript:void(0);">pages</a>
   							<ul>
   								<li><a href="about-us">about us </a></li>
-                                          <li><a href="shop">shop Grid</a></li>
-                                          <li><a href="shop-list">shop list</a></li>
-                                          <li><a href="product-details">product details</a></li>
-                                          <li><a href="cart-page">cart page</a></li>
-                                          <li><a href="checkout">checkout</a></li>
-                                          <li><a href="wishlist">wishlist</a></li>
-                                          <li><a href="my-account">my account</a></li>
-                                          <li><a href="login-register">login / register</a></li>
-                                          <li><a href="contact">contact</a></li>
-                                          <li><a href="testimonial">Testimonials</a></li>
+                    <li><a href="shop">shop Grid</a></li>
+                    <li><a href="shop-list">shop list</a></li>
+                    <li><a href="product-details">product details</a></li>
+                    <li><a href="cart-page">cart page</a></li>
+                    <li><a href="checkout">checkout</a></li>
+                    <li><a href="wishlist">wishlist</a></li>
+                    <li><a href="my-account">my account</a></li>
+                    <li><a href="login-register">login / register</a></li>
+                    <li><a href="contact">contact</a></li>
+                    <li><a href="testimonial">Testimonials</a></li>
   							</ul>
   						</li>
   						<li><a href="shop"> Shop </a>
-                                      <ul>
-                                          <li><a href="javascript:void(0);">Categories 01</a>
-                                              <ul>
-                                                  <li><a href="shop">salad</a></li>
-                                                  <li><a href="shop">sandwich</a></li>
-                                                  <li><a href="shop">bread</a></li>
-                                                  <li><a href="shop">steak</a></li>
-                                                  <li><a href="shop">tuna steak</a></li>
-                                                  <li><a href="shop">spaghetti </a></li>
-                                              </ul>
-                                          </li>
-                                          <li><a href="javascript:void(0);">Categories 02</a>
-                                              <ul>
-                                                  <li><a href="shop">rice</a></li>
-                                                  <li><a href="shop">pizza</a></li>
-                                                  <li><a href="shop">hamburger</a></li>
-                                                  <li><a href="shop">eggs</a></li>
-                                                  <li><a href="shop">sausages</a></li>
-                                                  <li><a href="shop">apple juice</a></li>
-                                              </ul>
-                                          </li>
-                                          <li><a href="javascript:void(0);">Categories 03</a>
-                                              <ul>
-                                                  <li><a href="shop">milk</a></li>
-                                                  <li><a href="shop">grape juice</a></li>
-                                                  <li><a href="shop">cookie</a></li>
-                                                  <li><a href="shop">candy</a></li>
-                                                  <li><a href="shop">cake</a></li>
-                                                  <li><a href="shop">cupcake</a></li>
-                                              </ul>
-                                          </li>
-                                          <li><a href="javascript:void(0);">Categories 04</a>
-                                              <ul>
-                                                  <li><a href="shop">pie</a></li>
-                                                  <li><a href="shop">stoberry</a></li>
-                                                  <li><a href="shop">sandwich</a></li>
-                                                  <li><a href="shop">bread</a></li>
-                                                  <li><a href="shop">steak</a></li>
-                                                  <li><a href="shop">hamburger</a></li>
-                                              </ul>
-                                          </li>
-                                      </ul>
-                                  </li>
+                <ul>
+                  <li><a href="javascript:void(0);">Categories 01</a>
+                    <ul>
+                      <li><a href="shop">salad</a></li>
+                      <li><a href="shop">sandwich</a></li>
+                      <li><a href="shop">bread</a></li>
+                      <li><a href="shop">steak</a></li>
+                      <li><a href="shop">tuna steak</a></li>
+                      <li><a href="shop">spaghetti </a></li>
+                    </ul>
+                  </li>
+                  <li><a href="javascript:void(0);">Categories 02</a>
+                    <ul>
+                      <li><a href="shop">rice</a></li>
+                      <li><a href="shop">pizza</a></li>
+                      <li><a href="shop">hamburger</a></li>
+                      <li><a href="shop">eggs</a></li>
+                      <li><a href="shop">sausages</a></li>
+                      <li><a href="shop">apple juice</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="javascript:void(0);">Categories 03</a>
+                    <ul>
+                      <li><a href="shop">milk</a></li>
+                      <li><a href="shop">grape juice</a></li>
+                      <li><a href="shop">cookie</a></li>
+                      <li><a href="shop">candy</a></li>
+                      <li><a href="shop">cake</a></li>
+                      <li><a href="shop">cupcake</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="javascript:void(0);">Categories 04</a>
+                    <ul>
+                      <li><a href="shop">pie</a></li>
+                      <li><a href="shop">stoberry</a></li>
+                      <li><a href="shop">sandwich</a></li>
+                      <li><a href="shop">bread</a></li>
+                      <li><a href="shop">steak</a></li>
+                      <li><a href="shop">hamburger</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
   						<li><a href="blog-rightsidebar">blog</a>
   							<ul>
   								<li><a href="blog">Blog No sidebar</a></li>
-                                          <li><a href="blog-rightsidebar">Blog sidebar</a></li>
-                                          <li><a href="blog-details">Blog details</a></li>
-                                          <li><a href="blog-details-gallery">Blog details gallery</a></li>
-                                          <li><a href="blog-details-video">Blog details video</a></li>
+                    <li><a href="blog-rightsidebar">Blog sidebar</a></li>
+                    <li><a href="blog-details">Blog details</a></li>
+                    <li><a href="blog-details-gallery">Blog details gallery</a></li>
+                    <li><a href="blog-details-video">Blog details video</a></li>
   							</ul>
   						</li>
   						<li><a href="contact">contact us</a></li>

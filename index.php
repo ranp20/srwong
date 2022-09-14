@@ -10,10 +10,10 @@ session_start();
   <title>SrWong - Deliveries y Pedidos</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
-  <!-- INCLUIR CRYPTO-JS -->
-  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
   <!-- INCLUIR SCROLLUP -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
+  <!-- INCLUIR CRYPTO-JS -->
+  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
   <!-- INCLUIR SLICK -->
   <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick.css">
   <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick-theme.css">
@@ -1470,12 +1470,13 @@ session_start();
                           </div>
                       </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- Modal end -->
-<!-- all js here -->
-  <script src="<?= $url;?>assets/js/actions/home-settings.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal end -->
+    <!-- all js here -->
+    <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/home-settings.js"></script>
 </body>
 </html>

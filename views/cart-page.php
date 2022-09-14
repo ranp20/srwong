@@ -8,6 +8,10 @@ session_start();
 <head>
   <title>SrWong - Deliveries y Pedidos</title>
   <?php require_once 'includes/inc-header_links.php';?>
+  <!-- INCLUIR MEANMENU -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
+  <!-- INCLUIR SCROLLUP -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
 </head>
 <body>
   <?php require_once 'includes/inc-header_top.php';?>
@@ -52,7 +56,9 @@ session_start();
                     </td>
                     <td class="product-quantity">
                       <div class="cart-plus-minus">
+                        <div class="dec qtybutton">-</div>
                         <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                        <div class="inc qtybutton">+</div>
                       </div>
                     </td>
                     <td class="product-subtotal">$110.00</td>
@@ -73,7 +79,9 @@ session_start();
                     </td>
                     <td class="product-quantity">
                       <div class="cart-plus-minus">
+                        <div class="dec qtybutton">-</div>
                         <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                        <div class="inc qtybutton">+</div>
                       </div>
                     </td>
                     <td class="product-subtotal">$150.00</td>
@@ -94,7 +102,9 @@ session_start();
                     </td>
                     <td class="product-quantity">
                       <div class="cart-plus-minus">
+                        <div class="dec qtybutton">-</div>
                         <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                        <div class="inc qtybutton">+</div>
                       </div>
                     </td>
                     <td class="product-subtotal">$170.00</td>
@@ -134,7 +144,7 @@ session_start();
               </ul>
             </div>
             <h4 class="grand-totall-title">Grand Total  <span>$260.00</span></h4>
-            <a href="javascript:void(0);">Proceed to Checkout</a>
+            <a href="./checkout">Proceed to Checkout</a>
           </div>
         </div>
       </div>
@@ -244,6 +254,7 @@ session_start();
     </div>
   </div>	
   <!-- all js here -->
-  <script src="<?= $url;?>assets/js/actions/cart-page.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/cart-page.js"></script>
 </body>
 </html>

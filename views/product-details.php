@@ -8,6 +8,15 @@ session_start();
 <head>    
     <title>SrWong - Deliveries y Pedidos</title>
     <?php require_once 'includes/inc-header_links.php';?>
+    <!-- INCLUIR MEANMENU -->
+    <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
+    <!-- INCLUIR SCROLLUP -->
+    <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
+    <!-- INCLUIR OWL CAROUSEL 2 -->
+    <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
+    <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
+    <!-- INCLUIR ELEVATEZOOM -->
+    <script type="text/javascript" src="<?= $url;?>assets/js/plugins/elevatezoom/jquery.elevateZoom-3.0.8.min.js"></script>
 </head>
     <body>
         <?php require_once 'includes/inc-header_top.php';?>
@@ -92,7 +101,9 @@ session_start();
                                 </div>
                                 <div class="product-quantity">
                                     <div class="cart-plus-minus">
+                                        <div class="dec qtybutton">-</div>
                                         <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                                        <div class="inc qtybutton">+</div>
                                     </div>
                                 </div>
                             </div>
@@ -559,23 +570,8 @@ session_start();
             </div>
         </div>
         <!-- Modal end -->
-        
-        
-        
-        
-        
-        
-        
-		
 		<!-- all js here -->
-        
-        <script src="<?= $url;?>assets/js/popper.js"></script>
-        
-        <script src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
-        <script src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
-        <script src="<?= $url;?>assets/js/ajax-mail.js"></script>
-        
-        <script src="<?= $url;?>assets/js/plugins.js"></script>
-        <script src="<?= $url;?>assets/js/main.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/actions/product-details.js"></script>
     </body>
 </html>

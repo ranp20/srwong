@@ -11,6 +11,10 @@ if(isset($_SESSION['usr-logg_srwong'])){
 <head>
   <title>SrWong - Deliveries y Pedidos</title>
   <?php require_once 'includes/inc-header_links.php';?>
+  <!-- INCLUIR MEANMENU -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
+  <!-- INCLUIR SCROLLUP -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
   <!-- INCLUIR SWEET ALERT 2 -->
   <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
@@ -201,6 +205,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
-  <script src="<?= $url;?>assets/js/actions/login-user.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/login-user.js"></script>
 </body>
 </html>

@@ -210,13 +210,13 @@ session_start();
 		
 		<!-- all js here -->
         
-        <script src="<?= $url;?>assets/js/popper.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/popper.js"></script>
         
-        <script src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
-        <script src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
-        <script src="<?= $url;?>assets/js/ajax-mail.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/ajax-mail.js"></script>
         
-        <script src="<?= $url;?>assets/js/plugins.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/plugins.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo"></script>
 		<script>
             function init() {
@@ -239,6 +239,6 @@ session_start();
             }
             google.maps.event.addDomListener(window, 'load', init);
 		</script>
-        <script src="<?= $url;?>assets/js/main.js"></script>
+        <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
     </body>
 </html>

@@ -8,6 +8,15 @@ session_start();
 <head>
   <title>SrWong - Deliveries y Pedidos</title>
   <?php require_once 'includes/inc-header_links.php';?>
+  <!-- INCLUIR MEANMENU -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
+  <!-- INCLUIR SCROLLUP -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
+  <!-- INCLUIR WAYPOINTS -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <!-- INCLUIR COUNTER-UP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 </head>
 <body>
 <?php require_once 'includes/inc-header_top.php';?>
@@ -411,14 +420,7 @@ session_start();
         </div>
   </div>
 	<!-- all js here -->
-  
-  <script src="<?= $url;?>assets/js/popper.js"></script>
-  
-  <script src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>
-  <script src="<?= $url;?>assets/js/isotope.pkgd.min.js"></script>
-  <script src="<?= $url;?>assets/js/ajax-mail.js"></script>
-  
-  <script src="<?= $url;?>assets/js/plugins.js"></script>
-  <script src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/about-us.js"></script>
 </body>
 </html>
