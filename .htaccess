@@ -16,6 +16,8 @@ RewriteRule ^my-account?$ views/my-account.php
 RewriteRule ^product-details?$ views/product-details.php
 RewriteRule ^shop-list?$ views/shop-list.php
 RewriteRule ^checkout?$ views/checkout.php
+RewriteRule ^payment?$ views/payment.php
+RewriteRule ^confirm?$ views/confirm.php
 RewriteRule ^contact?$ views/contact.php
 RewriteRule ^cart-page?$ views/cart-page.php
 RewriteRule ^blog-details?$ views/blog-details.php

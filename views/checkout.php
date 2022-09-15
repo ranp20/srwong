@@ -52,19 +52,19 @@ if(!isset($_SESSION['usr-logg_srwong'])){
               <div class="tab-content">
                 <div id="chck1" class="tab-pane active">
                   <div class="chcksel-register-form">
-                    <form action="" method="POST" id="frm_1-Log">
+                    <form action="./payment" method="POST" id="frm_1-Log">
                       <div class="mb-2">
                         <label for="chck-telephone" class="form-label">Teléfono/Celular</label>
-                        <input type="email" class="form-control" id="chck-telephone" placeholder="">
+                        <input type="text" class="form-control" name="chck-telephone" id="chck-telephone" placeholder="">
                       </div>
                       <div class="mb-2">
                         <label for="chck-address" class="form-label">Dirección</label>
-                        <input type="email" class="form-control" id="chck-address" placeholder="">
+                        <input type="text" class="form-control" name="chck-address" id="chck-address" placeholder="">
                       </div>
                       <div class="mb-2">
                         <div class="form-group">
                           <label for="chck-location">Ubicación</label>
-                          <select class="form-control" id="chck-location">
+                          <select class="form-control" name="chck-location" id="chck-location">
                             <option value="1">San Juan de Lurigancho 1</option>
                             <option value="2">San Juan de Lurigancho 2</option>
                           </select>
@@ -73,7 +73,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                       <div class="mb-2">
                         <label for="chck-reference" class="form-label">Referencia</label>
                         <div class="form-floating">
-                          <textarea class="form-control" placeholder="" id="chck-reference" style="height: 100px"></textarea>
+                          <textarea class="form-control" placeholder="" name="chck-reference" id="chck-reference" style="height: 100px"></textarea>
                         </div>
                       </div>
                       <div class="button-box">
