@@ -1,25 +1,41 @@
 .tablink--fill{
 	flex: 1;
-	background-color: $theme-clr-btns-tabs;
 	text-align: center;
 	margin-left: 10px;
 	margin-right: 10px;
 	transition: all ease-in-out .1s;
 	padding: 1.15rem 2rem;
 	border-radius: 10px;
+	border: 1px solid $theme-clr-btns-tabs;
 	span{
 		display: block;
-		color: $theme-clr-icons-tabs;
+		color: $theme-clr-btns-tabs;
 		&:nth-child(2){
 			font-size: 1rem;
+			font-weight: 600;
 		}
 	}
 	svg{
-		fill: $theme-clr-icons-tabs;
+		fill: $theme-clr-btns-tabs;
 		max-width: 70px;
 		width: 95%;
 	}
 	&:hover{
-		background-color: darken($theme-clr-btns-tabs, 10%);
+		background-color: $theme-clr-btns-tabs;
+		span{
+			color: $theme-clr-icons-tabs;
+		}
+		svg{
+			fill: $theme-clr-icons-tabs;
+		}
+	}
+	&.active{
+		background-color: $theme-clr-btns-tabs;
+		span{
+			color: $theme-clr-icons-tabs;
+		}
+		svg{
+			fill: $theme-clr-icons-tabs;
+		}
 	}
 }
