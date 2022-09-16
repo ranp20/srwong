@@ -131,35 +131,46 @@ $(() => {
   });
 
   // ------------ Product filter by category
-  $('.owl-carousel__tabfilter').owlCarousel({
+  $('.products-tabfilter-home').owlCarousel({
     items:4,
     lazyLoad:true,
     loop:true,
     autoplay:false,
     autoplayTimeout:6000,
     autoplayHoverPause:false,
-    nav:true,
-    dots:true,
+    nav:false,
+    dots:false,
     margin:10,
     responsiveClass:true,
     responsive:{
       0: {
-        items: 1
+        items: 1,
+        nav:false,
+        dots:false
       },
       576: {
-        items: 2
+        items: 2,
+        nav:false,
+        dots:false
       },
       768: {
-        items: 3
+        items: 3,
+        nav:false,
+        dots:false
       },
       992: {
-        items: 4
+        items: 4,
+        nav:false,
+        dots:false
       },
       1200: {
-        items: 4
+        items: 4,
+        nav:false,
+        dots:false
       }
     }
   });
+
   
   // $('.slider-arrow-left').click(function(){
   //   owl.trigger('prev.owl.carousel', [300]);

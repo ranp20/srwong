@@ -2,6 +2,10 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+
+require_once 'model/products.php';
+$products = new Products();
+$list = $products->getAll();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -86,7 +90,7 @@ session_start();
     </div>
   </div>
   <div class="product-area pb-70">
-    <div class="custom-container">
+    <div class="custom-container container">
       <div class="product-tab-list-wrap text-center mb-40">
         <div class="product-tab-list nav">
           <a class="active" href="#tab1" data-toggle="tab">
@@ -103,272 +107,66 @@ session_start();
       </div>
       <div class="tab-content jump">
         <div id="tab1" class="tab-pane active">
-          <div class="owl-theme row">
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-1.jpg" alt="">
+          <div class="products-tabfilter-home owl-carousel owl-theme row">
+            <?php 
+              function addTwoDecimalsOrGuion($number){
+                $output_final = "";
+                if($number != "0" || $number != 0){
+                  $output_num = explode(".", $number);
+                  if(!isset($output_num[1]) || $output_num[1] == "undefined" || $output_num[1] == ""){
+                    $output_final = number_format($number).".00";
+                  }else if(isset($output_num[1]) && strlen($output_num[1]) < 2){
+                    $output_final = number_format($output_num[0]).".".$output_num[1]."0";
+                  }else{
+                    $output_final = number_format($output_num[0]).".".$output_num[1];
+                  }
+                }else{
+                  $output_final = 0.00;
+                }
+                return $output_final;
+              }
+
+              $tmp = "";
+              foreach ($list as $key => $value){
+
+                $price_new = floatval($value['price']);
+                $price_new_convert = addTwoDecimalsOrGuion($price_new);
+                $price_old = $price_new - 10;
+                $price_old_convert = addTwoDecimalsOrGuion($price_old);
+                
+                $tmp .= "
+                  <div class='item'>
+                    <div class='product-wrapper mb-25'>
+                      <div class='product-img'>
+                        <a href='product-details'>
+                          <img src='{$url}assets/img/product/product-1.jpg' alt=''>
                         </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
+                        <div class='product-action'>
+                          <div class='pro-action-left'>
+                            <a title='Add Tto Cart' href='javascript:void(0);' class='a__tocart'><i class='ion-android-cart'></i> Add Tto Cart</a>
+                          </div>
+                          <div class='pro-action-right'>
+                            <a title='Wishlist' href='wishlist'><i class='ion-ios-heart-outline'></i></a>
+                            <a title='Quick View' data-toggle='modal' data-target='#exampleModal' href='javascript:void(0);'><i class='ion-android-open'></i></a>
+                          </div>
                         </div>
-                    </div>
-                    <div class="product-content">
+                      </div>
+                      <div class='product-content'>
                         <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
+                          <a href='product-details'>{$value['name']}</a>
                         </h4>
-                        <div class="product-price-wrapper">
-                            <span>$100.00</span>
-                            <span class="product-price-old">$120.00 </span>
+                        <div class='product-price-wrapper'>
+                          <span>S/. {$price_new_convert}</span>
+                            <span class='product-price-old'>S/. {$price_old_convert} </span>
                         </div>
+                      </div>
                     </div>
                 </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-2.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$200.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-3.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$90.00</span>
-                            <span class="product-price-old">$100.00 </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-4.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$50.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-5.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$60.00</span>
-                            <span class="product-price-old">$70.00 </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-6.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$190.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-7.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$150.00</span>
-                            <span class="product-price-old">$170.00 </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-8.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$80.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-9.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$180.00</span>
-                            <span class="product-price-old">$190.00 </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="custom-col-5">
-                <div class="product-wrapper mb-25">
-                    <div class="product-img">
-                        <a href="product-details">
-                            <img src="<?= $url;?>assets/img/product/product-10.jpg" alt="">
-                        </a>
-                        <div class="product-action">
-                            <div class="pro-action-left">
-                                <a title="Add Tto Cart" href="javascript:void(0);" class="a__tocart"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                            </div>
-                            <div class="pro-action-right">
-                                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h4>
-                            <a href="product-details">PRODUCTS NAME HERE </a>
-                        </h4>
-                        <div class="product-price-wrapper">
-                            <span>$70.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                ";
+              }
+              echo $tmp;
+            ?>
+            
           </div>
         </div>
         <div id="tab2" class="tab-pane">
@@ -926,7 +724,7 @@ session_start();
     </div>
   </div>
   <div class="best-food-area pt-100 pb-95">
-    <div class="custom-container">
+    <div class="custom-container container">
       <div class="row">
         <div class="best-food-width-1">
           <div class="single-banner">

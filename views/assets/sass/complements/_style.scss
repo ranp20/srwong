@@ -2207,7 +2207,8 @@ textarea:focus {
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    width: 1740px;
+    max-width: 1740px;
+    width: 95%;
 }
 .custom-col-5 {
     flex: 0 0 20%;

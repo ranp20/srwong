@@ -414,3 +414,37 @@ $form-container: "frm-cont" !default;
 .loader-in{
 	@include simple-preloader(55px,55px,$theme-clr-btns-tabs);
 }
+
+
+/* PRODUCT FILTER - HOME */
+.products-tabfilter-home{
+	.owl-stage,
+	.owl-stage-outer{
+		.owl-stage{		
+			.owl-item{
+				.item{
+					.product-wrapper{
+						.product-img{
+							& > a{
+								max-width: 255px;
+								width: 95%;
+								img{
+									object-fit: cover;
+									object-position: center;
+								}
+							}
+						}
+						.product-action{
+							.pro-action-left{
+
+							}
+							.pro-action-right{
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
