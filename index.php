@@ -3,8 +3,8 @@
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
 ?>
-<!doctype html>
-<html class="no-js" lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <?php require_once 'views/includes/inc-header_links.php';?>
   <title>SrWong - Deliveries y Pedidos</title>

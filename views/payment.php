@@ -1,30 +1,37 @@
 <?php
 require_once '../vendor/autoload.php';
-require_once '../keys.php';
-require_once '../helpers.php';
+require_once '../model/keys.php';
+require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
+$amount = intval($_POST['chck-payment']) * 100;
 
 $store = array(
-  "amount" => 250, 
-  "currency" => "USD", 
+  "amount" => $amount,
+  "currency" => "PEN", 
   "orderId" => uniqid("MyOrderId"),
   "customer" => array(
-  "email" => "sample@example.com"
+    "u_telephone" => $_POST['chck-telephone'],
+    "u_address" => $_POST['chck-address'],
+    "u_id_location" => $_POST['chck-location'],
+    "u_reference" => $_POST['chck-reference']
   )
 );
 $response = $client->post("V4/Charge/CreatePayment", $store);
+/*
+echo "<pre>";
+print_r($response);
+echo "</pre>";
+exit();
+*/
 
-if ($response['status'] != 'SUCCESS') {
-
+if($response['status'] != 'SUCCESS'){
   display_error($response);
   $error = $response['answer'];
   throw new Exception("error " . $error['errorCode'] . ": " . $error['errorMessage'] );
 }
 
-
 $formToken = $response["answer"]["formToken"];
-
 
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
@@ -33,32 +40,24 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }
 
-
-
-
 ?>
-<!doctype html>
-<html class="no-js" lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>    
   <?php require_once 'includes/inc-header_links.php';?>
   <title>SrWong - Detalle del pedido</title>
   <!-- INTEGRACIÓN IZZIPAY -->
-  <!-- Javascript library. Should be loaded in head section -->
+
   <script 
    src="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
    kr-public-key="<?php echo $client->getPublicKey();?>"
-   kr-post-url-success="./confirm">
+   kr-post-url-success="./payment-data">
   </script>
 
-  <!-- theme and plugins. should be loaded after the javascript library -->
-  <!-- not mandatory but helps to have a nice payment form out of the box -->
-  <link rel="stylesheet" 
-   href="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/ext/classic-reset.css">
-  <script 
-   src="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/ext/classic.js">
-  </script>
+  <link rel="stylesheet" href="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/ext/classic-reset.css">
+  <script src="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/ext/classic.js"></script>
    
-  <!-- Javascript library. Should be loaded in head section -->
+
   <!--
   <script 
    src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js" 
@@ -73,11 +72,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
  </script> 
 -->
 
-
-  <!-- INCLUIR MEANMENU -->
-  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
-  <!-- INCLUIR SCROLLUP -->
-  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
 </head>
 <body>
   <?php require_once 'includes/inc-header_top.php';?>
@@ -98,11 +92,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
         <div class="ml-auto mr-auto col-lg-8">
           <div class="payment-wrapper">
             <div class="c-frmpayment_dmss">
-              <?php
-                echo "<pre>";
-                print_r($_POST);
-                echo "</pre>";
-              ?>
               <!-- FORMULARIO INCRUSTADO (INICIO) -->
               
               <div class="kr-embedded"  kr-form-token="<?php echo $formToken; ?>">
@@ -136,6 +125,10 @@ if(!isset($_SESSION['usr-logg_srwong'])){
     </div>
   </div>
   <?php require_once 'includes/inc-footer.php';?>
+  <!-- INCLUIR MEANMENU -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
+  <!-- INCLUIR SCROLLUP -->
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
 </body>
 </html>

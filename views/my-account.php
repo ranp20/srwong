@@ -3,8 +3,8 @@
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
 ?>
-<!doctype html>
-<html class="no-js" lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <title>SrWong - Mi Cuenta</title>
   <?php require_once 'includes/inc-header_links.php';?>

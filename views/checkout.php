@@ -6,8 +6,8 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }
 ?>
-<!doctype html>
-<html class="no-js" lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>    
   <?php require_once 'includes/inc-header_links.php';?>
   <title>SrWong - Detalle del pedido</title>
@@ -53,6 +53,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                 <div id="chck1" class="tab-pane active">
                   <div class="chcksel-register-form">
                     <form action="./payment" method="POST" id="frm_1-Log">
+                      <input type="text" name="chck-payment" id="chck-payment" value="150">
                       <div class="mb-2">
                         <label for="chck-telephone" class="form-label">Teléfono/Celular</label>
                         <input type="text" class="form-control" name="chck-telephone" id="chck-telephone" placeholder="">

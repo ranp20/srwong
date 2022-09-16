@@ -6,8 +6,8 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }
 ?>
-<!doctype html>
-<html class="no-js" lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>    
   <?php require_once 'includes/inc-header_links.php';?>
   <title>SrWong - Detalle del pedido</title>

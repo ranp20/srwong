@@ -23,6 +23,7 @@ RewriteRule ^blog-details?$ views/blog-details.php
 RewriteRule ^blog-details-gallery?$ views/blog-details-gallery.php
 RewriteRule ^blog-details-video?$ views/blog-details-video.php
 RewriteRule ^blog-rightsidebar?$ views/blog-rightsidebar.php
+RewriteRule ^payment-data?$ controllers/prcss_payment-data.php
 RewriteRule ^logout?$ controllers/prcss_logout-user.php
 
 ############ PAGES ADMIN
