@@ -3,10 +3,10 @@ class Connection{
 	// CONFIGURACIÓN - SERVIDOR (SERVIDOR TEMPORAL)
   /*
   protected $con = null;
-	private $host = "207.7.82.106";
-	private $dbname = "grupopdg_camellogistics_db";
-	private $username = "grupopdg_camellogistics_user";
-	private $password = "A%,Q?%#U]N~K";
+	private $host = "108.160.152.119";
+	private $dbname = "plataformacsscre_srwong";
+	private $username = "plataformacsscre_srwong_user";
+	private $password = "RLK;#R_*.!&@";
 	private $charset = "utf8";
   */  
 

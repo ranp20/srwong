@@ -5,7 +5,6 @@ RewriteBase /srwong/
 
 ############ PAGES USERS
 RewriteRule ^/?$ index.php
-#RewriteRule ^index-2?$ index-2.php
 RewriteRule ^about-us?$ views/about-us.php
 RewriteRule ^blog?$ views/blog.php
 RewriteRule ^shop?$ views/shop.php
