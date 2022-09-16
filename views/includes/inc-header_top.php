@@ -46,14 +46,14 @@
       <div class="row">
         <div class="col-lg-3 col-md-4 col-12 col-sm-4">
           <div class="logo">
-            <a href="./">
+            <a href="./" style="display:flex;align-items: center;justify-content: center;flex-flow:wrap row;max-width:128px;">
               <img alt="" src="<?= $url;?>assets/img/logo/logo.png">
             </a>
           </div>
         </div>
         <div class="col-lg-9 col-md-8 col-12 col-sm-8">
           <div class="header-middle-right f-right">
-            <div class="header-login" id="header-login">
+            <div class="header-login" id="header-login" style="position: relative;top: 1rem;">
               <?php
                 $tmp_logg = "";
                 if(isset($_SESSION['usr-logg_srwong'])){
@@ -96,7 +96,7 @@
                 echo $tmp_logg;
               ?>
             </div>
-            <div class="header-wishlist">
+            <div class="header-wishlist" style="position: relative;top: 1rem;">
               <a href="wishlist">
                 <div class="header-icon-style">
                   <i class="icon-heart icons"></i>
@@ -106,7 +106,7 @@
                 </div>
               </a>
             </div>
-            <div class="header-cart">
+            <div class="header-cart" style="position: relative;top: 1rem;">
               <a href="javascript:void(0);">
                 <div class="header-icon-style">
                   <i class="icon-handbag icons"></i>

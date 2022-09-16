@@ -29,7 +29,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
     </div>
   </div>
   <!-- checkout-area start -->
-  <div class="checkout-area pb-80 pt-100">
+  <div class="checkout-area pb-80 pt-50">
     <div class="container">
       <div class="row">
         <div class="ml-auto mr-auto col-lg-8">

@@ -26,7 +26,7 @@ session_start();
       </div>
   </div>
   <!-- my account start -->
-  <div class="myaccount-area pb-80 pt-100">
+  <div class="myaccount-area pb-80 pt-50">
       <div class="container">
           <div class="row">
               <div class="ml-auto mr-auto col-lg-9">
