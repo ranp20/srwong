@@ -409,3 +409,8 @@ $form-container: "frm-cont" !default;
 		}
 	}
 }
+
+/* PRELOADER ALL PAGES */
+.loader-in{
+	@include simple-preloader(55px,55px,$theme-clr-btns-tabs);
+}

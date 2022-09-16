@@ -33,6 +33,9 @@ session_start();
 </head>
 <body>
   <?php require_once 'views/includes/inc-header_top.php';?>
+  <div class="loader-in">
+    <span class="loader-in--loader"></span>
+  </div>
   <div class="slider-area">
     <div class="slider-active owl-dot-style owl-carousel">
       <div class="single-slider pt-210 pb-220 bg-img" style="background-image:url(<?= $url;?>assets/img/slider/slider-1.jpg);">

@@ -1,6 +1,8 @@
-(function($) {
-'use strict';
-
+// ------------ PRELOADER - ALL PAGES
+window.addEventListener("load", function(){
+  document.querySelector(".loader-in").className += " hidden";
+});
+$(() => {
   // ------------ Login options toggle active
   $(".header-login #listcards_logg").on("click", function(e){
     e.preventDefault();
@@ -53,4 +55,4 @@
   $(document).on("click","#lk_cart",function(){window.location.href = "./cart-page";});
   // ------------ IR HACIA LA PÁGINA - CHECKOUT
   $(document).on("click","#lk_checkout",function(){window.location.href = "./checkout";});
-})(jQuery);
+});
