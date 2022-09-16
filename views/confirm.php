@@ -10,7 +10,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 <html lang="es">
 <head>    
   <?php require_once 'includes/inc-header_links.php';?>
-  <title>SrWong - Detalle del pedido</title>
+  <title>SrWong - Confirmación de compra</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->

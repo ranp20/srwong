@@ -45,7 +45,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 <html lang="es">
 <head>    
   <?php require_once 'includes/inc-header_links.php';?>
-  <title>SrWong - Detalle del pedido</title>
+  <title>SrWong - Página de pago</title>
   <!-- INTEGRACIÓN IZZIPAY -->
 
   <script 

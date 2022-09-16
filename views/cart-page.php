@@ -6,8 +6,8 @@ session_start();
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>SrWong - Deliveries y Pedidos</title>
   <?php require_once 'includes/inc-header_links.php';?>
+  <title>SrWong - Carrito de compras</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->

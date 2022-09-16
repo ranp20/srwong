@@ -6,8 +6,8 @@ session_start();
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>SrWong - Deliveries y Pedidos</title>
     <?php require_once 'includes/inc-header_links.php';?>
+    <title>SrWong - Blog</title>
     <!-- INCLUIR MAGNIFIC-POP-UP -->
     <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/Magnific-Popup/magnific-popup.css">
     <script type="text/javascript" src="<?= $url;?>assets/js/plugins/Magnific-Popup/jquery.magnific-popup.min.js"></script>
