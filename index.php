@@ -4,8 +4,11 @@
 session_start();
 
 require_once 'model/products.php';
+require_once 'model/categories.php';
 $products = new Products();
-$list = $products->getAll();
+$l_products = $products->getAll();
+$categories = new Categories();
+$l_categories = $products->getAll();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -127,12 +130,14 @@ $list = $products->getAll();
               }
 
               $tmp = "";
-              foreach ($list as $key => $value){
+              foreach ($l_products as $key => $value){
 
                 $price_new = floatval($value['price']);
                 $price_new_convert = addTwoDecimalsOrGuion($price_new);
                 $price_old = $price_new - 10;
                 $price_old_convert = addTwoDecimalsOrGuion($price_old);
+                $prod_categories = substr($value['category_ids'], 1, strlen($value['category_ids']) - 2);
+                $prod_list_categories = json_decode($prod_categories, TRUE);
                 
                 $tmp .= "
                   <div class='item'>
@@ -159,6 +164,7 @@ $list = $products->getAll();
                           <span>S/. {$price_new_convert}</span>
                             <span class='product-price-old'>S/. {$price_old_convert} </span>
                         </div>
+                        <p><strong>ID CATEGORÍA: {$prod_list_categories['id']}</strong></p>
                       </div>
                     </div>
                 </div>

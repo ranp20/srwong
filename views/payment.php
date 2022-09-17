@@ -51,7 +51,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <script 
    src="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
    kr-public-key="<?php echo $client->getPublicKey();?>"
-   kr-post-url-success="./payment-data">
+   kr-post-url-success="./confirm">
   </script>
 
   <link rel="stylesheet" href="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/ext/classic-reset.css">

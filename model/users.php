@@ -2,7 +2,7 @@
 require_once 'db/connection.php';
 class Users extends Connection
 {
-  private $users = "tbl_users";
+  private $table = "tbl_users";
   function __construct()
   {
     parent::__construct();
@@ -10,7 +10,7 @@ class Users extends Connection
   // -------------- VALIDAR EL USUARIO
   function verify_email($email){
     try{
-      $sql = "SELECT * FROM {$this->users} WHERE email = :email";
+      $sql = "SELECT * FROM {$this->table} WHERE email = :email";
       $stm = $this->con->prepare($sql);
       $stm->bindValue(':email', $email);
       $stm->execute();
@@ -36,7 +36,7 @@ class Users extends Connection
   // -------------- LISTAR USUARIO - PARA VALIDAR INICIO DE SESIÓN
   function get_usersverifylogin($email){
     try{
-      $sql = "SELECT password FROM {$this->users} WHERE email = :email";
+      $sql = "SELECT password FROM {$this->table} WHERE email = :email";
       $stm = $this->con->prepare($sql);
       $stm->bindValue(':email', $email);
       $stm->execute();
@@ -48,7 +48,7 @@ class Users extends Connection
   // -------------- LISTAR - USERS
   function get_users($email){
     try{
-      $sql = "SELECT * FROM {$this->users} WHERE email = :email";
+      $sql = "SELECT * FROM {$this->table} WHERE email = :email";
       $stm = $this->con->prepare($sql);
       $stm->bindValue(':email', $email);
       $stm->execute();
