@@ -51,14 +51,14 @@
                   <div class='product-wrapper mb-25'>
                     <div class='product-img'>
                       <a href='product-details'>
-                        <img src='{$url}assets/img/product/product-1.jpg' alt=''>
+                        <img src='{$url}assets/img/product/mostricrunh.jpg' alt=''>
                       </a>
                       <div class='product-action'>
                         <div class='pro-action-left'>
                           <a title='Add Tto Cart' href='javascript:void(0);' class='a__tocart'
                             dt-srwg_name='{$p_name}'
                             dt-srwg_price='{$p_price_new_convert}'
-                            dt-srwg_image='{$url}assets/img/product/product-1.jpg'
+                            dt-srwg_image='{$url}assets/img/product/mostricrunh.jpg'
                             dt-srwg_id='{$value["id"]}'
                           >
                             <i class='ion-android-cart'></i>
@@ -108,14 +108,14 @@
                   <div class='product-wrapper mb-25'>
                     <div class='product-img'>
                       <a href='product-details'>
-                        <img src='{$url}assets/img/product/product-1.jpg' alt=''>
+                        <img src='{$url}assets/img/product/mostricrunh.jpg' alt=''>
                       </a>
                       <div class='product-action'>
                         <div class='pro-action-left'>
                           <a title='Add Tto Cart' href='javascript:void(0);' class='a__tocart'
                             dt-srwg_name='{$p_name}'
                             dt-srwg_price='{$p_price_new_convert}'
-                            dt-srwg_image='{$url}assets/img/product/product-1.jpg'
+                            dt-srwg_image='{$url}assets/img/product/mostricrunh.jpg'
                             dt-srwg_id='{$value["id"]}'
                           >
                             <i class='ion-android-cart'></i>
@@ -165,14 +165,14 @@
                   <div class='product-wrapper mb-25'>
                     <div class='product-img'>
                       <a href='product-details'>
-                        <img src='{$url}assets/img/product/product-1.jpg' alt=''>
+                        <img src='{$url}assets/img/product/mostricrunh.jpg' alt=''>
                       </a>
                       <div class='product-action'>
                         <div class='pro-action-left'>
                           <a title='Add Tto Cart' href='javascript:void(0);' class='a__tocart'
                             dt-srwg_name='{$p_name}'
                             dt-srwg_price='{$p_price_new_convert}'
-                            dt-srwg_image='{$url}assets/img/product/product-1.jpg'
+                            dt-srwg_image='{$url}assets/img/product/mostricrunh.jpg'
                             dt-srwg_id='{$value["id"]}'
                           >
                             <i class='ion-android-cart'></i>

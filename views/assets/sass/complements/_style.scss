@@ -2272,6 +2272,20 @@ textarea:focus {
     visibility: visible;
     bottom: 12px;
 }
+.product-wrapper:hover .product-action:after{
+    content: "";
+    box-shadow: 0 -55px 17px 0 inset rgb(255 255 255 / 90%);
+    width: 100%;
+    left: 0;
+    bottom: -12px;
+    position: absolute;
+    height: 70px;
+    z-index: 0;
+}
+.pro-action-left,
+.pro-action-right{
+    z-index: 1;
+}
 .pro-action-left > a {
     color: #000000;
     font-size: 13px;
