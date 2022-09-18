@@ -11,14 +11,11 @@ function decryptValuesIpts(valueipt){
 }
 // ------------ COMPROBAR SI ES NUMÉRICO
 function isNumeric(variable){return !isNaN(parseInt(variable));}
-
 $(() => {
-
   // ------------ ENCRIPTACIÓN DE INPUTS
   var encrypt_v_idgencoderand = $("#u-s_regclient-sis").val(encryptValuesIpts($("#u-s_regclient-sis").val()));
   // ------------ DESENCRIPTACIÓN DE INPUTS
   var v_idgencoderand = decryptValuesIpts(encrypt_v_idgencoderand.val());
-
   // ------------ Slider active
   $('.slider-active').owlCarousel({
     loop: true,
@@ -41,7 +38,6 @@ $(() => {
       }
     }
   });
-
   // ------------ Best selling active
   $('.product-slider-active').owlCarousel({
     loop: true,
@@ -69,7 +65,6 @@ $(() => {
       }
     }
   });
-
   // ------------ Brand logo active
   $('.brand-logo-active').owlCarousel({
     loop: true,
@@ -100,7 +95,6 @@ $(() => {
       }
     }
   });
-
   // ------------ Thumbnail Product activation
   $('.thumb-menu').owlCarousel({
     loop: true,
@@ -129,7 +123,6 @@ $(() => {
   $('.thumb-menu a').on('click', function(){
     $('.thumb-menu a').removeClass('active');
   });
-
   // ------------ Product filter by category
   $('.products-tabfilter-home').owlCarousel({
     items:4,
@@ -171,7 +164,6 @@ $(() => {
     }
   });
 
-  
   // $('.slider-arrow-left').click(function(){
   //   owl.trigger('prev.owl.carousel', [300]);
   // });
@@ -183,7 +175,83 @@ $(() => {
   $(document).on("click",".a__tocart",function(e){
     e.preventDefault();
     if(isNumeric(v_idgencoderand) == true || isNumeric(v_idgencoderand) == "true"){
-      console.log('Existe una sesión iniciada');
+      let cart = {
+        p_id: $(this).attr('dt-srwg_id'),
+        p_idcli: v_idgencoderand,
+        p_quantity: 1,
+        p_price: $(this).attr('dt-srwg_price')
+      };
+      $.ajax({
+        url: "./controllers/prcss_cart-list-temp.php",
+        method: "POST",
+        dataType: 'JSON',
+        contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+        data: cart,
+        success : function(e){
+          if(e != "" && e != "[]"){
+            if(e.r == "srwg_add"){
+              console.log('Agregado al carrito');
+              Swal.fire({
+                title: '',
+                html: `<div class="alertSwal">
+                        <div class="alertSwal__cTitle">
+                          <h3>¡Agregado!</h3>
+                        </div>
+                        <div class="alertSwal__cText">
+                          <p>El producto ha sido agregado al carrito.</strong></p>
+                        </div>
+                        <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
+                      </div>`,
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Aceptar',
+                allowOutsideClick: false,
+                allowEscapeKey:false,
+                allowEnterKey:true,
+                timer: 1000
+              });
+              $(document).on('click', '.SwalBtn1', function() {
+                swal.clickConfirm();
+              });
+            }else if(e.r == "srwg_update"){
+              console.log('El carrito se ha actualizado');
+              Swal.fire({
+                title: '',
+                html: `<div class="alertSwal">
+                        <div class="alertSwal__cTitle">
+                          <h3>¡Actualizado!</h3>
+                        </div>
+                        <div class="alertSwal__cText">
+                          <p>El producto ha sido actualizado ene el carrito.</strong></p>
+                        </div>
+                        <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
+                      </div>`,
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Aceptar',
+                allowOutsideClick: false,
+                allowEscapeKey:false,
+                allowEnterKey:true,
+                timer: 1000
+              });
+              $(document).on('click', '.SwalBtn1', function() {
+                swal.clickConfirm();
+              });
+            }else{
+              console.log('Lo sentimos hubo un error');
+            }
+          }else{
+
+          }
+        },
+        error : function(xhr, status){
+          console.log('Disculpe, existió un problema');
+        }
+      });
     }else{
       console.log('NO existe una sesión iniciada');
       window.location.href = "./login-register";

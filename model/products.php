@@ -10,7 +10,7 @@ class Products extends Connection
   // -------------- LISTAR LOS PRODUCTOS
   function getAll(){
     try{
-      $sql = "SELECT * FROM {$this->table}";
+      $sql = "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT 100";
       $stm = $this->con->prepare($sql);
       $stm->execute();
       return $stm->fetchAll(PDO::FETCH_ASSOC);

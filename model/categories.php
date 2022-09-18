@@ -18,4 +18,16 @@ class Categories extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- LISTAR CATEGORIAS POR ID_CATEGORY DE PRODUCTOS
+  function getCategoriesByIdCategory($id_category){
+    try{
+      $sql = "SELECT * FROM {$this->table} WHERE id = :id";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":id",$id_category);
+      $stm->execute();
+      return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
 }
