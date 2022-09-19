@@ -258,15 +258,6 @@ $(() => {
       window.location.href = "./login-register";
     }
   });
-  // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO, SI ES QUE NO LOS TIENE
-  function addZeroes(num){
-    var value = Number(num);
-    var res = num.toString().split(".");
-    if(res.length == 1 || (res[1].length < 3)) {
-      value = value.toFixed(2);
-    }
-    return value;
-  }
   // ------------ LISTAR EL CARRITO DE COMPRAS
   function listCartList(){
     $("#c-listCartU").html("");
@@ -281,9 +272,16 @@ $(() => {
           if(e != "" && e != "[]"){
             let tmpList = "";
             tmpList += `<ul>`;
+            // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
             let totalpay = e.reduce(function(sum, v){
               return sum + parseFloat(v.tmp_subtotal)
             }, 0);
+            // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
+            var tpay_wzero = Number(totalpay);
+            var res = totalpay.toString().split(".");
+            if(res.length == 1 || (res[1].length < 3)) {
+              tpay_wzero = tpay_wzero.toFixed(2);
+            }
             $("#c-totcart").html(`
               <div class="header-icon-style">
                 <i class="icon-handbag icons"></i>
@@ -291,7 +289,7 @@ $(() => {
               </div>
               <div class="cart-text">
                 <span class="digit">Mi Carrito</span>
-                <span class="cart-digit-bold">S/. ${addZeroes(totalpay)}</span>
+                <span class="cart-digit-bold">S/. ${tpay_wzero}</span>
               </div>
             `);
             $.each(e, function(i,v){
@@ -318,7 +316,7 @@ $(() => {
             tmpList += `</ul>`;
             tmpList += `
               <div class="shopping-cart-total">
-                <h4>Total : <span class="shop-total">S/. ${addZeroes(totalpay)}</span></h4>
+                <h4>Total : <span class="shop-total">S/. ${tpay_wzero}</span></h4>
               </div>
               <div class="shopping-cart-btn">
                 <a href="cart-page" id="lk_cart">view cart</a>

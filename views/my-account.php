@@ -12,6 +12,8 @@ session_start();
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
+  <!-- INCLUIR CRYPTO-JS -->
+  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
 </head>
 <body>
   <?php require_once 'includes/inc-header_top.php';?>

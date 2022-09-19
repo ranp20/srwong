@@ -15,6 +15,8 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
+  <!-- INCLUIR CRYPTO-JS -->
+  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
 </head>
 <body>
   <?php require_once 'includes/inc-header_top.php';?>
@@ -173,5 +175,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   </div>
   <?php require_once 'includes/inc-footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/checkout.js"></script>
 </body>
 </html>
