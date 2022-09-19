@@ -107,53 +107,11 @@
               </a>
             </div>
             <div class="header-cart" style="position: relative;top: 1rem;">
-              <a href="javascript:void(0);">
-                <div class="header-icon-style">
-                  <i class="icon-handbag icons"></i>
-                  <span class="count-style">02</span>
-                </div>
-                <div class="cart-text">
-                  <span class="digit">My Cart</span>
-                  <span class="cart-digit-bold">$209.00</span>
-                </div>
+              <a href="javascript:void(0);" id="c-totcart">
+                
               </a>
-              <div class="shopping-cart-content">
-                <ul>
-                  <li class="single-shopping-cart">
-                    <div class="shopping-cart-img">
-                      <a href="javascript:void(0);"><img alt="" src="<?= $url;?>assets/img/cart/cart-1.jpg"></a>
-                    </div>
-                    <div class="shopping-cart-title">
-                      <h4><a href="javascript:void(0);">Phantom Remote </a></h4>
-                      <h6>Qty: 02</h6>
-                      <span>$260.00</span>
-                    </div>
-                    <div class="shopping-cart-delete">
-                      <a href="javascript:void(0);"><i class="ion ion-close"></i></a>
-                    </div>
-                  </li>
-                  <li class="single-shopping-cart">
-                    <div class="shopping-cart-img">
-                      <a href="javascript:void(0);"><img alt="" src="<?= $url;?>assets/img/cart/cart-2.jpg"></a>
-                    </div>
-                    <div class="shopping-cart-title">
-                      <h4><a href="javascript:void(0);">Phantom Remote</a></h4>
-                      <h6>Qty: 02</h6>
-                      <span>$260.00</span>
-                    </div>
-                    <div class="shopping-cart-delete">
-                      <a href="javascript:void(0);"><i class="ion ion-close"></i></a>
-                    </div>
-                  </li>
-                </ul>
-                <div class="shopping-cart-total">
-                  <h4>Shipping : <span>$20.00</span></h4>
-                  <h4>Total : <span class="shop-total">$260.00</span></h4>
-                </div>
-                <div class="shopping-cart-btn">
-                  <a href="cart-page" id="lk_cart">view cart</a>
-                  <!-- <a href="checkout" id="lk_checkout">checkout</a> -->
-                </div>
+              <div class="shopping-cart-content" id="c-listCartU">
+                
               </div>
             </div>
           </div>
@@ -166,7 +124,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12">
           <div class="main-menu">
-            <nav>
+            <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn">
               <ul>
                 <li class="top-hover"><a href="./">home <i class="ion-chevron-down"></i></a>
                   <ul class="submenu">

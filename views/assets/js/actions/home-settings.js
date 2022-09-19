@@ -13,9 +13,11 @@ function decryptValuesIpts(valueipt){
 function isNumeric(variable){return !isNaN(parseInt(variable));}
 $(() => {
   // ------------ ENCRIPTACIÓN DE INPUTS
-  var encrypt_v_idgencoderand = $("#u-s_regclient-sis").val(encryptValuesIpts($("#u-s_regclient-sis").val()));
+  var encrypt_sess_idcli = $("#u-s_regclient-sis").val(encryptValuesIpts($("#u-s_regclient-sis").val()));
   // ------------ DESENCRIPTACIÓN DE INPUTS
-  var v_idgencoderand = decryptValuesIpts(encrypt_v_idgencoderand.val());
+  var sess_idcli = decryptValuesIpts(encrypt_sess_idcli.val());
+  // ------------ LISTAR LOS PRODUCTOS EN EL CARRITO DE DICHO CLIENTE
+  listCartList();
   // ------------ Slider active
   $('.slider-active').owlCarousel({
     loop: true,
@@ -174,10 +176,10 @@ $(() => {
   // ------------ AGREGAR UN PRODUCTO AL CARRITO
   $(document).on("click",".a__tocart",function(e){
     e.preventDefault();
-    if(isNumeric(v_idgencoderand) == true || isNumeric(v_idgencoderand) == "true"){
+    if(isNumeric(sess_idcli) == true || isNumeric(sess_idcli) == "true"){
       let cart = {
         p_id: $(this).attr('dt-srwg_id'),
-        p_idcli: v_idgencoderand,
+        p_idcli: sess_idcli,
         p_quantity: 1,
         p_price: $(this).attr('dt-srwg_price')
       };
@@ -190,7 +192,7 @@ $(() => {
         success : function(e){
           if(e != "" && e != "[]"){
             if(e.r == "srwg_add"){
-              console.log('Agregado al carrito');
+              listCartList();
               Swal.fire({
                 title: '',
                 html: `<div class="alertSwal">
@@ -216,7 +218,7 @@ $(() => {
                 swal.clickConfirm();
               });
             }else if(e.r == "srwg_update"){
-              console.log('El carrito se ha actualizado');
+              listCartList();
               Swal.fire({
                 title: '',
                 html: `<div class="alertSwal">
@@ -242,10 +244,10 @@ $(() => {
                 swal.clickConfirm();
               });
             }else{
-              console.log('Lo sentimos hubo un error');
+              console.log('Lo sentimos, hubo un error al procesar la información');
             }
           }else{
-
+            console.log('Lo sentimos, hubo un error al procesar la información');
           }
         },
         error : function(xhr, status){
@@ -253,8 +255,88 @@ $(() => {
         }
       });
     }else{
-      console.log('NO existe una sesión iniciada');
       window.location.href = "./login-register";
     }
   });
+  // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO, SI ES QUE NO LOS TIENE
+  function addZeroes(num){
+    var value = Number(num);
+    var res = num.toString().split(".");
+    if(res.length == 1 || (res[1].length < 3)) {
+      value = value.toFixed(2);
+    }
+    return value;
+  }
+  // ------------ LISTAR EL CARRITO DE COMPRAS
+  function listCartList(){
+    $("#c-listCartU").html("");
+    if(isNumeric(sess_idcli) == true || isNumeric(sess_idcli) == "true"){
+      $.ajax({
+        url: "./controllers/prcss_cart-list-byIdClient.php",
+        method: "POST",
+        dataType: 'JSON',
+        contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+        data: { idcli : sess_idcli},
+        success : function(e){
+          if(e != "" && e != "[]"){
+            let tmpList = "";
+            tmpList += `<ul>`;
+            let totalpay = e.reduce(function(sum, v){
+              return sum + parseFloat(v.tmp_subtotal)
+            }, 0);
+            $("#c-totcart").html(`
+              <div class="header-icon-style">
+                <i class="icon-handbag icons"></i>
+                <span class="count-style">${e.length}</span>
+              </div>
+              <div class="cart-text">
+                <span class="digit">Mi Carrito</span>
+                <span class="cart-digit-bold">S/. ${addZeroes(totalpay)}</span>
+              </div>
+            `);
+            $.each(e, function(i,v){
+              let p_name = v.p_name;
+              let p_name_limit = (p_name.length >= 20) ? p_name.substring(20, 0) + "..." : p_name;
+              tmpList += `
+                <li class="single-shopping-cart">
+                  <div class="shopping-cart-img">
+                    <a href="javascript:void(0);"><img alt="" src="./views/assets/img/product/mostricrunh.jpg"></a>
+                  </div>
+                  <div class="shopping-cart-title">
+                    <h4><a href="javascript:void(0);">${p_name_limit} </a></h4>
+                    <h6>Cantidad: ${v.tmp_quantity}</h6>
+                    <span>S/. ${v.tmp_subtotal}</span>
+                  </div>
+                  <!--
+                  <div class="shopping-cart-delete">
+                    <a href="javascript:void(0);"><i class="ion ion-close"></i></a>
+                  </div>
+                  -->
+                </li>
+              `;
+            });
+            tmpList += `</ul>`;
+            tmpList += `
+              <div class="shopping-cart-total">
+                <h4>Total : <span class="shop-total">S/. ${addZeroes(totalpay)}</span></h4>
+              </div>
+              <div class="shopping-cart-btn">
+                <a href="cart-page" id="lk_cart">view cart</a>
+                <!-- <a href="checkout" id="lk_checkout">checkout</a> -->
+              </div>
+            `;
+            $("#c-listCartU").html(tmpList);
+          }else{
+            console.log('Lo sentimos, hubo un error al procesar la información');
+          }
+        },
+        error : function(xhr, status){
+          console.log('Disculpe, existió un problema');
+        }
+      })
+    }else{
+      window.location.href = "./login-register";
+    }
+  }
+  
 });

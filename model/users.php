@@ -1,8 +1,8 @@
 <?php
-require_once 'db/connection.php';
+require_once 'db/ext_connection.php';
 class Users extends Connection
 {
-  private $table = "tbl_users";
+  private $table = "users";
   function __construct()
   {
     parent::__construct();
