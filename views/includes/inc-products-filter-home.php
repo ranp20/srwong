@@ -50,7 +50,7 @@
                 <div class='item'>
                   <div class='product-wrapper mb-25'>
                     <div class='product-img'>
-                      <a href='product-details'>
+                      <a href='./product-details/{$value["id"]}'>
                         <img src='{$url}assets/img/product/mostricrunh.jpg' alt=''>
                       </a>
                       <div class='product-action'>
@@ -73,7 +73,7 @@
                     </div>
                     <div class='product-content'>
                       <h4>
-                        <a href='product-details'>{$p_name}</a>
+                        <a href='./product-details/{$value["id"]}'>{$p_name}</a>
                       </h4>
                       <div class='product-price-wrapper'>
                         <span>S/. {$p_price_new_convert}</span>
@@ -107,7 +107,7 @@
                 <div class='item'>
                   <div class='product-wrapper mb-25'>
                     <div class='product-img'>
-                      <a href='product-details'>
+                      <a href='./product-details/{$value["id"]}'>
                         <img src='{$url}assets/img/product/mostricrunh.jpg' alt=''>
                       </a>
                       <div class='product-action'>
@@ -130,7 +130,7 @@
                     </div>
                     <div class='product-content'>
                       <h4>
-                        <a href='product-details'>{$p_name}</a>
+                        <a href='./product-details/{$value["id"]}'>{$p_name}</a>
                       </h4>
                       <div class='product-price-wrapper'>
                         <span>S/. {$p_price_new_convert}</span>
@@ -164,7 +164,7 @@
                 <div class='item'>
                   <div class='product-wrapper mb-25'>
                     <div class='product-img'>
-                      <a href='product-details'>
+                      <a href='./product-details/{$value["id"]}'>
                         <img src='{$url}assets/img/product/mostricrunh.jpg' alt=''>
                       </a>
                       <div class='product-action'>
@@ -187,7 +187,7 @@
                     </div>
                     <div class='product-content'>
                       <h4>
-                        <a href='product-details'>{$p_name}</a>
+                        <a href='./product-details/{$value["id"]}'>{$p_name}</a>
                       </h4>
                       <div class='product-price-wrapper'>
                         <span>S/. {$p_price_new_convert}</span>

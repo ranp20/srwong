@@ -58,16 +58,16 @@ $(() => {
               tmpList += `
                 <li class="single-shopping-cart">
                   <div class="shopping-cart-img">
-                    <a href="javascript:void(0);"><img alt="" src="./views/assets/img/product/mostricrunh.jpg"></a>
+                    <a href="./product-details/${v.id}"><img alt="" src="./views/assets/img/product/mostricrunh.jpg"></a>
                   </div>
                   <div class="shopping-cart-title">
-                    <h4><a href="javascript:void(0);">${p_name_limit} </a></h4>
+                    <h4><a href="./product-details/${v.id}">${p_name_limit} </a></h4>
                     <h6>Cantidad: ${v.tmp_quantity}</h6>
                     <span>S/. ${v.tmp_subtotal}</span>
                   </div>
                   <!--
                   <div class="shopping-cart-delete">
-                    <a href="javascript:void(0);"><i class="ion ion-close"></i></a>
+                    <a href="./product-details/${v.id}"><i class="ion ion-close"></i></a>
                   </div>
                   -->
                 </li>

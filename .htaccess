@@ -12,7 +12,7 @@ RewriteRule ^testimonial?$ views/testimonial.php
 RewriteRule ^login-register?$ views/login-register.php
 RewriteRule ^wishlist?$ views/wishlist.php
 RewriteRule ^my-account?$ views/my-account.php
-RewriteRule ^product-details?$ views/product-details.php
+RewriteRule ^product-details/([0-9]+)$ views/product-details.php?prod=$1 [L,NC]
 RewriteRule ^shop-list?$ views/shop-list.php
 RewriteRule ^checkout?$ views/checkout.php
 RewriteRule ^payment?$ views/payment.php
