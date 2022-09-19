@@ -233,8 +233,6 @@ $(() => {
           console.log('Disculpe, existió un problema');
         }
       })
-    }else{
-      window.location.href = "./login-register";
     }
   }
 });
