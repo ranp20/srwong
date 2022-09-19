@@ -33,7 +33,7 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
   <script type="text/javascript" src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
-  <?php require_once 'includes/inc-header_top.php';?>
+  <?php require_once 'includes/inc-header_top-ind.php';?>
   <div class="loader-in">
     <span class="loader-in--loader"></span>
   </div>
@@ -41,7 +41,7 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
     <div class="container">
       <div class="breadcrumb-content">
         <ul>
-          <li><a href="./">Home</a></li>
+          <li><a href="../">Home</a></li>
           <li class="active">Product Details </li>
         </ul>
       </div>
