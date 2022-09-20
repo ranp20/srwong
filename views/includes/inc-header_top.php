@@ -5,10 +5,10 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-12 col-sm-4">
           <div class="welcome-area">
-            <p>Default welcome msg! </p>
+            <p>DELIVERY GRATIS | De lunes a viernes por Web</p>
           </div>
         </div>
-        <div class="col-lg-8 col-md-8 col-12 col-sm-8">
+<!--         <div class="col-lg-8 col-md-8 col-12 col-sm-8">
           <div class="account-curr-lang-wrap f-right">
             <ul>
               <li class="top-hover"><a href="javascript:void(0);">Language: (ENG) <i class="ion-chevron-down"></i></a>
@@ -37,11 +37,11 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
-  <div class="header-middle">
+  <div class="header-middle" style="border-bottom: thin solid #888;">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-4 col-12 col-sm-4">
@@ -51,9 +51,24 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-9 col-md-8 col-12 col-sm-8">
+
+        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+          <div class="main-menu">
+            <nav>
+              <ul>
+                <li class="top-hover"><a style="color:#2f333a;" href="./">MENU <i class="ion-chevron-down"></i></a></li>
+                <li><a style="color:#2f333a;" href="about-us">PROMOCIONES</a></li>
+                <li class="mega-menu-position top-hover"><a style="color:#2f333a;" href="shop">LOCALES<i class="ion-chevron-down"></i></a></li>
+                <li class="top-hover"><a style="color:#2f333a;" href="blog-rightsidebar">DESCARGA LA CARTA <i class="ion-chevron-down"></i></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    
+
+        <div class="col-lg-3 col-md-4 col-12 col-sm-4">
           <div class="header-middle-right f-right">
-            <div class="header-login" id="header-login" style="position: relative;top: 1rem;">
+            <div class="header-login" id="header-login" style="position: relative;top: 1rem;margin-left:1rem;">
               <?php
                 $tmp_logg = "";
                 if(isset($_SESSION['usr-logg_srwong'])){
@@ -96,7 +111,8 @@
                 echo $tmp_logg;
               ?>
             </div>
-            <div class="header-wishlist" style="position: relative;top: 1rem;">
+            <!-- 
+            <div class="header-wishlist" style="position: relative;top: 1rem;margin-left:1rem;">
               <a href="wishlist">
                 <div class="header-icon-style">
                   <i class="icon-heart icons"></i>
@@ -106,12 +122,41 @@
                 </div>
               </a>
             </div>
-            <div class="header-cart" style="position: relative;top: 1rem;">
+             -->
+            <div class="header-cart" style="position: relative;top: 1rem;margin-left:1rem;">
               <a href="javascript:void(0);" id="c-totcart">
-                
+                <?php 
+                  if(!isset($_SESSION['usr-logg_srwong'])){
+                    echo "
+                      <div class='header-icon-style'>
+                        <i class='icon-handbag icons'></i>
+                        <span class='count-style'> 0 </span>
+                      </div>
+                      <div class='cart-text'>
+                        <span class='digit'>Mi Carrito</span>
+                        <span class='cart-digit-bold'>S/. 0.00</span>
+                      </div>
+                    ";
+                  }
+                ?>
               </a>
               <div class="shopping-cart-content" id="c-listCartU">
-                
+                <?php 
+                  if(!isset($_SESSION['usr-logg_srwong'])){
+                    echo "
+                    <ul>
+                      <li class='single-shopping-cart'>
+                        <div class='shopping-cart-title' style='padding-bottom: 20px;'>
+                          <h4>No hay productos</h4>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class='shopping-cart-btn'>
+                      <a href='./login-register' id='logg-lk_cart-s'>Iniciar sesión</a>
+                    </div>
+                    ";
+                  }
+                ?>
               </div>
             </div>
           </div>
@@ -119,7 +164,7 @@
       </div>
     </div>
   </div>
-  <div class="header-bottom transparent-bar black-bg">
+<!--   <div class="header-bottom transparent-bar black-bg">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12">
@@ -215,7 +260,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- mobile-menu-area-start -->
   <div class="mobile-menu-area">
   <div class="container">

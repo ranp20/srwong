@@ -20,8 +20,8 @@ $(() => {
   listCartList();
   // ------------ LISTAR EL CARRITO DE COMPRAS
   function listCartList(){
-    $("#c-listCartU").html("");
     if(isNumeric(sess_idcli) == true || isNumeric(sess_idcli) == "true"){
+      $("#c-listCartU").html("");
       $.ajax({
         url: "./controllers/prcss_cart-list-byIdClient.php",
         method: "POST",
@@ -91,9 +91,20 @@ $(() => {
         error : function(xhr, status){
           console.log('Disculpe, existió un problema');
         }
-      })
+      });
     }else{
-      window.location.href = "./";
+      $("#c-totcart").html(`
+      <div class="header-icon-style">
+        <i class="icon-handbag icons"></i>
+        <span class="count-style"> 0 </span>
+      </div>
+      <div class="cart-text">
+        <span class="digit">Mi Carrito</span>
+        <span class="cart-digit-bold">S/. 0.00</span>
+      </div>
+    `);
     }
   }
+  // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
+  $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
 });
