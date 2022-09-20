@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="es">
 <head>    
-    <title>SrWong - Deliveries y Pedidos</title>
+    <title>SrWong - Lista de productos ( LIST )</title>
     <?php require_once 'includes/inc-header_links.php';?>
 </head>
 <body>

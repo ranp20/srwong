@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>SrWong - Deliveries y Pedidos</title>
+    <title>SrWong - Testimonios</title>
     <?php require_once 'includes/inc-header_links.php';?>
     <!-- INCLUIR OWL CAROUSEL 2 -->
     <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">

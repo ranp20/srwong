@@ -156,7 +156,7 @@ $(() => {
         }
       });
     }else{
-      window.location.href = "./login-register";
+      window.location.href = "../login-register";
     }
   });
 	// ------------ LISTAR EL CARRITO DE COMPRAS

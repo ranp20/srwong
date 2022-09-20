@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>SrWong - Deliveries y Pedidos</title>
+    <title>SrWong - Lista de productos ( GRID )</title>
     <?php require_once 'includes/inc-header_links.php';?>
     <!-- INCLUIR MEANMENU -->
     <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
