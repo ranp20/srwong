@@ -33,7 +33,7 @@ session_start();
    <!-- shopping-cart-area start -->
   <div class="cart-main-area pt-95 pb-100">
     <div class="container">
-      <h3 class="page-title">Your cart items</h3>
+      <h3 class="page-title">Tu lista de compras</h3>
       <div class="row">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12">
           <form action="#">
@@ -41,83 +41,32 @@ session_start();
               <table>
                 <thead>
                   <tr>
-                    <th>Image</th>
-                    <th>Product Name</th>
-                    <th>Qty</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
                     <th>Subtotal</th>
-                    <th>action</th>
+                    <th>Acción</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td class="product-thumbnail">
-                      <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/cart/cart-3.jpg" alt=""></a>
-                    </td>
-                    <td class="product-name">
-                      <div>
-                        <a href="javascript:void(0);">PRODUCTS NAME HERE </a>
-                        <span class="amount">$260.00</span>
-                      </div>
-                    </td>
-                    <td class="product-quantity">
-                      <div class="cart-plus-minus">
-                        <div class="dec qtybutton">-</div>
-                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                        <div class="inc qtybutton">+</div>
-                      </div>
-                    </td>
-                    <td class="product-subtotal">$110.00</td>
-                    <td class="product-remove">
-                      <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
-                      <a href="javascript:void(0);"><i class="fa fa-times"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="product-thumbnail">
-                      <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/cart/cart-4.jpg" alt=""></a>
-                    </td>
-                    <td class="product-name">
-                      <div>
-                        <a href="javascript:void(0);">PRODUCTS NAME HERE </a>
-                        <span class="amount">$150.00</span>
-                      </div>
-                    </td>
-                    <td class="product-quantity">
-                      <div class="cart-plus-minus">
-                        <div class="dec qtybutton">-</div>
-                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                        <div class="inc qtybutton">+</div>
-                      </div>
-                    </td>
-                    <td class="product-subtotal">$150.00</td>
-                    <td class="product-remove">
-                      <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
-                      <a href="javascript:void(0);"><i class="fa fa-times"></i></a>
-                   </td>
-                  </tr>
-                  <tr>
-                    <td class="product-thumbnail">
-                      <a href="javascript:void(0);"><img src="<?= $url;?>assets/img/cart/cart-5.jpg" alt=""></a>
-                    </td>
-                    <td class="product-name">
-                      <div>
-                        <a href="javascript:void(0);">PRODUCTS NAME HERE </a>
-                        <span class="amount">$170.00</span>
-                      </div>
-                    </td>
-                    <td class="product-quantity">
-                      <div class="cart-plus-minus">
-                        <div class="dec qtybutton">-</div>
-                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                        <div class="inc qtybutton">+</div>
-                      </div>
-                    </td>
-                    <td class="product-subtotal">$170.00</td>
-                    <td class="product-remove">
-                      <a href="javascript:void(0);"><i class="fa fa-pencil"></i></a>
-                      <a href="javascript:void(0);"><i class="fa fa-times"></i></a>
-                   </td>
-                  </tr>
+                <tbody id="c-xtbl_cartcli">
+                  <?php 
+                    if(!isset($_SESSION['usr-logg_srwong'])){
+                      echo "
+                        <tr>
+                          <td class='c_any-products'>
+                            <div>
+                              <div>
+                                <img src='<?= $url;?>assets/img/cart/cart-3.jpg' alt=''>
+                              </div>
+                              <div>
+                                <p>Aún no tienes productos.</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      ";
+                    }
+                  ?>
                 </tbody>
               </table>
             </div>
@@ -125,10 +74,10 @@ session_start();
               <div class="col-lg-12">
                 <div class="cart-shiping-update-wrapper">
                   <div class="cart-clear">
-                    <a href="javascript:void(0);">Clear Shopping Cart</a>
+                    <a href="javascript:void(0);" title="Borrar listado de compras">Borrar listado</a>
                   </div>
                   <div class="cart-shiping-update">
-                    <a href="javascript:void(0);">Continue Shopping</a>
+                    <a href="./" title="Seguir comprando">Seguir comprando</a>
                   </div>
                 </div>
               </div>
@@ -138,18 +87,11 @@ session_start();
         <div class="col-lg-4 col-md-12">
           <div class="grand-totall">
             <div class="title-wrap">
-              <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
+              <h4 class="cart-bottom-title section-bg-gary-cart">Total del carrito</h4>
             </div>
-            <h5>Total products <span>$260.00</span></h5>
-            <div class="total-shipping">
-              <h5>Total shipping</h5>
-              <ul>
-                <li><input type="checkbox"> Standard <span>$20.00</span></li>
-                <li><input type="checkbox"> Express <span>$30.00</span></li>
-              </ul>
+            <div class="cl-wrap_total" id="c-xtt_tochck">
+              
             </div>
-            <h4 class="grand-totall-title">Grand Total  <span>$260.00</span></h4>
-            <a href="./checkout">Proceed to Checkout</a>
           </div>
         </div>
       </div>
