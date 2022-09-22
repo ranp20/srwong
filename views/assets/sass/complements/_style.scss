@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
     
-    Template Name: Fudink - Food & Drink eCommerce Bootstrap4 Template
+    Template Name: SrWong - Food & Drink eCommerce Bootstrap4 Template
     Version: 1.0
     
 -----------------------------------------------------------------------------------
@@ -2255,6 +2255,24 @@ textarea:focus {
     overflow: hidden;
     position: relative;
 }
+.product-img .product-img__linkcateg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: thin solid #ddd;
+    overflow: hidden;
+    max-width: 240px;
+    @media (min-width: 991px){
+        width: 240px;
+        height: 240px;
+    }
+}
+.product-img .product-img__linkcateg img{
+    border-radius: 50%;
+}
 .product-action {
     bottom: -30px;
     display: flex;
@@ -2332,6 +2350,114 @@ textarea:focus {
     padding: 26px 0 0;
 }
 .product-img img {
+    width: 100%;
+}
+
+/* CATEGORIES CAROUSEL/LIST */
+.cxhm_category{
+  position: relative;
+  padding: 0 40px 0 70px;
+  &__cBtnIconSlide{
+    position: absolute;
+    top: 20%;
+    left: 0;
+    transform: translateY(50%);
+    z-index: 9;
+    cursor: pointer;
+    .slider-arrow-left,
+    .slider-arrow-right{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+      background-color: #fff;
+      border: thin solid rgba(0,0,0,0);
+      box-shadow: 0 1px 12px 0px rgba(0,0,0,.2);
+      width: 46px;
+      height: 44px;
+      border-radius: 50%;
+      z-index: 99;
+      @media (min-width: 991px){
+        width: 56px;
+        height: 54px;
+      }
+      &:hover{
+        background-color: $theme-clr-btns-sliders;
+        svg{
+          fill: #fff;
+        }
+      }
+    }
+    .slider-arrow-left{
+      svg{
+        position: relative;
+        top: 2px;
+        right: 2px;
+        fill: #515151;
+      }
+    }
+    .slider-arrow-right{
+      svg{
+        position: relative;
+        top: 2px;
+        left: 2px;
+        fill: #515151;
+      }
+    }
+    &.ps-x-left{
+      left: 0;
+      right: auto;
+      text-align: left;
+      margin-right: 0;
+      display: inline-block;
+      width: auto;
+    }
+    &.ps-x-right{
+      right: 0;
+      left: auto;
+      text-align: right;
+      margin-left: auto;
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+.category-img {
+    overflow: hidden;
+    position: relative;
+}
+.category-img .category-img__linkcateg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: thin solid #ddd;
+    overflow: hidden;
+    max-width: 240px;
+    @media (min-width: 991px){
+        width: 240px;
+        height: 240px;
+    }
+}
+.category-img .category-img__linkcateg img{
+    border-radius: 50%;
+}
+.category-content > h4 {
+    color: #2f333a;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+.category-content > h4 a {
+    color: #2f333a;
+}
+.category-content {
+    padding: 26px 0 0;
+}
+.category-img img {
     width: 100%;
 }
 

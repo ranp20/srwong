@@ -105,22 +105,6 @@ $(() => {
     `);
     }
   }
-	// ------------ INCREMENT AND DECREMENT PRODUCT
-	$(".qtybutton").on("click", function(){
-		var $button = $(this);
-		var oldValue = $button.parent().find("input").val();
-		if($button.text() === "+"){
-		  var newVal = parseFloat(oldValue) + 1;
-		}else{
-		  // Don't allow decrementing below zero
-		  if(oldValue > 0){
-		    var newVal = parseFloat(oldValue) - 1;
-		  }else{
-		    newVal = 1;
-		  }
-		}
-		$button.parent().find("input").val(newVal);
-	});
   // ------------ LISTAR LOS PRODUCTOS AGREGADOS AL CARRITO
   $.ajax({
     url: "./controllers/prcss_cart-list-byIdTempCart.php",
@@ -203,8 +187,6 @@ $(() => {
           <a href="./checkout">Proceed to Checkout</a>
         `;
         $("#c-xtt_tochck").html(tmpl_total);
-        
-
       }else{
         console.log('Lo sentimos, hubo un error al procesar la información');
       }
@@ -212,6 +194,22 @@ $(() => {
     error : function(xhr, status){
       console.log('Disculpe, existió un problema');
     }
+  });
+  // ------------ INCREMENT AND DECREMENT PRODUCT
+  $(document).on("click",".qtybutton",function(){
+    var $button = $(this);
+    var oldValue = $button.parent().find("input").val();
+    if($button.text() === "+"){
+      var newVal = parseFloat(oldValue) + 1;
+    }else{
+      // Don't allow decrementing below zero
+      if(oldValue > 0){
+        var newVal = parseFloat(oldValue) - 1;
+      }else{
+        newVal = 1;
+      }
+    }
+    $button.parent().find("input").val(newVal);
   });
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});

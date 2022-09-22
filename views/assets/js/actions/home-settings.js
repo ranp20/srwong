@@ -165,14 +165,153 @@ $(() => {
       }
     }
   });
-
   // $('.slider-arrow-left').click(function(){
   //   owl.trigger('prev.owl.carousel', [300]);
   // });
   // $('.slider-arrow-right').click(function(){
   //   owl.trigger('next.owl.carousel', [300]);
   // });
-
+  // ------------ Categories into home
+  var owl_categlisthome = $('.categories-list-home');
+  owl_categlisthome.owlCarousel({
+    items:4,
+    lazyLoad:true,
+    loop:true,
+    autoplay:false,
+    autoplayTimeout:6000,
+    autoplayHoverPause:false,
+    nav:false,
+    dots:false,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+      0: {
+        items: 1,
+        nav:false,
+        dots:false
+      },
+      576: {
+        items: 2,
+        nav:false,
+        dots:false
+      },
+      768: {
+        items: 3,
+        nav:false,
+        dots:false
+      },
+      992: {
+        items: 4,
+        nav:false,
+        dots:false
+      },
+      1200: {
+        items: 4,
+        nav:false,
+        dots:false
+      }
+    }
+  });
+  $('.slider-arrow-left').click(function(){
+    owl_categlisthome.trigger('prev.owl.carousel', [300]);
+  });
+  $('.slider-arrow-right').click(function(){
+    owl_categlisthome.trigger('next.owl.carousel', [300]);
+  });
+  // ------------ PRODUCTOS POPULARES - HOME
+  var owl_popularproductshome = $('.owl-popular-products-home');
+  owl_popularproductshome.owlCarousel({
+    items:4,
+    lazyLoad:true,
+    loop:true,
+    autoplay:false,
+    autoplayTimeout:6000,
+    autoplayHoverPause:false,
+    nav:false,
+    dots:false,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+      0: {
+        items: 1,
+        nav:false,
+        dots:false
+      },
+      576: {
+        items: 2,
+        nav:false,
+        dots:false
+      },
+      768: {
+        items: 3,
+        nav:false,
+        dots:false
+      },
+      992: {
+        items: 4,
+        nav:false,
+        dots:false
+      },
+      1200: {
+        items: 4,
+        nav:false,
+        dots:false
+      }
+    }
+  });
+  // $('.slider-arrow-left').click(function(){
+  //   owl_popularproductshome.trigger('prev.owl.carousel', [300]);
+  // });
+  // $('.slider-arrow-right').click(function(){
+  //   owl_popularproductshome.trigger('next.owl.carousel', [300]);
+  // });
+  // ------------ PRODUCTOS POPULARES - HOME
+  var owl_latestproductshome = $('.owl-latest-products-home');
+  owl_latestproductshome.owlCarousel({
+    items:4,
+    lazyLoad:true,
+    loop:true,
+    autoplay:false,
+    autoplayTimeout:6000,
+    autoplayHoverPause:false,
+    nav:false,
+    dots:false,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+      0: {
+        items: 1,
+        nav:false,
+        dots:false
+      },
+      576: {
+        items: 2,
+        nav:false,
+        dots:false
+      },
+      768: {
+        items: 3,
+        nav:false,
+        dots:false
+      },
+      992: {
+        items: 4,
+        nav:false,
+        dots:false
+      },
+      1200: {
+        items: 4,
+        nav:false,
+        dots:false
+      }
+    }
+  });
+  // $('.slider-arrow-left').click(function(){
+  //   owl_latestproductshome.trigger('prev.owl.carousel', [300]);
+  // });
+  // $('.slider-arrow-right').click(function(){
+  //   owl_latestproductshome.trigger('next.owl.carousel', [300]);
+  // });
   // ------------ AGREGAR UN PRODUCTO AL CARRITO
   $(document).on("click",".a__tocart",function(e){
     e.preventDefault();

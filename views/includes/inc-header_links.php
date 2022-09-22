@@ -46,8 +46,7 @@ $url_admin = $actual_link . "/admin/";
 <!---->
 <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" id="u-s_regclient-sis" value="<?= (isset($_SESSION['usr-logg_srwong'])) ? $_SESSION['usr-logg_srwong']['id'] : '';?>">
 <!-- GOOGLE FONTS -->
-<!-- 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
- -->

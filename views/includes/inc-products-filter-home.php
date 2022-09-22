@@ -1,5 +1,5 @@
 <div class="product-area pb-70">
-  <div class="custom-container container">
+  <div class="container">
     <div class="product-tab-list-wrap text-center mb-40">
       <div class="product-tab-list nav">
         <a class="active" href="#tab1" data-toggle="tab">

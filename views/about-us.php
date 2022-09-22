@@ -45,8 +45,8 @@ session_start();
               </div>
               <div class="col-lg-6 col-md-7 d-flex align-items-center">
                   <div class="overview-content-2">
-                      <h2>Welcome To <span>Fudink</span> Store !</h2>
-                      <p class="peragraph-blog">Fudink Shop is a premium HTML template designed and develoved from the ground up with the sole purpose of helping you create an astonishing, the beautiful and user friendly website that will boost your product’s sales.</p>
+                      <h2>Welcome To <span>SrWong</span> Store !</h2>
+                      <p class="peragraph-blog">SrWong Shop is a premium HTML template designed and develoved from the ground up with the sole purpose of helping you create an astonishing, the beautiful and user friendly website that will boost your product’s sales.</p>
                       <p>The theme design package provides a complete Magento theme set for your online store according to your desired theme. This includes all Magento themes that are required for your online store's successful implementation.</p>
                       <p>The theme design package provides a complete Magento theme set for your online store according to your desired theme.</p>
                       <div class="overview-btn mt-45">

@@ -20,16 +20,16 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="footer-widget mb-40">
             <div class="footer-title mb-22">
-              <h4>Information</h4>
+              <h4>CATEGORÍAS</h4>
             </div>
             <div class="footer-content">
               <ul>
-                <li><a href="about-us">About Us</a></li>
-                <li><a href="javascript:void(0);">Delivery Information</a></li>
-                <li><a href="javascript:void(0);">Privacy Policy</a></li>
-                <li><a href="javascript:void(0);">Terms & Conditions</a></li>
-                <li><a href="javascript:void(0);">Customer Service</a></li>
-                <li><a href="javascript:void(0);">Return Policy</a></li>
+                <li><a href="about-us">Chaufas</a></li>
+                <li><a href="javascript:void(0);">Aeropuerto</a></li>
+                <li><a href="javascript:void(0);">Sopas</a></li>
+                <li><a href="javascript:void(0);">Tallarines</a></li>
+                <li><a href="javascript:void(0);">Alitas Fritas</a></li>
+                <li><a href="javascript:void(0);">A la plancha</a></li>
               </ul>
             </div>
           </div>
@@ -37,16 +37,14 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="footer-widget mb-40">
             <div class="footer-title mb-22">
-              <h4>My Account</h4>
+              <h4>MENÚ</h4>
             </div>
             <div class="footer-content">
               <ul>
-                <li><a href="my-account">My Account</a></li>
-                <li><a href="javascript:void(0);">Order History</a></li>
-                <li><a href="wishlist">Wish List</a></li>
-                <li><a href="javascript:void(0);">Newsletter</a></li>
-                <li><a href="javascript:void(0);">Order History</a></li>
-                <li><a href="javascript:void(0);">International Orders</a></li>
+                <li><a href="my-account">Perfil</a></li>
+                <li><a href="javascript:void(0);">Nosotros</a></li>
+                <li><a href="wishlist">Políticas de privacidad</a></li>
+                <li><a href="javascript:void(0);">Términos y condiciones</a></li>
               </ul>
             </div>
           </div>
@@ -82,7 +80,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-7">
           <div class="copyright">
-            <p>Copyright © <a href="javascript:void(0);">Fudink.</a> . All Right Reserved.</p>
+            <p>Copyright © <a href="javascript:void(0);">SrWong.</a> . All Right Reserved.</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-5">
