@@ -1,5 +1,5 @@
 <div class="product-area pb-70">
-  <div class="container">
+  <div class="container hrsec-separator-home">
     <div class="product-tab-list-wrap text-center mb-40">
       <div class="row">
         <div class="col-lg-12">      

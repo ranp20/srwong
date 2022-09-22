@@ -79,6 +79,11 @@ img{
 	color: red;
 	font-size: 0.85rem;
 }
+.hrsec-separator-home{
+	border-bottom: 2px solid #eee;
+	padding: 0 0 20px 0;
+	margin: 0 0 20px 0;
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;

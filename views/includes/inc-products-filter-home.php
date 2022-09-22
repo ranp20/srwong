@@ -1,5 +1,5 @@
 <div class="product-area pb-70">
-  <div class="container">
+  <div class="container hrsec-separator-home">
     <div class="product-tab-list-wrap text-center mb-40">
       <div class="product-tab-list nav">
         <a class="active" href="#tab1" data-toggle="tab">
@@ -12,7 +12,6 @@
           <h4> Drink </h4>
         </a>
       </div>
-      <p>Typi non habent claritatem insitam est usus legentis in qui facit eorum claritatem, investigationes demonstraverunt lectores legere me lius quod legunt saepius.</p>
     </div>
     <div class="tab-content jump">
       <div id="tab1" class="tab-pane active">
