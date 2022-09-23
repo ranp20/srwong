@@ -245,7 +245,7 @@ $(() => {
                 </li>
               </ul>
               <div class='shopping-cart-btn'>
-                <a href='../login-register' id='logg-lk_cart-s'>Seguir comprando</a>
+                <a href='../cart-page' id='logg-lk_cart-s'>Carrito</a>
               </div>
             `);
           }
@@ -274,7 +274,7 @@ $(() => {
           </li>
         </ul>
         <div class='shopping-cart-btn'>
-          <a href='../login-register' id='logg-lk_cart-s'>Seguir comprando</a>
+          <a href='../cart-page' id='logg-lk_cart-s'>Carrito</a>
         </div>
       `);
     }
