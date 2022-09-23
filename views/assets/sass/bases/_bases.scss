@@ -455,3 +455,32 @@ $form-container: "frm-cont" !default;
 		}
 	}
 }
+
+/* RELLENO CUANDO NO HAY ITEMS EN UNA TABLA */
+.l_anyitms{
+	width: 100%;
+	display: flex;
+	flex-flow: wrap column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	&__cImg{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin-bottom: 0.5rem;
+		min-width: 80px;
+		width: 80px;
+		height: auto;
+		svg{
+			width: 100%;
+		}
+	}
+	&__cTxt{
+		p{
+			font-size: 1.1rem;
+			font-weight: 500;
+		}
+	}
+}
