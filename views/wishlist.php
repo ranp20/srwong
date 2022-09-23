@@ -19,7 +19,7 @@ session_start();
             <div class="breadcrumb-content">
                 <ul>
                     <li><a href="./">Home</a></li>
-                    <li class="active">Wishlist </li>
+                    <li class="active">Lista de deseos </li>
                 </ul>
             </div>
         </div>

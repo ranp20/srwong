@@ -28,7 +28,7 @@ session_start();
           <div class="breadcrumb-content">
               <ul>
                   <li><a href="./">Home</a></li>
-                  <li class="active">About us </li>
+                  <li class="active">Nosotros </li>
               </ul>
           </div>
       </div>

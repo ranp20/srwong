@@ -22,7 +22,7 @@ session_start();
             <div class="breadcrumb-content">
                 <ul>
                     <li><a href="./">Home</a></li>
-                    <li class="active">Testimonials </li>
+                    <li class="active">Testimonios </li>
                 </ul>
             </div>
         </div>

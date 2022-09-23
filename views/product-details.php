@@ -42,7 +42,7 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
       <div class="breadcrumb-content">
         <ul>
           <li><a href="../">Home</a></li>
-          <li class="active">Product Details </li>
+          <li class="active">Detalle del producto </li>
         </ul>
       </div>
     </div>

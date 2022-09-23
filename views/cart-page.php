@@ -25,7 +25,7 @@ session_start();
       <div class="breadcrumb-content">
         <ul>
           <li><a href="./">Home</a></li>
-          <li class="active">Cart </li>
+          <li class="active">Carrito </li>
         </ul>
       </div>
     </div>

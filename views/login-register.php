@@ -31,7 +31,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
       <div class="breadcrumb-content">
         <ul>
           <li><a href="./">Home</a></li>
-          <li class="active"> Login / Register </li>
+          <li class="active"> Login / Registro </li>
         </ul>
       </div>
     </div>

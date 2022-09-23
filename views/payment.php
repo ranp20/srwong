@@ -83,7 +83,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
       <div class="breadcrumb-content">
         <ul>
           <li><a href="./">Home</a></li>
-          <li class="active"> Payment </li>
+          <li class="active"> Pago </li>
         </ul>
       </div>
     </div>
