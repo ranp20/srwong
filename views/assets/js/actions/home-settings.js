@@ -464,7 +464,28 @@ $(() => {
             `;
             $("#c-listCartU").html(tmpList);
           }else{
-            console.log('Lo sentimos, hubo un error al procesar la información');
+            $("#c-totcart").html(`
+              <div class="header-icon-style">
+                <i class="icon-handbag icons"></i>
+                <span class="count-style"> 0 </span>
+              </div>
+              <div class="cart-text">
+                <span class="digit">Mi Carrito</span>
+                <span class="cart-digit-bold">S/. 0.00</span>
+              </div>
+            `);
+            $("#c-listCartU").html(`
+              <ul>
+                <li class='single-shopping-cart'>
+                  <div class='shopping-cart-title' style='padding-bottom: 20px;'>
+                    <h4>No hay productos</h4>
+                  </div>
+                </li>
+              </ul>
+              <div class='shopping-cart-btn'>
+                <a href='./login-register' id='logg-lk_cart-s'>Seguir comprando</a>
+              </div>
+            `);
           }
         },
         error : function(xhr, status){
@@ -473,15 +494,27 @@ $(() => {
       });
     }else{
       $("#c-totcart").html(`
-      <div class="header-icon-style">
-        <i class="icon-handbag icons"></i>
-        <span class="count-style"> 0 </span>
-      </div>
-      <div class="cart-text">
-        <span class="digit">Mi Carrito</span>
-        <span class="cart-digit-bold">S/. 0.00</span>
-      </div>
-    `);
+        <div class="header-icon-style">
+          <i class="icon-handbag icons"></i>
+          <span class="count-style"> 0 </span>
+        </div>
+        <div class="cart-text">
+          <span class="digit">Mi Carrito</span>
+          <span class="cart-digit-bold">S/. 0.00</span>
+        </div>
+      `);
+      $("#c-listCartU").html(`
+        <ul>
+          <li class='single-shopping-cart'>
+            <div class='shopping-cart-title' style='padding-bottom: 20px;'>
+              <h4>No hay productos</h4>
+            </div>
+          </li>
+        </ul>
+        <div class='shopping-cart-btn'>
+          <a href='./login-register' id='logg-lk_cart-s'>Seguir comprando</a>
+        </div>
+      `);
     }
   }
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)

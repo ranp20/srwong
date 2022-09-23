@@ -96,6 +96,18 @@ $(() => {
                 <span class="cart-digit-bold">S/. 0.00</span>
               </div>
             `);
+            $("#c-listCartU").html(`
+              <ul>
+                <li class='single-shopping-cart'>
+                  <div class='shopping-cart-title' style='padding-bottom: 20px;'>
+                    <h4>No hay productos</h4>
+                  </div>
+                </li>
+              </ul>
+              <div class='shopping-cart-btn'>
+                <a href='./login-register' id='logg-lk_cart-s'>Seguir comprando</a>
+              </div>
+            `);
           }
         },
         error : function(xhr, status){
@@ -111,6 +123,18 @@ $(() => {
         <div class="cart-text">
           <span class="digit">Mi Carrito</span>
           <span class="cart-digit-bold">S/. 0.00</span>
+        </div>
+      `);
+      $("#c-listCartU").html(`
+        <ul>
+          <li class='single-shopping-cart'>
+            <div class='shopping-cart-title' style='padding-bottom: 20px;'>
+              <h4>No hay productos</h4>
+            </div>
+          </li>
+        </ul>
+        <div class='shopping-cart-btn'>
+          <a href='./login-register' id='logg-lk_cart-s'>Seguir comprando</a>
         </div>
       `);
     }
