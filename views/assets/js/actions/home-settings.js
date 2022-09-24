@@ -333,16 +333,8 @@ $(() => {
             if(e.r == "srwg_add"){
               listCartList();
               Swal.fire({
-                title: '',
-                html: `<div class="alertSwal">
-                        <div class="alertSwal__cTitle">
-                          <h3>¡Agregado!</h3>
-                        </div>
-                        <div class="alertSwal__cText">
-                          <p>El producto ha sido agregado al carrito.</strong></p>
-                        </div>
-                        <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
-                      </div>`,
+                position: 'top-end',
+                title: 'Producto agregado',
                 icon: 'success',
                 showCancelButton: false,
                 showConfirmButton: false,
@@ -351,7 +343,9 @@ $(() => {
                 allowOutsideClick: false,
                 allowEscapeKey:false,
                 allowEnterKey:true,
-                timer: 1000
+                timer: 1200,
+                grow: "row",
+                toast: true,
               });
               $(document).on('click', '.SwalBtn1', function() {
                 swal.clickConfirm();
@@ -359,16 +353,8 @@ $(() => {
             }else if(e.r == "srwg_update"){
               listCartList();
               Swal.fire({
-                title: '',
-                html: `<div class="alertSwal">
-                        <div class="alertSwal__cTitle">
-                          <h3>¡Actualizado!</h3>
-                        </div>
-                        <div class="alertSwal__cText">
-                          <p>El producto ha sido actualizado ene el carrito.</strong></p>
-                        </div>
-                        <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
-                      </div>`,
+                position: 'top-end',
+                title: 'Producto actualizado',
                 icon: 'success',
                 showCancelButton: false,
                 showConfirmButton: false,
@@ -377,7 +363,9 @@ $(() => {
                 allowOutsideClick: false,
                 allowEscapeKey:false,
                 allowEnterKey:true,
-                timer: 1000
+                timer: 1200,
+                grow: "row",
+                toast: true,
               });
               $(document).on('click', '.SwalBtn1', function() {
                 swal.clickConfirm();
