@@ -58,7 +58,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                 <div id="chck1" class="tab-pane active">
                   <div class="chcksel-register-form">
                     <form action="./payment" method="POST" id="frm_1-Log">
-                      <input type="text" name="chck-payment" id="chck-payment" value="150">
+                      <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="clxt2_chck-ffil" id="clxt2_chck-ffil" value="<?= (isset($_POST) && isset($_POST['cx1chk_crt-sess'])) ? $_POST['cx1chk_crt-sess'] : "";?>">
                       <div class="mb-2">
                         <label for="chck-telephone" class="form-label">Teléfono/Celular</label>
                         <input type="text" class="form-control" name="chck-telephone" id="chck-telephone" placeholder="">

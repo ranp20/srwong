@@ -485,4 +485,49 @@ $form-container: "frm-cont" !default;
 	}
 }
 
-/* CONFIGURACIONES SWEETALERT 2 - POR DEFECTO */
+/* OCULTAR INPUTS DE ENVÍO DE INFORMACIÓN */
+input[f-hidden="aria-hidden"]{
+	width: 0;
+	height: 0;
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	user-select: none;
+	background-color: #fff;
+	border: none;
+	appearance: none;
+	line-height: unset;
+}
+.non-visvalipt{
+	width: 0 !important;
+	height: 0 !important;
+	display: none !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+	display: none !important;
+	background-color: #fff !important;
+	border: none !important;
+	line-height: unset !important;
+}
+.h-alternative-shwnon{
+	width: 0;
+	height: 0;
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+	background-color: #fff;
+	border: none;
+	line-height: unset;
+}
+.s-fkeynone-step{
+	width: 0;
+	height: 0;
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+	background-color: #fff;
+	border: none;
+	line-height: unset;	
+}

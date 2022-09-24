@@ -4221,6 +4221,8 @@ h4.grand-totall-title span {
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+    font-size: 1.2rem;
+    margin: 36px 0 27px;
 }
 .cl-wrap_total .c_title-total .row_cll{
     display: inline-block;
@@ -4228,7 +4230,7 @@ h4.grand-totall-title span {
 }
 .cl-wrap_total-title {
     color: #e02c2b;
-    font-size: 20px;
+    font-size: 1.4rem;
     font-weight: 500;
     margin: 0 0 25px;
     padding-top: 20px;
@@ -4242,7 +4244,7 @@ h4.grand-totall-title span {
 .cl-wrap_total-title span {
     // float: right;
 }
-.cl-wrap_total > a {
+.cl-wrap_total .btn_link {
     background-color: #e02c2b;
     border-radius: 3px;
     color: #fff;
@@ -4253,8 +4255,11 @@ h4.grand-totall-title span {
     padding: 18px 10px 19px;
     text-align: center;
     text-transform: uppercase;
+    width: 100%;
+    border: none;
+    transition: all ease-in-out .2s;
 }
-.cl-wrap_total > a:hover {
+.cl-wrap_total .btn_link:hover {
     background-color: #242424;
 }
 

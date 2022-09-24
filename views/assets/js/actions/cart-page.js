@@ -1,11 +1,28 @@
 // ------------ ENCRIPTAR DATOS DE INPUTS
 function encryptValuesIpts(valueipt){
+  // PRIMER MÉTODO
+  /*
   let ciphertext = CryptoJS.AES.encrypt(valueipt, 'CML_KEYSYSTEM').toString();
+  return ciphertext;
+  */
+  // SEGUNDO MÉTODO
+  let key = CryptoJS.enc.Hex.parse("bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3");
+  let iv = CryptoJS.enc.Hex.parse("101112131415161718191a1b1c1d1e1f");
+  let ciphertext = CryptoJS.AES.encrypt(valueipt, key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });
   return ciphertext;
 }
 // ------------ DESENCRIPTAR DATOS DE INPUTS
 function decryptValuesIpts(valueipt){
+  // PRIMER MÉTODO
+  /*
   let bytes  = CryptoJS.AES.decrypt(valueipt, 'CML_KEYSYSTEM');
+  let originalText = bytes.toString(CryptoJS.enc.Utf8);
+  return originalText;
+  */
+  // SEGUNDO MÉTODO
+  let key = CryptoJS.enc.Hex.parse("bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3");
+  let iv = CryptoJS.enc.Hex.parse("101112131415161718191a1b1c1d1e1f");
+  let bytes  = CryptoJS.AES.decrypt(valueipt, key, { iv: iv });
   let originalText = bytes.toString(CryptoJS.enc.Utf8);
   return originalText;
 }
@@ -16,6 +33,8 @@ $(() => {
   var encrypt_sess_idcli = $("#u-s_regclient-sis").val(encryptValuesIpts($("#u-s_regclient-sis").val()));
   // ------------ DESENCRIPTACIÓN DE INPUTS
   var sess_idcli = decryptValuesIpts(encrypt_sess_idcli.val());
+  // console.log(encrypt_sess_idcli);
+  // console.log(sess_idcli);
 	// ------------ LISTAR FUNCIONES
   listCartList(); // LISTAR LOS PRODUCTOS EN EL CARRITO DE DICHO CLIENTE
   listTempCartList(); // LISTAR LOS PRODUCTOS EN LA TABLA DE LISTADO DE PRODUCTOS DE TEMP_CART
@@ -219,8 +238,12 @@ $(() => {
             `;
           });
           $("#c-xtbl_cartcli").html(tmp);
+          // ---------- ENVIAR EL TOTAL ENCRIPTADO
+          let tmptotal_encp = encryptValuesIpts(tpay_wzero);
           let tmpl_total = "";
           tmpl_total += `
+          <form action="./checkout" method="POST">
+            <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_crt-sess" id="chk-s_crtclient-sis" value="${tmptotal_encp}">
             <h5 class="c_title-total">
               <span class="row_cll">Total productos </span>
               <span class="row_cll">
@@ -235,7 +258,8 @@ $(() => {
                 <span>${tpay_wzero}</span>
               </span>
             </h4>
-            <a href="./checkout">Proceed to Checkout</a>
+            <button type="submit" class='btn_link'>Pasar por caja</button>
+          </form>
           `;
           $("#c-xtt_tochck").html(tmpl_total);
         }else{
