@@ -260,22 +260,6 @@ $(() => {
       }
     });
   }
-  // ------------ INCREMENT AND DECREMENT PRODUCT
-  $(document).on("click",".qtybutton",function(){
-    var $button = $(this);
-    var oldValue = $button.parent().find("input").val();
-    if($button.text() === "+"){
-      var newVal = parseFloat(oldValue) + 1;
-    }else{
-      // Don't allow decrementing below zero
-      if(oldValue > 0){
-        var newVal = parseFloat(oldValue) - 1;
-      }else{
-        newVal = 1;
-      }
-    }
-    $button.parent().find("input").val(newVal);
-  });
   // ------------ ELIMINAR LOS PRODUCTOS DEL CARRITO
   $(document).on("click",".product-remove",function(e){
     e.preventDefault();
@@ -305,6 +289,67 @@ $(() => {
         console.log('Disculpe, existió un problema');
       }
     });
+  });
+  // ------------ INCREMENT AND DECREMENT PRODUCT
+  $(document).on("click",".qtybutton",function(){
+    var $button = $(this);
+    var oldValue = $button.parent().find("input").val();
+    let trparent = $button.parent().parent().parent().attr("id");
+    let idtmp_id_2 = trparent.split("prod_srw-");
+    if($button.text() === "+"){
+      var newVal = parseFloat(oldValue) + 1;
+      $.ajax({
+        url: "./controllers/prcss_change-byIdTempCart.php",
+        method: "POST",
+        dataType: 'JSON',
+        contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+        data: { idtmp : idtmp_id_2[1], btnchg: "+"},
+        success : function(e){          
+          if(e != "" && e != "[]"){
+            if(e == "true" || e == true){
+              listCartList();
+              listTempCartList();
+            }else{
+              console.log('Lo sentimos, hubo un error al procesar la información');  
+            }
+          }else{
+            console.log('Lo sentimos, hubo un error al procesar la información');
+          }
+        },
+        error : function(xhr, status){
+          console.log('Disculpe, existió un problema');
+        }
+      });
+    }else{
+      if(oldValue > 1){
+        var newVal = parseFloat(oldValue) - 1;
+        $.ajax({
+          url: "./controllers/prcss_change-byIdTempCart.php",
+          method: "POST",
+          dataType: 'JSON',
+          contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+          data: { idtmp : idtmp_id_2[1], btnchg: "-"},
+          success : function(e){          
+            if(e != "" && e != "[]"){
+              if(e == "true" || e == true){
+                listCartList();
+                listTempCartList();
+              }else{
+                console.log('Lo sentimos, hubo un error al procesar la información');  
+              }
+            }else{
+              console.log('Lo sentimos, hubo un error al procesar la información');
+            }
+          },
+          error : function(xhr, status){
+            console.log('Disculpe, existió un problema');
+          }
+        });
+      }else{
+        newVal = 1;
+      }
+    }
+    $button.parent().find("input").val(newVal);
   });
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
