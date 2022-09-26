@@ -53,12 +53,15 @@ $(() => {
               </div>
             `);
             $.each(e, function(i,v){
+              let p_pathimg = "./adminSrwong/storage/app/public/product/"+v.p_photo;
               let p_name = v.p_name;
               let p_name_limit = (p_name.length >= 20) ? p_name.substring(20, 0) + "..." : p_name;
               tmpList += `
                 <li class="single-shopping-cart">
                   <div class="shopping-cart-img">
-                    <a href="./product-details/${v.id}"><img alt="" src="./views/assets/img/product/mostricrunh.jpg"></a>
+                    <a href="./product-details/${v.id}">
+                      <img alt="" src="${p_pathimg}" alt="${p_name_limit}">
+                    </a>
                   </div>
                   <div class="shopping-cart-title">
                     <h4><a href="./product-details/${v.id}">${p_name_limit} </a></h4>
