@@ -204,13 +204,14 @@ $(() => {
             if(r2.length == 1 || (r2[1].length < 3)){
               p_price = p_price.toFixed(2);
             }
+            let p_pathimg = "./adminSrwong/storage/app/public/product/"+v.p_photo;
             let p_name = v.p_name;
             let p_name_limit = (p_name.length >= 25) ? p_name.substring(25, 0) + "..." : p_name;
             tmp += `
               <tr id="prod_srw-${v.id}">
                 <td class="product-thumbnail">
                   <a href="javascript:void(0);">
-                    <img src="./views/assets/img/product/mostricrunh.jpg" class="img-fluid" alt="">
+                    <img src="${p_pathimg}" class="img-fluid" alt="${p_name_limit}">
                   </a>
                 </td>
                 <td class="product-name">
