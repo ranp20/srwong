@@ -11,36 +11,6 @@
             <p>DELIVERY GRATIS | De lunes a viernes por Web</p>
           </div>
         </div>
-<!--         <div class="col-lg-8 col-md-8 col-12 col-sm-8">
-          <div class="account-curr-lang-wrap f-right">
-            <ul>
-              <li class="top-hover"><a href="javascript:void(0);">Language: (ENG) <i class="ion-chevron-down"></i></a>
-                <ul>
-                  <li><a href="javascript:void(0);">Bangla </a></li>
-                  <li><a href="javascript:void(0);">Arabic</a></li>
-                  <li><a href="javascript:void(0);">Hindi </a></li>
-                  <li><a href="javascript:void(0);">Spanish</a></li>
-                </ul>
-              </li>
-              <li class="top-hover"><a href="javascript:void(0);">Currency: (USD) <i class="ion-chevron-down"></i></a>
-                <ul>
-                  <li><a href="javascript:void(0);">Taka (BDT)</a></li>
-                  <li><a href="javascript:void(0);">Riyal (SAR)</a></li>
-                  <li><a href="javascript:void(0);">Rupee (INR)</a></li>
-                  <li><a href="javascript:void(0);">Dirham (AED)</a></li>
-                </ul>
-              </li>
-              <li class="top-hover"><a href="javascript:void(0);">Setting  <i class="ion-chevron-down"></i></a>
-                <ul>
-                  <li><a href="wishlist">Wishlist  </a></li>
-                  <li><a href="login-register">Login</a></li>
-                  <li><a href="login-register">Register</a></li>
-                  <li><a href="my-account">my account</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -59,7 +29,7 @@
           <div class="main-menu">
             <nav>
               <ul>
-                <li class="top-hover"><a style="color:#2f333a;" href="./">MENU <i class="ion-chevron-down"></i></a></li>
+                <li class="top-hover"><a style="color:#2f333a;" href="./">INICIO <i class="ion-chevron-down"></i></a></li>
                 <li><a style="color:#2f333a;" href="about-us">PROMOCIONES</a></li>
                 <li class="mega-menu-position top-hover"><a style="color:#2f333a;" href="shop">LOCALES<i class="ion-chevron-down"></i></a></li>
                 <li class="top-hover"><a style="color:#2f333a;" href="blog-rightsidebar">DESCARGA LA CARTA <i class="ion-chevron-down"></i></a></li>

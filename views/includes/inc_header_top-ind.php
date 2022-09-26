@@ -29,10 +29,10 @@
           <div class="main-menu">
             <nav>
               <ul>
-                <li class="top-hover"><a style="color:#2f333a;" href="./">MENU <i class="ion-chevron-down"></i></a></li>
-                <li><a style="color:#2f333a;" href="about-us">PROMOCIONES</a></li>
-                <li class="mega-menu-position top-hover"><a style="color:#2f333a;" href="shop">LOCALES<i class="ion-chevron-down"></i></a></li>
-                <li class="top-hover"><a style="color:#2f333a;" href="blog-rightsidebar">DESCARGA LA CARTA <i class="ion-chevron-down"></i></a></li>
+                <li class="top-hover"><a style="color:#2f333a;" href="../">INICIO <i class="ion-chevron-down"></i></a></li>
+                <li><a style="color:#2f333a;" href="../about-us">PROMOCIONES</a></li>
+                <li class="mega-menu-position top-hover"><a style="color:#2f333a;" href="../shop">LOCALES<i class="ion-chevron-down"></i></a></li>
+                <li class="top-hover"><a style="color:#2f333a;" href="../blog-rightsidebar">DESCARGA LA CARTA <i class="ion-chevron-down"></i></a></li>
               </ul>
             </nav>
           </div>
