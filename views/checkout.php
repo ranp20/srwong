@@ -20,9 +20,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
-    <div class="loader-in">
-        <span class="loader-in--loader"></span>
-    </div>
     <div class="breadcrumb-area gray-bg">
     <div class="container">
       <div class="breadcrumb-content">

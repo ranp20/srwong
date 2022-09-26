@@ -1,3 +1,6 @@
+<div class="loader-in">
+  <span class="loader-in--loader"></span>
+</div>
 <!-- header start -->
 <header class="header-area">
   <div class="header-top black-bg">

@@ -34,9 +34,6 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
 </head>
 <body>
   <?php require_once 'includes/inc_header_top-ind.php';?>
-  <div class="loader-in">
-    <span class="loader-in--loader"></span>
-  </div>
   <div class="breadcrumb-area gray-bg">
     <div class="container">
       <div class="breadcrumb-content">

@@ -1,3 +1,6 @@
+<div class="loader-in">
+  <span class="loader-in--loader"></span>
+</div>
 <!-- header start -->
 <header class="header-area">
   <div class="header-top black-bg">
@@ -83,13 +86,13 @@
                   <div class='listoptions-login-content'>
                     <ul>
                       <li class='single-listoptions-login'>
-                        <a href='my-account'>
+                        <a href='../my-account'>
                           <i class='icon-user icons'></i>
                           <span>Mi cuenta</span>
                         </a>
                       </li>
                       <li class='single-listoptions-login'>
-                        <a href='logout'>
+                        <a href='../logout'>
                           <i class='icon-logout icons'></i>
                           <span>Cerrar sesión</span>
                         </a>
