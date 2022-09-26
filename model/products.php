@@ -147,5 +147,40 @@ class Products extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- MOSTRAR LA DESCRIPCIÓN EN EL DETALLE DEL PRODUCTO
+  function getProductDescription($idProduct){
+    try{
+      $sql = "CALL sp_list_details_ByIdProduct(:id)";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":id",$idProduct);
+      $stm->execute();
+      $res = $stm->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($res as $data) {
+        $dataProduct = $data;
+      }
+      return $dataProduct;
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
+  // -------------- MOSTRAR COMPLEMENTOS EN EL DETALLE DEL PRODUCTO
+  function getAddOns($idAddOns){
+    try{
+      $sql = "SELECT id,name,price FROM add_ons WHERE id = :id";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":id",$idAddOns);
+      $stm->execute();
+      $res = $stm->fetchAll();
+      $resultHTML="";
+      foreach($res as $data){
+        $resultHTML.="<li>
+                        <input data-id='$data[0]' type='checkbox'> $data[1]: <span>  S/ $data[2]</span>
+                      </li>";
+      }
+      return $resultHTML;
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
 }
 $dmlProducts = new Products();
