@@ -13,6 +13,26 @@
       <div class='col-lg-6 col-md-12'>
         <div class='product-details-img'>
           <img class='zoompro' src='<?= $p_pathimg;?>' data-zoom-image='<?= $p_pathimg;?>' alt='zoom'/>
+          <div id="gallery" class="mt-20 product-dec-slider owl-carousel">
+            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
+              <img src="<?= $p_pathimg;?>" alt="">
+            </a>
+            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
+              <img src="<?= $p_pathimg;?>" alt="">
+            </a>
+            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
+              <img src="<?= $p_pathimg;?>" alt="">
+            </a>
+            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
+              <img src="<?= $p_pathimg;?>" alt="">
+            </a>
+            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
+              <img src="<?= $p_pathimg;?>" alt="">
+            </a>
+            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
+              <img src="<?= $p_pathimg;?>" alt="">
+            </a>
+          </div>
           <span>-29%</span>
         </div>
       </div>

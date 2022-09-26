@@ -25,6 +25,10 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
   <!-- INCLUIR ELEVATEZOOM -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/elevatezoom/jquery.elevateZoom-3.0.8.min.js"></script>
+  <!-- INCLUIR SLICK -->
+  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick.css">
+  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick-theme.css">
+  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/slick/slick.min.js"></script>
   <!-- INCLUIR CRYPTO-JS -->
   <script type="text/javascript" src="../node_modules/crypto-js/crypto-js.js"></script>
   <!-- INCLUIR SWEET ALERT 2 -->

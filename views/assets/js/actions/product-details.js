@@ -63,7 +63,7 @@ $(() => {
 			  items: 4
 			}
 		}
-	})
+	});
 	// ------------ PRODUCT ZOOM
 	$(".zoompro").elevateZoom({
 		gallery: "gallery",
@@ -74,6 +74,46 @@ $(() => {
 		zoomType: "inner",
 		cursor: "crosshair"
 	});
+  
+  // ------------ Best selling active
+  $('.product-dec-slider').slick({
+    dots: true,
+    infinite: false,
+    prevArrow: "<button type='button' class='slick-prev'>Previous</button>",
+    nextArrow: "<button type='button' class='slick-next'>Next</button>",
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: true,
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: true,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+
   // ------------ AGREGAR UN PRODUCTO AL CARRITO
   $(document).on("click",".a__tocart",function(e){
     e.preventDefault();
