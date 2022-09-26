@@ -9,7 +9,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>    
-  <?php require_once 'includes/inc-header_links.php';?>
+  <?php require_once 'includes/inc_header_links.php';?>
   <title>SrWong - Confirmación de compra</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
@@ -17,7 +17,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
 </head>
 <body>
-  <?php require_once 'includes/inc-header_top.php';?>
+  <?php require_once 'includes/inc_header_top.php';?>
     <div class="loader-in">
       <span class="loader-in--loader"></span>
     </div>
@@ -46,7 +46,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
-  <?php require_once 'includes/inc-footer.php';?>
+  <?php require_once 'includes/inc_footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
 </body>
 </html>

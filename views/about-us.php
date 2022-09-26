@@ -7,7 +7,7 @@ session_start();
 <html lang="es">
 <head>
   <title>SrWong - Sobre nosotros</title>
-  <?php require_once 'includes/inc-header_links.php';?>
+  <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
@@ -19,7 +19,7 @@ session_start();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 </head>
 <body>
-    <?php require_once 'includes/inc-header_top.php';?>
+    <?php require_once 'includes/inc_header_top.php';?>
     <div class="loader-in">
     <span class="loader-in--loader"></span>
   </div>
@@ -319,7 +319,7 @@ session_start();
             </div>
         </div>
     </div>
-    <?php require_once 'includes/inc-footer.php';?>
+    <?php require_once 'includes/inc_footer.php';?>
   </div>
 	<!-- all js here -->
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>

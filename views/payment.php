@@ -83,7 +83,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>    
-  <?php require_once 'includes/inc-header_links.php';?>
+  <?php require_once 'includes/inc_header_links.php';?>
   <title>SrWong - Página de pago</title>
   <!-- INTEGRACIÓN IZZIPAY -->
 
@@ -113,7 +113,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 
 </head>
 <body>
-  <?php require_once 'includes/inc-header_top.php';?>
+  <?php require_once 'includes/inc_header_top.php';?>
     <div class="loader-in">
         <span class="loader-in--loader"></span>
     </div>
@@ -166,7 +166,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
-  <?php require_once 'includes/inc-footer.php';?>
+  <?php require_once 'includes/inc_footer.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->

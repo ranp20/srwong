@@ -7,13 +7,13 @@ session_start();
 <html lang="es">
 <head>
     <title>SrWong - Testimonios</title>
-    <?php require_once 'includes/inc-header_links.php';?>
+    <?php require_once 'includes/inc_header_links.php';?>
     <!-- INCLUIR OWL CAROUSEL 2 -->
     <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
     <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
 </head>
 <body>
-    <?php require_once 'includes/inc-header_top.php';?>
+    <?php require_once 'includes/inc_header_top.php';?>
     <!-- <div class="loader-in">
         <span class="loader-in--loader"></span>
     </div> -->
@@ -263,7 +263,7 @@ session_start();
             </div>
         </div>
     </div>
-    <?php require_once 'includes/inc-footer.php';?>
+    <?php require_once 'includes/inc_footer.php';?>
 	<!-- all js here -->
     <script type="text/javascript" src="<?= $url;?>assets/js/actions/testimonials.js"></script>
 </body>

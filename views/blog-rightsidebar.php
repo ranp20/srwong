@@ -7,7 +7,7 @@ session_start();
 <html lang="es">
 <head>
   <title>SrWong - Deliveries y Pedidos</title>
-  <?php require_once 'includes/inc-header_links.php';?>
+  <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MAGNIFIC-POP-UP -->
   <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/Magnific-Popup/magnific-popup.css">
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/Magnific-Popup/jquery.magnific-popup.min.js"></script>
@@ -16,7 +16,7 @@ session_start();
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
 </head>
 <body>
-  <?php require_once 'includes/inc-header_top.php';?>
+  <?php require_once 'includes/inc_header_top.php';?>
   <div class="loader-in">
     <span class="loader-in--loader"></span>
   </div>
@@ -224,7 +224,7 @@ session_start();
       </div>
     </div>
   </div>
-  <?php require_once 'includes/inc-footer.php';?>
+  <?php require_once 'includes/inc_footer.php';?>
   <!-- all js here -->
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/actions/blog.js"></script>

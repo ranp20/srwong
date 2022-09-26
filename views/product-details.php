@@ -16,7 +16,7 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
 <html lang="es">
 <head>    
   <title>SrWong - Detalle de producto</title>
-  <?php require_once 'includes/inc-header_links.php';?>
+  <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
@@ -33,7 +33,7 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
   <script type="text/javascript" src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
-  <?php require_once 'includes/inc-header_top-ind.php';?>
+  <?php require_once 'includes/inc_header_top-ind.php';?>
   <div class="loader-in">
     <span class="loader-in--loader"></span>
   </div>
@@ -414,7 +414,7 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
       </div>
     </div>
   </div>
-  <?php require_once 'includes/inc-footer.php';?>
+  <?php require_once 'includes/inc_footer.php';?>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

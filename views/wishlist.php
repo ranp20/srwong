@@ -7,10 +7,10 @@ session_start();
 <html lang="es">
 <head>    
     <title>SrWong - Lista de deseos</title>
-    <?php require_once 'includes/inc-header_links.php';?>
+    <?php require_once 'includes/inc_header_links.php';?>
 </head>
 <body>
-    <?php require_once 'includes/inc-header_top.php';?>
+    <?php require_once 'includes/inc_header_top.php';?>
     <div class="loader-in">
         <span class="loader-in--loader"></span>
     </div>
@@ -116,7 +116,7 @@ session_start();
             </div>
         </div>
     </div>
-    <?php require_once 'includes/inc-footer.php';?>
+    <?php require_once 'includes/inc_footer.php';?>
 	<!-- all js here -->
     <script type="text/javascript" src="<?= $url;?>assets/js/popper.js"></script>
     <script type="text/javascript" src="<?= $url;?>assets/js/imagesloaded.pkgd.min.js"></script>

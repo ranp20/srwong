@@ -7,10 +7,10 @@ session_start();
 <html lang="es">
 <head>    
     <title>SrWong - Lista de productos ( LIST )</title>
-    <?php require_once 'includes/inc-header_links.php';?>
+    <?php require_once 'includes/inc_header_links.php';?>
 </head>
 <body>
-    <?php require_once 'includes/inc-header_top.php';?>
+    <?php require_once 'includes/inc_header_top.php';?>
     <div class="loader-in">
         <span class="loader-in--loader"></span>
     </div>
@@ -713,7 +713,7 @@ session_start();
             </div>
         </div>
     </div>
-    <?php require_once 'includes/inc-footer.php';?>
+    <?php require_once 'includes/inc_footer.php';?>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">

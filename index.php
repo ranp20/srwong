@@ -12,7 +12,7 @@ $l_products = $products->getAll();
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <?php require_once 'views/includes/inc-header_links.php';?>
+  <?php require_once 'views/includes/inc_header_links.php';?>
   <title>SrWong - Deliveries y Pedidos</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
@@ -41,41 +41,16 @@ $l_products = $products->getAll();
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
-  <?php require_once 'views/includes/inc-header_top.php';?>
+  <?php require_once 'views/includes/inc_header_top.php';?>
   <div class="loader-in">
     <span class="loader-in--loader"></span>
   </div>
-  <div class="slider-area">
-    <div class="slider-active owl-dot-style owl-carousel">
-      <div class="single-slider pt-210 pb-220 bg-img" style="background-image:url(<?= $url;?>assets/img/slider/slider-1.jpg);">
-        <div class="container">
-          <div class="slider-content slider-animated-1">
-            <h1 class="animated">Drink & Heathy Food</h1>
-            <h3 class="animated">Fresh Heathy and Organic.</h3>
-            <div class="slider-btn mt-90">
-              <a class="animated" href="product-details">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="single-slider pt-210 pb-220 bg-img" style="background-image:url(<?= $url;?>assets/img/slider/slider-2.jpg);">
-        <div class="container">
-          <div class="slider-content slider-animated-1">
-            <h1 class="animated">Drink & Heathy Food</h1>
-            <h3 class="animated">Fresh Heathy and Organic.</h3>
-            <div class="slider-btn mt-90">
-              <a class="animated" href="product-details">Order Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php require_once 'views/includes/inc-category-list-home.php';?>
-  <?php require_once 'views/includes/inc-products-filter-home.php';?>
-  <?php require_once 'views/includes/inc-popular-products-home.php';?>
-  <?php require_once 'views/includes/inc-latest-products-home.php';?>
-  <?php require_once 'views/includes/inc-footer.php';?>
+  <?php require_once 'views/includes/inc_carousel-home.php';?>
+  <?php require_once 'views/includes/inc_category-list-home.php';?>
+  <?php require_once 'views/includes/inc_products-filter-home.php';?>
+  <?php require_once 'views/includes/inc_popular-products-home.php';?>
+  <?php require_once 'views/includes/inc_latest-products-home.php';?>
+  <?php require_once 'views/includes/inc_footer.php';?>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">

@@ -10,7 +10,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
 <html lang="es">
 <head>
   <title>SrWong - Login | Registro</title>
-  <?php require_once 'includes/inc-header_links.php';?>
+  <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
@@ -22,7 +22,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
-  <?php require_once 'includes/inc-header_top.php';?>
+  <?php require_once 'includes/inc_header_top.php';?>
     <div class="loader-in">
         <span class="loader-in--loader"></span>
     </div>
@@ -107,7 +107,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
-  <?php require_once 'includes/inc-footer.php';?>
+  <?php require_once 'includes/inc_footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/actions/login-user.js"></script>
 </body>
