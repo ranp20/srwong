@@ -12,9 +12,26 @@
       </div>
     </div>
     <div class="tab-content jump">
-      <div id="tab1" class="tab-pane active">
+      <div class="tab-pane active">
         <div class="owl-latest-products-home owl-carousel owl-theme row">
           <?php 
+            function addTwoDecimalsOrGuion($number){
+              $output_final = "";
+              if($number != "0" || $number != 0){
+                $output_num = explode(".", $number);
+                if(!isset($output_num[1]) || $output_num[1] == "undefined" || $output_num[1] == ""){
+                  $output_final = number_format($number).".00";
+                }else if(isset($output_num[1]) && strlen($output_num[1]) < 2){
+                  $output_final = number_format($output_num[0]).".".$output_num[1]."0";
+                }else{
+                  $output_final = number_format($output_num[0]).".".$output_num[1];
+                }
+              }else{
+                $output_final = 0.00;
+              }
+              return $output_final;
+            }
+
             $tmp = "";
             foreach ($l_products as $key => $value){
 
