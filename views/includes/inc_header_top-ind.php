@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-12 col-sm-4">
           <div class="welcome-area">
-            <p>Default welcome msg! </p>
+            <p>DELIVERY GRATIS | De lunes a viernes por Web</p>
           </div>
         </div>
       </div>
