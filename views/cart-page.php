@@ -71,7 +71,7 @@ session_start();
               <div class="col-lg-12">
                 <div class="cart-shiping-update-wrapper">
                   <div class="cart-clear">
-                    <a href="javascript:void(0);" title="Borrar listado de compras">Borrar listado</a>
+                    <a href="javascript:void(0);" id="cart-clear" title="Borrar listado de compras">Borrar listado</a>
                   </div>
                   <div class="cart-shiping-update">
                     <a href="./" title="Seguir comprando">Seguir comprando</a>

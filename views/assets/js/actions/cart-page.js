@@ -380,23 +380,25 @@ $(() => {
     }
     $button.parent().find("input").val(newVal);
   });
-  // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
-  $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
-  // ------------ PROCESAR LA COMPRA DEL LISTADO DEL CARRITO
-  /*
-  $(document).on("submit","#fr-fm_04chkcrtpg",function(e){
+  // ------------ BORRAR EL LISTADO DEL CARRITO DE COMPRAS
+  $(document).on("click","#cart-clear",function(e){
     e.preventDefault();
     $.ajax({
-      url: "./controllers/prcss_cart-page-data.php",
+      url: "./controllers/prcss_delete-allTempCart-byIdClient.php",
       method: "POST",
       dataType: 'JSON',
       contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
-      data: { idcli : sess_idcli },
+      data: { idcli : sess_idcli},
       success : function(e){
         if(e != "" && e != "[]"){
-          console.log(e);
+          if(e == "true" || e == true){
+            listCartList();
+            listTempCartList();
+          }else{
+            console.log("Error. Lo sentimos, hubo un error al procesar la información.");
+          }
         }else{
-          console.log('Lo sentimos, hubo un error al procesar la información');
+          console.log("Error. Lo sentimos, hubo un error al procesar la información.");
         }
       },
       error : function(xhr, status){
@@ -404,5 +406,6 @@ $(() => {
       }
     });
   });
-  */
+  // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
+  $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
 });
