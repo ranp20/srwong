@@ -4,9 +4,9 @@ class Connection{
   /*
   protected $con = null;
 	private $host = "108.160.152.119";
-	private $dbname = "plataformacsscre_srwong";
+	private $dbname = "plataformacsscre_db";
 	private $username = "plataformacsscre_srwong_user";
-	private $password = "RLK;#R_*.!&@";
+	private $password = "Z%M.+ON^C@P%";
 	private $charset = "utf8";
   */  
 
