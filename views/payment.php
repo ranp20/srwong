@@ -12,38 +12,43 @@ require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
 $postamount = floatval($_POST['clxt2_chck-ffil']);
-$type_order = "";
+$u_type_order = "";
 if($_POST['clxt2_chck-ffil_ortype'] == "typ-A_or-del_10"){
-  $type_order = "DELIVERY";
+  $u_type_order = "DELIVERY";
 }else if($_POST['clxt2_chck-ffil_ortype'] == "typ-B_or-del_10"){
-  $type_order = "TIENDA";
+  $u_type_order = "TIENDA";
 }else{
-  $type_order = "No especificado";
+  $u_type_order = "No especificado";
 }
-$amount =  $postamount * 100;
-$email = $_SESSION['usr-logg_srwong']['email'];
+$u_email = $_SESSION['usr-logg_srwong']['email'];
+$u_reference = (isset($_POST['chck-reference']) && $_POST['chck-reference'] != "") ? $_POST['chck-reference'] : "No especificado";
+$u_address = (isset($_POST['chck-address']) && $_POST['chck-address'] != "") ? $_POST['chck-address'] : "No especificado";
+$u_branchid = "";
+if(isset($_POST['cx1chk_branchcrt-sess']) && $_POST['cx1chk_branchcrt-sess'] != ""){
+  $u_branchid = $_POST['cx1chk_branchcrt-sess'];
+}else if(isset($_POST['chck-location']) && $_POST['chck-location'] != ""){
+  $u_branchid = $_POST['chck-location'];
+}else{
+  $u_branchid = "0";
+}
+$u_telephone = (isset($_POST['chck-telephone']) && $_POST['chck-telephone'] != "") ? $_POST['chck-telephone'] : "";
+$u_amount =  $postamount * 100;
 $store = array(
-  "amount" => $amount,
+  "amount" => $u_amount,
   "currency" => "PEN", 
   "orderId" => uniqid("MyOrderId"),
   "customer" => array(
-    "email" => $email,
-    "reference" => $_POST['chck-reference'],
+    "email" => $u_email,
+    "reference" => $u_reference,
     "billingDetails" => array(
-      "address" => $_POST['chck-address'],
-      "title" => $type_order,
-      "city" => $_POST['chck-location'],
-      "phoneNumber" => $_POST['chck-telephone']
+      "address" => $u_address,
+      "title" => $u_type_order,
+      "city" => $u_branchid,
+      "phoneNumber" => $u_telephone
     )
   )
 );
 $response = $client->post("V4/Charge/CreatePayment", $store);
-/*
-echo "<pre>";
-print_r($response);
-echo "</pre>";
-exit();
-*/
 
 if($response['status'] != 'SUCCESS'){
   display_error($response);

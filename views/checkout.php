@@ -93,7 +93,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                 <div id="chck2" class="tab-pane">
                   <div class="chcksel-register-form">
                     <div class="mb-4">
-                      <form action="" method="POST" id="frm_2-Reg">
+                      <form action="./payment" method="POST" id="frm_2-Reg">
                         <div>
                           <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="clxt2_chck-ffil" id="clxt2_chck-ffil2" value="<?= (isset($_POST) && isset($_POST['cx1chk_crt-sess'])) ? $_POST['cx1chk_crt-sess'] : "";?>">
                         </div>

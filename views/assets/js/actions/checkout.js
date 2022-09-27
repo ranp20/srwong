@@ -198,9 +198,9 @@ $(() => {
                   </span>
                   <span>Horario: Web y Call 11:00am-11:00pm</span>
                 </div>
-                <a class="l-item-link" href="javascript:void(0);">
+                <button type="submit" class="l-item-link">
                   <span>RECOGER AQUÍ</span>
-                </a>
+                </button>
               </div>
             `;
           });
