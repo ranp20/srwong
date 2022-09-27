@@ -12,28 +12,27 @@ require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
 $postamount = floatval($_POST['clxt2_chck-ffil']);
+$type_order = "";
+if($_POST['clxt2_chck-ffil_ortype'] == "typ-A_or-del_10"){
+  $type_order = "DELIVERY";
+}else if($_POST['clxt2_chck-ffil_ortype'] == "typ-B_or-del_10"){
+  $type_order = "TIENDA";
+}else{
+  $type_order = "No especificado";
+}
 $amount =  $postamount * 100;
-/*
-$arr_details = [
-  "u_telephone" => $_POST['chck-telephone'],
-  "u_address" => $_POST['chck-address'],
-  "u_id_location" => $_POST['chck-location'],
-  "u_address_reference" => $_POST['chck-reference'],
-];
-*/
 $email = $_SESSION['usr-logg_srwong']['email'];
 $store = array(
   "amount" => $amount,
   "currency" => "PEN", 
   "orderId" => uniqid("MyOrderId"),
   "customer" => array(
-    // "u_telephone" => $_POST['chck-telephone'],
-    // "u_address" => $_POST['chck-address'],
     "email" => $email,
-    "u_id_location" => $_POST['chck-location'],
     "reference" => $_POST['chck-reference'],
     "billingDetails" => array(
       "address" => $_POST['chck-address'],
+      "title" => $type_order,
+      "city" => $_POST['chck-location'],
       "phoneNumber" => $_POST['chck-telephone']
     )
   )
