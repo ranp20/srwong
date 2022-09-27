@@ -1,21 +1,41 @@
 <?php
+//COMPRIMIR ARCHIVOS DE TEXTO...
+(substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
+session_start();
+if(!isset($_SESSION['usr-logg_srwong'])){
+  header("Location: ./login-register");
+}
+
 require_once '../vendor/autoload.php';
 require_once '../model/keys.php';
 require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
-
-$amount = 150 * 100;
-
+$postamount = floatval($_POST['clxt2_chck-ffil']);
+$amount =  $postamount * 100;
+/*
+$arr_details = [
+  "u_telephone" => $_POST['chck-telephone'],
+  "u_address" => $_POST['chck-address'],
+  "u_id_location" => $_POST['chck-location'],
+  "u_address_reference" => $_POST['chck-reference'],
+];
+*/
+$email = $_SESSION['usr-logg_srwong']['email'];
 $store = array(
   "amount" => $amount,
   "currency" => "PEN", 
   "orderId" => uniqid("MyOrderId"),
   "customer" => array(
-    "u_telephone" => $_POST['chck-telephone'],
-    "u_address" => $_POST['chck-address'],
+    // "u_telephone" => $_POST['chck-telephone'],
+    // "u_address" => $_POST['chck-address'],
+    "email" => $email,
     "u_id_location" => $_POST['chck-location'],
-    "u_reference" => $_POST['chck-reference']
+    "reference" => $_POST['chck-reference'],
+    "billingDetails" => array(
+      "address" => $_POST['chck-address'],
+      "phoneNumber" => $_POST['chck-telephone']
+    )
   )
 );
 $response = $client->post("V4/Charge/CreatePayment", $store);
@@ -34,12 +54,6 @@ if($response['status'] != 'SUCCESS'){
 
 $formToken = $response["answer"]["formToken"];
 
-//COMPRIMIR ARCHIVOS DE TEXTO...
-(substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
-session_start();
-if(!isset($_SESSION['usr-logg_srwong'])){
-  header("Location: ./login-register");
-}
 
 ?>
 <!DOCTYPE html>
@@ -52,7 +66,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <script 
    src="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
    kr-public-key="<?php echo $client->getPublicKey();?>"
-   kr-post-url-success="./confirm">
+   kr-post-url-success="./payment-data">
   </script>
 
   <link rel="stylesheet" href="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/ext/classic-reset.css">

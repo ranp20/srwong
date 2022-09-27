@@ -5,7 +5,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	$transactionDate = $izzipay_r['serverDate']; // TRANSACTION DATE
 	$datetransacString = strtotime($transactionDate);
 	$trans_date = date('Y-m-d H:i:s',$datetransacString);
-	$orderStatus = $izzipay_r['orderStatus']; // ORDER STATUS
+	$orderStatus = $izzipay_r['transactions'][0]['status']; // ORDER STATUS
 	$orderID = $izzipay_r['orderDetails']['orderId']; // ORDERID
 	$currency = $izzipay_r['orderDetails']['orderCurrency']; // CURRENCY
 	$payment_gateway_name = "IzziPay"; // PAYMENT GATEWAY NAME
@@ -22,10 +22,19 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	echo "MONTO => " . $convertAmmount . "<br>";
 	echo "TARGETA => " . $credit_card_brand . "<br>";
 	if($orderStatus == "PAID"){
-		echo "-------- Pagado";
+		echo "ESTADO => Pagado";
+
+		header("Location: ./confirm");
+
+	}else if($orderStatus == "RUNNING"){
+		echo "ESTADO => En Proceso";
 	}else{
-		echo "-------- In Process";
+		echo "ESTADO => Fallo";
 	}
+
+	echo "<pre>";
+	print_r($izzipay_r);
+	echo "</pre>";
 }else{
 	header("Location: ./");
 }

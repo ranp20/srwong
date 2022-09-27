@@ -1,4 +1,8 @@
 <?php
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+if(isset($_POST) && $_POST != ""){
+	echo "<pre>";
+	print_r($_POST);
+	echo "</pre>";
+}else{
+	header("Location: ../");
+}

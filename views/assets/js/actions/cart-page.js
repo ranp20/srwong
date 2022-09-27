@@ -247,7 +247,7 @@ $(() => {
           let tmptotal_encp = tpay_wzero;
           let tmpl_total = "";
           tmpl_total += `
-          <form action="./checkout-data" method="POST" id="fr-fm_04chkcrtpg">
+          <form action="./checkout" method="POST" id="fr-fm_04chkcrtpg">
             <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_crt-sess" id="chk-s_crtclient-sis" value="${tmptotal_encp}" readonly="readonly">
             <h5 class="c_title-total">
               <span class="row_cll">Total productos </span>
@@ -383,23 +383,18 @@ $(() => {
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
   // ------------ PROCESAR LA COMPRA DEL LISTADO DEL CARRITO
+  /*
   $(document).on("submit","#fr-fm_04chkcrtpg",function(e){
     e.preventDefault();
-    
     $.ajax({
       url: "./controllers/prcss_cart-page-data.php",
       method: "POST",
       dataType: 'JSON',
       contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
       data: { idcli : sess_idcli },
-      success : function(e){          
+      success : function(e){
         if(e != "" && e != "[]"){
-          if(e == "true" || e == true){
-            listCartList();
-            listTempCartList();
-          }else{
-            console.log('Lo sentimos, hubo un error al procesar la información');  
-          }
+          console.log(e);
         }else{
           console.log('Lo sentimos, hubo un error al procesar la información');
         }
@@ -408,6 +403,6 @@ $(() => {
         console.log('Disculpe, existió un problema');
       }
     });
-    
   });
+  */
 });
