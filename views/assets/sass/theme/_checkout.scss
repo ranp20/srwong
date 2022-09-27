@@ -52,3 +52,22 @@
 	margin: 0 auto;
 	padding: 1rem;
 }
+
+/* LISTA DE LOCALES */
+.chcksel-list-result{
+	&__cAnyItems{
+		display: block;
+		&--cImg{
+			display: flex;
+			flex-flow: wrap column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			img{
+				max-width: 50px;
+    		width: 95%;
+    		height: auto;
+			}
+		}
+	}
+}

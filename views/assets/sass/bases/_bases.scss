@@ -370,6 +370,9 @@ $form-container: "frm-cont" !default;
 	    @media (min-width: 768px){
 	    	flex: 1;
 	    }
+	    @media (min-width: 991px){
+	    	max-width: 335px;
+	    }
 		}
 		.l-item-title{
 			display: block;
@@ -386,6 +389,17 @@ $form-container: "frm-cont" !default;
 			p{
 				font-weight: 600;
 				color: #CDCDCD;
+			}
+		}
+		.l-item-email{
+			display: block;
+			span{
+				svg{
+					fill: $theme-clr-secondary;
+				}
+				&:nth-child(2){
+					margin-left: 0.25rem;
+				}
 			}
 		}
 		.l-item-telephone{
