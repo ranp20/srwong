@@ -497,6 +497,8 @@ input[f-hidden="aria-hidden"]{
 	border: none;
 	appearance: none;
 	line-height: unset;
+	-ms-touch-action: none !important;
+  touch-action: none !important;
 }
 .non-visvalipt{
 	width: 0 !important;
@@ -508,6 +510,8 @@ input[f-hidden="aria-hidden"]{
 	background-color: #fff !important;
 	border: none !important;
 	line-height: unset !important;
+	-ms-touch-action: none !important;
+  touch-action: none !important;
 }
 .h-alternative-shwnon{
 	width: 0;
@@ -519,6 +523,8 @@ input[f-hidden="aria-hidden"]{
 	background-color: #fff;
 	border: none;
 	line-height: unset;
+	-ms-touch-action: none !important;
+  touch-action: none !important;
 }
 .s-fkeynone-step{
 	width: 0;
@@ -529,5 +535,7 @@ input[f-hidden="aria-hidden"]{
 	display: none;
 	background-color: #fff;
 	border: none;
-	line-height: unset;	
+	line-height: unset;
+	-ms-touch-action: none !important;
+  touch-action: none !important;
 }

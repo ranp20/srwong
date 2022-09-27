@@ -148,7 +148,7 @@ class Products extends Connection
     }
   }
   // -------------- MOSTRAR LA DESCRIPCIÓN EN EL DETALLE DEL PRODUCTO
-  function getProductDescription($idProduct){
+  public function getProductDescription($idProduct){
     try{
       $sql = "CALL sp_list_details_ByIdProduct(:id)";
       $stm = $this->con->prepare($sql);
@@ -164,7 +164,7 @@ class Products extends Connection
     }
   }
   // -------------- MOSTRAR COMPLEMENTOS EN EL DETALLE DEL PRODUCTO
-  function getAddOns($idAddOns){
+  public function getAddOns($idAddOns){
     try{
       $sql = "SELECT id,name,price FROM add_ons WHERE id = :id";
       $stm = $this->con->prepare($sql);
@@ -178,6 +178,19 @@ class Products extends Connection
                       </li>";
       }
       return $resultHTML;
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
+  // -------------- LISTAR LOS VALORES DEL TEMPCART POR ID DE CLIENTE
+  function listTmpCartByIdClient($idcli){
+    try{
+      $sql = "CALL sp_list_cart_ByIdTempCart(:idcli)";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":idcli", $idcli);
+      $stm->execute();
+      $data = $stm->fetchAll(PDO::FETCH_ASSOC);
+      return $data;
     }catch(PDOException $e){
       return $e->getMessage();
     }

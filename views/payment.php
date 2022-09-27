@@ -5,45 +5,7 @@ require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
 
-echo $_POST['clxt2_chck-ffil'];
-// function decryptPassword($password){
-  /*
-  $key = pack('H*', "bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3");
-  $iv_dec = pack('H*', "101112131415161718191a1b1c1d1e1f");
-  $ciphertext_dec = base64_decode($password);
-  // $iv_dec = "101112131415161718191a1b1c1d1e1f";
-*/
-  $ciphertext_dec = base64_decode($_POST['clxt2_chck-ffil']);
-  // $key = hex2bin("bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3");
-  // $iv_dec = hex2bin("101112131415161718191a1b1c1d1e1f");
-  $key = pack('H*', "bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3");
-  $iv_dec = pack('H*', "101112131415161718191a1b1c1d1e1f");
-
-  // $ciphertext_dec = substr($ciphertext_dec, 16);
-  $decryptedPassword = openssl_decrypt($ciphertext_dec, 'AES-256-CBC', $key, 0, $iv_dec);
-  $decrypted = trim($decryptedPassword);
-  echo $decrypted;
-  print_r($decrypted);
-
-
-  function decrypt(string $data, string $key, string $method): string
-  {
-    $data = pack('H*', $data);
-    $ivSize = openssl_cipher_iv_length($method);  
-    $iv = $iv = openssl_random_pseudo_bytes($ivSize);
-    $decrypted = openssl_decrypt($data, $method, $key, OPENSSL_RAW_DATA, $iv); 
-    return trim($decrypted);
-  }
-  $key = pack('H*','101112131415161718191a1b1c1d1e1f');
-  $method = 'AES-256-CBC';
-  $decrypted = decrypt($_POST['clxt2_chck-ffil'], $key.'101112131415161718191a1b1c1d1e1f', $method);
-
-  echo $decrypted; // Output: 'test string'
-  // return trim($decryptedPassword);
-// }
-// echo decryptPassword($_POST['clxt2_chck-ffil']);
-exit();
-$amount = intval($_POST['clxt2_chck-ffil']) * 100;
+$amount = 150 * 100;
 
 $store = array(
   "amount" => $amount,
@@ -82,7 +44,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>    
+<head>
   <?php require_once 'includes/inc_header_links.php';?>
   <title>SrWong - Página de pago</title>
   <!-- INTEGRACIÓN IZZIPAY -->
