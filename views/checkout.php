@@ -63,18 +63,16 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                       </div>
                       <div class="mb-2">
                         <label for="chck-telephone" class="form-label">Teléfono/Celular</label>
-                        <input type="text" class="form-control" name="chck-telephone" id="chck-telephone" placeholder="">
+                        <input type="text" class="form-control" name="chck-telephone" id="chck-telephone" placeholder="" required>
                       </div>
                       <div class="mb-2">
                         <label for="chck-address" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" name="chck-address" id="chck-address" placeholder="">
+                        <input type="text" class="form-control" name="chck-address" id="chck-address" placeholder="" required>
                       </div>
                       <div class="mb-2">
                         <div class="form-group">
                           <label for="chck-location">Ubicación</label>
-                          <select class="form-control one-hidden" name="chck-location" id="chck-location">
-                            
-                          </select>
+                          <select class="form-control one-hidden" aria-required="true" name="chck-location" id="chck-location" required></select>
                         </div>
                       </div>
                       <div class="mb-2">

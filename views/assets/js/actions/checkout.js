@@ -245,13 +245,13 @@ $(() => {
         $.each(e, function(i,v){
           let b_name = v.name;
           let b_nameupper = b_name[0].toUpperCase() + b_name.substring(1);
-          tmpList += `<option value="${v.id}">${b_nameupper}</option>`;
+          tmpList += `<option value="${v.id}" required>${b_nameupper}</option>`;
         });
         $("#chck-location").html(tmpList);
       }else{
         $("#chck-location").html(`
-          <option>Seleccione una opción</option>
-          <option>No existen ubicaciones</option>
+          <option value="">Seleccione una opción</option>
+          <option value="">No existen ubicaciones</option>
         `);
       }
     },
