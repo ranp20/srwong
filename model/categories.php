@@ -55,7 +55,7 @@ class Categories extends Connection
           <div class='item'>
             <div class='category-wrapper mb-25'>
               <div class='category-img'>
-                <a href='./category/$data[1]' class='category-img__linkcateg'>
+                <a href='./category/$data[0]' class='category-img__linkcateg' title='$data[1]'>
                   <img src='./adminSrwong/storage/app/public/category/$data[2]' alt='./adminSrwong/storage/app/public/category/$data[1]'>
                 </a>
               </div>

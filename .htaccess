@@ -8,7 +8,7 @@ RewriteRule ^/?$ index.php
 RewriteRule ^login-register?$ views/login-register.php
 RewriteRule ^my-account?$ views/my-account.php
 RewriteRule ^product-details/([0-9]+)$ views/product-details.php?prod=$1 [L,NC]
-RewriteRule ^category/([a-zA-Z_-]+)$ views/category.php?cat=$1 [L,NC]
+RewriteRule ^category/([0-9]+)$ views/category.php?cat=$1 [L,NC]
 RewriteRule ^about-us?$ views/about-us.php
 RewriteRule ^blog?$ views/blog.php
 RewriteRule ^wishlist?$ views/wishlist.php

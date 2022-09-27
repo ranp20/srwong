@@ -3,7 +3,7 @@
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
 
-if(isset($_GET['cat']) && !empty($_GET) && !is_numeric($_GET['cat'])){
+if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
   require_once '../model/Categories.php';
 }else{
   header("Location: ../");
