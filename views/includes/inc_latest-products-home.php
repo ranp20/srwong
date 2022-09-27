@@ -14,8 +14,7 @@
     <div class="tab-content jump">
       <div class="tab-pane active">
         <div class="owl-latest-products-home owl-carousel owl-theme row">
-          <?php 
-            require_once './model/Products.php';
+          <?php
             echo $dmlProducts->getUltimos();
           ?>
         </div>

@@ -18,7 +18,6 @@
       <div class="categories-list-home owl-carousel owl-theme row">
         <!-- LIST ALL CATEGORIES -->
         <?php 
-          require_once './model/Categories.php';
           echo $dmlCategories->getCategoriesCarousel();
         ?>
         <!-- LIST ALL CATEGORIES -->
