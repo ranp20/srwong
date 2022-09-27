@@ -166,7 +166,8 @@ $(() => {
           tmpList += `<div class="l-menu">`;
           $.each(e, function(i,v){
             let b_name = v.name;
-            let b_name_limit = (b_name.length >= 20) ? b_name.substring(20, 0) + "..." : b_name;
+            let b_nameupper = b_name[0].toUpperCase() + b_name.substring(1);
+            let b_name_limit = (b_nameupper.length >= 20) ? b_nameupper.substring(20, 0) + "..." : b_nameupper;
             let b_address = v.address;
             tmpList += `
               <div class="l-item" id="${v.id}">
@@ -229,6 +230,33 @@ $(() => {
       listBranchLocations(thival);
     }else{
       listBranchLocations(thival);
+    }
+  });
+  // ------------ LISTAR LOS LOCALES DE COMIDA EN EL SELECT DE UBICACIONES
+  $.ajax({
+    url: "./controllers/prcss_list-branch-locations.php",
+    method: "POST",
+    dataType: 'JSON',
+    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+    success : function(e){
+      let tmpList = "";
+      if(e != "" && e != "[]"){
+        tmpList += `<option>Seleccione una opción</option>`;
+        $.each(e, function(i,v){
+          let b_name = v.name;
+          let b_nameupper = b_name[0].toUpperCase() + b_name.substring(1);
+          tmpList += `<option value="${v.id}">${b_nameupper}</option>`;
+        });
+        $("#chck-location").html(tmpList);
+      }else{
+        $("#chck-location").html(`
+          <option>Seleccione una opción</option>
+          <option>No existen ubicaciones</option>
+        `);
+      }
+    },
+    error : function(xhr, status){
+      console.log('Disculpe, existió un problema');
     }
   });
 });

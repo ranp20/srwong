@@ -72,9 +72,8 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                       <div class="mb-2">
                         <div class="form-group">
                           <label for="chck-location">Ubicación</label>
-                          <select class="form-control" name="chck-location" id="chck-location">
-                            <option value="1">San Juan de Lurigancho 1</option>
-                            <option value="2">San Juan de Lurigancho 2</option>
+                          <select class="form-control one-hidden" name="chck-location" id="chck-location">
+                            
                           </select>
                         </div>
                       </div>
