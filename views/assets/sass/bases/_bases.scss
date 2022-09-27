@@ -84,6 +84,30 @@ img{
 	padding: 0 0 20px 0;
 	margin: 0 0 20px 0;
 }
+.btn-theme__link{
+	background-color: $theme-clr-btns-tabs;
+	color: #fff;
+  padding: 18px 10px 19px;
+  max-width: 400px;
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  display: block;
+  line-height: 1;
+  border-radius: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all ease-in-out .2s;
+  @media (min-width: 991px){
+  	min-width: 315px;
+  }
+  &:hover{
+  	background-color: #242424;
+  	color: #fff;
+  }
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;

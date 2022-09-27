@@ -86,6 +86,9 @@ $formToken = $response["answer"]["formToken"];
  </script> 
 -->
 
+  <!-- INCLUIR CRYPTO-JS -->
+  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
+
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
@@ -144,5 +147,6 @@ $formToken = $response["answer"]["formToken"];
   <!-- INCLUIR SCROLLUP -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/payment.js"></script>
 </body>
 </html>

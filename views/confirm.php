@@ -15,6 +15,8 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
+  <!-- INCLUIR CRYPTO-JS -->
+  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
@@ -37,6 +39,11 @@ if(!isset($_SESSION['usr-logg_srwong'])){
             <div style="text-align: center;">            
               <h1>ÉXITO!</h1>
               <p>Su compra ha sido procesada correctamente.</p>
+              <div class="col-xl-6 m-auto">
+                <a href="./" class="btn-theme__link" title="Ir al inicio">
+                  <span>IR AL INICIO</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -45,5 +52,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   </div>
   <?php require_once 'includes/inc_footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/confirm.js"></script>
 </body>
 </html>
