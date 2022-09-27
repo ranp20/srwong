@@ -1,8 +1,16 @@
+<?php 
+  require_once '../model/Categories.php';
+  $cat = new Categories();
+  $l_byName = $cat->getCategoriesByNameCategory($_GET['cat']);
+  $cat_id = $l_byName[0]['id'];
+  $cat_banner = "../adminSrwong/storage/app/public/category/".$l_byName[0]['image'];
+  $cat_banner = "../adminSrwong/storage/app/public/category/banner/".$l_byName[0]['banner_image'];
+?>
 <div class="category-banner">
   <div class="row flex-row-reverse">
     <div class="col-12">
       <div class="category-banner" style="max-height: 330px;height: 330px;">
-        <img src="../views/assets/img/product-details/product-detalis-bl2.jpg" alt="" style="width: 100%;height: 100%;object-fit: cover;object-position: center;">
+        <img src="<?= $cat_banner;?>" alt="" style="width: 100%;height: 100%;object-fit: cover;object-position: center;">
       </div>
     </div>
   </div>

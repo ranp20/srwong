@@ -30,6 +30,18 @@ class Categories extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- LISTAR CATEGORIAS POR NOMBRE DE CATEOGORÍA
+  function getCategoriesByNameCategory($name_category){
+    try{
+      $sql = "SELECT id, name, status, image, banner_image FROM {$this->table} WHERE name = :name";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":name",$name_category);
+      $stm->execute();
+      return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
   // -------------- LISTADO DE CATEGORÍAS EN EL CAROUSEL PRINCIPAL
   public function getCategoriesCarousel(){
     try{
