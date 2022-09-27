@@ -4,6 +4,10 @@
 session_start();
 if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
+}else{
+  if(!isset($_POST) || !isset($_POST['cx1chk_crt-sess']) || $_POST['cx1chk_crt-sess'] == ""){
+    header("Location: ./");
+  }
 }
 ?>
 <!DOCTYPE html>

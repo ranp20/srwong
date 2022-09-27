@@ -4,6 +4,10 @@
 session_start();
 if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
+}else{
+  if(!isset($_POST) || count($_POST) < 1){
+    header("Location: ./");
+  }
 }
 
 require_once '../vendor/autoload.php';
