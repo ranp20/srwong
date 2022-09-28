@@ -21,7 +21,7 @@ class Categories extends Connection
   // -------------- LISTAR CATEGORIAS POR ID_CATEGORY DE PRODUCTOS
   function getCategoriesByIdCategory($id_category){
     try{
-      $sql = "SELECT * FROM {$this->table} WHERE id = :id";
+      $sql = "SELECT id, name, status, image, banner_image FROM {$this->table} WHERE id = :id";
       $stm = $this->con->prepare($sql);
       $stm->bindValue(":id",$id_category);
       $stm->execute();

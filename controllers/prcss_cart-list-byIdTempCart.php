@@ -6,7 +6,7 @@ if(isset($_POST['idcli']) && $_POST['idcli'] != ""){
   $listtmp = $orders->listTempCartByIdClient($_POST['idcli']);
   $arr_tmp = [];
   foreach ($listtmp as $k => $v){
-    if($v['tmp_status'] != "COMPLETED" && $v['tmp_orderid'] == "NO"){
+    if($v['tmp_status'] != "COMPLETED" && $v['tmp_orderid'] == "NO"){    
       $arr_tmp[$k]['id'] = $v['id'];
       $arr_tmp[$k]['id_product'] = $v['id_product'];
       $arr_tmp[$k]['tmp_price'] = $v['tmp_price'];

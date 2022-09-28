@@ -21,12 +21,6 @@ if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
   <!-- INCLUIR OWL CAROUSEL 2 -->
   <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
-  <!-- INCLUIR ELEVATEZOOM -->
-  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/elevatezoom/jquery.elevateZoom-3.0.8.min.js"></script>
-  <!-- INCLUIR SLICK -->
-  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick.css">
-  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick-theme.css">
-  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/slick/slick.min.js"></script>
   <!-- INCLUIR CRYPTO-JS -->
   <script type="text/javascript" src="../node_modules/crypto-js/crypto-js.js"></script>
   <!-- INCLUIR SWEET ALERT 2 -->
@@ -48,6 +42,6 @@ if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
   <?php require_once 'includes/inc_products-by-category-name.php';?>
 	<!-- all js here -->
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
-  <script type="text/javascript" src="<?= $url;?>assets/js/actions/product-details.js"></script>
+  <script type="text/javascript" src="<?= $url;?>assets/js/actions/category.js"></script>
 </body>
 </html>

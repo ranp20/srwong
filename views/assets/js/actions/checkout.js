@@ -33,9 +33,14 @@ $(() => {
             let tmpList = "";
             tmpList += `<ul>`;
             // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
-            let totalpay = e.reduce(function(sum, v){
-              return sum + parseFloat(v.tmp_subtotal)
-            }, 0);
+            let filtered = Object.entries(e);
+            // let totalpay = filtered.reduce(function(sum, v){
+            //   return sum + parseFloat(v.tmp_subtotal)
+            // }, 0);
+            let totalpay = 0;
+            $.each(e, function(i,v){
+              totalpay += parseFloat(v.tmp_subtotal);
+            });
             // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
             var tpay_wzero = Number(totalpay);
             var res = totalpay.toString().split(".");
@@ -45,7 +50,7 @@ $(() => {
             $("#c-totcart").html(`
               <div class="header-icon-style">
                 <i class="icon-handbag icons"></i>
-                <span class="count-style">${e.length}</span>
+                <span class="count-style">${filtered.length}</span>
               </div>
               <div class="cart-text">
                 <span class="digit">Mi Carrito</span>

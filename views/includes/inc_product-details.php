@@ -83,9 +83,9 @@
           <div class='pro-dec-categories'>
             <ul>
               <li class='categories-title'>Categories:</li>
-              <li><a href='javascript:void(0);'>Fast Foods,</a></li>
-              <li><a href='javascript:void(0);'> Rich Foods, </a></li>
-              <li><a href='javascript:void(0);'>Custom Orders,</a></li>
+              <?php
+                echo ($dmlProducts->getCategoriesProducts($_GET['prod']));
+              ?>
             </ul>
           </div>
           <div class='pro-dec-categories'>
