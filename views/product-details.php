@@ -4,9 +4,8 @@
 session_start();
 
 if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
-  require_once '../model/Products.php';
+  require_once '../model/products.php';
   $l_details = $dmlProducts->getProductDescription($_GET['prod']);
-  
 }else{
   header("Location: ../");
 }
@@ -56,129 +55,9 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
         </div>
       </div>
       <div class="related-product-active owl-carousel product-nav">
-        <div class="product-wrapper">
-          <div class="product-img">
-            <a href="product-details">
-              <img src="<?= $url;?>assets/img/product/product-1.jpg" alt="">
-            </a>
-            <div class="product-action">
-              <div class="pro-action-left">
-                <a title="Add Tto Cart" href="javascript:void(0);"><i class="ion-android-cart"></i> Add Tto Cart</a>
-              </div>
-              <div class="pro-action-right">
-                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4>
-              <a href="product-details">PRODUCTS NAME HERE </a>
-            </h4>
-            <div class="product-price-wrapper">
-              <span>$100.00</span>
-              <span class="product-price-old">$120.00 </span>
-            </div>
-          </div>
-        </div>
-        <div class="product-wrapper">
-          <div class="product-img">
-            <a href="product-details">
-              <img src="<?= $url;?>assets/img/product/product-2.jpg" alt="">
-            </a>
-            <div class="product-action">
-              <div class="pro-action-left">
-                <a title="Add Tto Cart" href="javascript:void(0);"><i class="ion-android-cart"></i> Add Tto Cart</a>
-              </div>
-              <div class="pro-action-right">
-                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4>
-              <a href="product-details">PRODUCTS NAME HERE </a>
-            </h4>
-            <div class="product-price-wrapper">
-              <span>$200.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-wrapper">
-          <div class="product-img">
-            <a href="product-details">
-              <img src="<?= $url;?>assets/img/product/product-3.jpg" alt="">
-            </a>
-            <div class="product-action">
-              <div class="pro-action-left">
-                <a title="Add Tto Cart" href="javascript:void(0);"><i class="ion-android-cart"></i> Add Tto Cart</a>
-              </div>
-              <div class="pro-action-right">
-                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4>
-              <a href="product-details">PRODUCTS NAME HERE </a>
-            </h4>
-            <div class="product-price-wrapper">
-              <span>$90.00</span>
-              <span class="product-price-old">$100.00 </span>
-            </div>
-          </div>
-        </div>
-        <div class="product-wrapper">
-          <div class="product-img">
-            <a href="product-details">
-              <img src="<?= $url;?>assets/img/product/product-4.jpg" alt="">
-            </a>
-            <div class="product-action">
-              <div class="pro-action-left">
-                <a title="Add Tto Cart" href="javascript:void(0);"><i class="ion-android-cart"></i> Add Tto Cart</a>
-              </div>
-              <div class="pro-action-right">
-                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4>
-              <a href="product-details">PRODUCTS NAME HERE </a>
-            </h4>
-            <div class="product-price-wrapper">
-              <span>$50.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-wrapper">
-          <div class="product-img">
-            <a href="product-details">
-              <img src="<?= $url;?>assets/img/product/product-7.jpg" alt="">
-            </a>
-            <div class="product-action">
-              <div class="pro-action-left">
-                <a title="Add Tto Cart" href="javascript:void(0);"><i class="ion-android-cart"></i> Add Tto Cart</a>
-              </div>
-              <div class="pro-action-right">
-                <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"><i class="ion-android-open"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-content">
-            <h4>
-              <a href="product-details">PRODUCTS NAME HERE </a>
-            </h4>
-            <div class="product-price-wrapper">
-              <span>$100.00</span>
-              <span class="product-price-old">$120.00 </span>
-            </div>
-          </div>
-        </div>
+        <?php
+          echo $dmlProducts->getRelatedProducts($dmlProducts->getArrCategories($_GET['prod']), $_GET['prod']);
+        ?>
       </div>
     </div>
   </div>
