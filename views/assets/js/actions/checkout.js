@@ -58,7 +58,7 @@ $(() => {
               </div>
             `);
             $.each(e, function(i,v){
-              let p_pathimg = "./adminSrwong/storage/app/public/product/"+v.p_photo;
+              let p_pathimg = "./admin/storage/app/public/product/"+v.p_photo;
               let p_name = v.p_name;
               let p_name_limit = (p_name.length >= 20) ? p_name.substring(20, 0) + "..." : p_name;
               tmpList += `

@@ -16,7 +16,8 @@ class Banners extends Connection
       $res = $stm->fetchAll();
       $resultHTML="";
       foreach ($res as $data) {
-         $resultHTML.= "<div class='single-slider pt-210 pb-220 bg-img' style='background-image:url(adminSrwong/storage/app/public/banner/$data[3]);'>
+        $banner_pathimg = "./admin/storage/app/public/banner/".$data[3];
+        $resultHTML.= "<div class='single-slider pt-210 pb-220 bg-img' style='background-image:url({$banner_pathimg});'>
                     <div class='container'>
                         <div class='slider-content slider-animated-1'>
                             <h1 class='animated'>$data[2]</h1>

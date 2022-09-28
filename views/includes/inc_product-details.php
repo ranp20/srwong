@@ -1,5 +1,5 @@
 <?php 
-  $p_pathimg = "../adminSrwong/storage/app/public/product/".$l_details['p_photo'];
+  $p_pathimg = "../admin/storage/app/public/product/".$l_details['p_photo'];
   $p_name = substr($l_details["p_name"], 0, 60);
   $p_desc = ($l_details["p_desc"] != "") ? substr($l_details["p_desc"], 0, 120) : "No especificado";
   $p_price_old = number_format($l_details['p_price'], 2, '.', ' '); 
