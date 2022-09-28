@@ -47,11 +47,13 @@ class Orders extends Connection
     }
   }
   // -------------- ACTUALIZAR LOS PRODUCTOS PENDIENTES
-  function updateStatusTempCart_ByIdClient($id_cli){
+  function updateStatusTempCart_ByIdClient($id_cli, $orderid, $status){
     try{
-      $sql = "CALL sp_update_statusTempCart_ByIdClient(:id)";
+      $sql = "CALL sp_update_statusTempCart_ByIdClient(:id,:orderid,:status)";
       $stm = $this->con->prepare($sql);
       $stm->bindValue(":id",$id_cli);
+      $stm->bindValue(":orderid",$orderid);
+      $stm->bindValue(":status",$status);
       $stm->execute();
       return $stm->rowCount() > 0 ? 'true' : 'false';
     }catch(PDOException $e){
