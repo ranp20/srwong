@@ -445,7 +445,7 @@ $(() => {
     if(isNumeric(sess_idcli) == true || isNumeric(sess_idcli) == "true"){
       $("#c-listCartU").html("");
       $.ajax({
-        url: "./controllers/prcss_cart-list-byIdClient.php",
+        url: "./controllers/prcss_cart-list-byIdTempCart.php",
         method: "POST",
         dataType: 'JSON',
         contentType: 'application/x-www-form-urlencoded;charset=UTF-8',

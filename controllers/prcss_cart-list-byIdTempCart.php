@@ -1,20 +1,23 @@
 <?php
-require_once '../model/db/ext_connection.php';
-class CartListByIdTemp extends Connection{
-  function list(){
-    $idcli = (isset($_POST['idcli']) && $_POST['idcli'] != "") ? $_POST['idcli'] : '';
-    try{
-      $sql = "CALL sp_list_cart_ByIdTempCart(:idcli)";
-      $stm = $this->con->prepare($sql);
-      $stm->bindValue(":idcli", $idcli);
-      $stm->execute();
-      $data = $stm->fetchAll(PDO::FETCH_ASSOC);
-      $res = json_encode($data);
-      echo $res;
-    }catch(PDOException $e){
-      return $e->getMessage();
-    } 
+$r = "";
+if(isset($_POST['idcli']) && $_POST['idcli'] != ""){
+  require_once '../model/Orders.php';
+  $orders = new Orders();
+  $listtmp = $orders->listTempCartByIdClient($_POST['idcli']);
+  $arr_tmp = [];
+  foreach ($listtmp as $k => $v){
+    if($v['tmp_status'] != "COMPLETED" && $v['tmp_orderid'] == "NO"){
+      $arr_tmp[$k]['id'] = $v['id'];
+      $arr_tmp[$k]['id_product'] = $v['id_product'];
+      $arr_tmp[$k]['tmp_price'] = $v['tmp_price'];
+      $arr_tmp[$k]['tmp_quantity'] = $v['tmp_quantity'];
+      $arr_tmp[$k]['tmp_subtotal'] = $v['tmp_subtotal'];
+      $arr_tmp[$k]['p_name'] = $v['p_name'];
+      $arr_tmp[$k]['p_photo'] = $v['p_photo'];
+    }
   }
+  $r = $arr_tmp;
+}else{
+  $r = "";
 }
-$carlisttemp = new CartListByIdTemp();
-echo $carlisttemp->list();
+die(json_encode($r));

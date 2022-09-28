@@ -33,5 +33,42 @@ class Orders extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- ACTUALIZAR LOS PRODUCTOS PENDIENTES
+  function updateOrderIdTempCart_ByIdClient($id_cli, $orderid){
+    try{
+      $sql = "CALL sp_update_orderidTempCart_ByIdClient(:id,:orderid)";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":id",$id_cli);
+      $stm->bindValue(":orderid",$orderid);
+      $stm->execute();
+      return $stm->rowCount() > 0 ? 'true' : 'false';
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
+  // -------------- ACTUALIZAR LOS PRODUCTOS PENDIENTES
+  function updateStatusTempCart_ByIdClient($id_cli){
+    try{
+      $sql = "CALL sp_update_statusTempCart_ByIdClient(:id)";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":id",$id_cli);
+      $stm->execute();
+      return $stm->rowCount() > 0 ? 'true' : 'false';
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
+  // -------------- LISTAR TODOS LOS PRODUCTOS DEL TEMP_CART POR ID DEL CLIENTE - CARRITO DE COMPRAS
+  function listTempCartByIdClient($idcli){
+    try{
+      $sql = "CALL sp_list_cart_ByIdTempCart(:idcli)";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":idcli", $idcli);
+      $stm->execute();
+      return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
 }
 $dmlOrders = new Orders();

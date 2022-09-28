@@ -49,12 +49,25 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	require_once '../model/Orders.php';
 	$orders = new Orders();
 	$add = $orders->addOrder($arr_order);
-	
+	$updorderid = $orders->updateOrderIdTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id']);
+
+	echo "<pre>";
+	print_r($updorderid);
+	echo "</pre>";
+	exit();
+
 	if($add[0]['r'] == "order_recent"){
-		$r = array(
-			"r" => "true"
-		);
-		header("Location: ./confirm");
+		$updstatus = $orders->updateStatusTempCart_ByIdClient($arr_order['user_id']);
+		if($updstatus == "true"){
+			$r = array(
+				"r" => "true"
+			);
+			header("Location: ./confirm");
+		}else{
+			$r = array(
+				"r" => "err_updestatus"
+			);
+		}
 	}else if($add[0]['r'] == "order_exists"){
 		$r = array(
 			"r" => "err_process"
