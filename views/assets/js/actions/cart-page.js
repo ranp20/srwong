@@ -102,7 +102,7 @@ $(() => {
                 <h4>Total : <span class="shop-total">S/. ${tpay_wzero}</span></h4>
               </div>
               <div class="shopping-cart-btn">
-                <a href="cart-page" id="lk_cart">view cart</a>
+                <a href="cart-page" id="lk_cart">Ver Carrito</a>
                 <!-- <a href="checkout" id="lk_checkout">checkout</a> -->
               </div>
             `;
@@ -388,28 +388,51 @@ $(() => {
   // ------------ BORRAR EL LISTADO DEL CARRITO DE COMPRAS
   $(document).on("click","#cart-clear",function(e){
     e.preventDefault();
-    $.ajax({
-      url: "./controllers/prcss_delete-allTempCart-byIdClient.php",
-      method: "POST",
-      dataType: 'JSON',
-      contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
-      data: { idcli : sess_idcli},
-      success : function(e){
-        if(e != "" && e != "[]"){
-          if(e == "true" || e == true){
-            listCartList();
-            listTempCartList();
-          }else{
-            console.log("Error. Lo sentimos, hubo un error al procesar la información.");
-          }
-        }else{
-          console.log("Error. Lo sentimos, hubo un error al procesar la información.");
-        }
-      },
-      error : function(xhr, status){
-        console.log('Disculpe, existió un problema');
-      }
+    let childobj = [];
+    $.each($("#c-xtbl_cartcli tr"), function(i,v){
+      let trchildren = $(this).attr("id");
+      let idtmp_idchildren = trchildren.split("prod_srw-");
+      childobj.push(idtmp_idchildren[1]);
     });
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "Se eliminaran tus datos del carrito",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#e02c2b',
+      confirmButtonText: 'Si, eliminarlos',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if(result.isConfirmed){    
+        $.ajax({
+          url: "./controllers/prcss_delete-allTempCart-byIdClient.php",
+          method: "POST",
+          dataType: 'JSON',
+          contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+          data: { idcli : sess_idcli, idprod : childobj},
+          success : function(e){
+            if(e != "" && e != "[]"){
+              if(e.r == "true" || e.r == true){
+                Swal.fire('Éxito', 'Se eliminó el listado', 'success');
+                listCartList();
+                listTempCartList();
+              }else{
+                console.log("Error. Lo sentimos, hubo un error al procesar la información.");
+              }
+            }else{
+              console.log("Error. Lo sentimos, hubo un error al procesar la información.");
+            }
+          },
+          error : function(xhr, status){
+            console.log('Disculpe, existió un problema');
+          }
+        });
+      }else if(result.isDenied){
+        listCartList();
+        listTempCartList();
+      }
+    })
   });
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});

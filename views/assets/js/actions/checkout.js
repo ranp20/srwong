@@ -82,7 +82,7 @@ $(() => {
                 <h4>Total : <span class="shop-total">S/. ${tpay_wzero}</span></h4>
               </div>
               <div class="shopping-cart-btn">
-                <a href="cart-page" id="lk_cart">view cart</a>
+                <a href="cart-page" id="lk_cart">Ver Carrito</a>
                 <!-- <a href="checkout" id="lk_checkout">checkout</a> -->
               </div>
             `;
