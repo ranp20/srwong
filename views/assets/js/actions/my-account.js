@@ -143,4 +143,40 @@ $(() => {
   }
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
+  // ------------ LISTA DE TIPOS DE DOCUMENTOS
+  // ------------ LISTAR LOS LOCALES DE COMIDA EN EL SELECT DE UBICACIONES
+  $(document).on("change","#prof_usval-location",function(e){
+    let thisid = e.target.value;
+    console.log(thisid);
+    if(thisid == 1){
+      $("#prf_usval-ndoc-name").val('');
+      $(document).on("keypress keyup","#prf_usval-ndoc-name",function(v){
+        let thisval = v.target.value;
+        // maxlengthchar = 8;
+        if(thisval.length > 8){
+          $(this).val(thisval.replace(/\D+/g, '').replace(/(\d{7})/, '$1').slice(0, 8));
+        }
+      });
+    }else if(thisid == 2){
+      $("#prf_usval-ndoc-name").val('');
+      $(document).on("keypress keyup","#prf_usval-ndoc-name",function(f){
+        let thisval2 = f.target.value;
+        // maxlengthchar = 12;
+        if(thisval2.length > 12){
+          $(this).val(thisval2.replace(/\D+/g, '').replace(/(\d{12})/, '$1').slice(0, 12));
+        }
+      });
+    }else if(thisid == 3){
+      $("#prf_usval-ndoc-name").val('');
+      $(document).on("keypress keyup","#prf_usval-ndoc-name",function(g){
+        let thisval = g.target.value;
+        // maxlengthchar = 13;
+        if(thisval3.length > 13){
+          $(this).val(thisval3.replace(/\D+/g, '').replace(/(\d{13})/, '$1').slice(0, 13));
+        }
+      });
+    }else{
+      console.log('Error. Lo sentimos hubo un error al seleccionar');
+    }
+  });
 });

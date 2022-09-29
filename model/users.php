@@ -57,4 +57,24 @@ class Users extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- LISTAR - TIPOS DE DOCUMENTOS
+  function get_typeDocuments(){
+    try{
+      $sql = "SELECT * FROM tbl_type_document ORDER BY id ASC";
+      $stm = $this->con->prepare($sql);
+      $stm->execute();
+      $res = $stm->fetchAll(PDO::FETCH_ASSOC);
+      $resultHTML = "";
+      $resultHTML .= "<option value=''>Seleccione una opción</option>";
+      foreach ($res as $k => $v){
+        $resultHTML .= "
+          <option value='{$v['id']}' required>{$v['type']}</option>
+        ";
+      }
+      return $resultHTML;
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
 }
+$dmlUsers = new Users();

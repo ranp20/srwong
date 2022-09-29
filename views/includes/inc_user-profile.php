@@ -23,13 +23,13 @@
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>Nombres</label>
-                      <input type="text" placeholder="" value="<?= $uprof_name;?>" required>
+                      <input type="text" name="prf_usval-f-name" id="prf_usval-f-name" placeholder="" value="<?= $uprof_name;?>" required>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>Apellidos</label>
-                      <input type="text" placeholder="" value="<?= $uprof_lastname;?>" required>
+                      <input type="text" name="prf_usval-l-name" id="prf_usval-l-name" placeholder="" value="<?= $uprof_lastname;?>" required>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
@@ -41,24 +41,23 @@
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>Teléfono</label>
-                      <input type="text" placeholder="" value="<?= $uprof_phone;?>" required>
+                      <input type="text" name="prf_usval-telf-name" id="prf_usval-telf-name" placeholder="" value="<?= $uprof_phone;?>" required>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>Tipo de Documento</label>
-                      <select class="form-control one-hidden" aria-required="true" name="prof_usval-location" id="prof_usval-location" required>
-                        <option value="">Seleccione una opción</option>
-                        <option value="1" required>DNI</option>
-                        <option value="2" required>Carnet de extranjería</option>
-                        <option value="3" required>Pasaporte</option>
+                      <select class="form-control one-hidden" aria-required="true" name="prof_usval-location" id="prof_usval-location" title="Tipo de documento" required>
+                        <?php 
+                          echo $dmlUsers->get_typeDocuments();
+                        ?>
                       </select>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>N° de Documento</label>
-                      <input type="text" placeholder="" value="" required>
+                      <input type="text" name="prf_usval-ndoc-name" id="prf_usval-ndoc-name" placeholder="" value="" required>
                     </div>
                   </div>
                 </div>
