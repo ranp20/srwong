@@ -143,14 +143,13 @@ $(() => {
   }
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
-  // ------------ LISTA DE TIPOS DE DOCUMENTOS
   // ------------ LISTAR LOS LOCALES DE COMIDA EN EL SELECT DE UBICACIONES
-  $(document).on("change","#prof_usval-location",function(e){
+  $(document).on("change","#prof_usval-t-doc",function(e){
     let thisid = e.target.value;
     console.log(thisid);
     if(thisid == 1){
-      $("#prf_usval-ndoc-name").val('');
-      $(document).on("keypress keyup","#prf_usval-ndoc-name",function(v){
+      $("#prf_usval-ndoc").val('');
+      $(document).on("keypress keyup","#prf_usval-ndoc",function(v){
         let thisval = v.target.value;
         // maxlengthchar = 8;
         if(thisval.length > 8){
@@ -158,8 +157,8 @@ $(() => {
         }
       });
     }else if(thisid == 2){
-      $("#prf_usval-ndoc-name").val('');
-      $(document).on("keypress keyup","#prf_usval-ndoc-name",function(f){
+      $("#prf_usval-ndoc").val('');
+      $(document).on("keypress keyup","#prf_usval-ndoc",function(f){
         let thisval2 = f.target.value;
         // maxlengthchar = 12;
         if(thisval2.length > 12){
@@ -167,8 +166,8 @@ $(() => {
         }
       });
     }else if(thisid == 3){
-      $("#prf_usval-ndoc-name").val('');
-      $(document).on("keypress keyup","#prf_usval-ndoc-name",function(g){
+      $("#prf_usval-ndoc").val('');
+      $(document).on("keypress keyup","#prf_usval-ndoc",function(g){
         let thisval = g.target.value;
         // maxlengthchar = 13;
         if(thisval3.length > 13){
@@ -178,5 +177,76 @@ $(() => {
     }else{
       console.log('Error. Lo sentimos hubo un error al seleccionar');
     }
+  });
+  // ------------ GUARDAR/ACTUALIZAR LOS DATOS DEL CLIENTE
+  $(document).on("submit",".profile-cont__prfusval--frm",function(e){
+    e.preventDefault();
+    var formdata = new FormData();
+    var nameSendPOST = $(this).find("button[type='submit']").attr("name");
+    console.log(nameSendPOST);
+
+    if(nameSendPOST == "prf-profile_dataperinfo"){
+      formdata.append("prf_usval-f-name", $("#prf_usval-f-name").val());
+      formdata.append("prf_usval-l-name", $("#prf_usval-l-name").val());
+      formdata.append("prf_usval-telf", $("#prf_usval-telf").val());
+      formdata.append("prof_usval-t-doc", $("#prof_usval-t-doc").val());
+      formdata.append("prf_usval-ndoc", $("#prf_usval-ndoc").val());
+    }else if(nameSendPOST == "prf-profile_datadirections"){
+      console.log('Agregar/Actualizar las direcciones del usuario.')
+    }else{
+      console.log('Error, no hay un método de asociación para GUARDAR');
+    }
+
+
+
+    $.ajax({
+      url: `savesettingsuser?action=SaveChanges&assoc=${nameSendPOST}`,
+      method: 'POST',
+      data: formdata,
+      datatype: "JSON",
+      contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function(e){
+        console.log(e);
+        /*
+        if(e != ""){
+          let r = JSON.parse(e);
+          if(r.res == "updated"){
+            Swal.fire({
+              title: 'Actualizado!',
+              html: `<span class='font-w-300'>Se ha actualizado correctamente.</span>`,
+              icon: 'success',
+              confirmButtonText: 'Aceptar'
+            });
+          }else if(r.res == "not-updated"){
+            Swal.fire({
+              title: 'Atención!',
+              html: `<span class='font-w-300'>Hubo un error y/o los datos son los mismos.</span>`,
+              icon: 'warning',
+              confirmButtonText: 'Aceptar'
+            });
+          }else{
+            Swal.fire({
+              title: 'Error!',
+              html: `<span class='font-w-300'>Lo sentimos, hubo un error al procesar la información.</span>`,
+              icon: 'error',
+              confirmButtonText: 'Aceptar'
+            });
+          }
+        }else{
+          Swal.fire({
+            title: 'Error!',
+            html: `<span class='font-w-300'>Lo sentimos, hubo un error al procesar la información.</span>`,
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          });
+        }
+        */
+      }
+    });
+
+
   });
 });

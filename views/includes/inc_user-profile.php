@@ -14,7 +14,7 @@
         </div>
         <div id="my-account-1" class="panel-collapse collapse show">
           <div class="panel-body">
-            <form action="" method="POST" id="clx-frm_usval-info">                              
+            <form action="" method="POST" class="profile-cont__prfusval--frm" id="clx-frm_usval-info">
               <div class="profile-information-wrapper">
                 <div class="account-info-wrapper">
                   <h4><strong>DATOS PERSONALES</strong></h4>
@@ -41,13 +41,13 @@
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>Teléfono</label>
-                      <input type="text" name="prf_usval-telf-name" id="prf_usval-telf-name" placeholder="" value="<?= $uprof_phone;?>" required>
+                      <input type="text" name="prf_usval-telf" id="prf_usval-telf" placeholder="" value="<?= $uprof_phone;?>" required>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>Tipo de Documento</label>
-                      <select class="form-control one-hidden" aria-required="true" name="prof_usval-location" id="prof_usval-location" title="Tipo de documento" required>
+                      <select class="form-control one-hidden" aria-required="true" name="prof_usval-t-doc" id="prof_usval-t-doc" title="Tipo de documento" required>
                         <?php 
                           echo $dmlUsers->get_typeDocuments();
                         ?>
@@ -57,7 +57,7 @@
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>N° de Documento</label>
-                      <input type="text" name="prf_usval-ndoc-name" id="prf_usval-ndoc-name" placeholder="" value="" required>
+                      <input type="text" name="prf_usval-ndoc-name" id="prf_usval-ndoc" placeholder="" value="" required>
                     </div>
                   </div>
                 </div>
@@ -66,7 +66,7 @@
                     <a href="#"><i class="ion-arrow-up-c"></i> VOLVER</a>
                   </div>
                   <div class="profile-btn">
-                    <button type="submit">Guardar</button>
+                    <button type="submit" name="prf-profile_dataperinfo">Guardar</button>
                   </div>
                 </div>
               </div>
@@ -80,33 +80,35 @@
         </div>
         <div id="my-account-2" class="panel-collapse collapse">
           <div class="panel-body">
-            <div class="profile-information-wrapper">
-              <div class="account-info-wrapper">
-                <h4><strong>Cambiar contraseña</strong></h4>
-              </div>
-              <div class="row">
-                <div class="col-lg-12 col-md-12">
-                  <div class="profile-info">
-                    <label>Contraseña</label>
-                    <input type="password">
+            <form action="" method="POST" class="profile-cont__prfusval--frm">
+              <div class="profile-information-wrapper">
+                <div class="account-info-wrapper">
+                  <h4><strong>Cambiar contraseña</strong></h4>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12">
+                    <div class="profile-info">
+                      <label>Contraseña</label>
+                      <input type="password" name="sdsds_1">
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-12">
+                    <div class="profile-info">
+                      <label>Confirmar contraseña</label>
+                      <input type="password" name="sdsds_2">
+                    </div>
                   </div>
                 </div>
-                <div class="col-lg-12 col-md-12">
-                  <div class="profile-info">
-                    <label>Confirmar contraseña</label>
-                    <input type="password">
+                <div class="profile-back-btn">
+                  <div class="profile-back">
+                    <a href="#"><i class="ion-arrow-up-c"></i> VOLVER</a>
+                  </div>
+                  <div class="profile-btn">
+                    <button type="submit" name="prf-profile_datadirections">Guardar</button>
                   </div>
                 </div>
               </div>
-              <div class="profile-back-btn">
-                <div class="profile-back">
-                  <a href="#"><i class="ion-arrow-up-c"></i> VOLVER</a>
-                </div>
-                <div class="profile-btn">
-                  <button type="submit">Guardar</button>
-                </div>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

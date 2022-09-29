@@ -26,6 +26,7 @@ RewriteRule ^blog-details-video?$ views/blog-details-video.php
 RewriteRule ^blog-rightsidebar?$ views/blog-rightsidebar.php
 RewriteRule ^checkout-data?$ controllers/prcss_checkout-data.php
 RewriteRule ^payment-data?$ controllers/prcss_payment-data.php
+RewriteRule ^savesettingsuser?$ controllers/prcss_savesettingsuser.php
 RewriteRule ^logout?$ controllers/prcss_logout-user.php
 
 ############ PAGES ADMIN
