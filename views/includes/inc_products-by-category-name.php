@@ -1,5 +1,5 @@
 <?php 
-  // require_once '../model/Categories.php';
+  // require_once '../model/categories.php';
   $cat = new Categories();
   $l_byName = $cat->getCategoriesByIdCategory($_GET['cat']);
   $cat_id = $l_byName[0]['id'];

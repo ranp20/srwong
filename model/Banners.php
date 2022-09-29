@@ -16,20 +16,26 @@ class Banners extends Connection
       $res = $stm->fetchAll();
       $resultHTML="";
       foreach ($res as $data) {
-        $banner_pathimg = "./admin/storage/app/public/banner/".$data[3];
-        $resultHTML.= "<div class='single-slider pt-210 pb-220 bg-img' style='background-image:url({$banner_pathimg});'>
-                    <div class='container'>
-                        <div class='slider-content slider-animated-1'>
-                            <h1 class='animated'>$data[2]</h1>
-                            <!--h3 class='animated'>Fresh Heathy and Organic.</h3-->
-                            <div class='slider-btn mt-90'>
-                                <a class='animated' href='./product-details/$data[1]'>Ordenar Ahora</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>";
-        }
-        return $resultHTML;
+       $url_def = "";
+       if($data[4] != "" && $data[4] != "null"){
+          $url_def = "./category/".$data[4];
+       }else{
+          $url_def = "./product-details/".$data[1];
+       }
+      $banner_pathimg = "./admin/storage/app/public/banner/".$data[3];
+      $resultHTML.= "<div class='single-slider pt-210 pb-220 bg-img' style='background-image:url({$banner_pathimg});'>
+                  <div class='container'>
+                      <div class='slider-content slider-animated-1'>
+                          <h1 class='animated'>$data[2]</h1>
+                          <!--h3 class='animated'>Fresh Heathy and Organic.</h3-->
+                          <div class='slider-btn mt-90'>
+                              <a class='animated' href='{$url_def}'>Ordenar Ahora $data[4]</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>";
+      }
+      return $resultHTML;
     }catch(PDOException $e){
       return $e->getMessage();
     }

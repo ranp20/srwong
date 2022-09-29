@@ -4,7 +4,7 @@
 session_start();
 
 if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
-  require_once '../model/Categories.php';
+  require_once '../model/categories.php';
 }else{
   header("Location: ../");
 }

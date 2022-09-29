@@ -3,8 +3,8 @@
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
 
-require_once './model/Products.php';
-require_once './model/Categories.php';
+require_once './model/products.php';
+require_once './model/categories.php';
 $products = new Products();
 $categories = new Categories();
 $l_products = $products->getAll();
