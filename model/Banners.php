@@ -10,7 +10,7 @@ class Banners extends Connection
   // -------------- CAROUSEL DE BANNERS
   function getSliders(){
     try{
-      $sql = "SELECT id,product_id,title,image FROM {$this->table} WHERE banners.status=1;";
+      $sql = "SELECT id,product_id,title,image,category_id FROM {$this->table} WHERE banners.status=1;";
       $stm = $this->con->prepare($sql);
       $stm->execute();
       $res = $stm->fetchAll();
