@@ -53,7 +53,7 @@ $(() => {
         success : function(e){
           if(e != "" && e != "[]"){
             let tmpList = "";
-            tmpList += `<ul>`;
+            tmpList += `<ul style='max-height: 335px;overflow-x: hidden;overflow-y: auto;'>`;
             // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
             let filtered = Object.entries(e);
             // let totalpay = filtered.reduce(function(sum, v){
