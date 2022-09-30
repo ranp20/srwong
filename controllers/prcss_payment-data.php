@@ -52,7 +52,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	if($add[0]['r'] == "order_recent"){
 		$updorderid = $orders->updateOrderIdTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id']);
 		if($updorderid == "true"){
-			$updstatus = $orders->updateStatusTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id'], "COMPLETED");
+			$updstatus = $orders->updateStatusTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id'], "completed");
 			if($updstatus == "true"){
 				$r = array(
 					"r" => "true"
@@ -71,7 +71,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	}else if($add[0]['r'] == "order_exists"){
 		$updorderid = $orders->updateOrderIdTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id']);
 		if($updorderid == "true"){
-			$updstatus = $orders->updateStatusTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id'], "IN_PROCESS");
+			$updstatus = $orders->updateStatusTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id'], "in_process");
 			if($updstatus == "true"){
 				$r = array(
 					"r" => "true"
