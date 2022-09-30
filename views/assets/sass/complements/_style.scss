@@ -2402,6 +2402,11 @@ textarea:focus {
       height: 44px;
       border-radius: 50%;
       z-index: 99;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: -moz-none;
+      -o-user-select: none;
+      user-select: none;
       @media (min-width: 991px){
         width: 56px;
         height: 54px;
@@ -3872,14 +3877,41 @@ h4.shop-sidebar-title {
     background-color: #e02c2b;
     color: #fff;
 }
-.product-details-content .shop-list-cart-wishlist a {
+.product-details-content .product-details-wishlist a {
     border-radius: 3px;
     font-size: 20px;
-    height: 40px;
+    // height: 40px;
 }
-.product-details-content .shop-list-cart-wishlist a i {
+.product-details-wishlist a {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    color: #242424;
+    display: inline-block;
+    font-size: 20px;
+    height: 50px;
+    line-height: 52px;
+    margin: 0 8px 0 0;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    padding: 0.65rem 1rem;
+    max-width: 260px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: nowrap row;
+}
+.product-details-wishlist a:hover {
+    background-color: #e02c2b;
+    color: #fff;
+}
+.product-details-content .product-details-wishlist a i {
     line-height: 40px;
-    display: block;
+    margin-right: 0.5rem;
+}
+.product-details-content .product-details-wishlist a span{
+    display: inline-block;
+    font-size: 16px;
 }
 
 /*---------------------------

@@ -5,6 +5,8 @@ session_start();
 
 if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
   require_once '../model/categories.php';
+  $catg = new Categories();
+  $liById = $catg->getCategoriesByIdCategory($_GET['cat']);
 }else{
   header("Location: ../");
 }
@@ -12,7 +14,7 @@ if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>    
-  <title>SrWong - Categoría <?= (isset($_GET['cat']) && $_GET['cat'] != "") ? $_GET['cat'] : "";?></title>
+  <title>SrWong - Categoría <?= (isset($liById[0]['name']) && $liById[0]['name'] != "") ? $liById[0]['name'] : "";?></title>
   <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
@@ -34,7 +36,7 @@ if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
       <div class="breadcrumb-content">
         <ul>
           <li><a href="../">Home</a></li>
-          <li class="active">Categoría <?= (isset($_GET['cat']) && $_GET['cat'] != "") ? $_GET['cat'] : "";?></li>
+          <li class="active">Categoría <?= (isset($liById[0]['name']) && $liById[0]['name'] != "") ? $liById[0]['name'] : "";?></li>
         </ul>
       </div>
     </div>

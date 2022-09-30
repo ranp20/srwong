@@ -29,7 +29,7 @@ class Banners extends Connection
                           <h1 class='animated'>$data[2]</h1>
                           <!--h3 class='animated'>Fresh Heathy and Organic.</h3-->
                           <div class='slider-btn mt-90'>
-                              <a class='animated' href='{$url_def}'>Ordenar Ahora $data[4]</a>
+                              <a class='animated' href='{$url_def}'>Ordenar Ahora</a>
                           </div>
                       </div>
                   </div>

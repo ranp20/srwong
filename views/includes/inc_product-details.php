@@ -50,7 +50,7 @@
             <div class='pro-dec-review'>
               <ul>
                 <li>32 Reseñas </li>
-                <li> Agrega tus reseñas</li>
+                <!-- <li> Agrega tus reseñas</li> -->
               </ul>
             </div>
           </div>
@@ -69,7 +69,7 @@
             </ul>
           </div>
           <div class='pro-details-cart-wrap'>
-            <div class='shop-list-cart-wishlist'>
+            <div class='product-details-wishlist'>
               <a title='Add To Cart' href='javascript:void(0);' class='a__tocart'
                 dt-srwg_name='<?= $p_name;?>'
                 dt-srwg_price='<?= $p_price_new;?>'
@@ -77,6 +77,7 @@
                 dt-srwg_id='<?= $l_details["id"];?>'
               >
                 <i class='ion-android-cart'></i>
+                <span>AGREGAR AL CARRITO</span>
               </a>
             </div>
           </div>
@@ -88,14 +89,14 @@
               ?>
             </ul>
           </div>
-          <div class='pro-dec-categories'>
+          <!-- <div class='pro-dec-categories'>
             <ul>
-              <li class='categories-title'>Tags: </li>
+              <li class='categories-title'>Etiquetas: </li>
               <li><a href='javascript:void(0);'> Cheesy,</a></li>
               <li><a href='javascript:void(0);'> Fast Food, </a></li>
               <li><a href='javascript:void(0);'> French Fries,</a></li>
             </ul>
-          </div>
+          </div> -->
           <div class='pro-dec-social'>
             <ul>
               <li><a class='tweet' href='javascript:void(0);'><i class='ion-social-twitter'></i> Tweet</a></li>
