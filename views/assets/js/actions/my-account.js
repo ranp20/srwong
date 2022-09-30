@@ -298,7 +298,43 @@ $(() => {
             }else{
               tmp_ordstatus = `<span class='badge st_pending'><span class='legend-indicator bg-danger'></span><span>Pendiente</span></span>`;
             }
-            tmp += `
+
+            if(or_status == "confirmed" || or_status == "COMPLETED"){
+              tmp += `
+              <tr id="prod_srw-${v.id}" class="t_or-complete">
+                <td class="product-thumbnail">
+                  <a href="./product-details/${v.id_product}">
+                    <img src="${p_pathimg}" class="img-fluid" alt="${p_name_limit}">
+                  </a>
+                </td>
+                <td class="product-name">
+                  <div>
+                    <a href="./product-details/${v.id_product}" title="${p_name_limit}">${p_name_limit} </a>
+                    <span class="amount">S/. ${p_price}</span>
+                  </div>
+                </td>
+                <td class="product-quantity">
+                  <div class="cart-plus-minus">
+                    <div>
+                      <span>${v.tmp_quantity}</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="product-subtotal">
+                  <div>
+                    <span>
+                      <span>S/. </span>
+                      <span id="totprod_amount">${v.tmp_subtotal}</span>
+                    </span>
+                  </div>
+                </td>
+                <td class="product-status" id="${v.tmp_status}">
+                  <div>${tmp_ordstatus}</div>
+                </td>
+              </tr>
+            `;
+            }else{
+              tmp += `
               <tr id="prod_srw-${v.id}">
                 <td class="product-thumbnail">
                   <a href="./product-details/${v.id_product}">
@@ -331,6 +367,7 @@ $(() => {
                 </td>
               </tr>
             `;
+            }
           });
           $("#c-xtbl_tmplistreguser").html(tmp);
         }else{

@@ -215,7 +215,7 @@ $(() => {
             tmp += `
               <tr id="prod_srw-${v.id}">
                 <td class="product-thumbnail">
-                  <a href="javascript:void(0);">
+                  <a href="./product-details/${v.id_product}">
                     <img src="${p_pathimg}" class="img-fluid" alt="${p_name_limit}">
                   </a>
                 </td>
