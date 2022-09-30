@@ -4,6 +4,7 @@
   $uprof_lastname = ($listprof[0]['l_name'] != "" || $listprof[0]['l_name'] != null) ? $listprof[0]['l_name'] : "";
   $uprof_email = $listprof[0]['email'];
   $uprof_phone = ($listprof[0]['phone'] != "" || $listprof[0]['phone'] != null) ? $listprof[0]['phone'] : "";
+  $uprof_n_doc = ($listprof[0]['n_doc'] != "" || $listprof[0]['n_doc'] != null) ? $listprof[0]['n_doc'] : "";
 ?>
 <div class="ml-auto mr-auto col-lg-9">
   <div class="profile-wrapper">
@@ -57,7 +58,7 @@
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>N° de Documento</label>
-                      <input type="text" name="prf_usval-ndoc-name" id="prf_usval-ndoc" placeholder="" value="" required>
+                      <input type="text" name="prf_usval-ndoc-name" id="prf_usval-ndoc" placeholder="" value="<?= $uprof_n_doc;?>" required>
                     </div>
                   </div>
                 </div>

@@ -76,5 +76,19 @@ class Users extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- ACTUALIZAR USUARIO - DATOS PERSONALES
+  function update_personalinfo($arr_update){
+    try{
+      $sql = "CALL sp_update_personalinfo(:f_name, :l_name, :telephone, :id_t_doc, :n_doc, :idcli)";
+      $stm = $this->con->prepare($sql);
+      foreach ($arr_update as $key => $value){
+        $stm->bindValue($key, $value);
+      }
+      $stm->execute();
+      return $stm->rowCount() > 0 ? "true" : "false";
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
 }
 $dmlUsers = new Users();

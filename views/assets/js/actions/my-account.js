@@ -143,10 +143,16 @@ $(() => {
   }
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
+  $(document).on("keypress keyup","#prf_usval-ndoc",function(v){
+    let thisval = v.target.value;
+    // maxlengthchar = 8;
+    if(thisval.length > 8){
+      $(this).val(thisval.replace(/\D+/g, '').replace(/(\d{7})/, '$1').slice(0, 8));
+    }
+  });
   // ------------ LISTAR LOS LOCALES DE COMIDA EN EL SELECT DE UBICACIONES
   $(document).on("change","#prof_usval-t-doc",function(e){
     let thisid = e.target.value;
-    console.log(thisid);
     if(thisid == 1){
       $("#prf_usval-ndoc").val('');
       $(document).on("keypress keyup","#prf_usval-ndoc",function(v){
@@ -179,28 +185,17 @@ $(() => {
     }
   });
   // ------------ GUARDAR/ACTUALIZAR LOS DATOS DEL CLIENTE
-  $(document).on("submit",".profile-cont__prfusval--frm",function(e){
+  $(document).on("submit","#clx-frm_usval-info",function(e){
     e.preventDefault();
     var formdata = new FormData();
-    var nameSendPOST = $(this).find("button[type='submit']").attr("name");
-    console.log(nameSendPOST);
-
-    if(nameSendPOST == "prf-profile_dataperinfo"){
-      formdata.append("prf_usval-f-name", $("#prf_usval-f-name").val());
-      formdata.append("prf_usval-l-name", $("#prf_usval-l-name").val());
-      formdata.append("prf_usval-telf", $("#prf_usval-telf").val());
-      formdata.append("prof_usval-t-doc", $("#prof_usval-t-doc").val());
-      formdata.append("prf_usval-ndoc", $("#prf_usval-ndoc").val());
-    }else if(nameSendPOST == "prf-profile_datadirections"){
-      console.log('Agregar/Actualizar las direcciones del usuario.')
-    }else{
-      console.log('Error, no hay un método de asociación para GUARDAR');
-    }
-
-
-
+    formdata.append("prf_usval-f-name", $("#prf_usval-f-name").val());
+    formdata.append("prf_usval-l-name", $("#prf_usval-l-name").val());
+    formdata.append("prf_usval-telf", $("#prf_usval-telf").val());
+    formdata.append("prof_usval-t-doc", $("#prof_usval-t-doc").val());
+    formdata.append("prf_usval-ndoc", $("#prf_usval-ndoc").val());
+    formdata.append("prf_usval-idcli", sess_idcli);
     $.ajax({
-      url: `savesettingsuser?action=SaveChanges&assoc=${nameSendPOST}`,
+      url: './controllers/prcss_update-personal-info-user.php',
       method: 'POST',
       data: formdata,
       datatype: "JSON",
@@ -209,18 +204,16 @@ $(() => {
       contentType: false,
       processData: false,
       success: function(e){
-        console.log(e);
-        /*
         if(e != ""){
           let r = JSON.parse(e);
-          if(r.res == "updated"){
+          if(r.r == "true"){
             Swal.fire({
               title: 'Actualizado!',
               html: `<span class='font-w-300'>Se ha actualizado correctamente.</span>`,
               icon: 'success',
               confirmButtonText: 'Aceptar'
             });
-          }else if(r.res == "not-updated"){
+          }else if(r.r == "err_upd"){
             Swal.fire({
               title: 'Atención!',
               html: `<span class='font-w-300'>Hubo un error y/o los datos son los mismos.</span>`,
@@ -243,10 +236,7 @@ $(() => {
             confirmButtonText: 'Aceptar'
           });
         }
-        */
       }
     });
-
-
   });
 });
