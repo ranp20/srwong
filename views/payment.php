@@ -18,7 +18,7 @@ $client = new Lyra\Client();
 $postamount = floatval($_POST['clxt2_chck-ffil']);
 $u_type_order = "";
 if($_POST['clxt2_chck-ffil_ortype'] == "typ-A_or-del_10"){
-  $u_type_order = "DELIVERY";
+  $u_type_order = "delivery";
 }else if($_POST['clxt2_chck-ffil_ortype'] == "typ-B_or-del_10"){
   $u_type_order = "TIENDA";
 }else{

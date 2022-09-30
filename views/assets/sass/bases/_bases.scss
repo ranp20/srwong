@@ -72,9 +72,9 @@ img{
 .mgb-2{
 	margin-bottom: 2rem;
 }
-.talign-c{
-	text-align: center;
-}
+.talign-l{text-align: left !important;}
+.talign-c{text-align: center !important;}
+.talign-r{text-align: right !important;}
 .txt-noti-req{
 	color: red;
 	font-size: 0.85rem;

@@ -25,18 +25,18 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	*/
 	$pay_status = "";
 	if($orderStatus == "PAID"){
-		$pay_status = "PAGADO";
+		$pay_status = "paid";
 	}else if($orderStatus == "RUNNING"){
-		$pay_status = "EN PROCESO";
+		$pay_status = "in_process";
 	}else{
-		$pay_status = "FALLO";
+		$pay_status = "unpaid";
 	}
 	
 	$arr_order = [
 		"user_id" => $_SESSION['usr-logg_srwong']['id'],
 		"order_amount" => $convertAmmount,
 		"payment_status" => $pay_status,
-		"order_status" => "Pending",
+		"order_status" => "pending",
 		"payment_method" => "IzziPay",
 		"transaction_reference" => $izzipay_r['customer']['reference'],
 		"order_type" => $izzipay_r['customer']['billingDetails']['title'],
