@@ -124,6 +124,22 @@ img{
 .t_or-complete{
 	background-color: #F5F5F5 !important;
 }
+.cprf-link_collapse{
+	&:before{
+		color: $theme-clr-tertiary !important;
+		font-size: 1.56rem 	!important;
+		right: 1.1rem !important;
+    top: 1rem !important;
+	}
+	&.collapsed{
+		&:after{
+			color: $theme-clr-tertiary !important;
+			font-size: 1.56rem 	!important;
+			right: 1.1rem !important;
+	    top: 1rem !important;
+		}	
+	}
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;

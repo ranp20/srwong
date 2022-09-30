@@ -11,7 +11,7 @@
     <div id="faq" class="panel-group">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h5 class="panel-title"><span>1</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-1">Mi cuenta </a></h5>
+          <h5 class="panel-title"><span>1</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-1" class="cprf-link_collapse">Mi cuenta </a></h5>
         </div>
         <div id="my-account-1" class="panel-collapse collapse show">
           <div class="panel-body">
@@ -77,7 +77,7 @@
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h5 class="panel-title"><span>2</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-2">Mis Pedidos </a></h5>
+          <h5 class="panel-title"><span>2</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-2" class="cprf-link_collapse">Mis Pedidos </a></h5>
         </div>
         <div id="my-account-2" class="panel-collapse collapse">
           <div class="panel-body">
@@ -93,8 +93,7 @@
                         <table>
                           <thead>
                             <tr>
-                              <th class="talign-l">Imagen</th>
-                              <th class="talign-l">Nombre</th>
+                              <th colspan="2" class="talign-l">Producto</th>
                               <th class="talign-l">Cantidad</th>
                               <th class="talign-l">Subtotal</th>
                               <th class="talign-l">Estado</th>

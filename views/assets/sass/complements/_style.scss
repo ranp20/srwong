@@ -2932,6 +2932,11 @@ product-quantity {
     transition: all 0.3s ease 0s;
     width: 20px;
     text-align: center;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
 }
 .product-quantity .dec.qtybutton {
     border-right: 1px solid #e5e5e5;
@@ -2939,6 +2944,11 @@ product-quantity {
     left: 0;
     padding-top: 8px;
     top: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
 }
 .product-quantity .inc.qtybutton {
     border-left: 1px solid #e5e5e5;
@@ -2946,6 +2956,11 @@ product-quantity {
     padding-top: 9px;
     right: 0;
     top: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
 }
 .product-quantity input.cart-plus-minus-box {
     color: #454545;
@@ -4098,6 +4113,11 @@ h3.page-title {
     line-height: 1;
     padding: 18px 63px 17px;
     text-transform: uppercase;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
 }
 .cart-shiping-update > a:hover,
 .cart-clear > button:hover,

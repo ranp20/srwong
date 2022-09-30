@@ -41,11 +41,10 @@ session_start();
               <table>
                 <thead>
                   <tr>
-                    <th>Imagen</th>
-                    <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Subtotal</th>
-                    <th>Acción</th>
+                    <th colspan="2" class="talign-l">Producto</th>
+                    <th class="talign-l">Cantidad</th>
+                    <th class="talign-l">Subtotal</th>
+                    <th class="talign-l">Acción</th>
                   </tr>
                 </thead>
                 <tbody id="c-xtbl_cartcli">

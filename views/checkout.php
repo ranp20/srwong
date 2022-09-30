@@ -86,7 +86,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                         </div>
                       </div>
                       <div class="button-box">
-                        <button type="submit"><span>PAYMENT</span></button>
+                        <button type="submit"><span>IR A PAGAR</span></button>
                       </div>
                     </form>
                   </div>
