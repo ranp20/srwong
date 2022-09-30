@@ -2,6 +2,8 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/categories.php';
+$categories = new Categories();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -42,7 +44,7 @@ session_start();
               </div>
               <div class="col-lg-6 col-md-7 d-flex align-items-center">
                   <div class="overview-content-2">
-                      <h2>Welcome To <span>SrWong</span> Store !</h2>
+                      <h2>Bienvenidos a la tienda <span>SrWong</span>!</h2>
                       <p class="peragraph-blog">SrWong Shop is a premium HTML template designed and develoved from the ground up with the sole purpose of helping you create an astonishing, the beautiful and user friendly website that will boost your product’s sales.</p>
                       <p>The theme design package provides a complete Magento theme set for your online store according to your desired theme. This includes all Magento themes that are required for your online store's successful implementation.</p>
                       <p>The theme design package provides a complete Magento theme set for your online store according to your desired theme.</p>
@@ -112,7 +114,7 @@ session_start();
                     <div class="skill-wrapper">
                         <div class="section-border section-mrg-none mb-45">
                             <div class="section-title-wrap">
-                                <h3 class="section-title section-bg-white">Our skills</h3>
+                                <h3 class="section-title section-bg-white">Nuestras habilidades</h3>
                             </div>
                         </div>
                         <div class="skill">
@@ -139,7 +141,7 @@ session_start();
                     <div class="our-work-wrapper">
                         <div class="section-border section-mrg-none mb-45">
                             <div class="section-title-wrap">
-                                <h3 class="section-title section-bg-white">Our Work</h3>
+                                <h3 class="section-title section-bg-white">Nuestro trabajo</h3>
                             </div>
                         </div>
                         <div class="work-list">
@@ -189,7 +191,7 @@ session_start();
         <div class="container">
             <div class="section-border section-mrg-none mb-45">
                 <div class="section-title-wrap">
-                    <h3 class="section-title section-bg-white">Team Members</h3>
+                    <h3 class="section-title section-bg-white">Nuestro Equipo</h3>
                 </div>
             </div>
             <div class="row">
@@ -197,7 +199,7 @@ session_start();
                     <div class="team-wrapper mb-30">
                         <div class="team-img">
                             <a href="#">
-                                <img src="<?= $url;?>assets/img/team/team-1.jpg" alt="">
+                                <img src="<?= $url;?>assets/img/team/team_1.jpg" alt="">
                             </a>
                             <div class="team-action">
                                 <a class="action-plus facebook" href="#">
@@ -221,7 +223,7 @@ session_start();
                     <div class="team-wrapper mb-30">
                         <div class="team-img">
                             <a href="#">
-                                <img src="<?= $url;?>assets/img/team/team-3.jpg" alt="">
+                                <img src="<?= $url;?>assets/img/team/team_3.jpg" alt="">
                             </a>
                             <div class="team-action">
                                 <a class="action-plus facebook" href="#">
@@ -245,7 +247,7 @@ session_start();
                     <div class="team-wrapper mb-30">
                         <div class="team-img">
                             <a href="#">
-                                <img src="<?= $url;?>assets/img/team/team-2.jpg" alt="">
+                                <img src="<?= $url;?>assets/img/team/team_2.jpg" alt="">
                             </a>
                             <div class="team-action">
                                 <a class="action-plus facebook" href="#">
@@ -269,7 +271,7 @@ session_start();
                     <div class="team-wrapper mb-30">
                         <div class="team-img">
                             <a href="#">
-                                <img src="<?= $url;?>assets/img/team/team-4.jpg" alt="">
+                                <img src="<?= $url;?>assets/img/team/team_4.jpg" alt="">
                             </a>
                             <div class="team-action">
                                 <a class="action-plus facebook" href="#">

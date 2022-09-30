@@ -7,6 +7,9 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 }else{
   if(!isset($_POST) || count($_POST) < 1){
     header("Location: ./");
+  }else{
+    require_once '../model/categories.php';
+    $categories = new Categories();
   }
 }
 

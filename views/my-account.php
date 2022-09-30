@@ -6,7 +6,9 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }else{
   require_once '../model/users.php';
+  require_once '../model/categories.php';
   $users = new Users();
+  $categories = new Categories();
   $listprof = $users->get_users($_SESSION['usr-logg_srwong']['email']);
 }
 ?>

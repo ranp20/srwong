@@ -1,3 +1,7 @@
+<?php 
+  $lisShortList = $categories->getAll();
+  $shortListCatg = array_slice($lisShortList, 0, 5);
+?>
 <div class="footer-area black-bg-2 pt-70">
   <div class="footer-top-area pb-18">
     <div class="container">
@@ -24,12 +28,14 @@
             </div>
             <div class="footer-content">
               <ul>
-                <li><a href="about-us">Chaufas</a></li>
-                <li><a href="javascript:void(0);">Aeropuerto</a></li>
-                <li><a href="javascript:void(0);">Sopas</a></li>
-                <li><a href="javascript:void(0);">Tallarines</a></li>
-                <li><a href="javascript:void(0);">Alitas Fritas</a></li>
-                <li><a href="javascript:void(0);">A la plancha</a></li>
+                <?php
+                  $tmp_ctgshort = "";
+                  foreach($shortListCatg as $k => $v){
+                    $catg_name = mb_convert_case($v['name'], MB_CASE_TITLE, "UTF-8");
+                    $tmp_ctgshort .= "<li><a href='./category/{$v['id']}'>{$catg_name}</a></li>";
+                  }
+                  echo $tmp_ctgshort;
+                ?>
               </ul>
             </div>
           </div>
@@ -42,7 +48,7 @@
             <div class="footer-content">
               <ul>
                 <li><a href="my-account">Perfil</a></li>
-                <li><a href="javascript:void(0);">Nosotros</a></li>
+                <li><a href="about-us">Nosotros</a></li>
                 <li><a href="wishlist">Políticas de privacidad</a></li>
                 <li><a href="javascript:void(0);">Términos y condiciones</a></li>
               </ul>

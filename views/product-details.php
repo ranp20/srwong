@@ -5,6 +5,8 @@ session_start();
 
 if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
   require_once '../model/products.php';
+  require_once '../model/categories.php';
+  $categories = new Categories();
   $l_details = $dmlProducts->getProductDescription($_GET['prod']);
 }else{
   header("Location: ../");

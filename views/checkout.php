@@ -7,6 +7,9 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 }else{
   if(!isset($_POST) || !isset($_POST['cx1chk_crt-sess']) || $_POST['cx1chk_crt-sess'] == ""){
     header("Location: ./");
+  }else{
+    require_once '../model/categories.php';
+    $categories = new Categories();
   }
 }
 ?>

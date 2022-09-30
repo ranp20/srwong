@@ -9,11 +9,9 @@
   $products=new Products();
 ?>
 <div class="category-banner">
-  <div class="row flex-row-reverse">
-    <div class="col-12">
-      <div class="category-banner" style="max-height: 330px;height: 330px;">
-        <img src="<?= $cat_banner;?>" alt="" style="width: 100%;height: 100%;object-fit: cover;object-position: center;">
-      </div>
+  <div class="col-12 p-0">
+    <div class="category-banner" style="max-height: 330px;height: 330px;">
+      <img src="<?= $cat_banner;?>" alt="" style="width: 100%;height: 100%;object-fit: cover;object-position: center;">
     </div>
   </div>
 </div>

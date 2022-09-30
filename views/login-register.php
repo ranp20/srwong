@@ -4,6 +4,9 @@
 session_start();
 if(isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./");
+}else{
+  require_once '../model/categories.php';
+  $categories = new Categories();
 }
 ?>
 <!DOCTYPE html>
