@@ -12,7 +12,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>SrWong - Login | Registro</title>
+  <title>SrWong - Iniciar sesión | Registrarse</title>
   <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
@@ -31,7 +31,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
       <div class="breadcrumb-content">
         <ul>
           <li><a href="./">Home</a></li>
-          <li class="active"> Login / Registro </li>
+          <li class="active"> Iniciar Sesión / Registrarse </li>
         </ul>
       </div>
     </div>
@@ -43,10 +43,10 @@ if(isset($_SESSION['usr-logg_srwong'])){
           <div class="login-register-wrapper">
             <div class="login-register-tab-list nav">
               <a class="active" data-toggle="tab" href="#lg1">
-                <h4> login </h4>
+                <h4> Iniciar Sesión </h4>
               </a>
               <a data-toggle="tab" href="#lg2">
-                <h4> register </h4>
+                <h4> Registrarse </h4>
               </a>
             </div>
             <div class="tab-content">
@@ -65,10 +65,10 @@ if(isset($_SESSION['usr-logg_srwong'])){
                       <div class="button-box">
                         <div class="login-toggle-btn">
                           <input type="checkbox">
-                          <label>Remember me</label>
-                          <a href="javascript:void(0);">Forgot Password?</a>
+                          <label>Recuérdame</label>
+                          <a href="javascript:void(0);">Has olvidado tu contraseña?</a>
                         </div>
-                        <button type="submit"><span>Login</span></button>
+                        <button type="submit"><span>Iniciar sesión</span></button>
                       </div>
                     </form>
                   </div>
@@ -95,7 +95,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
                         <span class="ml-1 txt-noti-req"></span>
                       </div>
                       <div class="button-box">
-                        <button type="submit"><span>Register</span></button>
+                        <button type="submit"><span>Registrarme</span></button>
                       </div>
                     </form>
                   </div>
