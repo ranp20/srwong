@@ -72,5 +72,17 @@ class Orders extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- LISTAR TODOS LOS PRODUCTOS DEL TEMP_CART POR ID DEL CLIENTE - PERFIL DEL USUARIO
+  function listTempCartByIdClientMyAccount($idcli){
+    try{
+      $sql = "CALL sp_list_cart_ByIdClientMyAccount(:idcli)";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":idcli", $idcli);
+      $stm->execute();
+      return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
 }
 $dmlOrders = new Orders();

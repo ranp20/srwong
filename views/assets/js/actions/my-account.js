@@ -291,6 +291,13 @@ $(() => {
             let p_pathimg = "./admin/storage/app/public/product/"+v.p_photo;
             let p_name = v.p_name;
             let p_name_limit = (p_name.length >= 25) ? p_name.substring(25, 0) + "..." : p_name;
+            let or_status = v.tmp_status;
+            let tmp_ordstatus = "";
+            if(or_status == "confirmed" || or_status == "COMPLETED"){
+              tmp_ordstatus = `<span class='badge st_confirm'><span class='legend-indicator bg-info'></span><span>Completado</span></span>`;
+            }else{
+              tmp_ordstatus = `<span class='badge st_pending'><span class='legend-indicator bg-danger'></span><span>Pendiente</span></span>`;
+            }
             tmp += `
               <tr id="prod_srw-${v.id}">
                 <td class="product-thumbnail">
@@ -319,12 +326,8 @@ $(() => {
                     </span>
                   </div>
                 </td>
-                <td class="product-status">
-                  <div>
-                    <span>
-                      <span>Pendiente</span>
-                    </span>
-                  </div>
+                <td class="product-status" id="${v.tmp_status}">
+                  <div>${tmp_ordstatus}</div>
                 </td>
               </tr>
             `;

@@ -3961,9 +3961,41 @@ h4.shop-sidebar-title {
     text-align: center;
     & > div{
         span{
-            .st_confirm{
-                background-color: green;
-                color: #fff;
+            &.badge{
+                display: inline-block;
+                padding: .3125em .5em;
+                font-size: 75%;
+                font-weight: 600;
+                line-height: 1;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: baseline;
+                border-radius: .3125rem;
+                transition: all .2s ease-in-out;
+            }
+            span:first-child{
+                &.legend-indicator{
+                    display: inline-block;
+                    width: .5rem;
+                    height: .5rem;
+                    background-color: #bdc5d1;
+                    border-radius: 50%;
+                    margin-right: .4375rem;
+                }
+            }
+            &.st_confirm{
+                color: #00c9db;
+                background-color: rgba(0, 201, 219, .1);
+                .bg-info{
+                    background-color: #00c9db !important;
+                }
+            }
+            &.st_pending{
+                color: #ed4c78;
+                background-color: rgba(237, 76, 120, .1);
+                .bg-danger{
+                    background-color: #ed4c78 !important;
+                }
             }
         }
     }
