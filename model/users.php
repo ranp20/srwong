@@ -58,18 +58,42 @@ class Users extends Connection
     }
   }
   // -------------- LISTAR - TIPOS DE DOCUMENTOS
-  function get_typeDocuments(){
+  function get_typeDocumentsByIdDoc($uprof_id_t_doc){
     try{
       $sql = "SELECT * FROM tbl_type_document ORDER BY id ASC";
       $stm = $this->con->prepare($sql);
       $stm->execute();
       $res = $stm->fetchAll(PDO::FETCH_ASSOC);
       $resultHTML = "";
-      $resultHTML .= "<option value=''>Seleccione una opción</option>";
-      foreach ($res as $k => $v){
-        $resultHTML .= "
-          <option value='{$v['id']}' required>{$v['type']}</option>
-        ";
+      if($uprof_id_t_doc == 0){
+        $resultHTML .= "<select class='form-control one-hidden' aria-required='true' name='prof_usval-t-doc' id='prof_usval-t-doc' title='Tipo de documento' required>";
+        $resultHTML .= "<option value=''>Seleccione una opción</option>";
+        foreach ($res as $k => $v){
+          if($v['id'] == $uprof_id_t_doc){
+            $resultHTML .= "
+              <option value='{$v['id']}' selected required>{$v['type']}</option>
+            ";
+          }else{
+            $resultHTML .= "
+              <option value='{$v['id']}' required>{$v['type']}</option>
+            ";
+          }
+        }
+        $resultHTML .= "</select>";
+      }else{      
+        $resultHTML .= "<select class='form-control' aria-required='true' name='prof_usval-t-doc' id='prof_usval-t-doc' title='Tipo de documento' required>";
+        foreach ($res as $k => $v){
+          if($v['id'] == $uprof_id_t_doc){
+            $resultHTML .= "
+              <option value='{$v['id']}' selected required>{$v['type']}</option>
+            ";
+          }else{
+            $resultHTML .= "
+              <option value='{$v['id']}' required>{$v['type']}</option>
+            ";
+          }
+        }
+        $resultHTML .= "</select>";
       }
       return $resultHTML;
     }catch(PDOException $e){

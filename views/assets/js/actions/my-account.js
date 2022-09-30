@@ -290,7 +290,7 @@ $(() => {
             }
             let p_pathimg = "./admin/storage/app/public/product/"+v.p_photo;
             let p_name = v.p_name;
-            let p_name_limit = (p_name.length >= 25) ? p_name.substring(25, 0) + "..." : p_name;
+            let p_name_limit = (p_name.length >= 31) ? p_name.substring(31, 0) + "..." : p_name;
             let or_status = v.tmp_status;
             let tmp_ordstatus = "";
             if(or_status == "confirmed" || or_status == "COMPLETED"){

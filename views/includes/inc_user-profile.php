@@ -4,6 +4,7 @@
   $uprof_lastname = ($listprof[0]['l_name'] != "" || $listprof[0]['l_name'] != null) ? $listprof[0]['l_name'] : "";
   $uprof_email = $listprof[0]['email'];
   $uprof_phone = ($listprof[0]['phone'] != "" || $listprof[0]['phone'] != null) ? $listprof[0]['phone'] : "";
+  $uprof_id_t_doc = ($listprof[0]['id_t_doc'] != "" || $listprof[0]['id_t_doc'] != null) ? $listprof[0]['id_t_doc'] : 0;
   $uprof_n_doc = ($listprof[0]['n_doc'] != "" || $listprof[0]['n_doc'] != null) ? $listprof[0]['n_doc'] : "";
 ?>
 <div class="ml-auto mr-auto col-lg-9">
@@ -48,11 +49,9 @@
                   <div class="col-lg-6 col-md-6">
                     <div class="profile-info">
                       <label>Tipo de Documento</label>
-                      <select class="form-control one-hidden" aria-required="true" name="prof_usval-t-doc" id="prof_usval-t-doc" title="Tipo de documento" required>
-                        <?php 
-                          echo $dmlUsers->get_typeDocuments();
-                        ?>
-                      </select>
+                      <?php 
+                        echo $dmlUsers->get_typeDocumentsByIdDoc($uprof_id_t_doc);
+                      ?>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
