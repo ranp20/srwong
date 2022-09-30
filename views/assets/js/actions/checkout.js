@@ -241,7 +241,7 @@ $(() => {
     success : function(e){
       let tmpList = "";
       if(e != "" && e != "[]"){
-        tmpList += `<option>Seleccione una opción</option>`;
+        tmpList += `<option value="">Seleccione una opción</option>`;
         $.each(e, function(i,v){
           let b_name = v.name;
           let b_nameupper = b_name[0].toUpperCase() + b_name.substring(1);

@@ -23,6 +23,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	echo "MONTO => " . $convertAmmount . "<br>";
 	echo "TARGETA => " . $credit_card_brand . "<br>";
 	*/
+
 	$pay_status = "";
 	if($orderStatus == "PAID"){
 		$pay_status = "paid";
@@ -32,6 +33,19 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 		$pay_status = "unpaid";
 	}
 	
+	$arr_delivery_address = [
+		"id" => 0,
+		"addres_type" => "Home",
+		"contact_person_number" => $izzipay_r['customer']['billingDetails']['phoneNumber'],
+	  "address" => $izzipay_r['customer']['billingDetails']['address'],
+	  "latitude" => "-12.023474199999994",
+	  "longitude" => "-77.01358479999999",
+	  "created_at" => date("Y-m-d H:i:s"),
+	  "updated_at" => date("Y-m-d H:i:s"),
+	  "user_id" => $_SESSION['usr-logg_srwong']['id'],
+	  "contact_person_name" => $_SESSION['usr-logg_srwong']['f_name'] . " " . $_SESSION['usr-logg_srwong']['l_name']
+	];
+
 	$arr_order = [
 		"user_id" => $_SESSION['usr-logg_srwong']['id'],
 		"order_amount" => $convertAmmount,
@@ -41,11 +55,16 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 		"transaction_reference" => $izzipay_r['customer']['reference'],
 		"order_type" => $izzipay_r['customer']['billingDetails']['title'],
 		"branch_id" => $izzipay_r['customer']['billingDetails']['city'],
-		"delivery_address" => $izzipay_r['customer']['billingDetails']['address'],
+		"delivery_address" => json_encode($arr_delivery_address, TRUE),
 		"user_phone_number" => $izzipay_r['customer']['billingDetails']['phoneNumber'],
 		"order_id" => $orderID,
 	];
-
+	/*
+	echo "<pre>";
+	print_r($arr_order);
+	echo "</pre>";
+	exit();
+	*/
 	require_once '../model/Orders.php';
 	$orders = new Orders();
 	$add = $orders->addOrder($arr_order);
