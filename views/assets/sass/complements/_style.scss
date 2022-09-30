@@ -3957,6 +3957,17 @@ h4.shop-sidebar-title {
 .table-content table td.product-subtotal {
     text-align: center;
 }
+.table-content table td.product-status {
+    text-align: center;
+    & > div{
+        span{
+            .st_confirm{
+                background-color: green;
+                color: #fff;
+            }
+        }
+    }
+}
 .table-content table td.product-remove {
     width: 100px;
     text-align: center;

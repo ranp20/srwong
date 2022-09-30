@@ -108,6 +108,19 @@ img{
   	color: #fff;
   }
 }
+.tbl-responsiv__theme{
+	overflow-x: auto;
+	overflow-y: auto;
+	max-height: 310px;
+	height: 310px;
+	@media (min-width: 991px){
+		max-height: 415px;
+		height: 415px;
+	}
+	&.br_bottom{
+		border-bottom: 1px solid #ebebeb;
+	}
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;

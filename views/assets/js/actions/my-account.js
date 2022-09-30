@@ -243,7 +243,7 @@ $(() => {
   // ------------ LISTAR LAS ORDENES DEL CLIENTE
   function listAllOrdersUser(){
     $.ajax({
-      url: "./controllers/prcss_cart-list-byIdTempCart.php",
+      url: "./controllers/prcss_list-byIdClientMyAccount.php",
       method: "POST",
       dataType: 'JSON',
       contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -316,6 +316,13 @@ $(() => {
                     <span>
                       <span>S/. </span>
                       <span id="totprod_amount">${v.tmp_subtotal}</span>
+                    </span>
+                  </div>
+                </td>
+                <td class="product-status">
+                  <div>
+                    <span>
+                      <span>Pendiente</span>
                     </span>
                   </div>
                 </td>

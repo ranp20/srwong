@@ -89,7 +89,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12">
                     <div class="profile-main-area">                    
-                      <div class="table-content table-responsive">
+                      <div class="table-content table-responsive tbl-responsiv__theme br_bottom">
                         <table>
                           <thead>
                             <tr>
@@ -97,6 +97,7 @@
                               <th class="talign-l">Nombre</th>
                               <th class="talign-l">Cantidad</th>
                               <th class="talign-l">Subtotal</th>
+                              <th class="talign-l">Estado</th>
                             </tr>
                           </thead>
                           <tbody id="c-xtbl_tmplistreguser">
