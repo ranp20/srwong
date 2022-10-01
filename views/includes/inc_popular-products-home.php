@@ -1,13 +1,9 @@
 <div class="product-area pb-70">
-  <div class="container hrsec-separator-home">
-    <div class="product-tab-list-wrap text-center mb-40">
-      <div class="product-tab-list-wrap text-center mb-40">
-        <div class="row">
-          <div class="col-lg-12">      
-            <div class="title-all text-center">
-              <h3>PRODUCTOS MÁS POPULARES</h3>
-            </div>
-          </div>
+  <div class="container hrsec-separator-home lprodpopularhome">
+    <div class="product-tab-list-wrap text-center mb-40 lprodpopularhome__sec">
+      <div class="row lprodpopularhome__sec__c">
+        <div class="col-lg-12 lprodpopularhome__sec__c--cTitle">      
+          <h3 class="lprodpopularhome__sec__c--cTitle__title">PRODUCTOS MÁS POPULARES</h3>
         </div>
       </div>
     </div>

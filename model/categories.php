@@ -51,17 +51,20 @@ class Categories extends Connection
       $res = $stm->fetchAll();
       $resultHTML="";
       foreach ($res as $data){
+        
+        
+        $catg_name = (strlen($data[1]) > 18) ? substr($data[1], 0, 15) . '...' : $data[1];
         $resultHTML .= "
           <div class='item'>
             <div class='category-wrapper mb-25'>
               <div class='category-img'>
-                <a href='./category/$data[0]' class='category-img__linkcateg six_slider' title='$data[1]'>
+                <a href='./category/$data[0]' class='category-img__linkcateg six_slider' title='{$catg_name}'>
                   <img src='./admin/storage/app/public/category/$data[2]' alt='./admin/storage/app/public/category/$data[1]'>
                 </a>
               </div>
               <div class='category-content six_slider_title'>
                 <h4 class='text-center'>
-                  <a href='./category/$data[1]'>$data[1]</a>
+                  <a href='./category/$data[1]'>{$catg_name}</a>
                 </h4>
               </div>
             </div>

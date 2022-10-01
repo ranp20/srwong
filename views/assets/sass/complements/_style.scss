@@ -2264,7 +2264,14 @@ textarea:focus {
     border-radius: 50%;
     border: thin solid #ddd;
     overflow: hidden;
-    max-width: 240px;
+    max-width: 138px;
+    width: auto;
+    height: 138px;
+    @media (min-width: 991px){
+        max-width: 240px;
+        width: 240px;
+        height: 240px;
+    }
     @media (min-width: 991px){
         width: 240px;
         height: 240px;
@@ -2281,8 +2288,11 @@ textarea:focus {
     margin: 0 auto;
     border: thin solid #ddd;
     overflow: hidden;
-    max-width: 270px;
+    max-width: 138px;
+    width: auto;
+    height: 110px;
     @media (min-width: 991px){
+        max-width: 270px;
         width: 270px;
         height: 225px;
     }
@@ -2380,7 +2390,15 @@ textarea:focus {
 /* CATEGORIES CAROUSEL/LIST */
 .cxhm_category{
   position: relative;
-  padding: 0 40px 0 70px;
+  @media (min-width: 991px){
+    padding: 0 40px 0 70px;
+  }
+  .categories-list-home{
+    margin: 0;
+    @media (min-width: 991px){
+
+    }
+  }
   &__cBtnIconSlide{
     position: absolute;
     top: 20%;
@@ -2388,6 +2406,16 @@ textarea:focus {
     transform: translateY(50%);
     z-index: 9;
     cursor: pointer;
+    display: none;
+    user-select: none;
+    visibility: hidden;
+    opacity: 0;
+    @media (min-width: 991px){
+        display: flex;
+        user-select: auto;
+        visibility: visible;
+        opacity: 1;
+    }
     .slider-arrow-left,
     .slider-arrow-right{
       display: flex;
@@ -2465,7 +2493,9 @@ textarea:focus {
     border-radius: 50%;
     border: thin solid #ddd;
     overflow: hidden;
-    max-width: 240px;
+    max-width: 69px;
+    width: auto;
+    height: 68px;
     &.three_slider{}
     &.four_slider{}
     &.five_slider{}
@@ -2491,11 +2521,18 @@ textarea:focus {
     height: 100%;
 }
 .category-content {
-    padding: 26px 0 0;
+    padding: 10px 0 0;
+    @media (min-width: 991px){
+        padding: 26px 0 0;
+    }
     &.six_slider_title{
         h4{
-            font-size: 1.125rem;
+            font-size: 0.72rem;
             font-weight: 500;
+            word-break: break-all;
+            @media (min-width: 991px){
+                font-size: 1.125rem;
+            }
         }
     }
 }
@@ -2504,6 +2541,7 @@ textarea:focus {
     font-size: 1.25rem;
     font-weight: 500;
     margin: 0 0 8px;
+    word-break: break-all;
 }
 .category-content > h4 a {
     color: #2f333a;
@@ -2511,6 +2549,95 @@ textarea:focus {
 .category-img img {
     width: 100%;
 }
+
+
+/* PRODUCTOS MÁS POPULARES */
+.owl-popular-products-home{
+    margin: 0;
+    @media (min-width: 991px){
+
+    }
+}
+/* PRODUCTOS MÁS RECIENTES */
+.owl-latest-products-home{
+    margin: 0;
+    @media (min-width: 991px){
+
+    }
+}
+
+/****************************************************************/
+/**************** LISTA DE LAS CATEGORÍAS - HOME ****************/
+/****************************************************************/
+.catghome{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    @media (min-width: 991px){
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    &__sec{
+        margin-bottom: 0.5rem !important;
+        &__c{
+            &--cTitle{        
+                &__title{
+                    font-size: .9rem;
+                    font-weight: 600;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+/****************************************************************/
+/**************** LISTA DE LOS PRODUCTOS MÁS POPULARES - HOME ****************/
+/****************************************************************/
+.lprodpopularhome{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    @media (min-width: 991px){
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    &__sec{
+        margin-bottom: 0.5rem !important;
+        &__c{
+            &--cTitle{        
+                &__title{
+                    font-size: .9rem;
+                    font-weight: 600;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+/****************************************************************/
+/**************** LISTA DE LOS PRODUCTOS MÁS RECIENTE - HOME ****************/
+/****************************************************************/
+.lprodrecenthome{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    @media (min-width: 991px){
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    &__sec{
+        margin-bottom: 0.5rem !important;
+        &__c{
+            &--cTitle{        
+                &__title{
+                    font-size: .9rem;
+                    font-weight: 600;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+
+
 
 /* banner area */
 .discount-content > h3 {

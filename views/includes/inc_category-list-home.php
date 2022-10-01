@@ -1,11 +1,9 @@
 <div class="product-area pb-70">
-  <div class="container hrsec-separator-home">
-    <div class="product-tab-list-wrap text-center mb-40">
-      <div class="row">
-        <div class="col-lg-12">      
-          <div class="title-all text-center">
-            <h3>TODAS LAS CATEGORÍAS</h3>
-          </div>
+  <div class="container hrsec-separator-home catghome">
+    <div class="product-tab-list-wrap text-center mb-40 catghome__sec">
+      <div class="row catghome__sec__c">
+        <div class="col-lg-12 catghome__sec__c--cTitle">      
+          <h3 class="catghome__sec__c--cTitle__title">TODAS LAS CATEGORÍAS</h3>
         </div>
       </div>
     </div>

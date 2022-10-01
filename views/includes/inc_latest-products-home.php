@@ -1,13 +1,9 @@
 <div class="product-area pb-70">
-  <div class="container">
-    <div class="product-tab-list-wrap text-center mb-40">
-      <div class="product-tab-list-wrap text-center mb-40">
-        <div class="row">
-          <div class="col-lg-12">      
-            <div class="title-all text-center">
-              <h3>PRODUCTOS MÁS RECIENTES</h3>
-            </div>
-          </div>
+  <div class="container lprodrecenthome">
+    <div class="product-tab-list-wrap text-center mb-40 lprodrecenthome__sec">
+      <div class="row lprodrecenthome__sec__c">
+        <div class="col-lg-12 lprodrecenthome__sec__c--cTitle">
+          <h3 class="lprodrecenthome__sec__c--cTitle__title">PRODUCTOS MÁS RECIENTES</h3>
         </div>
       </div>
     </div>

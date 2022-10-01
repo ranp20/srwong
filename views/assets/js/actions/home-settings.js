@@ -186,9 +186,10 @@ $(() => {
     responsiveClass:true,
     responsive:{
       0: {
-        items: 1,
+        items: 4,
         nav:false,
-        dots:false
+        dots:false,
+        margin:10,
       },
       576: {
         items: 2,
@@ -235,29 +236,34 @@ $(() => {
     responsiveClass:true,
     responsive:{
       0: {
-        items: 1,
+        items: 2,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 10
       },
       576: {
         items: 2,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 15
       },
       768: {
         items: 3,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 15
       },
       992: {
         items: 4,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 20
       },
       1200: {
         items: 4,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 20
       }
     }
   });
@@ -282,29 +288,34 @@ $(() => {
     responsiveClass:true,
     responsive:{
       0: {
-        items: 1,
+        items: 2,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 10
       },
       576: {
         items: 2,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 15
       },
       768: {
         items: 3,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 15
       },
       992: {
         items: 4,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 20
       },
       1200: {
         items: 4,
         nav:false,
-        dots:false
+        dots:false,
+        margin: 20
       }
     }
   });
