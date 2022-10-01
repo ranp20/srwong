@@ -196,19 +196,21 @@ $(() => {
         dots:false
       },
       768: {
-        items: 3,
+        items: 4,
         nav:false,
         dots:false
       },
       992: {
-        items: 4,
+        items: 6,
         nav:false,
-        dots:false
+        dots:false,
+        margin:20
       },
       1200: {
-        items: 4,
+        items: 6,
         nav:false,
-        dots:false
+        dots:false,
+        margin:20
       }
     }
   });
