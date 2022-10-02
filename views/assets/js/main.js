@@ -60,7 +60,6 @@ $(() => {
 // ------------ ITEM SELECCIONADO DEL MENÚ EN CADA PÁGINA - SIDEBARLEFT
 var urlMobile = window.location.pathname;
 var filename = urlMobile.substring(urlMobile.lastIndexOf('/')+1);
-console.log(filename);
 if(filename == ""){
   $(".mbtbslinks__c__cont__m__i a").removeClass("active");
   $(".mbtbslinks__c__cont__m__i a").eq(0).addClass('active');
@@ -70,7 +69,7 @@ if(filename == ""){
 }else if(filename == "cart-page" || filename == "checkout" || filename == "payment" || filename == "confirm"){
   $(".mbtbslinks__c__cont__m__i a").removeClass("active");
   $(".mbtbslinks__c__cont__m__i a").eq(2).addClass('active');
-}else if(filename == "my-account"){
+}else if(filename == "my-account" || filename == "login-register"){
   $(".mbtbslinks__c__cont__m__i a").removeClass("active");
   $(".mbtbslinks__c__cont__m__i a").eq(3).addClass('active');
 }else{
