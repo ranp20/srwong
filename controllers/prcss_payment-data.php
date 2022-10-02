@@ -33,6 +33,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 		$pay_status = "unpaid";
 	}
 	
+	// INFORMACIÓN PARA EL DETALLE EN EL ADMINISTRADOR
 	$arr_delivery_address = [
 		"id" => 0,
 		"addres_type" => "Home",
@@ -45,7 +46,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	  "user_id" => $_SESSION['usr-logg_srwong']['id'],
 	  "contact_person_name" => $_SESSION['usr-logg_srwong']['f_name'] . " " . $_SESSION['usr-logg_srwong']['l_name']
 	];
-
+	// INFORMACIÓN DE LA ORDEN
 	$arr_order = [
 		"user_id" => $_SESSION['usr-logg_srwong']['id'],
 		"order_amount" => $convertAmmount,
@@ -59,12 +60,27 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 		"user_phone_number" => $izzipay_r['customer']['billingDetails']['phoneNumber'],
 		"order_id" => $orderID,
 	];
+	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
 	/*
+	$arr_customer_addresses = [
+		"addres_type" => "Home",
+		"contact_person_number" => $izzipay_r['customer']['billingDetails']['phoneNumber'],
+		"address" => $izzipay_r['customer']['billingDetails']['address'],
+		"latitude" => "NO especificado",
+		"longitude" => "NO especificado",
+		"created_at" => date("Y-m-d H:i:s"),
+		"updated_at" => date("Y-m-d H:i:s"),
+		"user_id" => $_SESSION['usr-logg_srwong']['id'],
+		"contact_person_name" => $_SESSION['usr-logg_srwong']['f_name'] . " " . $_SESSION['usr-logg_srwong']['l_name']
+	];
+	*/
+	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
+
 	echo "<pre>";
 	print_r($arr_order);
 	echo "</pre>";
 	exit();
-	*/
+	
 	require_once '../model/Orders.php';
 	$orders = new Orders();
 	$add = $orders->addOrder($arr_order);

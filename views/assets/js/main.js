@@ -56,3 +56,24 @@ $(() => {
   // ------------ IR HACIA LA PÁGINA - CHECKOUT
   $(document).on("click","#lk_checkout",function(){window.location.href = "./checkout";});
 });
+
+// ------------ ITEM SELECCIONADO DEL MENÚ EN CADA PÁGINA - SIDEBARLEFT
+var urlMobile = window.location.pathname;
+var filename = urlMobile.substring(urlMobile.lastIndexOf('/')+1);
+console.log(filename);
+if(filename == ""){
+  $(".mbtbslinks__c__cont__m__i a").removeClass("active");
+  $(".mbtbslinks__c__cont__m__i a").eq(0).addClass('active');
+}else if(filename == "categories"){
+  $(".mbtbslinks__c__cont__m__i a").removeClass("active");
+  $(".mbtbslinks__c__cont__m__i a").eq(1).addClass('active');
+}else if(filename == "cart-page" || filename == "checkout" || filename == "payment" || filename == "confirm"){
+  $(".mbtbslinks__c__cont__m__i a").removeClass("active");
+  $(".mbtbslinks__c__cont__m__i a").eq(2).addClass('active');
+}else if(filename == "my-account"){
+  $(".mbtbslinks__c__cont__m__i a").removeClass("active");
+  $(".mbtbslinks__c__cont__m__i a").eq(3).addClass('active');
+}else{
+  $(".mbtbslinks__c__cont__m__i a").removeClass("active");
+  $('.mbtbslinks__c__cont__m__i a[href="' + filename + '"]').addClass("active");
+}

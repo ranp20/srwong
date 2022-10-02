@@ -54,6 +54,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
     </div>
   </div>
   <?php require_once 'includes/inc_footer.php';?>
+  <?php require_once 'includes/inc_mobile-tabs-links-footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/actions/confirm.js"></script>
 </body>

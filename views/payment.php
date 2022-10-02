@@ -154,6 +154,7 @@ $formToken = $response["answer"]["formToken"];
     </div>
   </div>
   <?php require_once 'includes/inc_footer.php';?>
+  <?php require_once 'includes/inc_mobile-tabs-links-footer.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->

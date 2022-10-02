@@ -1,0 +1,113 @@
+.mbtbslinks{
+	display: block;
+	visibility: visible;
+	cursor: block;
+	opacity: 1;
+	-webkit-user-select: block;
+  -khtml-user-select: block;
+  -moz-user-select: -moz-block;
+  -o-user-select: block;
+  user-select: block;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  background-color: #FAFAFA;
+  box-shadow: 0px 1px 0 0 #f4f4f4 inset;
+  z-index: 9999999999;
+	@media (min-width: 650px){
+		display: none;
+		visibility: hidden;
+		cursor: none;
+		opacity: 0;
+		-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+    width: 0;
+    height: 0;
+	}
+
+	&__c{
+		&__cont{
+			padding: 0.4rem;
+			&__m{
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				flex-flow: nowrap row;
+				flex: 0 0 100%;
+				max-height: 51px;
+				height: 51px;
+				&__i{
+					flex: auto;
+					text-align: center;
+					&--cIcon{
+						max-width: 40px;
+						max-height: 30px;
+						width: auto;
+						height: auto;
+						margin-left: auto;
+						margin-right: auto;
+						position: relative;
+						top: 5px;
+						span{
+							max-width: 40px;
+							max-height: 30px;
+							width: auto;
+							height: auto;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							text-align: center;
+							svg{
+								fill: #A0A4A8;
+								width: auto;
+								height: auto;
+							}
+						}
+					}
+					&--cName{
+						text-align: center;
+						span{
+							font-size: 0.75rem;
+							color: #A0A4A8;
+						}
+					}
+					a{					
+						&:hover{
+							.mbtbslinks__c__cont__m__i--cIcon{
+								span{
+									svg{
+										fill: $theme-clr-tertiary;
+									}
+								}
+							}
+							.mbtbslinks__c__cont__m__i--cName{
+								span{
+									color: $theme-clr-tertiary;
+								}
+							}
+						}
+						&.active{
+							.mbtbslinks__c__cont__m__i--cIcon{
+								span{
+									svg{
+										fill: $theme-clr-tertiary;
+									}
+								}
+							}
+							.mbtbslinks__c__cont__m__i--cName{
+								span{
+									color: $theme-clr-tertiary;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

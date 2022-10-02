@@ -22,7 +22,7 @@ $categories = new Categories();
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
-    <div class="breadcrumb-area gray-bg">
+  <div class="breadcrumb-area gray-bg">
     <div class="container">
       <div class="breadcrumb-content">
         <ul>
@@ -97,6 +97,7 @@ $categories = new Categories();
     </div>
   </div>
   <?php require_once 'includes/inc_footer.php';?>
+  <?php require_once 'includes/inc_mobile-tabs-links-footer.php';?>
   <!-- all js here -->
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/actions/cart-page.js"></script>
