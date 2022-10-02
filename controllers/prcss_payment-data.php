@@ -82,7 +82,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	exit();
 	*/
 
-	require_once '../model/Orders.php';
+	require_once '../model/orders.php';
 	$orders = new Orders();
 	$add = $orders->addOrder($arr_order);
 	if($add[0]['r'] == "order_recent"){

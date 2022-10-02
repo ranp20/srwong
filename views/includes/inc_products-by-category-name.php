@@ -1,12 +1,11 @@
 <?php 
-  // require_once '../model/categories.php';
+  require_once '../model/products.php';
+  $products=new Products();
   $cat = new Categories();
   $l_byName = $cat->getCategoriesByIdCategory($_GET['cat']);
   $cat_id = $l_byName[0]['id'];
   $cat_banner = "../admin/storage/app/public/category/".$l_byName[0]['image'];
   $cat_banner = "../admin/storage/app/public/category/banner/".$l_byName[0]['banner_image'];
-  require_once '../model/Products.php';
-  $products=new Products();
 ?>
 <div class="category-banner">
   <div class="col-12 p-0">
