@@ -339,10 +339,12 @@ class Products extends Connection
         $p_price_new = $data['price'] - $data['discount'];
         $p_price_new = number_format($p_price_new, 2, '.', ' ');
         $htmlDiscount = "";
-        if($data['discount'] > 0){
-          $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
-        }else{
-          $htmlDiscount = "";
+        if($data['discount_type'] == "percent"){        
+          if($data['discount'] != 0 || $data['discount'] != 0.00 || $data['discount'] != "0.00"){
+            $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
+          }else{
+            $htmlDiscount = "";
+          }
         }
         $resultHTML.= "
         <div class='product-wrapper'>

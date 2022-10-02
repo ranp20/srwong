@@ -7,19 +7,17 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6">
+
+
           <div class="footer-about mb-40">
             <div class="footer-logo">
               <a href="index">
-                <img src="<?= $url;?>assets/img/logo/footer-logo.png" alt="">
+                <img src="<?= $url;?>assets/img/logo/logo.png" alt="">
               </a>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            <div class="payment-img">
-              <a href="javascript:void(0);">
-                <img src="<?= $url;?>assets/img/icon-img/payment.png" alt="">
-              </a>
-            </div>
+            <p>Restaurante de venta de comida china.</p>  
           </div>
+
         </div>
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="footer-widget mb-40">
@@ -58,22 +56,22 @@
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="footer-widget mb-40">
             <div class="footer-title mb-22">
-              <h4>Get in touch</h4>
+              <h4>INFORMACIÓN DE CONTACTO</h4>
             </div>
             <div class="footer-contact">
               <ul>
-                <li>Address: 123 Main Street, Anytown, CA 12345 - USA.</li>
-                <li>Telephone Enquiry: (012) 800 456 789-987 </li>
-                <li>Email: <a href="javascript:void(0);">Info@example.com</a></li>
+                <li>Av. Los Jardines este 173 Urb. Las flores 78 S.J.L</li>
+                <li>Teléfonos: (01) 612 8000 </li>
+                <li>Email: <a href="javascript:void(0);">ventas@srwong.pe</a></li>
               </ul>
             </div>
             <div class="mt-35 footer-title mb-22">
-              <h4>Get in touch</h4>
+              <h4>Horarios</h4>
             </div>
             <div class="footer-time">
               <ul>
-                <li>Open:  <span>8:00 AM</span> - Close: <span>18:00 PM</span></li>
-                <li>Saturday - Sunday: <span>Close</span></li>
+                <li>Abierto:  <span>8:00 AM</span> - Cerrado: <span>18:00 PM</span></li>
+                <li>Sábado y Domingo: <span>Abierto</span></li>
               </ul>
             </div>
           </div>
@@ -86,7 +84,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-7">
           <div class="copyright">
-            <p>Copyright © <a href="javascript:void(0);">SrWong.</a> . Todos los derechos reservados.</p>
+            <p>Copyright © <a href="javascript:void(0);">SrWong.</a> Todos los derechos reservados.</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-5">

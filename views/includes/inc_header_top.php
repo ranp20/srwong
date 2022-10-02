@@ -5,7 +5,7 @@
 <header class="header-area">
   <div class="header-top black-bg hphom__sec">
     <div class="hphom__sec--cBnnadd">
-      <div class="container hphom__sec--cBnnadd__c">
+      <div class="container contain-def-theme hphom__sec--cBnnadd__c">
         <div class="row hphom__sec--cBnnadd__c__cont">
           <div class="col-lg-12 col-md-12 col-12 col-sm-12 hphom__sec--cBnnadd__c__cont__sec">
             <div class="welcome-area hphom__sec--cBnnadd__c__cont__sec--cTitle">
@@ -18,7 +18,7 @@
   </div>
   <div class="header-middle hphom__sec">
     <div class="hphom__sec--cHTopNav">    
-      <div class="container hphom__sec--cHTNav__c">
+      <div class="container contain-def-theme hphom__sec--cHTNav__c">
         <div class="row hphom__sec--cHTNav__c__cont">
           <div class="col-lg-2 col-md-2 col-12 col-sm-2 logos hphom__sec--cHTNav__c__cont--cLogo">
             <div class="logo hphom__sec--cHTNav__c__cont--cLogo__c">
@@ -27,8 +27,7 @@
               </a>
             </div>
           </div>
-
-          <div class="col-lg-5 col-md-5 col-12 col-sm-6 menus hphom__sec--cHTNav__c__cont--cMenus">
+          <div class="col-lg-6 col-md-6 col-12 col-sm-7 menus hphom__sec--cHTNav__c__cont--cMenus">
             <div class="main-menu hphom__sec--cHTNav__c__cont--cMenus__c">
               <nav class="hphom__sec--cHTNav__c__cont--cMenus__c__nav">
                 <ul class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m">
@@ -48,8 +47,7 @@
               </nav>
             </div>
           </div>
-
-          <div class="col-lg-5 col-md-5 col-12 col-sm-4 bloq hphom__sec--cHTNav__c__cont--cLinkMenus">
+          <div class="col-lg-4 col-md-4 col-12 col-sm-3 bloq hphom__sec--cHTNav__c__cont--cLinkMenus">
             <div class="header-middle-right f-right">
               <div class="header-wishlist">
                 <a href="tel:+51612800">

@@ -143,6 +143,23 @@ img{
 		}	
 	}
 }
+.black-bg-2{
+	background-color: #414141 !important;
+}
+.contain-def-theme{
+	max-width: $max-width-boostrap !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 100% !important;
+	padding-left: 1rem !important;
+	padding-right: 1rem !important;
+	@media (min-width: 768px){
+		max-width: $max-width-boostrap !important;
+	}
+	@media (min-width: 768px){
+		max-width: $max-width-boostrap !important;
+	}
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;

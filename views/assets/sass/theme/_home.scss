@@ -50,7 +50,7 @@
 								align-items: flex-start;
 								justify-content: flex-start;
 								flex-flow: wrap row;
-								max-width: 100%;
+								max-width: 150px;
 							}
 						}
 					}
@@ -70,7 +70,7 @@
 											background: $theme-clr-tertiary;
 									    padding-left: 13px;
 									    padding-right: 15px;
-									    border-radius: 20px;
+									    border-radius: 15px;
 									    span{
 									    	color: #fff;
 									    }
@@ -82,6 +82,9 @@
 					}
 					&--cLinkMenus{
 						&.bloq{
+						  display: flex;
+					    align-items: center;
+					    justify-content: flex-end;
 							@media (max-width: 920px){
 								flex: 0 0 60%;
 	    					max-width: 60%;
@@ -89,7 +92,6 @@
 						}
 						.header-wishlist{
 							position: relative;
-							top: 1rem;
 							margin-left:10px;
 							.wishlist-text{
 								.pedido{
@@ -100,24 +102,13 @@
 						}
 						.header-login{
 							position: relative;
-							top: 1rem;
 							margin-left:10px;
 						}
 						.header-cart{
 							position: relative;
-							top: 1rem;
 							margin-left:10px;
 						}
 						@media (max-width: 920px){
-							.header-wishlist{
-								top: 0.7rem;
-							}
-							.header-login{
-								top: 0.7rem;
-							}
-							.header-cart{
-								top: 0.7rem;
-							}
 							.wishlist-text{
 								display: none;
 							}
@@ -144,6 +135,28 @@
 				height: 100%;
 				object-fit: fill;
 				object-position: center;
+			}
+		}
+	}
+}
+
+
+
+/* CUSTOMS STYLES */
+.footer-bottom-area{
+  padding: 22px 0 24px;
+  background: #000;
+}
+.footer-title{
+	& > h4{
+		font-weight: 700 !important;
+	}
+}
+.footer-time{
+	ul{
+		li{	
+			span{
+				color: $theme-clr-tertiary;
 			}
 		}
 	}
