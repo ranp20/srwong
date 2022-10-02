@@ -1452,6 +1452,12 @@ textarea:focus {
 }
 .mobile-menu-area {
     display: none;
+    @media (max-width: 767px){
+        display: block;
+    }
+    @media screen and (max-width: 920px){
+        display: block !important;
+    }
 }
 #mobile-menu-active {
     display: none;
@@ -1631,7 +1637,10 @@ textarea:focus {
 
 /* header bottom cart */
 .header-middle {
-    padding: 30px 0 26px;
+    padding: 10px 0 10px;
+    @media(min-width: 920px){
+        padding: 30px 0 26px;
+    }
 }
 .header-middle-right {
     display: flex;
@@ -1644,7 +1653,7 @@ textarea:focus {
     display: inline-block;
 }
 .header-wishlist {
-    margin: 0 40px;
+    margin: 0 10px;
 }
 .wishlist-text > p,
 .login-text-content > p {

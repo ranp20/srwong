@@ -1,0 +1,135 @@
+.hphom{
+	&__sec{
+		/* BANNER DE ANUNCIO */
+		&--cBnnadd{
+			background-color: $theme-clr-tertiary;
+			&__c{
+				&__cont{
+					&__sec{
+						&--cTitle{
+							h3{
+								color: #fff;
+						    margin: 9px 0 0;
+						    text-align: center;
+						    font-size: 21px;
+						    line-height: 57px;
+						    font-weight: 400;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    flex-flow: wrap row;
+						    text-align: center;
+						    span, strong{
+						    	font-size: 30px;
+    							font-weight: 700;
+						    }
+							}
+						}
+					}
+				}
+			}
+		}
+		/* NAVEGACIÓN DE MENÚS */
+		&--cHTNav{
+			&__c{
+				&__cont{
+					&--cLogo{
+						@media (max-width: 920px){
+							flex: 0 0 40% !important;
+					    width: 40% !important;
+					    max-width: 40% !important;
+						}
+						&__c{
+							@media (max-width: 920px){
+								margin: 0 0 0px !important;
+    						text-align: center !important;
+							}
+							&--cLink{
+								display: flex;
+								align-items: flex-start;
+								justify-content: flex-start;
+								flex-flow: wrap row;
+								max-width: 100%;
+							}
+						}
+					}
+					&--cMenus{
+						@media (max-width: 920px){
+							display: none;
+						}
+						&__c{
+							&__nav{
+								&--m{
+									&--i{
+
+									}
+									&--link{
+										color: #2f333a !important;
+										&.menu-cart{
+											background: $theme-clr-tertiary;
+									    padding-left: 13px;
+									    padding-right: 15px;
+									    border-radius: 20px;
+									    span{
+									    	color: #fff;
+									    }
+										}
+									}
+								}
+							}
+						}
+					}
+					&--cLinkMenus{
+						&.bloq{
+							@media (max-width: 920px){
+								flex: 0 0 60%;
+	    					max-width: 60%;
+							}
+						}
+						.header-wishlist{
+							position: relative;
+							top: 1rem;
+							margin-left:10px;
+							.wishlist-text{
+								.pedido{
+							    font-weight: 700;
+							    font-size: 17px;
+								}
+							}
+						}
+						.header-login{
+							position: relative;
+							top: 1rem;
+							margin-left:10px;
+						}
+						.header-cart{
+							position: relative;
+							top: 1rem;
+							margin-left:10px;
+						}
+						@media (max-width: 920px){
+							.header-wishlist{
+								top: 0.7rem;
+							}
+							.header-login{
+								top: 0.7rem;
+							}
+							.header-cart{
+								top: 0.7rem;
+							}
+							.wishlist-text{
+								display: none;
+							}
+							.login-text-content{
+								display: none;
+							}
+							.cart-text{
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
