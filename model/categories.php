@@ -51,8 +51,6 @@ class Categories extends Connection
       $res = $stm->fetchAll();
       $resultHTML="";
       foreach ($res as $data){
-        
-        
         $catg_name = (strlen($data[1]) > 18) ? substr($data[1], 0, 15) . '...' : $data[1];
         $resultHTML .= "
           <div class='item'>
@@ -64,6 +62,38 @@ class Categories extends Connection
               </div>
               <div class='category-content six_slider_title'>
                 <h4 class='text-center'>
+                  <a href='./category/$data[1]'>{$catg_name}</a>
+                </h4>
+              </div>
+            </div>
+          </div>
+        ";
+      }
+    return $resultHTML;
+   }catch(Exception $exc){
+    echo $exc->getTraceAsString();
+   }
+  }
+  // -------------- LISTADO DE TODAS LAS CATEGORÍAS
+  public function getAllCategories(){
+    try{
+      $sql = "SELECT id, name, image FROM {$this->table} ORDER BY name ASC";
+      $stm = $this->con->prepare($sql);
+      $stm->execute();
+      $res = $stm->fetchAll();
+      $resultHTML="";
+      foreach ($res as $data){
+        $catg_name = $data[1];
+        $resultHTML .= "
+          <div class='product-width col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mb-30'>
+            <div class='product-wrapper'>
+              <div class='product-img'>
+                <a href='./category/$data[0]' class='product-img__linkprods' title='{$catg_name}'>
+                  <img src='./admin/storage/app/public/category/$data[2]' alt='catg_{$catg_name}'>
+                </a>
+              </div>
+              <div class='product-content'>
+                <h4>
                   <a href='./category/$data[1]'>{$catg_name}</a>
                 </h4>
               </div>
