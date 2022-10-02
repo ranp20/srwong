@@ -15,15 +15,16 @@ class Banners extends Connection
       $stm->execute();
       $res = $stm->fetchAll();
       $resultHTML="";
-      foreach ($res as $data) {
-       $url_def = "";
-       if($data[4] != "" && $data[4] != "null"){
+      foreach($res as $data){
+        $url_def = "";
+        if($data[4] != "" && $data[4] != "null"){
           $url_def = "./category/".$data[4];
-       }else{
+        }else{
           $url_def = "./product-details/".$data[1];
-       }
-      $banner_pathimg = "./admin/storage/app/public/banner/".$data[3];
-      $resultHTML.= "<div class='single-slider pt-210 pb-220 bg-img' style='background-image:url({$banner_pathimg});'>
+        }
+        $banner_pathimg = "./admin/storage/app/public/banner/".$data[3];
+        /*
+        $resultHTML.= "<div class='single-slider pt-210 pb-220 bg-img' style='background-image:url({$banner_pathimg});'>
                   <div class='container'>
                       <div class='slider-content slider-animated-1'>
                           <h1 class='animated'>$data[2]</h1>
@@ -34,6 +35,10 @@ class Banners extends Connection
                       </div>
                   </div>
               </div>";
+        */
+        $resultHTML.= "<div class='single-slider hpbannerhom__sec__c'>
+            <img src='{$banner_pathimg}' class='img-fluid' alt='$data[2]'/> 
+          </div>";        
       }
       return $resultHTML;
     }catch(PDOException $e){

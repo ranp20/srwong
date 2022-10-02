@@ -1,3 +1,4 @@
+/* HEADER TOP - HOME */
 .hphom{
 	&__sec{
 		/* BANNER DE ANUNCIO */
@@ -129,6 +130,20 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
+/* CAROUSEL BANNERS - HOME */
+.hpbannerhom{
+	&__sec{
+		&__c{
+			max-height: 327px;
+			height: 327px;
+			img{
+				height: 100%;
+				object-fit: fill;
+				object-position: center;
 			}
 		}
 	}
