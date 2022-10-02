@@ -279,8 +279,8 @@ class Products extends Connection
                 foreach ($dataProductarr as $key=>$value) {
                     foreach ($value as $keyId => $valId) {
                         if ($keyId=="id") { 
-                            $nameCategorie= self::getCategoriesName($valId);
-                            $resultHtmlCat.= "<li><a href='#'>$nameCategorie,</a></li>";
+                            $nameCategorie = self::getCategoriesName($valId);
+                            $resultHtmlCat.= "<li><a href='../category/{$valId}'>{$nameCategorie} &nbsp;</a></li>";
                         }
                     }
 

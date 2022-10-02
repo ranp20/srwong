@@ -36,9 +36,14 @@ if(isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
-  <div class="login-register-area pt-95 pb-100">
+  <div class="login-register-area pt-20 pb-100">
     <div class="container">
       <div class="row">
+        <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+          <div class="logo" style="text-align: center;margin-bottom: 1rem;">
+            <img alt="logo_loggregister" src="<?= $url;?>assets/img/logo/logo.png">
+          </div>
+        </div>
         <div class="col-lg-7 col-md-12 ml-auto mr-auto">
           <div class="login-register-wrapper">
             <div class="login-register-tab-list nav">

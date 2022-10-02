@@ -1,0 +1,21 @@
+.foto-producto{
+	width: 100%;
+  border-radius: 20px;
+}
+.product-details-content{
+	padding: 25px;
+  background: #fcfcfc;
+  border: 1px solid #ececec;
+  border-radius: 20px;
+  & > h4{
+  	line-height: 50px !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+  }
+  & > span{
+  	color: #242424;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}

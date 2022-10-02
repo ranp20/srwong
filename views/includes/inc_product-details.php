@@ -6,13 +6,23 @@
   $p_price_new = $l_details['p_price'] - $l_details['p_discount'];
   $p_price_new = number_format($p_price_new, 2, '.', ' ');
   $p_status = ($l_details["p_status"] == 1) ? "Disponible" : "No disponible";
+  $p_discount_type = $l_details['p_discount_type'];
+  $p_discount = $l_details['p_discount'];
+  $tmpDiscount = "";
+  if($p_discount_type == "percent"){
+    if($p_discount != 0 || $p_discount != 0.00 || $p_discount != "0.00"){
+      $tmpDiscount .= "<span>-{$p_discount}%</span>";
+    }
+  }
+
 ?>
 <div class='product-details pt-100 pb-90'>
   <div class='container'>
     <div class='row'>
       <div class='col-lg-6 col-md-12'>
         <div class='product-details-img'>
-          <img class='zoompro' src='<?= $p_pathimg;?>' data-zoom-image='<?= $p_pathimg;?>' alt='zoom'/>
+          <img class='foto-producto' src='<?= $p_pathimg;?>' data-zoom-image='<?= $p_pathimg;?>' alt='zoom'/>
+          <!-- 
           <div id="gallery" class="mt-20 product-dec-slider owl-carousel">
             <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
               <img src="<?= $p_pathimg;?>" alt="">
@@ -33,27 +43,13 @@
               <img src="<?= $p_pathimg;?>" alt="">
             </a>
           </div>
-          <span>-29%</span>
+           -->
+          <?= $tmpDiscount;?>
         </div>
       </div>
       <div class='col-lg-6 col-md-12'>
         <div class='product-details-content'>
           <h4><?= $p_name;?></h4>
-          <div class='rating-review'>
-            <div class='pro-dec-rating'>
-              <i class='ion-android-star-outline theme-star'></i>
-              <i class='ion-android-star-outline theme-star'></i>
-              <i class='ion-android-star-outline theme-star'></i>
-              <i class='ion-android-star-outline theme-star'></i>
-              <i class='ion-android-star-outline'></i>
-            </div>
-            <div class='pro-dec-review'>
-              <ul>
-                <li>32 Reseñas </li>
-                <!-- <li> Agrega tus reseñas</li> -->
-              </ul>
-            </div>
-          </div>
           <span>S/. <?= $p_price_new;?></span>
           <div class='in-stock'>
             <p>Estado: <span><?= $p_status;?></span></p>

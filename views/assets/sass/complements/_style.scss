@@ -3795,7 +3795,7 @@ h4.shop-sidebar-title {
     color: #e02c2b;
 }
 .pro-dec-feature {
-    padding: 24px 0 37px;
+    padding: 10px 0 10px;
 }
 .quality input {
     background: transparent none repeat scroll 0 0;
@@ -4090,9 +4090,11 @@ h4.shop-sidebar-title {
     // height: 40px;
 }
 .product-details-wishlist a {
-    background-color: #F5F5F5;
+    // background-color: #F5F5F5;
+    // color: #242424;
+    // max-width: 260px;
+    // width: 95%;
     border-radius: 5px;
-    color: #242424;
     display: inline-block;
     font-size: 20px;
     height: 50px;
@@ -4101,16 +4103,18 @@ h4.shop-sidebar-title {
     text-align: center;
     transition: all 0.3s ease 0s;
     padding: 0.65rem 1rem;
-    max-width: 260px;
-    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: nowrap row;
+    background-color: $theme-clr-tertiary;
+    color: #fff;
+    width: 100%;
 }
 .product-details-wishlist a:hover {
-    background-color: #e02c2b;
-    color: #fff;
+    // background-color: $theme-clr-tertiary;
+    // color: #fff;
+    background-color: darken($theme-clr-tertiary, 10%);
 }
 .product-details-content .product-details-wishlist a i {
     line-height: 40px;
