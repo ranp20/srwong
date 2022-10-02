@@ -1,7 +1,7 @@
 <?php
 $r = "";
 if(isset($_POST['idcli']) && $_POST['idcli'] != ""){
-  require_once '../model/Orders.php';
+  require_once '../model/orders.php';
   $orders = new Orders();
   $listtmp = $orders->listTempCartByIdClient($_POST['idcli']);
   $arr_tmp = [];

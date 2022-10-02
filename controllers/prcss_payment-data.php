@@ -75,12 +75,13 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	];
 	*/
 	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
-
+	/*
 	echo "<pre>";
 	print_r($arr_order);
 	echo "</pre>";
 	exit();
-	
+	*/
+
 	require_once '../model/Orders.php';
 	$orders = new Orders();
 	$add = $orders->addOrder($arr_order);

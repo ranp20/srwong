@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST) && $_POST != ""){
 	$idcli = $_POST['idcli'];
-	require_once '../model/Products.php';
+	require_once '../model/products.php';
 	$tmpcart = new Products();
 	$list = $tmpcart->listTmpCartByIdClient($idcli);
 	echo "<pre>";

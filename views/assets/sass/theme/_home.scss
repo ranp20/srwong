@@ -93,20 +93,44 @@
 						.header-wishlist{
 							position: relative;
 							margin-left:10px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
 							.wishlist-text{
 								.pedido{
 							    font-weight: 700;
 							    font-size: 17px;
 								}
 							}
+							& > a{
+								display: flex;
+								align-items: center;
+								justify-content: center;
+							}
 						}
 						.header-login{
 							position: relative;
 							margin-left:10px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							& > a{
+								display: flex;
+								align-items: center;
+								justify-content: center;
+							}
 						}
 						.header-cart{
 							position: relative;
 							margin-left:10px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							& > a{
+								display: flex;
+								align-items: center;
+								justify-content: center;
+							}
 						}
 						@media (max-width: 920px){
 							.wishlist-text{

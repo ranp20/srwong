@@ -3,7 +3,7 @@ $r = "";
 if(isset($_POST) && count($_POST) > 0 && $_POST['idcli'] != ""){
   $idcli = $_POST['idcli'];
   $idprod = $_POST['idprod'];
-  require_once '../model/Cart.php';
+  require_once '../model/cart.php';
   $cartlist = new CartList();
   foreach($idprod as $k => $v){
     $del = $cartlist->deleteAllTempCartByIdClient($idcli, $v);
