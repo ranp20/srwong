@@ -18,11 +18,10 @@ class Branches extends Connection
       foreach($res as $k => $v){
         $branch_name = ucfirst($v['name']);
         $branch_address = ucfirst($v['address']);
-        $resultHTML.= "<div class='col-6'>
-                  <div class='l-item' id='{$v['id']}' style='border: 2px solid #f60715;border-radius: 20px;padding: 40px;'>
-                    <input tabindex='-1' placeholder='' type='hidden' autocomplete='off' spellcheck='false' f-hidden='aria-hidden' class='non-visvalipt h-alternative-shwnon s-fkeynone-step' name='cx1chk_branchcrt-sess' id='chk-sbranch_0_crtclient-sis' value='11' readonly='readonly' width='0' height='0'>
+        $resultHTML.= "<div class='col-6 c_clistBranches__c__cont--m--i'>
+                  <div class='l-item' id='{$v['id']}'>
                     <div class='l-item-title'>
-                      <h4 style='text-align: center;font-weight: 500;padding: 10px;'>{$branch_name}</h4>
+                      <h4>{$branch_name}</h4>
                     </div>
                     <div class='l-item-address'>
                       <h6>{$branch_address}</h6>

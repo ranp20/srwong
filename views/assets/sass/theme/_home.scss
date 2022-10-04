@@ -212,3 +212,44 @@
 		}
 	}
 }
+.c_clistBranches{
+	&__c{
+		&__cont{
+			&--m{
+				&--i{
+					.l-item{
+						border: 2px solid $theme-clr-tertiary;
+				    border-radius: 20px;
+				    padding: 40px;
+					}
+			    .l-item-title{
+			    	text-align: center;
+			    	font-weight: 500;
+			    	padding: 10px;
+			    }
+			    .l-item-email{
+			    	span{
+			    		svg{
+			    			fill: $theme-clr-tertiary;
+			    		}
+			    	}
+			    }
+			    .l-item-telephone{
+			    	span{
+			    		svg{
+			    			fill: $theme-clr-tertiary;
+			    		}
+			    	}
+			    }
+			    .l-item-schedule{
+			    	span{
+			    		svg{
+			    			fill: $theme-clr-tertiary;
+			    		}
+			    	}
+			    }
+				}
+			}
+		}
+	}
+}

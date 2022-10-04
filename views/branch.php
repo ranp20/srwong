@@ -26,7 +26,7 @@ $categories = new Categories();
     <div class="container">
       <div class="breadcrumb-content">
         <ul>
-          <li><a href="../">Inicio</a></li>
+          <li><a href="./">Inicio</a></li>
           <li class="active">Locales</li>
         </ul>
       </div>
@@ -39,16 +39,14 @@ $categories = new Categories();
           <h3 class="category-title" style="font-size: 20px;">TODOS LOS LOCALES</h3>
         </div>
       </div>
-      <div class="row flex-row-reverse">
-        <div class="col-12">
-          <div class="grid-list-product-wrapper">
-            <div class="product-grid product-view pb-20">
-              <div class="row">
-                <?php 
-                  require_once '../model/branch.php';
-                  echo $dmlBranches->getBranches();
-                ?>
-              </div>
+      <div class="row flex-row-reverse c_clistBranches">
+        <div class="col-12 c_clistBranches__c">
+          <div class="product-grid product-view pb-20 c_clistBranches__c__cont">
+            <div class="row c_clistBranches__c__cont--m">
+              <?php 
+                require_once '../model/branch.php';
+                echo $dmlBranches->getBranches();
+              ?>
             </div>
           </div>
         </div>
