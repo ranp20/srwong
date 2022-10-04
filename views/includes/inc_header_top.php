@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-  <div class="header-middle hphom__sec">
+  <div class="header-middle hphom__sec" id="headerTop-info">
     <div class="hphom__sec--cHTopNav">    
       <div class="container contain-def-theme hphom__sec--cHTNav__c">
         <div class="row hphom__sec--cHTNav__c__cont">

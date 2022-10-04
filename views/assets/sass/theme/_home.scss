@@ -1,6 +1,17 @@
 /* HEADER TOP - HOME */
 .hphom{
 	&__sec{
+		&.header-middle{
+			background-color: #fff;
+	    position: fixed;
+	    top: 65px;
+	    width: 100%;
+	    z-index: 999;
+	    box-shadow: 0 0 10px 2px #8888;
+	    &.reduxheight{
+	    	top: 0px;
+	    }
+		}
 		/* BANNER DE ANUNCIO */
 		&--cBnnadd{
 			background-color: $theme-clr-tertiary;
