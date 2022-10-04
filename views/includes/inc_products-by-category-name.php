@@ -10,7 +10,7 @@
 ?>
 <div class="category-banner">
   <div class="col-12 p-0">
-    <div class="category-banner" style="max-height: 330px;height: 330px;background:url(<?= $cat_banner;?>);background-size: cover;background-repeat: no-repeat;">
+    <div class="category-banner" style="max-height: 330px;height: 330px;background:url(<?= $cat_banner;?>);background-size: cover;background-repeat: no-repeat;background-position: center;">
      
       <div class="container">
     <div class="row"><p class="text-ce"><?= (isset($liById[0]['name']) && $liById[0]['name'] != "") ? $liById[0]['name'] : "";?></p>

@@ -88,7 +88,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Rubik', sans-serif;
     color: #2f333a;
     margin-top: 0px;
     font-style: normal;
@@ -131,7 +130,6 @@ p {
     line-height: 24px;
     color: #242424;
     margin-bottom: 15px;
-    font-family: 'Rubik', sans-serif;
 }
 hr {
     margin: 60px 0;
@@ -1792,7 +1790,6 @@ textarea:focus {
 .shopping-cart-content ul li {
     border-bottom: 1px solid #ebebeb;
     display: flex;
-    flex-wrap: wrap;
     margin-bottom: 20px;
     padding-bottom: 15px;
 }
@@ -2386,6 +2383,9 @@ textarea:focus {
 }
 .product-content > h4 a {
     color: #2f333a;
+    @media (min-width: 991px){
+        font-size: 18px;
+    }
 }
 .product-price-wrapper > span {
     color: #2f333a;
@@ -2607,7 +2607,7 @@ textarea:focus {
                         font-size: 1.2rem;
                     }
                     @media (min-width: 991px){
-                        font-size: 1.65rem;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -2639,7 +2639,7 @@ textarea:focus {
                         font-size: 1.2rem;
                     }
                     @media (min-width: 991px){
-                        font-size: 1.65rem;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -2671,7 +2671,7 @@ textarea:focus {
                         font-size: 1.2rem;
                     }
                     @media (min-width: 991px){
-                        font-size: 1.65rem;
+                        font-size: 1.5rem;
                     }
                 }
             }

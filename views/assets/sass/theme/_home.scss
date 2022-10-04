@@ -65,7 +65,17 @@
 
 									}
 									&--link{
+										display: inline-block;
+								    line-height: 60px;
+								    text-transform: uppercase;
+								    padding-top: 2px;
 										color: #2f333a !important;
+										@media (min-width: 768px){
+								    	font-weight: 700 !important;
+										}
+										@media (min-width: 991px){
+								    	font-size: 18px !important;
+										}
 										&.menu-cart{
 											background: $theme-clr-tertiary;
 									    padding-left: 13px;
@@ -182,6 +192,23 @@
 			span{
 				color: $theme-clr-tertiary;
 			}
+		}
+	}
+}
+.topdestaca{
+	float: left;
+  width: 100%;
+  padding: 30px;
+	.icono-top{
+		text-align: center;
+	}
+	.icono-text{
+		text-align: center;
+		a{
+			outline: medium none;
+			color: $theme-clr-tertiary;
+	    font-size: 19px;
+	    font-weight: 800;
 		}
 	}
 }

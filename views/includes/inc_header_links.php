@@ -35,9 +35,6 @@ $url_admin = $actual_link . "/admin/";
 <link rel="preload" href="<?= $url;?>assets/css/styles.min.css" as="style"/>
 <!-- <link rel="preload" href="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js" as="script"/> -->
 <link rel="preload" href="<?= $url;?>assets/js/plugins/jquery/jquery-1.12.4.min.js" as="script"/>
-<!-- <style>
-@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
-</style> -->
 <!-- JQUERY COMPRESSED -->
 <!-- <script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js"></script> -->
 <script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-1.12.4.min.js"></script>
