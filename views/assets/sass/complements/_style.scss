@@ -2519,6 +2519,10 @@ textarea:focus {
 .category-img {
     overflow: hidden;
     position: relative;
+    transition: all 0 ease-out 0s !important;
+}
+.category-img:hover + .category-content a{
+    color: $theme-clr-tertiary;
 }
 .category-img .category-img__linkcateg{
     display: flex;

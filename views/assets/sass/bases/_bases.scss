@@ -160,6 +160,15 @@ img{
 		max-width: $max-width-boostrap !important;
 	}
 }
+.text-ce{
+	padding-top: 40px;
+  font-size: 40px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 1px 5px #000;
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;
