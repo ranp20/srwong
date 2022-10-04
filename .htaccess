@@ -13,6 +13,7 @@ RewriteRule ^category/([0-9]+)$ views/category.php?cat=$1 [L,NC]
 RewriteRule ^about-us?$ views/about-us.php
 RewriteRule ^blog?$ views/blog.php
 RewriteRule ^wishlist?$ views/wishlist.php
+RewriteRule ^branch?$ views/branch.php
 RewriteRule ^shop?$ views/shop.php
 RewriteRule ^testimonial?$ views/testimonial.php
 RewriteRule ^shop-list?$ views/shop-list.php

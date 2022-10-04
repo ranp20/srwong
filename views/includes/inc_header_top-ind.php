@@ -38,7 +38,7 @@
                     <a href="../categories" class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--link">CATEGORÍAS</a>
                   </li>
                   <li class="mega-menu-position top-hover hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--i">
-                    <a href="../shop" class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--link">LOCALES</i></a>
+                    <a href="../branch" class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--link">LOCALES</i></a>
                   </li>
                   
                 </ul>
@@ -153,7 +153,7 @@
                   <a style="color:#2f333a;" href="../categories">CATEGORÍAS</a>
                 </li>
                 <li class="mega-menu-position top-hover">
-                  <a style="color:#2f333a;" href="../shop">LOCALES</i></a>
+                  <a style="color:#2f333a;" href="../branch">LOCALES</i></a>
                 </li>
                
               </ul>

@@ -272,19 +272,18 @@ class Products extends Connection
       $stm->execute([$idProduct]);
       $res = $stm->fetchAll(); 
       foreach($res as $data){
-         $dataProductarr = json_decode($data[0]);
+        $dataProductarr = json_decode($data[0]);
       }
       $resultHtmlCat="";
-      //              //recorriendo el array obtenido de categries id del producto para obtener el nombre
-                foreach ($dataProductarr as $key=>$value) {
-                    foreach ($value as $keyId => $valId) {
-                        if ($keyId=="id") { 
-                            $nameCategorie = self::getCategoriesName($valId);
-                            $resultHtmlCat.= "<li><a href='../category/{$valId}'>{$nameCategorie} &nbsp;</a></li>";
-                        }
-                    }
-
-                }
+      //recorriendo el array obtenido de categries id del producto para obtener el nombre
+      foreach($dataProductarr as $key=>$value){
+        foreach($value as $keyId => $valId){
+          if($keyId=="id"){
+            $nameCategorie = self::getCategoriesName($valId);
+            $resultHtmlCat.= "<li><a href='../category/{$valId}'>{$nameCategorie} &nbsp;</a></li>";
+          }
+        }
+      }
       return $resultHtmlCat;
     }catch(PDOException $e){
       return $e->getMessage();
