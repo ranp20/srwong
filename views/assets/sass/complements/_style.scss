@@ -1786,6 +1786,25 @@ textarea:focus {
     @media (min-width: 991px){
         width: 390px;
     }
+
+    /* ANCHO DE LA BARRA DE SCROLL */
+    &::-webkit-scrollbar {width: 7px;}
+    /* Estilos barra (thumb) de scroll */
+    &::-webkit-scrollbar-thumb {background: transparent;}
+    &::-webkit-scrollbar-thumb:active {background-color: #999999;}
+    &::-webkit-scrollbar-thumb:hover {background: #b3b3b3;box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);}
+    /* Estilos track de scroll */
+    &::-webkit-scrollbar-track {background: #e1e1e1;border-radius: 4px;}
+    &::-webkit-scrollbar-track:hover, &::-webkit-scrollbar-track:active {background: #d4d4d4;}
+    /* scrollling */
+    /* ANCHO DEL SCROLLING */
+    &::-webkit-scrollbar {width: 7px;}
+    &::-webkit-scrollbar-thumb {background: #cccc;border-radius: 4px;}
+    &::-webkit-scrollbar-thumb:active {background: #999999;}
+    &::-webkit-scrollbar-thumb:hover {background: #b3b3b3;box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);}
+    /* FONDO DEL SCROLL */
+    &::-webkit-scrollbar-track {background: #eee;}
+    &::-webkit-scrollbar-track:active, &::-webkit-scrollbar-track:hover {background: #eee;}
 }
 .shopping-cart-content ul{
     /* ANCHO DE LA BARRA DE SCROLL */
@@ -2650,6 +2669,7 @@ textarea:focus {
     }
     &__sec{
         margin-bottom: 0.5rem !important;
+        margin-top: 1.2rem !important;
         @media (min-width: 768px){margin-bottom: 1rem !important;}
         @media (min-width: 991px){margin-bottom: 1rem !important;}
         &__c{

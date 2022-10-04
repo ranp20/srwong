@@ -12,14 +12,18 @@
 								color: #fff;
 						    margin: 9px 0 0;
 						    text-align: center;
-						    font-size: 21px;
-						    line-height: 57px;
+						    font-size: 1rem;
+						    line-height: 30px;
 						    font-weight: 400;
 						    display: flex;
 						    align-items: center;
 						    justify-content: center;
 						    flex-flow: wrap row;
 						    text-align: center;
+						    @media (min-width: 991px){
+						    	font-size: 21px;
+						    	line-height: 57px;
+						    }
 						    span, strong{
 						    	font-size: 30px;
     							font-weight: 700;
