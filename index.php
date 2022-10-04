@@ -45,7 +45,6 @@ $l_products = $products->getAll();
   <?php require_once 'views/includes/inc_carousel-home.php';?>
   <?php require_once 'views/includes/inc_category-list-home.php';?>
   <?php require_once 'views/includes/inc_popular-products-home.php';?>
-  <?php require_once 'views/includes/inc_latest-products-home.php';?>
   <?php require_once 'views/includes/inc_footer.php';?>
   <?php require_once 'views/includes/inc_mobile-tabs-links-footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>

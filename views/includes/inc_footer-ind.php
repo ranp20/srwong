@@ -11,7 +11,7 @@
 
           <div class="footer-about mb-40">
             <div class="footer-logo">
-              <a href="index">
+              <a href="../">
                 <img src="<?= $url;?>assets/img/logo/logo.png" alt="">
               </a>
             </div>
@@ -30,7 +30,7 @@
                   $tmp_ctgshort = "";
                   foreach($shortListCatg as $k => $v){
                     $catg_name = mb_convert_case($v['name'], MB_CASE_TITLE, "UTF-8");
-                    $tmp_ctgshort .= "<li><a href='./category/{$v['id']}'>{$catg_name}</a></li>";
+                    $tmp_ctgshort .= "<li><a href='../category/{$v['id']}'>{$catg_name}</a></li>";
                   }
                   echo $tmp_ctgshort;
                 ?>
@@ -45,9 +45,9 @@
             </div>
             <div class="footer-content">
               <ul>
-                <li><a href="my-account">Perfil</a></li>
-                <li><a href="about-us">Nosotros</a></li>
-                <li><a href="wishlist">Políticas de privacidad</a></li>
+                <li><a href="../my-account">Perfil</a></li>
+                <li><a href="../about-us">Nosotros</a></li>
+                <li><a href="../wishlist">Políticas de privacidad</a></li>
                 <li><a href="javascript:void(0);">Términos y condiciones</a></li>
               </ul>
             </div>

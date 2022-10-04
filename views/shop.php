@@ -16,707 +16,103 @@ $categories = new Categories();
     <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
 </head>
 <body>
-    <?php require_once 'includes/inc_header_top.php';?>
-    <div class="breadcrumb-area gray-bg">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <ul>
-                    <li><a href="./">Home</a></li>
-                    <li class="active">Shop Grid Style </li>
-                </ul>
-            </div>
-        </div>
+  <?php require_once 'includes/inc_header_top.php';?>
+  <div class="breadcrumb-area gray-bg">
+    <div class="container">
+      <div class="breadcrumb-content">
+        <ul>
+          <li><a href="../">Inicio</a></li>
+          <li class="active">Local</li>
+        </ul>
+      </div>
     </div>
-    <div class="shop-page-area pt-100 pb-100">
-        <div class="container">
-            <div class="row flex-row-reverse">
-                <div class="col-lg-9">
-                    <div class="banner-area pb-30">
-                        <a href="product-details"><img alt="" src="<?= $url;?>assets/img/banner/banner-49.jpg"></a>
-                    </div>
-                    <div class="shop-topbar-wrapper">
-                        <div class="shop-topbar-left">
-                            <ul class="view-mode">
-                                <li class="active"><a href="#product-grid" data-view="product-grid"><i class="fa fa-th"></i></a></li>
-                                <li><a href="#product-list" data-view="product-list"><i class="fa fa-list-ul"></i></a></li>
-                            </ul>
-                            <p>Showing 1 - 20 of 30 results  </p>
-                        </div>
-                        <div class="product-sorting-wrapper">
-                            <div class="product-shorting shorting-style">
-                                <label>View:</label>
-                                <select>
-                                    <option value=""> 20</option>
-                                    <option value=""> 23</option>
-                                    <option value=""> 30</option>
-                                </select>
-                            </div>
-                            <div class="product-show shorting-style">
-                                <label>Sort by:</label>
-                                <select>
-                                    <option value="">Default</option>
-                                    <option value=""> Name</option>
-                                    <option value=""> price</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-list-product-wrapper">
-                        <div class="product-grid product-view pb-20">
-                            <div class="row">
-                                <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-1.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-2.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$200.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-3.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$90.00</span>
-                                                <span class="product-price-old">$100.00 </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-4.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$50.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-5.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$60.00</span>
-                                                <span class="product-price-old">$70.00 </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-6.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$190.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-7.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$150.00</span>
-                                                <span class="product-price-old">$170.00 </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-8.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$80.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-9.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$180.00</span>
-                                                <span class="product-price-old">$190.00 </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-10.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$70.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-1.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
-                                    <div class="product-wrapper">
-                                        <div class="product-img">
-                                            <a href="product-details">
-                                                <img src="<?= $url;?>assets/img/product/product-2.jpg" alt="">
-                                            </a>
-                                            <div class="product-action">
-                                                <div class="pro-action-left">
-                                                    <a title="Add Tto Cart" href="#"><i class="ion-android-cart"></i> Add Tto Cart</a>
-                                                </div>
-                                                <div class="pro-action-right">
-                                                    <a title="Wishlist" href="wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                    <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#"><i class="ion-android-open"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$200.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-list-details">
-                                            <h4>
-                                                <a href="product-details">PRODUCTS NAME HERE </a>
-                                            </h4>
-                                            <div class="product-price-wrapper">
-                                                <span>$100.00</span>
-                                                <span class="product-price-old">$120.00 </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor labor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                            <div class="shop-list-cart-wishlist">
-                                                <a href="#" title="Wishlist"><i class="ion-ios-heart-outline"></i></a>
-                                                <a href="#" title="Add To Cart"><i class="ion-android-cart"></i></a>
-                                                <a href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-                                                    <i class="ion-android-open"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pagination-total-pages">
-                            <div class="pagination-style">
-                                <ul>
-                                    <li><a class="prev-next prev" href="#"><i class="ion-ios-arrow-left"></i> Prev</a></li>
-                                    <li><a class="active" href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">10</a></li>
-                                    <li><a class="prev-next next" href="#">Next<i class="ion-ios-arrow-right"></i> </a></li>
-                                </ul>
-                            </div>
-                            <div class="total-pages">
-                                <p>Showing 1 - 20 of 30 results  </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="shop-sidebar-wrapper gray-bg-7 shop-sidebar-mrg">
-                        <div class="shop-widget">
-                            <h4 class="shop-sidebar-title">Shop By Categories</h4>
-                            <div class="shop-catigory">
-                                <ul id="faq">
-                                    <li> <a data-toggle="collapse" data-parent="#faq" href="#shop-catigory-1">Fast Foods <i class="ion-ios-arrow-down"></i></a>
-                                        <ul id="shop-catigory-1" class="panel-collapse collapse show">
-                                            <li><a href="#">Pizza </a></li>
-                                            <li><a href="#">Hamburgers</a></li>
-                                            <li><a href="#">Sandwiches</a></li>
-                                            <li><a href="#">French fries</a></li>
-                                            <li><a href="#">Fried chicken</a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a data-toggle="collapse" data-parent="#faq" href="#shop-catigory-2">Rich Foods <i class="ion-ios-arrow-down"></i></a>
-                                        <ul id="shop-catigory-2" class="panel-collapse collapse">
-                                            <li><a href="#">Eggs</a></li>
-                                            <li><a href="#">Milk</a></li>
-                                            <li><a href="#">Almonds</a></li>
-                                            <li><a href="#">Cottage Cheese</a></li>
-                                            <li><a href="#">Lean Beef</a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a data-toggle="collapse" data-parent="#faq" href="#shop-catigory-3">Soft Drinks <i class="ion-ios-arrow-down"></i></a>
-                                        <ul id="shop-catigory-3" class="panel-collapse collapse">
-                                            <li><a href="#"> Pepsi Cola</a></li>
-                                            <li><a href="#"> Fruit juices</a></li>
-                                            <li><a href="#">Diet Pepsi</a></li>
-                                            <li><a href="#">Bitter lemon</a></li>
-                                            <li><a href="#">Barley water</a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="#">Vegetables</a> </li>
-                                    <li> <a href="#">Fruits</a></li>
-                                    <li> <a href="#">Red Meat</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="shop-price-filter mt-40 shop-sidebar-border pt-35">
-                            <h4 class="shop-sidebar-title">Price Filter</h4>
-                            <div class="price_filter mt-25">
-                                <span>Range:  $100.00 - 1.300.00 </span>
-                                <div id="slider-range"></div>
-                                <div class="price_slider_amount">
-                                    <div class="label-input">
-                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
-                                    </div>
-                                    <button type="button">Filter</button> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                            <h4 class="shop-sidebar-title">By Brand</h4>
-                            <div class="sidebar-list-style mt-20">
-                                <ul>
-                                    <li><input type="checkbox"><a href="#">Poure </a></li>
-                                    <li><input type="checkbox"><a href="#">Eveman </a></li>
-                                    <li><input type="checkbox"><a href="#">Iccaso </a></li>
-                                    <li><input type="checkbox"><a href="#">Annopil </a></li>
-                                    <li><input type="checkbox"><a href="#">Origina </a></li>
-                                    <li><input type="checkbox"><a href="#">Perini  </a></li>
-                                    <li><input type="checkbox"><a href="#">Dolloz </a></li>
-                                    <li><input type="checkbox"><a href="#">Spectry </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                            <h4 class="shop-sidebar-title">By Color</h4>
-                            <div class="sidebar-list-style mt-20">
-                                <ul>
-                                    <li><input type="checkbox"><a href="#">Black </a></li>
-                                    <li><input type="checkbox"><a href="#">Blue </a></li>
-                                    <li><input type="checkbox"><a href="#">Green </a></li>
-                                    <li><input type="checkbox"><a href="#">Grey </a></li>
-                                    <li><input type="checkbox"><a href="#">Red</a></li>
-                                    <li><input type="checkbox"><a href="#">White  </a></li>
-                                    <li><input type="checkbox"><a href="#">Yellow   </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                            <h4 class="shop-sidebar-title">Compare Products</h4>
-                            <div class="compare-product">
-                                <p>You have no item to compare. </p>
-                                <div class="compare-product-btn">
-                                    <span>Clear all </span>
-                                    <a href="#">Compare <i class="fa fa-check"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                            <h4 class="shop-sidebar-title">Popular Tags</h4>
-                            <div class="shop-tags mt-25">
-                                <ul>
-                                    <li><a href="#">All</a></li>
-                                    <li><a href="#">Cheesy</a></li>
-                                    <li><a href="#">Fast Food</a></li>
-                                    <li><a href="#">French Fries</a></li>
-                                    <li><a href="#">Hamburger </a></li>
-                                    <li><a href="#">Pizza</a></li>
-                                    <li><a href="#">Red Meat</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="category-page-area pt-50 pb-100">
+    <div class="container">
+      <div class="row flex-row-reverse mb-20">
+        <div class="col-12">
+          <h3 class="category-title" style="font-size: 20px;">TODAS LOS LOCALES</h3>
         </div>
+      </div>
+      <div class="row flex-row-reverse">
+        <div class="col-12">
+          <div class="grid-list-product-wrapper">
+            <div class="product-grid product-view pb-20">
+              <div class="row">
+                <div class="col-6">
+                <div class="l-item" id="11" style="border: 2px solid #f60715;border-radius: 20px;padding: 40px;">
+                <input tabindex="-1" placeholder="" type="hidden" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_branchcrt-sess" id="chk-sbranch_0_crtclient-sis" value="11" readonly="readonly" width="0" height="0">
+                <div class="l-item-title">
+                  <h4 style="text-align: center;font-weight: 500;padding: 10px;">Señor Wong - Norte</h4>
+                </div>
+                <div class="l-item-address">
+                  <h6>Av. Los Jardines este 173 Urb. Las flores 78 S.J.L</h6>
+                </div>
+                <!--<div class="l-item-distance">
+                  <p>0.89 km de distancia</p>
+                </div>-->
+                <div class="l-item-email">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m120.4 112c-9.1133 0-16.801 7.6875-16.801 16.801v302.4c0 9.1133 7.6875 16.801 16.801 16.801h459.2c9.1133 0 16.801-7.6875 16.801-16.801v-302.4c0-9.1133-7.6875-16.801-16.801-16.801zm17.324 22.398h424.55l-212.27 191.98-212.27-191.98zm-11.723 19.602 131.07 118.48-131.07 135.97zm448 0v254.45l-131.07-135.97zm-300.3 133.52 68.773 62.301h0.003906c4.2695 3.875 10.777 3.875 15.047 0l68.773-62.301 133.18 138.07h-418.95z"></path></g></svg>
+                  </span>
+                  <span>Email: srwong2@srwong.pe</span>
+                </div>
+                <div class="l-item-telephone">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m524.37 97.562h-227.11v-0.035156c0-13.398-10.898-24.297-24.297-24.297h-64.883c-13.398 0-24.297 10.898-24.297 24.297v0.027344h-8.1406c-17.867 0-32.402 14.543-32.402 32.41v291.96c0 17.867 14.543 32.41 32.402 32.41h8.1406v24.363c0 4.4609 3.6172 8.082 8.082 8.082h48.66c4.4609 0 8.0742-3.6172 8.0742-8.082v-24.363h275.77c17.867 0 32.402-14.543 32.402-32.41v-291.96c0-17.871-14.543-32.402-32.402-32.402zm-324.44-0.035156c0-4.4883 3.6523-8.1406 8.1406-8.1406h64.883c4.4883 0 8.1406 3.6523 8.1406 8.1406v291.96c0 4.4883-3.6523 8.1406-8.1406 8.1406h-64.883c-4.4961 0-8.1406-3.6523-8.1406-8.1406zm-40.547 324.39v-291.96c0-8.9609 7.2891-16.258 16.25-16.258h8.1406v275.77c0 13.398 10.898 24.297 24.297 24.297h24.363v24.398h-56.801c-8.9609 0.007813-16.25-7.2812-16.25-16.25zm73.059 48.695h-32.504v-16.281h32.504zm308.18-48.695c0 8.9688-7.2891 16.258-16.25 16.258h-275.78v-24.398h24.363c13.398 0 24.297-10.906 24.297-24.297l-0.003906-275.77h227.11c8.9609 0 16.25 7.2969 16.25 16.258v291.95z"></path><path d="m508.14 138.11h-178.43c-4.4609 0-8.082 3.6172-8.082 8.082v40.543c0 4.4609 3.6172 8.082 8.082 8.082h178.41c4.4609 0 8.082-3.6172 8.082-8.082v-40.543c0-4.4727-3.6094-8.082-8.0703-8.082zm-8.082 40.543h-162.26v-24.391h162.26z"></path><path d="m362.16 219.21h-32.445c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.445c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c0-4.4648-3.6172-8.082-8.082-8.082zm-8.0703 32.438h-16.293v-16.281h16.293z"></path><path d="m435.16 219.21h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011719-4.4648-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m508.14 219.21h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6094 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011718-4.4648-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m362.16 292.2h-32.445c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.445c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c0-4.4727-3.6172-8.082-8.082-8.082zm-8.0703 32.438h-16.293v-16.281h16.293z"></path><path d="m435.16 292.2h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011719-4.4727-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m362.16 365.19h-32.445c-4.4609 0-8.082 3.6172-8.082 8.082v32.445c0 4.4609 3.6172 8.082 8.082 8.082h32.445c4.4609 0 8.082-3.6172 8.082-8.082v-32.445c0-4.4609-3.6172-8.082-8.082-8.082zm-8.0703 32.438h-16.293v-16.293h16.293z"></path><path d="m435.16 365.19h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.445c0 4.4609 3.6172 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.445c-0.011719-4.4609-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.293h16.281z"></path><path d="m508.14 292.2h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6094 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011718-4.4727-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m508.14 365.19h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.445c0 4.4609 3.6094 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.445c-0.011718-4.4609-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.293h16.281z"></path></g></svg>
+                  </span>
+                  <span>Telf: 990 235 125</span>
+                </div>
+                <div class="l-item-schedule">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" version="1.1" viewBox="0 0 700 700"><g><path d="m621.52 73.309c0-22.656-18.414-41.152-41.152-41.152h-60.75v-15.441c0-4.582-3.6484-8.2305-8.2305-8.2305-4.582 0-8.2305 3.6484-8.2305 8.2305v15.441h-144.92v-15.441c0-4.582-3.6484-8.2305-8.2305-8.2305s-8.2305 3.6484-8.2305 8.2305v15.441h-144.92v-15.441c0-4.582-3.6484-8.2305-8.2305-8.2305-4.582 0-8.2305 3.6484-8.2305 8.2305v15.441h-60.75c-22.656 0-41.152 18.5-41.152 41.152l0.085937 437.05c0 22.656 18.496 41.152 41.152 41.152h460.73c22.656 0 41.152-18.496 41.152-41.152zm-41.152 461.75h-460.73c-13.574 0-24.691-11.031-24.691-24.691v-19.77c6.8711 5.2617 15.359 8.3984 24.691 8.3984h460.73c9.332 0 17.816-3.2227 24.691-8.3984v19.77c0 13.66-11.117 24.691-24.691 24.691zm0-52.438h-460.73c-13.574 0-24.691-11.031-24.691-24.691v-287.21h510.02v287.21c0.085938 13.578-11.031 24.691-24.605 24.691zm-485.42-409.31c0-13.574 11.031-24.691 24.691-24.691h60.75v23.418c-2.7148 0.76172-5.3438 1.8672-7.8047 3.3086-8.9922 5.5156-14.594 15.527-14.594 26.047 0 10.605 5.6016 20.617 14.68 26.219 4.8359 2.9688 10.352 4.4961 15.953 4.4961 5.6016 0 11.113-1.5273 15.953-4.4961 8.9922-5.5156 14.594-15.527 14.594-26.133 0-10.52-5.6016-20.449-14.594-26.047-2.4609-1.4414-5.0078-2.5469-7.7227-3.3086l-0.003906-23.504h144.92v23.418c-2.7148 0.76172-5.3438 1.8672-7.7227 3.3086-8.9922 5.5156-14.594 15.527-14.594 26.047 0 10.605 5.6016 20.617 14.68 26.219 4.8359 2.9688 10.352 4.4961 15.953 4.4961 5.6016 0 11.113-1.5273 15.953-4.4961 8.9922-5.5156 14.594-15.527 14.594-26.133 0-10.52-5.6016-20.449-14.594-26.047-2.4609-1.4414-5.0898-2.6289-7.8047-3.3086l-0.003906-23.504h144.92v23.418c-2.7148 0.76172-5.2617 1.8672-7.7227 3.3086-8.9922 5.5156-14.594 15.527-14.594 26.047 0 10.605 5.6016 20.617 14.594 26.219 4.8359 2.9688 10.352 4.4961 15.953 4.4961 5.6016 0 11.113-1.5273 15.953-4.4961 8.9922-5.5156 14.594-15.527 14.594-26.133 0-10.52-5.6016-20.449-14.594-26.047-2.4609-1.5273-5.0898-2.6289-7.8047-3.3086l-0.003906-23.504h60.75c13.574 0 24.691 11.031 24.691 24.691v80.945h-510.02zm93.672 36.316c4.582 0 8.2305-3.6484 8.2305-8.2305v-11.371c3.6484 2.6289 5.9375 6.8711 5.9375 11.285 0 4.9219-2.6289 9.5859-6.7891 12.133-4.4141 2.7148-10.352 2.7148-14.762 0-4.1562-2.5469-6.7891-7.2109-6.7891-12.133 0-4.4961 2.2891-8.6562 5.9375-11.285v11.371c0.003907 4.582 3.6523 8.2305 8.2344 8.2305zm161.38 0c4.582 0 8.2305-3.6484 8.2305-8.2305v-11.371c3.6484 2.6289 5.9375 6.8711 5.9375 11.285 0 4.9219-2.6289 9.5859-6.7891 12.133-4.4961 2.7148-10.352 2.7148-14.762 0-4.1562-2.5469-6.7891-7.2109-6.7891-12.133 0-4.4961 2.2891-8.6562 5.9375-11.285v11.371c0.003906 4.582 3.6523 8.2305 8.2344 8.2305zm161.38 0c4.582 0 8.2305-3.6484 8.2305-8.2305v-11.453c3.6484 2.6289 5.9375 6.8711 5.9375 11.371 0 4.9219-2.6289 9.5859-6.7891 12.133-4.4961 2.7148-10.352 2.7148-14.762 0-4.1562-2.5469-6.7891-7.2109-6.7891-12.133 0-4.4141 2.2891-8.6562 5.8555-11.285v11.371c0.085938 4.5781 3.8203 8.2266 8.3164 8.2266z"></path><path d="m235.11 215.86h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.578-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m371.21 215.86h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.578-11.113-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m507.22 215.86h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.578-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m235.11 345.08h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.574-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m371.21 345.08h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.574-11.113-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m507.22 345.08h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.574-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path></g></svg>
+                  </span>
+                  <span>Horario: 11:00am-11:00pm</span>
+                </div>
+                </div>
+                
+                </div>
+                
+                <div class="col-6">
+                    <div class="l-item" id="11" style="border: 2px solid #f60715;border-radius: 20px;padding: 40px;">
+                 <div class="l-item-title" >
+                  <h4 style="text-align: center;font-weight: 500;padding: 10px;">Señor Wong - Sur</h4>
+                </div>
+                <div class="l-item-address">
+                  <h6>Calle Wiracocha Mz Q1 Lt 7-9 Zarate - S.J.L</h6>
+                </div>
+                <!--<div class="l-item-distance">
+                  <p>0.89 km de distancia</p>
+                </div>-->
+                <div class="l-item-email">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m120.4 112c-9.1133 0-16.801 7.6875-16.801 16.801v302.4c0 9.1133 7.6875 16.801 16.801 16.801h459.2c9.1133 0 16.801-7.6875 16.801-16.801v-302.4c0-9.1133-7.6875-16.801-16.801-16.801zm17.324 22.398h424.55l-212.27 191.98-212.27-191.98zm-11.723 19.602 131.07 118.48-131.07 135.97zm448 0v254.45l-131.07-135.97zm-300.3 133.52 68.773 62.301h0.003906c4.2695 3.875 10.777 3.875 15.047 0l68.773-62.301 133.18 138.07h-418.95z"></path></g></svg>
+                  </span>
+                  <span>Email: ventas@srwong.pe</span>
+                </div>
+                <div class="l-item-telephone">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m524.37 97.562h-227.11v-0.035156c0-13.398-10.898-24.297-24.297-24.297h-64.883c-13.398 0-24.297 10.898-24.297 24.297v0.027344h-8.1406c-17.867 0-32.402 14.543-32.402 32.41v291.96c0 17.867 14.543 32.41 32.402 32.41h8.1406v24.363c0 4.4609 3.6172 8.082 8.082 8.082h48.66c4.4609 0 8.0742-3.6172 8.0742-8.082v-24.363h275.77c17.867 0 32.402-14.543 32.402-32.41v-291.96c0-17.871-14.543-32.402-32.402-32.402zm-324.44-0.035156c0-4.4883 3.6523-8.1406 8.1406-8.1406h64.883c4.4883 0 8.1406 3.6523 8.1406 8.1406v291.96c0 4.4883-3.6523 8.1406-8.1406 8.1406h-64.883c-4.4961 0-8.1406-3.6523-8.1406-8.1406zm-40.547 324.39v-291.96c0-8.9609 7.2891-16.258 16.25-16.258h8.1406v275.77c0 13.398 10.898 24.297 24.297 24.297h24.363v24.398h-56.801c-8.9609 0.007813-16.25-7.2812-16.25-16.25zm73.059 48.695h-32.504v-16.281h32.504zm308.18-48.695c0 8.9688-7.2891 16.258-16.25 16.258h-275.78v-24.398h24.363c13.398 0 24.297-10.906 24.297-24.297l-0.003906-275.77h227.11c8.9609 0 16.25 7.2969 16.25 16.258v291.95z"></path><path d="m508.14 138.11h-178.43c-4.4609 0-8.082 3.6172-8.082 8.082v40.543c0 4.4609 3.6172 8.082 8.082 8.082h178.41c4.4609 0 8.082-3.6172 8.082-8.082v-40.543c0-4.4727-3.6094-8.082-8.0703-8.082zm-8.082 40.543h-162.26v-24.391h162.26z"></path><path d="m362.16 219.21h-32.445c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.445c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c0-4.4648-3.6172-8.082-8.082-8.082zm-8.0703 32.438h-16.293v-16.281h16.293z"></path><path d="m435.16 219.21h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011719-4.4648-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m508.14 219.21h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6094 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011718-4.4648-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m362.16 292.2h-32.445c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.445c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c0-4.4727-3.6172-8.082-8.082-8.082zm-8.0703 32.438h-16.293v-16.281h16.293z"></path><path d="m435.16 292.2h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6172 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011719-4.4727-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m362.16 365.19h-32.445c-4.4609 0-8.082 3.6172-8.082 8.082v32.445c0 4.4609 3.6172 8.082 8.082 8.082h32.445c4.4609 0 8.082-3.6172 8.082-8.082v-32.445c0-4.4609-3.6172-8.082-8.082-8.082zm-8.0703 32.438h-16.293v-16.293h16.293z"></path><path d="m435.16 365.19h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.445c0 4.4609 3.6172 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.445c-0.011719-4.4609-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.293h16.281z"></path><path d="m508.14 292.2h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.438c0 4.4609 3.6094 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.438c-0.011718-4.4727-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.281h16.281z"></path><path d="m508.14 365.19h-32.438c-4.4609 0-8.082 3.6172-8.082 8.082v32.445c0 4.4609 3.6094 8.082 8.082 8.082h32.438c4.4609 0 8.082-3.6172 8.082-8.082v-32.445c-0.011718-4.4609-3.6211-8.082-8.082-8.082zm-8.082 32.438h-16.281v-16.293h16.281z"></path></g></svg>
+                  </span>
+                  <span>Telf: 990 235 125</span>
+                </div>
+                <div class="l-item-schedule">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" version="1.1" viewBox="0 0 700 700"><g><path d="m621.52 73.309c0-22.656-18.414-41.152-41.152-41.152h-60.75v-15.441c0-4.582-3.6484-8.2305-8.2305-8.2305-4.582 0-8.2305 3.6484-8.2305 8.2305v15.441h-144.92v-15.441c0-4.582-3.6484-8.2305-8.2305-8.2305s-8.2305 3.6484-8.2305 8.2305v15.441h-144.92v-15.441c0-4.582-3.6484-8.2305-8.2305-8.2305-4.582 0-8.2305 3.6484-8.2305 8.2305v15.441h-60.75c-22.656 0-41.152 18.5-41.152 41.152l0.085937 437.05c0 22.656 18.496 41.152 41.152 41.152h460.73c22.656 0 41.152-18.496 41.152-41.152zm-41.152 461.75h-460.73c-13.574 0-24.691-11.031-24.691-24.691v-19.77c6.8711 5.2617 15.359 8.3984 24.691 8.3984h460.73c9.332 0 17.816-3.2227 24.691-8.3984v19.77c0 13.66-11.117 24.691-24.691 24.691zm0-52.438h-460.73c-13.574 0-24.691-11.031-24.691-24.691v-287.21h510.02v287.21c0.085938 13.578-11.031 24.691-24.605 24.691zm-485.42-409.31c0-13.574 11.031-24.691 24.691-24.691h60.75v23.418c-2.7148 0.76172-5.3438 1.8672-7.8047 3.3086-8.9922 5.5156-14.594 15.527-14.594 26.047 0 10.605 5.6016 20.617 14.68 26.219 4.8359 2.9688 10.352 4.4961 15.953 4.4961 5.6016 0 11.113-1.5273 15.953-4.4961 8.9922-5.5156 14.594-15.527 14.594-26.133 0-10.52-5.6016-20.449-14.594-26.047-2.4609-1.4414-5.0078-2.5469-7.7227-3.3086l-0.003906-23.504h144.92v23.418c-2.7148 0.76172-5.3438 1.8672-7.7227 3.3086-8.9922 5.5156-14.594 15.527-14.594 26.047 0 10.605 5.6016 20.617 14.68 26.219 4.8359 2.9688 10.352 4.4961 15.953 4.4961 5.6016 0 11.113-1.5273 15.953-4.4961 8.9922-5.5156 14.594-15.527 14.594-26.133 0-10.52-5.6016-20.449-14.594-26.047-2.4609-1.4414-5.0898-2.6289-7.8047-3.3086l-0.003906-23.504h144.92v23.418c-2.7148 0.76172-5.2617 1.8672-7.7227 3.3086-8.9922 5.5156-14.594 15.527-14.594 26.047 0 10.605 5.6016 20.617 14.594 26.219 4.8359 2.9688 10.352 4.4961 15.953 4.4961 5.6016 0 11.113-1.5273 15.953-4.4961 8.9922-5.5156 14.594-15.527 14.594-26.133 0-10.52-5.6016-20.449-14.594-26.047-2.4609-1.5273-5.0898-2.6289-7.8047-3.3086l-0.003906-23.504h60.75c13.574 0 24.691 11.031 24.691 24.691v80.945h-510.02zm93.672 36.316c4.582 0 8.2305-3.6484 8.2305-8.2305v-11.371c3.6484 2.6289 5.9375 6.8711 5.9375 11.285 0 4.9219-2.6289 9.5859-6.7891 12.133-4.4141 2.7148-10.352 2.7148-14.762 0-4.1562-2.5469-6.7891-7.2109-6.7891-12.133 0-4.4961 2.2891-8.6562 5.9375-11.285v11.371c0.003907 4.582 3.6523 8.2305 8.2344 8.2305zm161.38 0c4.582 0 8.2305-3.6484 8.2305-8.2305v-11.371c3.6484 2.6289 5.9375 6.8711 5.9375 11.285 0 4.9219-2.6289 9.5859-6.7891 12.133-4.4961 2.7148-10.352 2.7148-14.762 0-4.1562-2.5469-6.7891-7.2109-6.7891-12.133 0-4.4961 2.2891-8.6562 5.9375-11.285v11.371c0.003906 4.582 3.6523 8.2305 8.2344 8.2305zm161.38 0c4.582 0 8.2305-3.6484 8.2305-8.2305v-11.453c3.6484 2.6289 5.9375 6.8711 5.9375 11.371 0 4.9219-2.6289 9.5859-6.7891 12.133-4.4961 2.7148-10.352 2.7148-14.762 0-4.1562-2.5469-6.7891-7.2109-6.7891-12.133 0-4.4141 2.2891-8.6562 5.8555-11.285v11.371c0.085938 4.5781 3.8203 8.2266 8.3164 8.2266z"></path><path d="m235.11 215.86h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.578-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m371.21 215.86h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.578-11.113-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m507.22 215.86h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.578-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m235.11 345.08h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.574-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m371.21 345.08h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.574-11.113-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path><path d="m507.22 345.08h-42.34c-13.574 0-24.691 11.031-24.691 24.691v42.34c0 13.574 11.031 24.691 24.691 24.691h42.34c13.574 0 24.691-11.031 24.691-24.691v-42.34c0-13.574-11.027-24.691-24.691-24.691zm8.2305 67.031c0 4.582-3.6484 8.2305-8.2305 8.2305h-42.34c-4.582 0-8.2305-3.6484-8.2305-8.2305v-42.34c0-4.582 3.6484-8.2305 8.2305-8.2305h42.34c4.582 0 8.2305 3.6484 8.2305 8.2305z"></path></g></svg>
+                  </span>
+                  <span>Horario: 11:00am-11:00pm</span>
+                </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
     <?php require_once 'includes/inc_footer.php';?>
+     <?php require_once 'includes/inc_mobile-tabs-links-footer.php';?>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">

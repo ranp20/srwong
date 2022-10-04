@@ -63,7 +63,7 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
       </div>
     </div>
   </div>
-  <?php require_once 'includes/inc_footer.php';?>
+  <?php require_once 'includes/inc_footer-ind.php';?>
   <?php require_once 'includes/inc_mobile-tabs-links-footer-ind.php';?>
 	<!-- all js here -->
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>

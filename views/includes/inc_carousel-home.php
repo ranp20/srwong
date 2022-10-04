@@ -6,3 +6,10 @@
     ?>
   </div>
 </div>
+<style>
+    .hpbannerhom__sec__c {
+  max-height: 100%;
+  height: 100%;
+}
+    
+</style>

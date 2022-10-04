@@ -1,8 +1,10 @@
 <?php 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 // CONFIGURACIÓN LOCALHOST
+
 $url = $actual_link . "/srwong/views/";
 $url_admin = $actual_link . "/srwong/admin/";
+
 // CONFIGURACIÓN SERVIDOR
 /*
 $url = $actual_link . "/views/";
@@ -33,6 +35,9 @@ $url_admin = $actual_link . "/admin/";
 <link rel="preload" href="<?= $url;?>assets/css/styles.min.css" as="style"/>
 <!-- <link rel="preload" href="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js" as="script"/> -->
 <link rel="preload" href="<?= $url;?>assets/js/plugins/jquery/jquery-1.12.4.min.js" as="script"/>
+<!-- <style>
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+</style> -->
 <!-- JQUERY COMPRESSED -->
 <!-- <script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-3.6.0.min.js"></script> -->
 <script type="text/javascript" src="<?= $url;?>assets/js/plugins/jquery/jquery-1.12.4.min.js"></script>
@@ -46,7 +51,14 @@ $url_admin = $actual_link . "/admin/";
 <!---->
 <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" id="u-s_regclient-sis" value="<?= (isset($_SESSION['usr-logg_srwong'])) ? $_SESSION['usr-logg_srwong']['id'] : '';?>">
 <!-- GOOGLE FONTS -->
-
+<!-- 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+ -->
+
+ <!-- GOOGLE FONTS 2 -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">

@@ -40,9 +40,7 @@
                   <li class="mega-menu-position top-hover hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--i">
                     <a href="../shop" class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--link">LOCALES</i></a>
                   </li>
-                  <li class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--i">
-                    <a href="<?= $url;?>assets/carta.pdf" class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--link menu-cart" target="_blank"><span>DESCARGA LA CARTA</span></a>
-                  </li>
+                  
                 </ul>
               </nav>
             </div>
@@ -157,9 +155,7 @@
                 <li class="mega-menu-position top-hover">
                   <a style="color:#2f333a;" href="../shop">LOCALES</i></a>
                 </li>
-                <li>
-                  <a class="menu-carta" href="<?= $url;?>assets/carta.pdf" target="_blank">DESCARGA LA CARTA</a>
-                </li>
+               
               </ul>
             </nav>
           </div>

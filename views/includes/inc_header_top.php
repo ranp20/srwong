@@ -27,7 +27,7 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-12 col-sm-7 menus hphom__sec--cHTNav__c__cont--cMenus">
+          <div class="col-lg-5 col-md-5 col-12 col-sm-7 menus hphom__sec--cHTNav__c__cont--cMenus">
             <div class="main-menu hphom__sec--cHTNav__c__cont--cMenus__c">
               <nav class="hphom__sec--cHTNav__c__cont--cMenus__c__nav">
                 <ul class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m">
@@ -40,14 +40,12 @@
                   <li class="mega-menu-position top-hover hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--i">
                     <a href="./shop" class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--link">LOCALES</i></a>
                   </li>
-                  <li class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--i">
-                    <a href="https://plataforma-csscretivos.ml/carta.pdf" class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m--link menu-cart" target="_blank"><span>DESCARGA LA CARTA</span></a>
-                  </li>
+                  
                 </ul>
               </nav>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-12 col-sm-3 bloq hphom__sec--cHTNav__c__cont--cLinkMenus">
+          <div class="col-lg-5 col-md-5 col-12 col-sm-3 bloq hphom__sec--cHTNav__c__cont--cLinkMenus">
             <div class="header-middle-right f-right">
               <div class="header-wishlist">
                 <a href="tel:+51612800">
@@ -157,9 +155,7 @@
                 <li class="mega-menu-position top-hover">
                   <a style="color:#2f333a;" href="./shop">LOCALES</i></a>
                 </li>
-                <li>
-                  <a class="menu-carta" href="<?= $url;?>assets/carta.pdf" target="_blank">DESCARGA LA CARTA</a>
-                </li>
+                
               </ul>
             </nav>
           </div>

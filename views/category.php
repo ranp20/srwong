@@ -5,8 +5,8 @@ session_start();
 
 if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
   require_once '../model/categories.php';
-  $catg = new Categories();
-  $liById = $catg->getCategoriesByIdCategory($_GET['cat']);
+  $categories = new Categories();
+  $liById = $categories->getCategoriesByIdCategory($_GET['cat']);
 }else{
   header("Location: ../");
 }
@@ -35,13 +35,14 @@ if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
     <div class="container">
       <div class="breadcrumb-content">
         <ul>
-          <li><a href="../">Home</a></li>
-          <li class="active">Categoría <?= (isset($liById[0]['name']) && $liById[0]['name'] != "") ? $liById[0]['name'] : "";?></li>
+          <li><a href="../">Inicio</a></li>
+          <li class="active">Categoría </li>
         </ul>
       </div>
     </div>
   </div>
   <?php require_once 'includes/inc_products-by-category-name.php';?>
+  <?php require_once 'includes/inc_footer-ind.php';?>
   <?php require_once 'includes/inc_mobile-tabs-links-footer-ind.php';?>
 	<!-- all js here -->
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
