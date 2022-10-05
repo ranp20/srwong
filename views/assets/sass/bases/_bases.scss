@@ -182,6 +182,22 @@ img{
   	display: block;
   }
 }
+.custom-control-input:checked~.custom-control-label::before{
+	border-color: $theme-clr-tertiary !important;
+	background-color: $theme-clr-tertiary !important;
+}
+.custom-control-input:focus~.custom-control-label::before{
+	box-shadow: 0 0 0 0.2rem #ed9aa2 !important;
+}
+input[type="radio"]:focus{
+	background-color: rgba(0,0,0,0) !important;
+	border: 2px solid #dc3545 !important;
+}
+input[type="radio"]::selection{
+	background: #dc3545 !important;
+	color: #fff !important;
+	text-shadow: none !important;
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;
@@ -390,14 +406,14 @@ $form-container: "frm-cont" !default;
 				text-align: center;
 				padding: 0 10px;
 				border-radius: 8px;
-				background-color: $theme-clr-secondary;
+				background-color: $theme-clr-tertiary;
 				svg{
 					position: relative;
 					top: 2px;
 					fill: #fff;
 				}
 				&:hover{
-					background-color: darken($theme-clr-secondary, 6%);
+					background-color: darken($theme-clr-tertiary, 6%);
 				}
 			}
 		}
@@ -451,7 +467,7 @@ $form-container: "frm-cont" !default;
 		.l-item-title{
 			display: block;
 			h4{
-				color: $theme-clr-secondary;
+				color: $theme-clr-tertiary;
 				font-weight: 600;
 			}
 		}
@@ -469,7 +485,7 @@ $form-container: "frm-cont" !default;
 			display: block;
 			span{
 				svg{
-					fill: $theme-clr-secondary;
+					fill: $theme-clr-tertiary;
 				}
 				&:nth-child(2){
 					margin-left: 0.25rem;
@@ -480,7 +496,7 @@ $form-container: "frm-cont" !default;
 			display: block;
 			span{
 				svg{
-					fill: $theme-clr-secondary;
+					fill: $theme-clr-tertiary;
 				}
 				&:nth-child(2){
 					margin-left: 0.25rem;
@@ -491,7 +507,7 @@ $form-container: "frm-cont" !default;
 			display: block;
 			span{
 				svg{
-					fill: $theme-clr-secondary;
+					fill: $theme-clr-tertiary;
 				}
 				&:nth-child(2){
 					margin-left: 0.25rem;
@@ -507,19 +523,19 @@ $form-container: "frm-cont" !default;
 			margin-right: auto;
 			border-radius: 12px;
 			background-color: transparent;
-			border: 1px solid $theme-clr-secondary;
+			border: 1px solid $theme-clr-tertiary;
 			text-align: center;
 			padding: 10px 15px;
 			transition: all ease-in-out .1s;
 			span{
 				font-weight: 600;
-				color: $theme-clr-secondary;
+				color: $theme-clr-tertiary;
 			}
 			@media (min-width: 991px){
 				width: 95%;
 			}
 			&:hover{
-				background-color: $theme-clr-secondary;
+				background-color: $theme-clr-tertiary;
 				span{
 					color: #fff;
 				}

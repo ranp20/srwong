@@ -18,6 +18,8 @@ require_once '../model/keys.php';
 require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
+
+
 $postamount = floatval($_POST['clxt2_chck-ffil']);
 $u_type_order = "";
 if($_POST['clxt2_chck-ffil_ortype'] == "typ-A_or-del_10"){
@@ -40,6 +42,13 @@ if(isset($_POST['cx1chk_branchcrt-sess']) && $_POST['cx1chk_branchcrt-sess'] != 
 }
 $u_telephone = (isset($_POST['chck-telephone']) && $_POST['chck-telephone'] != "") ? $_POST['chck-telephone'] : "";
 $u_amount =  $postamount * 100;
+
+$u_delivery_name = (isset($_POST['chck-t_delivery_name']) && $_POST['chck-t_delivery_name'] != "") ? $_POST['chck-t_delivery_name'] : "No especificado";
+$u_delivery_dni = (isset($_POST['chck-t_delivery_dni']) && $_POST['chck-t_delivery_dni'] != "") ? $_POST['chck-t_delivery_dni'] : "No especificado";
+
+$u_delivery_ruc = (isset($_POST['chck-t_delivery_ruc']) && $_POST['chck-t_delivery_ruc'] != "") ? $_POST['chck-t_delivery_ruc'] : "No especificado";
+$u_delivery_razonsocial = (isset($_POST['chck-t_delivery_razonsocial']) && $_POST['chck-t_delivery_razonsocial'] != "") ? $_POST['chck-t_delivery_razonsocial'] : "No especificado";
+
 $store = array(
   "amount" => $u_amount,
   "currency" => "PEN", 

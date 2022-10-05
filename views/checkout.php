@@ -53,7 +53,8 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                 </a>
                 <a class="tablink--fill" data-toggle="tab" href="#chck2">
                   <span class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m161.7 50.402-4.8984 7.5234-72.801 112-2.8008 4.1992v33.074c0 26.961 16.125 50.398 39.199 61.074v224.53c0.003906 4.457 1.7734 8.7305 4.9219 11.879 3.1523 3.1523 7.4258 4.9219 11.879 4.9219h425.6c4.4531 0 8.7266-1.7695 11.879-4.9219 3.1484-3.1484 4.918-7.4219 4.9219-11.879v-224.52c23.074-10.676 39.199-34.113 39.199-61.074v-33.074l-2.8008-4.1992-72.801-112-4.8984-7.5234h-376.6zm18.023 33.602h340.55l64.926 99.922v23.273c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602v-23.273l64.926-99.926zm19.078 166.25c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c11.207 13.098 26.805 22.375 44.801 23.977v201.77h-212.8v-162.4h0.007813c0-4.457-1.7695-8.7305-4.9219-11.879-3.1484-3.1523-7.4219-4.9219-11.879-4.9219h-112c-4.4531 0-8.7266 1.7695-11.879 4.9219-3.1484 3.1484-4.918 7.4219-4.918 11.879v162.4h-33.602v-201.77c17.996-1.5977 33.594-10.879 44.801-23.977zm173.6 46.551h-0.003906c-4.4531 0-8.7266 1.7695-11.879 4.9219-3.1484 3.1484-4.918 7.4219-4.918 11.879v78.398c0 4.457 1.7695 8.7266 4.918 11.879 3.1523 3.1523 7.4258 4.9219 11.879 4.9219h123.2c4.4531 0 8.7266-1.7695 11.879-4.9219 3.1484-3.1523 4.918-7.4219 4.918-11.879v-78.398c0-4.457-1.7695-8.7305-4.918-11.879-3.1523-3.1523-7.4258-4.9219-11.879-4.9219zm-151.2 33.602h78.398v145.6h-78.398zm168 0h89.602v44.801h-89.602z"/></g></svg>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m161.7 50.402-4.8984 7.5234-72.801 112-2.8008 4.1992v33.074c0 26.961 16.125 50.398 39.199 61.074v224.53c0.003906 4.457 1.7734 8.7305 4.9219 11.879 3.1523 3.1523 7.4258 4.9219 11.879 4.9219h425.6c4.4531 0 8.7266-1.7695 11.879-4.9219 3.1484-3.1484 4.918-7.4219 4.9219-11.879v-224.52c23.074-10.676 39.199-34.113 39.199-61.074v-33.074l-2.8008-4.1992-72.801-112-4.8984-7.5234h-376.6zm18.023 33.602h340.55l64.926 99.922v23.273c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602v-23.273l64.926-99.926zm19.078 166.25c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c11.207 13.098 26.805 22.375 44.801 23.977v201.77h-212.8v-162.4h0.007813c0-4.457-1.7695-8.7305-4.9219-11.879-3.1484-3.1523-7.4219-4.9219-11.879-4.9219h-112c-4.4531 0-8.7266 1.7695-11.879 4.9219-3.1484 3.1484-4.918 7.4219-4.918 11.879v162.4h-33.602v-201.77c17.996-1.5977 33.594-10.879 44.801-23.977zm173.6 46.551h-0.003906c-4.4531 0-8.7266 1.7695-11.879 4.9219-3.1484 3.1484-4.918 7.4219-4.918 11.879v78.398c0 4.457 1.7695 8.7266 4.918 11.879 3.1523 3.1523 7.4258 4.9219 11.879 4.9219h123.2c4.4531 0 8.7266-1.7695 11.879-4.9219 3.1484-3.1523 4.918-7.4219 4.918-11.879v-78.398c0-4.457-1.7695-8.7305-4.918-11.879-3.1523-3.1523-7.4258-4.9219-11.879-4.9219zm-151.2 33.602h78.398v145.6h-78.398zm168 0h89.602v44.801h-89.602z"/></g></svg> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m352.8 66.641c-81.762 0-148.4 66.641-148.4 148.4 0 81.762 148.4 283.92 148.4 283.92s148.4-202.16 148.4-283.92c0-81.758-66.641-148.4-148.4-148.4zm0 225.12c-42.559 0-76.719-34.16-76.719-76.719 0-42.559 34.16-76.719 76.719-76.719 42.559 0 76.719 34.16 76.719 76.719 0 42.559-34.16 76.719-76.719 76.719z"/></g></svg>
                   </span>
                   <span>RECOJO EN TIENDA</span>
                 </a>
@@ -89,21 +90,20 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                         </div>
                       </div>
 
-
                       <div class="mb-4">
                         <label for="chck-reference" class="form-label mb-3">Tipo de entrega</label>
                         <div class="form-floating">
                           <div class="custom-control custom-radio d-block mb-2">
-                            <input type="radio" id="customRadio1" name="type_delivery" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1">Encontrarse en la puerta</label>
+                            <input type="radio" id="t_delivery1" name="type_delivery" class="custom-control-input" checked="checked">
+                            <label class="custom-control-label" for="t_delivery1">Encontrarse en la puerta</label>
                           </div>
                           <div class="custom-control custom-radio d-block mb-2">
-                            <input type="radio" id="customRadio2" name="type_delivery" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">Encontrarse en la afuera</label>
+                            <input type="radio" id="t_delivery2" name="type_delivery" class="custom-control-input">
+                            <label class="custom-control-label" for="t_delivery2">Encontrarse afuera</label>
                           </div>
                           <div class="custom-control custom-radio d-block mb-2">
-                            <input type="radio" id="customRadio2" name="type_delivery" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">Dejar el paquete en consejería o en la puerta si es una casa</label>
+                            <input type="radio" id="t_delivery3" name="type_delivery" class="custom-control-input">
+                            <label class="custom-control-label" for="t_delivery3">Dejar el paquete en consejería o en la puerta si es una casa</label>
                           </div>
                         </div>
                       </div>
@@ -111,27 +111,27 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                       <div class="mb-2">
                         <label for="chck-reference" class="form-label mb-3">Información de facturación</label>
                         <div class="form-floating">
-                          <div class="container-tabbed">
-                            <ul class="container-tabs mb-3">
+                          <div class="">
+                            <ul class="mb-3" id="chk_infofact">
                               <li class="mb-2">
-                                <a href="#type_delivery1" class="active">
+                                <a href="javascript:void(0);" class="active">
                                   <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio3" name="info_facture" class="custom-control-input" checked="checked">
-                                    <label class="custom-control-label" for="customRadio3">Pago con boleta</label>
+                                    <input type="radio" id="info_fact1" name="info_facture" class="custom-control-input" checked="checked">
+                                    <label class="custom-control-label" for="info_fact1">Pago con boleta</label>
                                   </div>
                                 </a>
                               </li>
                               <li class="mb-2">
-                                <a href="#type_delivery2">
+                                <a href="javascript:void(0);">
                                   <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio4" name="info_facture" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio4">Pago con factura</label>
+                                    <input type="radio" id="info_fact2" name="info_facture" class="custom-control-input">
+                                    <label class="custom-control-label" for="info_fact2">Pago con factura</label>
                                   </div>
                                 </a>
                               </li>
                             </ul>
                             <div class="tab-content">
-                              <div class="container-tab active" id="type_delivery1">
+                              <div class="container-tab active" id="type_deliverysel">
                                 <div class="wrapper wrapper-white">
                                   <div class="page-subtitle">
                                     <div class="mb-2">
@@ -141,20 +141,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                                     <div class="mb-2">
                                       <label for="chck-t_delivery_dni" class="form-label">DNI</label>
                                       <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni" placeholder="" required>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="container-tab" id="type_delivery2">
-                                <div class="wrapper wrapper-white">
-                                  <div class="page-subtitle">
-                                    <div class="mb-2">
-                                      <label for="chck-t_delivery_ruc" class="form-label">RUC</label>
-                                      <input type="text" class="form-control" name="chck-t_delivery_ruc" id="chck-t_delivery_ruc" placeholder="" required>
-                                    </div>
-                                    <div class="mb-2">
-                                      <label for="chck-t_delivery_razonsocial" class="form-label">RAZÓN SOCIAL</label>
-                                      <input type="text" class="form-control" name="chck-t_delivery_razonsocial" id="chck-t_delivery_razonsocial" placeholder="" required>
                                     </div>
                                   </div>
                                 </div>
