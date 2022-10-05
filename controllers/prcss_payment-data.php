@@ -59,6 +59,12 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 		"delivery_address" => json_encode($arr_delivery_address, TRUE),
 		"user_phone_number" => $izzipay_r['customer']['billingDetails']['phoneNumber'],
 		"order_id" => $orderID,
+		"type_delivery" => $izzipay_r['customer']['shippingDetails']['address'],
+		"info_facturation" => $izzipay_r['customer']['shippingDetails']['address2'],
+		"deliv_name" => $izzipay_r['customer']['shippingDetails']['firstName'],
+		"deliv_dni" => $izzipay_r['customer']['shippingDetails']['identityCode'],
+		"deliv_ruc" => $izzipay_r['customer']['shippingDetails']['zipCode'],
+		"deliv_razonsocial" => $izzipay_r['customer']['shippingDetails']['legalName'],
 	];
 	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
 	/*
@@ -75,12 +81,13 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	];
 	*/
 	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
-	
+	/*
+	echo "<!------------------------------->";
 	echo "<pre>";
 	print_r($arr_order);
 	echo "</pre>";
 	exit();
-	
+	*/
 
 	require_once '../model/orders.php';
 	$orders = new Orders();

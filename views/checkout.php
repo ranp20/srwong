@@ -94,15 +94,15 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                         <label for="chck-reference" class="form-label mb-3">Tipo de entrega</label>
                         <div class="form-floating">
                           <div class="custom-control custom-radio d-block mb-2">
-                            <input type="radio" id="t_delivery1" name="type_delivery" class="custom-control-input" checked="checked">
+                            <input type="radio" id="t_delivery1" name="type_delivery" class="custom-control-input" checked="checked" value="tdeliv_1-srwg">
                             <label class="custom-control-label" for="t_delivery1">Encontrarse en la puerta</label>
                           </div>
                           <div class="custom-control custom-radio d-block mb-2">
-                            <input type="radio" id="t_delivery2" name="type_delivery" class="custom-control-input">
+                            <input type="radio" id="t_delivery2" name="type_delivery" class="custom-control-input" value="tdeliv_2-srwg">
                             <label class="custom-control-label" for="t_delivery2">Encontrarse afuera</label>
                           </div>
                           <div class="custom-control custom-radio d-block mb-2">
-                            <input type="radio" id="t_delivery3" name="type_delivery" class="custom-control-input">
+                            <input type="radio" id="t_delivery3" name="type_delivery" class="custom-control-input" value="tdeliv_3-srwg">
                             <label class="custom-control-label" for="t_delivery3">Dejar el paquete en consejería o en la puerta si es una casa</label>
                           </div>
                         </div>
@@ -116,7 +116,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                               <li class="mb-2">
                                 <a href="javascript:void(0);" class="active">
                                   <div class="custom-control custom-radio">
-                                    <input type="radio" id="info_fact1" name="info_facture" class="custom-control-input" checked="checked">
+                                    <input type="radio" id="info_fact1" name="info_facture" class="custom-control-input" checked="checked" value="inffac_1-srwng">
                                     <label class="custom-control-label" for="info_fact1">Pago con boleta</label>
                                   </div>
                                 </a>
@@ -124,7 +124,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                               <li class="mb-2">
                                 <a href="javascript:void(0);">
                                   <div class="custom-control custom-radio">
-                                    <input type="radio" id="info_fact2" name="info_facture" class="custom-control-input">
+                                    <input type="radio" id="info_fact2" name="info_facture" class="custom-control-input" value="inffac_2-srwng">
                                     <label class="custom-control-label" for="info_fact2">Pago con factura</label>
                                   </div>
                                 </a>

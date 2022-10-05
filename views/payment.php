@@ -19,7 +19,6 @@ require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
 
-
 $postamount = floatval($_POST['clxt2_chck-ffil']);
 $u_type_order = "";
 if($_POST['clxt2_chck-ffil_ortype'] == "typ-A_or-del_10"){
@@ -43,9 +42,31 @@ if(isset($_POST['cx1chk_branchcrt-sess']) && $_POST['cx1chk_branchcrt-sess'] != 
 $u_telephone = (isset($_POST['chck-telephone']) && $_POST['chck-telephone'] != "") ? $_POST['chck-telephone'] : "";
 $u_amount =  $postamount * 100;
 
+$u_type_delivery = (isset($_POST['type_delivery']) && $_POST['type_delivery'] != "") ? $_POST['type_delivery'] : "No especificado";
+$u_type_delivery_format = "";
+if($u_type_delivery == "tdeliv_1-srwg"){
+  $u_type_delivery_format = "Encontrarse en la puerta";
+}else if($u_type_delivery == "tdeliv_2-srwg"){
+  $u_type_delivery_format = "Encontrarse afuera";
+}else if($u_type_delivery == "tdeliv_3-srwg"){
+  $u_type_delivery_format = "Dejar el paquete en consejería o en la puerta si es una casa";
+}else{
+  $u_type_delivery_format = "No especificado";
+  // header("Location: ./");
+}
+
+$u_info_facture = (isset($_POST['info_facture']) && $_POST['info_facture'] != "") ? $_POST['info_facture'] : "No especificado";
+$u_info_facture_format = "";
+if($u_info_facture == "inffac_1-srwng"){
+  $u_info_facture_format == "Pago con boleta";
+}else if($u_info_facture == "inffac_2-srwng"){
+  $u_info_facture_format == "Pago con factura";
+}else{
+  $u_info_facture_format == "No especificado";
+}
+
 $u_delivery_name = (isset($_POST['chck-t_delivery_name']) && $_POST['chck-t_delivery_name'] != "") ? $_POST['chck-t_delivery_name'] : "No especificado";
 $u_delivery_dni = (isset($_POST['chck-t_delivery_dni']) && $_POST['chck-t_delivery_dni'] != "") ? $_POST['chck-t_delivery_dni'] : "No especificado";
-
 $u_delivery_ruc = (isset($_POST['chck-t_delivery_ruc']) && $_POST['chck-t_delivery_ruc'] != "") ? $_POST['chck-t_delivery_ruc'] : "No especificado";
 $u_delivery_razonsocial = (isset($_POST['chck-t_delivery_razonsocial']) && $_POST['chck-t_delivery_razonsocial'] != "") ? $_POST['chck-t_delivery_razonsocial'] : "No especificado";
 
@@ -60,7 +81,15 @@ $store = array(
       "address" => $u_address,
       "title" => $u_type_order,
       "city" => $u_branchid,
-      "phoneNumber" => $u_telephone
+      "phoneNumber" => $u_telephone,
+    ),
+    "shippingDetails" => array(
+      "address" => $u_type_delivery_format,
+      "address2" => $u_info_facture,
+      "firstName" => $u_delivery_name,
+      "identityCode" => $u_delivery_dni,
+      "legalName" => $u_delivery_razonsocial,
+      "zipCode" => $u_delivery_ruc
     )
   )
 );

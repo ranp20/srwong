@@ -21,7 +21,13 @@ class Orders extends Connection
       :branch_id,
       :delivery_address,
       :user_phone_number,
-      :order_id)";
+      :order_id,
+      :type_delivery,
+      :info_facturation,
+      :deliv_name,
+      :deliv_dni,
+      :deliv_ruc,
+      :deliv_razonsocial)";
       $stm = $this->con->prepare($sql);
       foreach ($arr_order as $key => $value) {
         $stm->bindValue($key,$value);
