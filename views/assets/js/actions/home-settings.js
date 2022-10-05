@@ -517,4 +517,17 @@ $(() => {
   }
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./login-register";});
+  // ------------ MENÚ PEGAJOSO
+  let headerTop = document.querySelector('#headerTop-info');
+  let scrollTop = document.documentElement.scrollTop;
+  let heroImageClass = document.querySelector('#fromHereFixedHeadTop');
+  let heightHeroImage = heroImageClass.offsetTop;
+
+  window.addEventListener('scroll', function(){
+    if(window.pageYOffset > (heightHeroImage - 5)){
+      headerTop.classList.add("reduxheight");
+    }else{
+      headerTop.classList.remove("reduxheight");
+    }
+  });
 });

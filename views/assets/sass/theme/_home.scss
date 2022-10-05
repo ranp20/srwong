@@ -3,13 +3,24 @@
 	&__sec{
 		&.header-middle{
 			background-color: #fff;
-	    position: fixed;
-	    top: 65px;
 	    width: 100%;
 	    z-index: 999;
 	    box-shadow: 0 0 10px 2px #8888;
+	    transition: top .2s ease-in-out;
 	    &.reduxheight{
+	    	position: fixed;
+	    	animation-name: topSticky;
+	    	animation-duration: .3s;
+	    	animation-timing-function: ease-in-out;
 	    	top: 0px;
+	    }
+	    @keyframes topSticky{
+	    	0%{
+	    		top: -100px;
+	    	}
+	    	100%{
+	    		top: 0px;
+	    	}
 	    }
 		}
 		/* BANNER DE ANUNCIO */

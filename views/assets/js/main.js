@@ -55,19 +55,7 @@ $(() => {
   $(document).on("click","#lk_cart",function(){window.location.href = "./cart-page";});
   // ------------ IR HACIA LA PÁGINA - CHECKOUT
   $(document).on("click","#lk_checkout",function(){window.location.href = "./checkout";});
-  // ------------ MENÚ PEGAJOSO
-  let headerTop = document.querySelector('#headerTop-info');
-  let scrollTop = document.documentElement.scrollTop;
-  let heroImageClass = document.querySelector('#fromHereFixedHeadTop');
-  let heightHeroImage = heroImageClass.offsetTop;
-
-  window.addEventListener('scroll', function(){
-    if(window.pageYOffset > (heightHeroImage - 10)){
-      headerTop.classList.add("reduxheight");
-    }else{
-      headerTop.classList.remove("reduxheight");
-    }
-  });
+  
 });
 
 // ------------ ITEM SELECCIONADO DEL MENÚ EN CADA PÁGINA - SIDEBARLEFT
