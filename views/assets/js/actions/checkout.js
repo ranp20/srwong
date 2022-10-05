@@ -267,4 +267,11 @@ $(() => {
       console.log('Disculpe, existió un problema');
     }
   });
+  // ------------ TABS DE LA PÁGINA DEL CHECKOUT
+  $("ul.container-tabs a").click(function (e) {
+    $($(this).attr('href'))
+      .show()
+      .siblings('.container-tab')
+      .hide();
+  });
 });

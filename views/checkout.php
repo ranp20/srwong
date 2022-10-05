@@ -82,12 +82,88 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                           <select class="form-control one-hidden" aria-required="true" name="chck-location" id="chck-location" required></select>
                         </div>
                       </div>
-                      <div class="mb-2">
+                      <div class="mb-3">
                         <label for="chck-reference" class="form-label">Referencia</label>
                         <div class="form-floating">
                           <textarea class="form-control" placeholder="" name="chck-reference" id="chck-reference" style="height: 100px"></textarea>
                         </div>
                       </div>
+
+
+                      <div class="mb-4">
+                        <label for="chck-reference" class="form-label mb-3">Tipo de entrega</label>
+                        <div class="form-floating">
+                          <div class="custom-control custom-radio d-block mb-2">
+                            <input type="radio" id="customRadio1" name="type_delivery" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">Encontrarse en la puerta</label>
+                          </div>
+                          <div class="custom-control custom-radio d-block mb-2">
+                            <input type="radio" id="customRadio2" name="type_delivery" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Encontrarse en la afuera</label>
+                          </div>
+                          <div class="custom-control custom-radio d-block mb-2">
+                            <input type="radio" id="customRadio2" name="type_delivery" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Dejar el paquete en consejería o en la puerta si es una casa</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="chck-reference" class="form-label mb-3">Información de facturación</label>
+                        <div class="form-floating">
+                          <div class="container-tabbed">
+                            <ul class="container-tabs mb-3">
+                              <li class="mb-2">
+                                <a href="#type_delivery1" class="active">
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio3" name="info_facture" class="custom-control-input" checked="checked">
+                                    <label class="custom-control-label" for="customRadio3">Pago con boleta</label>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="mb-2">
+                                <a href="#type_delivery2">
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio4" name="info_facture" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio4">Pago con factura</label>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>
+                            <div class="tab-content">
+                              <div class="container-tab active" id="type_delivery1">
+                                <div class="wrapper wrapper-white">
+                                  <div class="page-subtitle">
+                                    <div class="mb-2">
+                                      <label for="chck-t_delivery_name" class="form-label">NOMBRE</label>
+                                      <input type="text" class="form-control" name="chck-t_delivery_name" id="chck-t_delivery_name" placeholder="" required>
+                                    </div>
+                                    <div class="mb-2">
+                                      <label for="chck-t_delivery_dni" class="form-label">DNI</label>
+                                      <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni" placeholder="" required>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="container-tab" id="type_delivery2">
+                                <div class="wrapper wrapper-white">
+                                  <div class="page-subtitle">
+                                    <div class="mb-2">
+                                      <label for="chck-t_delivery_ruc" class="form-label">RUC</label>
+                                      <input type="text" class="form-control" name="chck-t_delivery_ruc" id="chck-t_delivery_ruc" placeholder="" required>
+                                    </div>
+                                    <div class="mb-2">
+                                      <label for="chck-t_delivery_razonsocial" class="form-label">RAZÓN SOCIAL</label>
+                                      <input type="text" class="form-control" name="chck-t_delivery_razonsocial" id="chck-t_delivery_razonsocial" placeholder="" required>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="button-box">
                         <button type="submit"><span>IR A PAGAR</span></button>
                       </div>

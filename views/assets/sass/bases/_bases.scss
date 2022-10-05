@@ -169,6 +169,19 @@ img{
   width: 100%;
   text-shadow: 1px 1px 5px #000;
 }
+.nav-tabs{
+	border-top: none !important;
+	border-bottom: none !important;
+	border-left: none !important;
+	border-right: none !important;
+}
+/* SISTEMA DE TABS DEL CHECKOUT */
+.container-tab{
+  display: none;
+  &.active{
+  	display: block;
+  }
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;
