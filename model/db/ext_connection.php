@@ -14,7 +14,7 @@ class Connection{
 	
 	protected $con = null;
 	private $host = "localhost";
-	private $dbname = "db_srwong_ext";
+	private $dbname = "db_srwong";
 	private $username = "root";
 	private $password = "";
 	private $charset = "utf8";

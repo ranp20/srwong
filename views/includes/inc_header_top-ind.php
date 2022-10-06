@@ -27,7 +27,7 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-12 col-sm-7 menus hphom__sec--cHTNav__c__cont--cMenus">
+          <div class="col-lg-5 col-md-5 col-12 col-sm-7 menus hphom__sec--cHTNav__c__cont--cMenus">
             <div class="main-menu hphom__sec--cHTNav__c__cont--cMenus__c">
               <nav class="hphom__sec--cHTNav__c__cont--cMenus__c__nav">
                 <ul class="hphom__sec--cHTNav__c__cont--cMenus__c__nav--m">
@@ -45,7 +45,7 @@
               </nav>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-12 col-sm-3 bloq hphom__sec--cHTNav__c__cont--cLinkMenus">
+          <div class="col-lg-5 col-md-5 col-12 col-sm-3 bloq hphom__sec--cHTNav__c__cont--cLinkMenus">
             <div class="header-middle-right f-right">
               <div class="header-wishlist">
                 <a href="tel:016802680">
