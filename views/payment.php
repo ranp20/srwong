@@ -19,6 +19,13 @@ require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
 
+/*
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+exit();
+*/
+
 function addTwoDecimals($number){
   $output_final = "";
   if($number != "0" || $number != 0){
@@ -49,13 +56,19 @@ $u_email = $_SESSION['usr-logg_srwong']['email'];
 $u_reference = (isset($_POST['chck-reference']) && $_POST['chck-reference'] != "") ? $_POST['chck-reference'] : "No especificado";
 $u_address = (isset($_POST['chck-address']) && $_POST['chck-address'] != "") ? $_POST['chck-address'] : "No especificado";
 $u_branchid = "";
-if(isset($_POST['cx1chk_branchcrt-sess']) && $_POST['cx1chk_branchcrt-sess'] != ""){
-  $u_branchid = $_POST['cx1chk_branchcrt-sess'];
-}else if(isset($_POST['chck-location']) && $_POST['chck-location'] != ""){
+if(isset($_POST['chck-location']) && $_POST['chck-location'] != ""){
   $u_branchid = $_POST['chck-location'];
 }else{
   $u_branchid = "0";
 }
+
+$u_urbanization = "";
+if(isset($_POST['chck-urbanization']) && $_POST['chck-urbanization'] != ""){
+  $u_urbanization = $_POST['chck-urbanization'];
+}else{
+  $u_urbanization = "0";
+}
+
 $u_telephone = (isset($_POST['chck-telephone']) && $_POST['chck-telephone'] != "") ? $_POST['chck-telephone'] : "";
 $u_amount =  $postamount * 100;
 
@@ -112,6 +125,7 @@ $store = array(
       "address" => $u_address,
       "title" => $u_type_order,
       "city" => $u_branchid,
+      "country" => $u_urbanization,
       "firstName" => $u_t_payinfochk_format,
       "identityCode" => $u_chcktpayinfo_chk_format_1,
       "phoneNumber" => $u_telephone,

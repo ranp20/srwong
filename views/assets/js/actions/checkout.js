@@ -184,7 +184,7 @@ $(() => {
             let b_telephone_format = b_telephone.replace(/\D+/g, '').replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3');
             let b_coverage = v.coverage;
             tmpList += `
-              <div class="l-item" id="${v.id}">
+              <div class="l-item" id="loc_${v.id}">
                 <input  tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_branchcrt-sess" id="chk-sbranch_${i}_crtclient-sis" value="${v.id}" readonly="readonly">
                 <div class="l-item-title">
                   <h4>${b_name_limit}</h4>
@@ -213,11 +213,17 @@ $(() => {
                   </span>
                   <span>Horario: ${tConvert(v.schedule_open)} - ${tConvert(v.schedule_close)}</span>
                 </div>
-                <button type="submit" class="l-item-link">
+                <button type="button" class="l-item-link">
                   <span>RECOGER AQUÍ</span>
                 </button>
               </div>
             `;
+            $(document).on("click",`#loc_${v.id} button`,function(e){
+              let idbranch = $(this).parent().attr("id");
+              $(this).parent().siblings().remove();
+              $(this).parent().css({"border":"4px solid red"});
+              $(this).remove();
+            });
           });
           tmpList += `</div>`;
           $("#chcksel-list-result").html(tmpList);
@@ -280,6 +286,37 @@ $(() => {
       console.log('Disculpe, existió un problema');
     }
   });
+  // ------------  LISTAR LAS URBANIZACIONES POR SUCURSAL
+  $(document).on("change","#chck-location",function(e){
+    let idbranch = e.target.value;
+    $.ajax({
+      url: "./controllers/prcss_list-urbanizationsByIdBranch.php",
+      method: "POST",
+      dataType: 'JSON',
+      contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+      data: { id_branch : idbranch},
+      success : function(e){        
+        let tmpList = "";
+        if(e != "" && e != "[]"){
+          tmpList += `<option value="">--- Seleccione una opción ---</option>`;
+          $.each(e, function(i,v){
+            let urb_name = v.name;
+            let urb_nameupper = urb_name[0].toUpperCase() + urb_name.substring(1);
+            tmpList += `<option value="${v.id}" required>${urb_nameupper}</option>`;
+          });
+          $("#chck-urbanization").html(tmpList);
+        }else{
+          $("#chck-urbanization").html(`
+            <option value="">Seleccione una opción</option>
+            <option value="">No existen ubicaciones</option>
+          `);
+        }
+      },
+      error : function(xhr, status){
+        console.log('Disculpe, existió un problema');
+      }
+    });
+  });
   // ------------ TABS PARA LA INFORMACIÓN DE FACTURACIÓN
   $(document).on("click","input[name=info_facture]",function(){
     var linkiptname = $(this).attr("id");
@@ -306,16 +343,48 @@ $(() => {
           <div class="page-subtitle">
             <div class="mb-2">
               <label for="chck-t_delivery_ruc" class="form-label">RUC</label>
-              <input type="text" class="form-control" name="chck-t_delivery_ruc" id="chck-t_delivery_ruc" placeholder="">
+              <input type="text" class="form-control" name="chck-t_delivery_ruc" id="chck-t_delivery_ruc" placeholder="" required>
             </div>
             <div class="mb-2">
               <label for="chck-t_delivery_razonsocial" class="form-label">RAZÓN SOCIAL</label>
-              <input type="text" class="form-control" name="chck-t_delivery_razonsocial" id="chck-t_delivery_razonsocial" placeholder="">
+              <input type="text" class="form-control" name="chck-t_delivery_razonsocial" id="chck-t_delivery_razonsocial" placeholder="" required>
             </div>
           </div>
         </div>
       `;
       $("#type_deliverysel").html(tmpChck);
+    }else if(linkiptname == "info_fact3"){
+      tmpChck += `
+        <div class="wrapper wrapper-white">
+          <div class="page-subtitle">
+            <div class="mb-2">
+              <label for="chck-t_delivery_name1" class="form-label">NOMBRE</label>
+              <input type="text" class="form-control" name="chck-t_delivery_name" id="chck-t_delivery_name1" placeholder="" required>
+            </div>
+            <div class="mb-2">
+              <label for="chck-t_delivery_dni2" class="form-label">DNI</label>
+              <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni2" placeholder="" required>
+            </div>
+          </div>
+        </div>
+      `;
+      $("#type_2deliverysel").html(tmpChck);
+    }else if(linkiptname == "info_fact4"){
+      tmpChck += `
+        <div class="wrapper wrapper-white">
+          <div class="page-subtitle">
+            <div class="mb-2">
+              <label for="chck-t_delivery_ruc1" class="form-label">RUC</label>
+              <input type="text" class="form-control" name="chck-t_delivery_ruc" id="chck-t_delivery_ruc1" placeholder="" required>
+            </div>
+            <div class="mb-2">
+              <label for="chck-t_delivery_razonsocial2" class="form-label">RAZÓN SOCIAL</label>
+              <input type="text" class="form-control" name="chck-t_delivery_razonsocial" id="chck-t_delivery_razonsocial2" placeholder="" required>
+            </div>
+          </div>
+        </div>
+      `;
+      $("#type_2deliverysel").html(tmpChck);
     }else{
       console.log('Se intentó vincular al enlace');
     }

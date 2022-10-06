@@ -79,8 +79,16 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                       </div>
                       <div class="mb-2">
                         <div class="form-group">
-                          <label for="chck-location">Ubicación</label>
+                          <label for="chck-location">Local</label>
                           <select class="form-control one-hidden" aria-required="true" name="chck-location" id="chck-location" required></select>
+                        </div>
+                      </div>
+                      <div class="mb-2">
+                        <div class="form-group">
+                          <label for="chck-urbanization">Urbanización</label>
+                          <select class="form-control one-hidden" aria-required="true" name="chck-urbanization" id="chck-urbanization" required>
+                            <option value="">--- Seleccione un local ---</option>
+                          </select>
                         </div>
                       </div>
                       <div class="mb-3">
@@ -213,9 +221,58 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                             </span>
                           </div>
                         </div>
-                        <div class="chcksel-list-result" id="chcksel-list-result">
+                        <div class="chcksel-list-result mb-3" id="chcksel-list-result">
                           
                         </div>
+
+                        <hr class="mt-4 mb-4">
+
+                        <div class="mb-2">
+                          <label for="chck-reference" class="form-label mb-3">Información de facturación</label>
+                          <div class="form-floating">
+                            <div class="">
+                              <ul class="mb-3" id="chk_infofact">
+                                <li class="mb-2">
+                                  <a href="javascript:void(0);" class="active">
+                                    <div class="custom-control custom-radio">
+                                      <input type="radio" id="info_fact3" name="info_facture" class="custom-control-input" checked="checked" value="inffac_1-srwng">
+                                      <label class="custom-control-label" for="info_fact3">Pago con boleta</label>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li class="mb-2">
+                                  <a href="javascript:void(0);">
+                                    <div class="custom-control custom-radio">
+                                      <input type="radio" id="info_fact4" name="info_facture" class="custom-control-input" value="inffac_2-srwng">
+                                      <label class="custom-control-label" for="info_fact4">Pago con factura</label>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                              <div class="tab-content">
+                                <div class="container-tab active" id="type_2deliverysel">
+                                  <div class="wrapper wrapper-white">
+                                    <div class="page-subtitle">
+                                      <div class="mb-2">
+                                        <label for="chck-t_delivery_name1" class="form-label">NOMBRE</label>
+                                        <input type="text" class="form-control" name="chck-t_delivery_name" id="chck-t_delivery_name1" placeholder="" required>
+                                      </div>
+                                      <div class="mb-2">
+                                        <label for="chck-t_delivery_dni2" class="form-label">DNI</label>
+                                        <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni2" placeholder="" required>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="button-box">
+                          <button type="submit"><span>IR A PAGAR</span></button>
+                        </div>
+
                       </form>
                     </div>
                   </div>
