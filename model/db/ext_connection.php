@@ -1,14 +1,14 @@
 <?php 	
 class Connection{
 	// CONFIGURACIÓN - SERVIDOR (SERVIDOR TEMPORAL)
-  
- //  protected $con = null;
-	// private $host = "108.160.152.119";
-	// private $dbname = "plataformacsscre_srwong_db_test";
-	// private $username = "plataformacsscre_srwong_user_test";
-	// private $password = "VK}?YO]@F,(V";
-	// private $charset = "utf8";
-  
+  /*
+	protected $con = null;
+	private $host = "108.160.152.119";
+	private $dbname = "plataformacsscre_srwong_db_test";
+	private $username = "plataformacsscre_srwong_user_test";
+	private $password = "VK}?YO]@F,(V";
+	private $charset = "utf8";
+  */
 
   // CONFIGURACIÓN - LOCALHOST
 	
@@ -18,7 +18,7 @@ class Connection{
 	private $username = "root";
 	private $password = "";
 	private $charset = "utf8";
-  
+    
 	// CONFIGURACIÓN - SERVIDOR DE SRWONG(OFICIAL)
 	/*
 	protected $con = null;

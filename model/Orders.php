@@ -27,7 +27,9 @@ class Orders extends Connection
       :deliv_name,
       :deliv_dni,
       :deliv_ruc,
-      :deliv_razonsocial)";
+      :deliv_razonsocial,
+      :t_payment,
+      :t_amount_payment)";
       $stm = $this->con->prepare($sql);
       foreach ($arr_order as $key => $value) {
         $stm->bindValue($key,$value);

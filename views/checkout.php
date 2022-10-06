@@ -150,9 +150,45 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                         </div>
                       </div>
 
-                      <div class="button-box">
-                        <button type="submit"><span>IR A PAGAR</span></button>
+                      <div class="mb-2">
+                        <label for="chck-reference" class="form-label mb-3">Tipo de pago</label>
+                        <div class="form-floating">
+                          <div class="">
+                            <ul class="mb-3" id="tpayinfo_chk">
+                              <li class="mb-2">
+                                <a href="javascript:void(0);" class="active">
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" id="t_payinfo1" name="t_payinfochk" class="custom-control-input" checked="checked" value="tinfochk_1-srwng">
+                                    <label class="custom-control-label" for="t_payinfo1">Pago con targeta</label>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="mb-2">
+                                <a href="javascript:void(0);">
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" id="t_payinfo2" name="t_payinfochk" class="custom-control-input" value="tinfochk_2-srwng">
+                                    <label class="custom-control-label" for="t_payinfo2">Contraentrega</label>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>
+                            <div class="tab-content">
+                              <div class="container-tab active" id="type_paymentsel">
+                                <div class="wrapper wrapper-white">
+                                  <div class="page-subtitle">
+                                    <div class="button-box">
+                                      <button type="submit"><span>IR A PAGAR</span></button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
+
+                      <div class="mb-2" id="tv-01cfbvalfrm"></div>
+                      
                     </form>
                   </div>
                 </div>

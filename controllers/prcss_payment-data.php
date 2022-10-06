@@ -65,6 +65,8 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 		"deliv_dni" => $izzipay_r['customer']['shippingDetails']['identityCode'],
 		"deliv_ruc" => $izzipay_r['customer']['shippingDetails']['zipCode'],
 		"deliv_razonsocial" => $izzipay_r['customer']['shippingDetails']['legalName'],
+		"t_payment" => $izzipay_r['customer']['billingDetails']['firstName'],
+		"t_amount_payment" => $izzipay_r['customer']['billingDetails']['identityCode'],
 	];
 	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
 	/*
@@ -81,13 +83,15 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	];
 	*/
 	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
-	/*
-	echo "<!------------------------------->";
-	echo "<pre>";
-	print_r($arr_order);
-	echo "</pre>";
-	exit();
-	*/
+	// echo "<pre>";
+	// print_r($izzipay_r);
+	// echo "</pre>";
+	// echo "<!------------------------------->";
+	// echo "<pre>";
+	// print_r($arr_order);
+	// echo "</pre>";
+	// exit();
+	
 
 	require_once '../model/orders.php';
 	$orders = new Orders();

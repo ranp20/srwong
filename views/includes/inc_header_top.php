@@ -9,7 +9,7 @@
         <div class="row hphom__sec--cBnnadd__c__cont">
           <div class="col-lg-12 col-md-12 col-12 col-sm-12 hphom__sec--cBnnadd__c__cont__sec">
             <div class="welcome-area hphom__sec--cBnnadd__c__cont__sec--cTitle">
-              <h3><strong>DELIVERY GRATIS</strong> | De lunes a viernes por Web</h3>
+              <h3><strong>DELIVERY GRATIS</strong>  De lunes a viernes por Web</h3>
             </div>
           </div>
         </div>
@@ -48,12 +48,12 @@
           <div class="col-lg-5 col-md-5 col-12 col-sm-3 bloq hphom__sec--cHTNav__c__cont--cLinkMenus">
             <div class="header-middle-right f-right">
               <div class="header-wishlist">
-                <a href="tel:+51612800">
+                <a href="tel:016802680">
                   <div class="header-icon-style">
                     <i class="icon-phone icons"></i>
                   </div>
                   <div class="wishlist-text">
-                    <p class="pedido">DELIVERY<br> <span>612 8000 </span></p>
+                    <p class="pedido">DELIVERY<br> <span> 01 680 2680 </span></p>
                   </div>
                 </a>
               </div>

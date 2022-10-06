@@ -70,6 +70,18 @@ $u_delivery_dni = (isset($_POST['chck-t_delivery_dni']) && $_POST['chck-t_delive
 $u_delivery_ruc = (isset($_POST['chck-t_delivery_ruc']) && $_POST['chck-t_delivery_ruc'] != "") ? $_POST['chck-t_delivery_ruc'] : "No especificado";
 $u_delivery_razonsocial = (isset($_POST['chck-t_delivery_razonsocial']) && $_POST['chck-t_delivery_razonsocial'] != "") ? $_POST['chck-t_delivery_razonsocial'] : "No especificado";
 
+$u_t_payinfochk = (isset($_POST['t_payinfochk']) && $_POST['t_payinfochk'] != "") ? $_POST['t_payinfochk'] : "No especificado";
+$u_t_payinfochk_format = "";
+if($u_t_payinfochk == "tinfochk_1-srwng"){
+  $u_t_payinfochk_format = "Pago con targeta";
+}else if($u_t_payinfochk == "tinfochk_2-srwng"){
+  $u_t_payinfochk_format = "Contraentrega";
+}else{
+  $u_t_payinfochk_format = "No especificado";
+}
+
+$u_chcktpayinfo_chk = (isset($_POST['chck-t_payinfo_chk']) && $_POST['chck-t_payinfo_chk'] != "" && $_POST['chck-t_payinfo_chk'] != 0) ? str_replace(",", "", $_POST['chck-t_payinfo_chk']) : "0";
+
 $store = array(
   "amount" => $u_amount,
   "currency" => "PEN", 
@@ -81,6 +93,8 @@ $store = array(
       "address" => $u_address,
       "title" => $u_type_order,
       "city" => $u_branchid,
+      "firstName" => $u_t_payinfochk_format,
+      "identityCode" => $u_chcktpayinfo_chk,
       "phoneNumber" => $u_telephone,
     ),
     "shippingDetails" => array(

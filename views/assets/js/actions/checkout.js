@@ -147,7 +147,6 @@ $(() => {
   // ------------ CONVERTIR A FORMATO DE 12 HORAS
   function tConvert(time){
     time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-
     if (time.length > 1){
       time = time.slice (1);
       time[5] = +time[0] < 12 ? 'am' : 'pm';
@@ -155,7 +154,6 @@ $(() => {
     }
     return time.join ('');
   }
-
   // ------------ LISTAR LOS LOCALES DE COMIDA
   function listBranchLocations(searchVal){
     $.ajax({
@@ -321,5 +319,52 @@ $(() => {
     }else{
       console.log('Se intentó vincular al enlace');
     }
+  });
+  // ------------ TABS PARA EL TIPO DE PAGO
+  $(document).on("click","input[name=t_payinfochk]",function(){
+    var linkiptname2 = $(this).attr("id");
+    var tmptpaychck = "";
+    if(linkiptname2 == "t_payinfo1"){
+      tmptpaychck = `
+      <div class="wrapper wrapper-white">
+        <div class="page-subtitle">
+          <div class="button-box">
+            <button type="submit"><span>IR A PAGAR</span></button>
+          </div>
+        </div>
+      </div>
+      `;
+      $("#type_paymentsel").html(tmptpaychck);
+    }else if(linkiptname2 == "t_payinfo2"){
+      tmptpaychck = `
+      <div class="wrapper wrapper-white">
+        <div class="page-subtitle">
+          <div class="mb-2">
+            <label for="chck-t_payinfo_chk" class="form-label">INGRESE EL MONTO</label>
+            <input type="text" class="form-control" name="chck-t_payinfo_chk" id="chck-t_payinfochck" placeholder="" min="1" max="9999999" maxlength="11" required>
+          </div>
+        </div>
+      </div>`;
+      $("#type_paymentsel").html(tmptpaychck);
+    }else{
+       console.log('Se intentó vincular al enlace : Tipo de pago');
+    }
+  });
+  // ------------ VALIDAR LA ENTRADA DEL CAMPO : CONTRAENTREGA
+  $(document).on("keyup keypress input change","#chck-t_payinfochck",function(e){
+    let val = e.target.value;
+    this.value = $.trim(this.value);
+    let val_formatNumber = val.toString().replace(/[^\d.]/g, "").replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3').replace(/\.(\d{2})\d+/, '.$1').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    $(this).val(val_formatNumber);
+    let tpaychckbtn = "";
+    if(val_formatNumber != "" && val_formatNumber != " " && val_formatNumber != "." && val_formatNumber != "0" && val_formatNumber != "0.0" && val_formatNumber != ".00" && val_formatNumber != "0." && val_formatNumber != "0.00" && val_formatNumber != "00.00" && val_formatNumber != "0,00"){
+      tpaychckbtn = `
+      <div class="button-box">
+        <button type="submit"><span>IR A PAGAR</span></button>
+      </div>`;
+    }else{
+      tpaychckbtn = "";
+    }
+    $("#tv-01cfbvalfrm").html(tpaychckbtn);
   });
 });
