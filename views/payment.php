@@ -19,6 +19,23 @@ require_once '../model/helpers.php';
 
 $client = new Lyra\Client();
 
+function addTwoDecimals($number){
+  $output_final = "";
+  if($number != "0" || $number != 0){
+    $output_num = explode(".", $number);
+    if(!isset($output_num[1]) || $output_num[1] == "undefined" || $output_num[1] == ""){
+      $output_final = number_format($number).".00";
+    }else if(isset($output_num[1]) && strlen($output_num[1]) < 2){
+      $output_final = number_format($output_num[0]).".".$output_num[1]."0";
+    }else{
+      $output_final = number_format($output_num[0]).".".$output_num[1];
+    }
+  }else{
+    $output_final = $number;
+  }
+  return $output_final;
+}
+
 $postamount = floatval($_POST['clxt2_chck-ffil']);
 $u_type_order = "";
 if($_POST['clxt2_chck-ffil_ortype'] == "typ-A_or-del_10"){
@@ -80,7 +97,9 @@ if($u_t_payinfochk == "tinfochk_1-srwng"){
   $u_t_payinfochk_format = "No especificado";
 }
 
-$u_chcktpayinfo_chk = (isset($_POST['chck-t_payinfo_chk']) && $_POST['chck-t_payinfo_chk'] != "" && $_POST['chck-t_payinfo_chk'] != 0) ? str_replace(",", "", $_POST['chck-t_payinfo_chk']) : "0";
+$u_chcktpayinfo_chk = (isset($_POST['chck-t_payinfo_chk']) && $_POST['chck-t_payinfo_chk'] != "" && $_POST['chck-t_payinfo_chk'] != 0) ? floatval($_POST['chck-t_payinfo_chk']) : "0";
+$u_chcktpayinfo_chk_format = str_replace(",", "", $u_chcktpayinfo_chk);
+$u_chcktpayinfo_chk_format_1 = addTwoDecimals($u_chcktpayinfo_chk_format);
 
 $store = array(
   "amount" => $u_amount,
@@ -94,7 +113,7 @@ $store = array(
       "title" => $u_type_order,
       "city" => $u_branchid,
       "firstName" => $u_t_payinfochk_format,
-      "identityCode" => $u_chcktpayinfo_chk,
+      "identityCode" => $u_chcktpayinfo_chk_format_1,
       "phoneNumber" => $u_telephone,
     ),
     "shippingDetails" => array(

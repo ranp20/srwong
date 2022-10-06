@@ -351,17 +351,21 @@ $(() => {
     }
   });
   // ------------ VALIDAR LA ENTRADA DEL CAMPO : CONTRAENTREGA
-  $(document).on("keyup keypress input change","#chck-t_payinfochck",function(e){
+  $(document).on("keyup keypress input","#chck-t_payinfochck",function(e){
     let val = e.target.value;
     this.value = $.trim(this.value);
     let val_formatNumber = val.toString().replace(/[^\d.]/g, "").replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3').replace(/\.(\d{2})\d+/, '.$1').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     $(this).val(val_formatNumber);
     let tpaychckbtn = "";
-    if(val_formatNumber != "" && val_formatNumber != " " && val_formatNumber != "." && val_formatNumber != "0" && val_formatNumber != "0.0" && val_formatNumber != ".00" && val_formatNumber != "0." && val_formatNumber != "0.00" && val_formatNumber != "00.00" && val_formatNumber != "0,00"){
-      tpaychckbtn = `
-      <div class="button-box">
-        <button type="submit"><span>IR A PAGAR</span></button>
-      </div>`;
+    if(val_formatNumber != "" && val_formatNumber != " " && val_formatNumber != "." && val_formatNumber != "0" && val_formatNumber != "0.0" && val_formatNumber != ".00" && val_formatNumber != "0." && val_formatNumber != "0.00" && val_formatNumber != "00.00" && val_formatNumber != "0,00"){    
+      if(Number(val_formatNumber) != 0 && Number(val_formatNumber) != 0 && parseFloat(val_formatNumber) != 0 && !isNaN(val_formatNumber)){
+        tpaychckbtn = `
+        <div class="button-box">
+          <button type="submit"><span>IR A PAGAR</span></button>
+        </div>`;
+      }else{
+        tpaychckbtn = "";
+      }
     }else{
       tpaychckbtn = "";
     }
