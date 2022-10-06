@@ -358,7 +358,7 @@ $(() => {
     $(this).val(val_formatNumber);
     let tpaychckbtn = "";
     if(val_formatNumber != "" && val_formatNumber != " " && val_formatNumber != "." && val_formatNumber != "0" && val_formatNumber != "0.0" && val_formatNumber != ".00" && val_formatNumber != "0." && val_formatNumber != "0.00" && val_formatNumber != "00.00" && val_formatNumber != "0,00"){    
-      if(Number(val_formatNumber) != 0 && Number(val_formatNumber) != 0 && parseFloat(val_formatNumber) != 0 && !isNaN(val_formatNumber)){
+      if(Number(val_formatNumber) != 0 && Number(val_formatNumber) != 0 && parseFloat(val_formatNumber) != 0){
         tpaychckbtn = `
         <div class="button-box">
           <button type="submit"><span>IR A PAGAR</span></button>
