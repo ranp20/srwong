@@ -394,17 +394,21 @@ $(() => {
     var linkiptname2 = $(this).attr("id");
     var tmptpaychck = "";
     if(linkiptname2 == "t_payinfo1"){
+      $("#frm_1-Log").attr("action", "./payment");
       tmptpaychck = `
       <div class="wrapper wrapper-white">
         <div class="page-subtitle">
           <div class="button-box">
-            <button type="submit"><span>IR A PAGAR</span></button>
+            <button type="submit">
+              <span>IR A PAGAR</span>
+            </button>
           </div>
         </div>
       </div>
       `;
       $("#type_paymentsel").html(tmptpaychck);
     }else if(linkiptname2 == "t_payinfo2"){
+      $("#frm_1-Log").attr("action", "");
       tmptpaychck = `
       <div class="wrapper wrapper-white">
         <div class="page-subtitle">
@@ -429,8 +433,10 @@ $(() => {
     if(val_formatNumber != "" && val_formatNumber != " " && val_formatNumber != "." && val_formatNumber != "0" && val_formatNumber != "0.0" && val_formatNumber != ".00" && val_formatNumber != "0." && val_formatNumber != "0.00" && val_formatNumber != "00.00" && val_formatNumber != "0,00"){    
       if(Number(val_formatNumber) != 0 && Number(val_formatNumber) != 0 && parseFloat(val_formatNumber) != 0){
         tpaychckbtn = `
-        <div class="button-box">
-          <button type="submit"><span>IR A PAGAR</span></button>
+        <div class="button-box talign-r">
+          <button type="submit" id="ord-chkl_1fxt" title="ORDENAR">
+            <span>ORDENAR</span>
+          </button>
         </div>`;
       }else{
         tpaychckbtn = "";
@@ -439,5 +445,59 @@ $(() => {
       tpaychckbtn = "";
     }
     $("#tv-01cfbvalfrm").html(tpaychckbtn);
+  });
+  // ------------ VALIDAR EL BOTÓN PARA CONTRAENTREGA
+  $(document).on("submit","#frm_1-Log",function(e){
+    e.preventDefault();
+    var formdata = $(this).serializeArray();
+    $.ajax({
+      url: "./controllers/prcss_checkout-upondelivery.php",
+      method: "POST",
+      dataType: 'JSON',
+      contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+      data: formdata,
+      success : function(e){
+        if(e != "" && e != "[]"){
+          if(e.r == "true"){
+            Swal.fire({
+              title: '',
+              html: `<div class="alertSwal">
+                      <div class="alertSwal__cTitle">
+                        <h3>¡Éxito!</h3>
+                      </div>
+                      <div class="alertSwal__cText">
+                        <p>Su orden ha sido aceptada y esta siendo procesada.</strong></p>
+                      </div>
+                      <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
+                    </div>`,
+              icon: 'success',
+              showCancelButton: false,
+              showConfirmButton: false,
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'Aceptar',
+              allowOutsideClick: false,
+              allowEscapeKey:false,
+              allowEnterKey:true,
+              timer: 3500
+            });
+            $(document).on('click', '.SwalBtn1', function() {
+              swal.clickConfirm();
+              window.location.href = "./confirm";
+            });
+            setTimeout(function(){
+              window.location.href = "./confirm";
+            }, 3500);
+            // window.location.href = "./confirm";
+          }else{
+            console.log('Lo sentimos, ocurrió un error');
+          }
+        }else{
+          console.log('Lo sentimos, ocurrió un error');
+        }
+      },
+      error : function(xhr, status){
+        console.log('Disculpe, existió un problema');
+      }
+    });
   });
 });

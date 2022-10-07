@@ -198,6 +198,33 @@ input[type="radio"]::selection{
 	color: #fff !important;
 	text-shadow: none !important;
 }
+.button-box{
+	button, a{
+		display: block;
+		margin-left: auto;
+		padding: 1rem 2.5rem;
+	}
+}
+.button-box button,
+.button-box a {
+	display: inline-block;
+  background-color: #f2f2f2;
+  border: medium none;
+  border-radius: 3px;
+  color: #242424;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 11px 30px;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+}
+.button-box button:hover,
+.button-box a:hover {
+  background-color: #e02c2b;
+  color: #fff;
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;
@@ -370,13 +397,6 @@ $form-container: "frm-cont" !default;
 	    color: #242424;
 	    height: calc(2.25rem + 14px) !important;
 	    padding: 0 15px;
-		}
-		.button-box{
-			button{
-				display: block;
-				margin-left: auto;
-				padding: 1rem 2.5rem;
-			}
 		}
 		.control-pls-search{
 			display: flex;
