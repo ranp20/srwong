@@ -57,7 +57,7 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 		"order_type" => $izzipay_r['customer']['billingDetails']['title'],
 		"branch_id" => $izzipay_r['customer']['billingDetails']['city'],
 		"delivery_address" => json_encode($arr_delivery_address, TRUE),
-		"user_phone_number" => $izzipay_r['customer']['billingDetails']['phoneNumber'],
+		"user_phone_number" => (isset($izzipay_r['customer']['billingDetails']['phoneNumber']) && $izzipay_r['customer']['billingDetails']['phoneNumber'] != "" && $izzipay_r['customer']['billingDetails']['phoneNumber'] != 0) ? $izzipay_r['customer']['billingDetails']['phoneNumber'] : "0",
 		"order_id" => $orderID,
 		"type_delivery" => $izzipay_r['customer']['shippingDetails']['address'],
 		"info_facturation" => $izzipay_r['customer']['shippingDetails']['address2'],
@@ -84,19 +84,21 @@ if(isset($_POST) && isset($_POST['kr-answer'])){
 	];
 	*/
 	// INFORMACIÓN PARA EL DETALLE DE LA DIRECCIÓN DEL ENVÍO
-	/*
-	echo "<pre>";
-	print_r($izzipay_r);
-	echo "</pre>";
-	echo "<!------------------------------->";
-	echo "<pre>";
-	print_r($arr_order);
-	echo "</pre>";
-	exit();	
-	*/
+	
+	// echo "<pre>";
+	// print_r($izzipay_r);
+	// echo "</pre>";
+	// echo "<!------------------------------->";
+	// echo "<pre>";
+	// print_r($arr_order);
+	// echo "</pre>";
+	// exit();	
+	
 	require_once '../model/orders.php';
 	$orders = new Orders();
 	$add = $orders->addOrder($arr_order);
+	
+	
 	if($add[0]['r'] == "order_recent"){
 		$updorderid = $orders->updateOrderIdTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id']);
 		if($updorderid == "true"){
