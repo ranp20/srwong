@@ -49,6 +49,7 @@
 						    span, strong{
 						    	font-size: 30px;
     							font-weight: 700;
+    							margin-right: 0.5rem;
 						    }
 							}
 						}
@@ -189,8 +190,18 @@
 .hpbannerhom{
 	&__sec{
 		&__c{
-			max-height: 327px;
-			height: 327px;
+			
+			max-height: 100%;
+			height: 100%;
+			
+			@media (min-width: 768px){			
+				max-height: 327px !important;
+				height: 327px !important;
+			}
+			@media (min-width: 991px){			
+				max-height: 507px !important;
+				height: 507px !important;
+			}
 			img{
 				height: 100%;
 				object-fit: fill;

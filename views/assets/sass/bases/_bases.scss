@@ -225,6 +225,42 @@ input[type="radio"]::selection{
   background-color: #e02c2b;
   color: #fff;
 }
+.slider-active .owl-dots{
+	position: relative;
+	bottom: 50px;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	background-color: rgba(0,0,0,.3);
+  // max-width: 152px;
+  max-width: fit-content;
+	width: auto;
+  line-height: 10px;
+  padding: .5rem;
+  border-radius: 20px;
+  margin: 0 auto;
+	button{
+		margin: 0 10px;
+		border-radius: 50%;
+		width: 6px;
+		height: 6px;
+		@media (min-width: 768px){
+			width: 11px;
+			height: 11px;
+		}
+		&.owl-dot{
+			border: 1px solid #fff !important;
+			background-color: #fff !important;
+			opacity: 0.5;
+		}
+		&.owl-dot.active{
+			background-color: #fff !important;
+			opacity: 1;
+		}
+	}
+}
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
 	z-index: 99999999;

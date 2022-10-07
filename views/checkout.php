@@ -187,7 +187,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                               <div class="container-tab active" id="type_paymentsel">
                                 <div class="wrapper wrapper-white">
                                   <div class="page-subtitle">
-                                    <div class="button-box">
+                                    <div class="button-box talign-r">
                                       <button type="submit"><span>IR A PAGAR</span></button>
                                     </div>
                                   </div>
@@ -272,7 +272,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                           </div>
                         </div>
 
-                        <div class="button-box">
+                        <div class="button-box talign-r">
                           <button type="submit"><span>IR A PAGAR</span></button>
                         </div>
 

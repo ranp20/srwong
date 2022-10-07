@@ -21,9 +21,10 @@ $(() => {
   // ------------ Slider active
   $('.slider-active').owlCarousel({
     loop: true,
-    nav: true,
-    autoplay: false,
-    autoplayTimeout: 5000,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 6000,
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
     navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
