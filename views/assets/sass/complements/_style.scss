@@ -4690,9 +4690,17 @@ h4.grand-totall-title span {
     float: right;
     font-size: 15px;
     transition: all 0.3s ease 0s;
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    line-height: unset;
+    border-radius: unset;
+    padding: 0;
+    text-transform: initial;
 }
 .login-toggle-btn>a:hover {
-    color: #e02c2b;
+    background-color: transparent;
+    color: #e02c2b !important;
 }
 .login-register-tab-list {
     display: flex;
