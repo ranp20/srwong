@@ -64,11 +64,11 @@ if(isset($_POST) && $_POST != "" && count($_POST) > 0){
 	$u_info_facture = (isset($_POST['info_facture']) && $_POST['info_facture'] != "") ? $_POST['info_facture'] : "No especificado";
 	$u_info_facture_format = "";
 	if($u_info_facture == "inffac_1-srwng"){
-	  $u_info_facture_format == "Pago con boleta";
+	  $u_info_facture_format = "Pago con boleta";
 	}else if($u_info_facture == "inffac_2-srwng"){
-	  $u_info_facture_format == "Pago con factura";
+	  $u_info_facture_format = "Pago con factura";
 	}else{
-	  $u_info_facture_format == "No especificado";
+	  $u_info_facture_format = "No especificado";
 	}
 
 	$u_delivery_name = (isset($_POST['chck-t_delivery_name']) && $_POST['chck-t_delivery_name'] != "") ? $_POST['chck-t_delivery_name'] : "No especificado";
