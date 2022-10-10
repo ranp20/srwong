@@ -94,7 +94,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                       <div class="mb-2">
                         <div class="form-group">
                           <label for="chck-urbanization">Urbanización</label>
-                          <select class="form-control c-select_urbanization one-hidden" aria-required="true" name="chck-urbanization[]" id="chck-urbanization" required>
+                          <select class="form-control c-select_urbanization one-hidden" aria-required="true" name="chck-urbanization" id="chck-urbanization" required>
                             <!-- <option value="">--- Seleccione un local ---</option> -->
                           </select>
                         </div>

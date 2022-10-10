@@ -40,7 +40,7 @@ if(isset($_POST) && $_POST != "" && count($_POST) > 0){
 
 	$u_urbanization = "";
 	if(isset($_POST['chck-urbanization']) && $_POST['chck-urbanization'] != ""){
-	  $u_urbanization = $_POST['chck-urbanization'];
+	  $u_urbanization = $_POST['chck-urbanization'][0];
 	}else{
 	  $u_urbanization = "0";
 	}
@@ -145,6 +145,7 @@ if(isset($_POST) && $_POST != "" && count($_POST) > 0){
 	echo "<pre>";
 	print_r($arr_order);
 	echo "</pre>";
+	exit();
 	*/
 
 	require_once '../model/orders.php';
@@ -155,6 +156,8 @@ if(isset($_POST) && $_POST != "" && count($_POST) > 0){
 		$updorderid = $orders->updateOrderIdTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id']);
 		if($updorderid == "true"){
 			$updstatus = $orders->updateStatusTempCart_ByIdClient($arr_order['user_id'], $arr_order['order_id'], "completed");
+			// print_r($updstatus);
+			// exit();
 			if($updstatus == "true"){
 				$r = array(
 					"r" => "true"

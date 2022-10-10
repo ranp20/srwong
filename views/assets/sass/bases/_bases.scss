@@ -94,8 +94,8 @@ img{
 	margin: 0 0 20px 0;
 }
 .btn-theme__link{
-	background-color: $theme-clr-btns-tabs;
-	color: #fff;
+	background-color: $theme-clr-btns-tabs !important;
+	color: #fff !important;
   padding: 18px 10px 19px;
   max-width: 400px;
   width: 95%;
@@ -113,8 +113,8 @@ img{
   	min-width: 315px;
   }
   &:hover{
-  	background-color: #242424;
-  	color: #fff;
+  	background-color: #242424 !important;
+  	color: #fff !important;
   }
 }
 .tbl-responsiv__theme{
