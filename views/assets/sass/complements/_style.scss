@@ -1463,9 +1463,9 @@ textarea:focus {
 
 /* scrollUp */
 #scrollUp {
-    background: #242424 none repeat scroll 0 0;
+    background: #242424 none repeat scroll 0 0 !important;
+    color: #ffffff !important;
     bottom: 85px;
-    color: #ffffff;
     cursor: pointer;
     display: none;
     font-size: 20px;
@@ -1478,7 +1478,7 @@ textarea:focus {
     z-index: 9999;
 }
 #scrollUp:hover {
-    background: #e02c2b none repeat scroll 0 0;
+    background: #e02c2b none repeat scroll 0 0 !important;
 }
 
 /* button */
@@ -5969,4 +5969,58 @@ h5.panel-title span {
 .pagination-style .owl-dot.active {
     height: 10px;
     width: 30px;
+}
+
+
+
+/* NUEVOS ESTILOS */
+@media screen and (max-width: 900px){
+    .col-lg-3.bloc {
+        width: 25%;
+        padding: 0px;
+    }
+    .icono-text {
+        line-height: 14px;
+    }
+    .topdestaca .icono-text a {
+        outline: medium none;
+        color: #f60715;
+        font-size: 8px;
+        font-weight: 800;
+        line-height: 8px;
+    }
+    .topdestaca {
+        float: left;
+        width: 100%;
+        padding: 10px;
+    }
+    .footer-area.black-bg-2.pt-70 {
+        padding: 0px;
+    }
+    .footer-top-area.pb-18 {
+        display: none;
+    }
+    .product-width.col-xl-3.col-lg-4.col-md-4.col-sm-6.col-12.mb-30 {
+        max-width: 50%;
+        float: left;
+    }
+    .mobile-menu .mean-nav ul.menu-overflow {
+        height: auto;
+        margin-top: 10px;
+        overflow-y: auto;
+        padding-bottom: 15px;
+    }
+    .login-form-container {
+        background: rgba(0,0,0,0) none repeat scroll 0 0;
+        box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+        padding: 20px;
+        text-align: left;
+    }
+    .login-register-tab-list.nav a h4 {
+        font-size: 15px;
+        font-weight: 700;
+        margin: 0 20px;
+        text-transform: capitalize;
+        transition: all .3s ease 0s;
+    }
 }

@@ -1,3 +1,25 @@
+// ------------ MARCAR LA URBANIZACIÓN SELECCIONADA EN EL MAPA
+function init() {
+  var mapOptions = {
+    zoom: 11,
+    scrollwheel: false,
+    center: new google.maps.LatLng(-12.0672896, -77.0359179),
+    styles: 
+    [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#f53651"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"},{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road.highway.controlled_access","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#dddddd"},{"visibility":"on"}]}]
+  };
+  var mapElement = document.getElementById('map');
+  var geocoder = new google.maps.Geocoder();
+  var map = new google.maps.Map(mapElement, mapOptions);
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(-12.0672896, -77.0359179),
+    map: map,
+    icon: './views/assets/img/icon-img/map.png',
+    animation:google.maps.Animation.BOUNCE,
+    title: 'Snazzy!'
+  });
+}
+google.maps.event.addDomListener(window, 'load', init);
+
 // ------------ ENCRIPTAR DATOS DE INPUTS
 function encryptValuesIpts(valueipt){
   let ciphertext = CryptoJS.AES.encrypt(valueipt, 'CML_KEYSYSTEM').toString();
@@ -285,6 +307,101 @@ $(() => {
     error : function(xhr, status){
       console.log('Disculpe, existió un problema');
     }
+  });
+  // ------------ LISTAR LAS URBANIZACIONES
+  var chk_listurbanizations = $("#chck-urbanization");
+  chk_listurbanizations.select2({
+    placeholder: 'Buscar urbanización'
+  });
+  $.ajax({
+    url: "./controllers/prcss_list-all-urbanizations.php",
+    method: "POST",
+    dataType: 'JSON',
+    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+    success : function(e){
+      let tmpList = "";
+      if(e != "" && e != "[]"){
+        tmpList += `<option value="">Seleccione una opción</option>`;
+        $.each(e, function(i,v){
+          let b_name = v.name;
+          let b_nameupper = b_name[0].toUpperCase() + b_name.substring(1);
+          tmpList += `<option value="${v.id}" required>${b_nameupper}</option>`;
+        });
+        $("#chck-urbanization").html(tmpList);
+      }else{
+        $("#chck-urbanization").html(`
+          <option value="">Seleccione una opción</option>
+          <option value="">No existen ubicaciones</option>
+        `);
+      }
+    },
+    error : function(xhr, status){
+      console.log('Disculpe, existió un problema');
+    }
+  });
+  chk_listurbanizations.on("select2:select", function (e){
+    var data = $(this).select2('data');
+    var searchbytext = data[0].text;
+    /*
+    var results = document.querySelector("#map");
+
+    var autocomplete = new google.maps.places.Autocomplete((searchbytext), {
+      types: ['geocode'],
+      // componentRestrictions: {
+      //  country: "USA"
+      // }
+    });
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+      var near_place = autocomplete.getPlace();
+    });
+    */
+    /*
+    autocomplete = new google.maps.places.Autocomplete(
+      searchbytext
+    );
+    */
+    // searchbytext.focus();
+    // autocomplete.addListener('place_changed',onPlaceChangedNeighborhood);
+    var geocoder = new google.maps.Geocoder();
+    /*
+    geocoder.geocode({'address': searchbytext}, function(results, status) {
+      if (status === 'OK') {
+        
+        // map.setCenter(results[0].geometry.location);
+        // var marker = new google.maps.Marker({
+        //   map: map,
+        //   position: results[0].geometry.location
+        // });
+        
+
+        var mapOptions = {
+          zoom: 17,
+          center: results[0].geometry.location,
+          disableDefaultUI: true
+        };
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+        });
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+    */
+    geocoder.geocode( { 'address': searchbytext}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map, 
+            position: results[0].geometry.location
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+    
   });
   // ------------  LISTAR LAS URBANIZACIONES POR SUCURSAL
   $(document).on("change","#chck-location",function(e){

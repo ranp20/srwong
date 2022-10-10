@@ -21,7 +21,7 @@
 		width: 95%;
 	}
 	&:hover{
-		background-color: $theme-clr-btns-tabs;
+		background-color: $theme-clr-btns-tabs !important;
 		span{
 			color: $theme-clr-icons-tabs;
 		}
@@ -30,7 +30,7 @@
 		}
 	}
 	&.active{
-		background-color: $theme-clr-btns-tabs;
+		background-color: $theme-clr-btns-tabs !important;
 		span{
 			color: $theme-clr-icons-tabs;
 		}

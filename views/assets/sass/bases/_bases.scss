@@ -15,6 +15,12 @@ body{
 }
 a{
 	text-decoration: none;
+	background: transparent !important;
+	color: #000 !important;
+}
+button{
+	background: #e02c2b !important;
+  color: #fff !important;
 }
 div{
 	&[aria-expanded="true"],
@@ -260,6 +266,13 @@ input[type="radio"]::selection{
 			opacity: 1;
 		}
 	}
+}
+.gm-style button.gm-control-active,
+.gm-style button.gm-fullscreen-control{
+	background: none rgb(255, 255, 255) !important;
+}
+.gm-style-cc button{
+	background: none !important;
 }
 /* ESTILOS PARA SWEETALERT2 */
 .swal2-container.swal2-bottom, .swal2-container.swal2-center, .swal2-container.swal2-top{
@@ -578,22 +591,22 @@ $form-container: "frm-cont" !default;
 			margin-left: auto;
 			margin-right: auto;
 			border-radius: 12px;
-			background-color: transparent;
+			background-color: transparent !important;
 			border: 1px solid $theme-clr-tertiary;
 			text-align: center;
 			padding: 10px 15px;
 			transition: all ease-in-out .1s;
 			span{
 				font-weight: 600;
-				color: $theme-clr-tertiary;
+				color: $theme-clr-tertiary !important;
 			}
 			@media (min-width: 991px){
 				width: 95%;
 			}
 			&:hover{
-				background-color: $theme-clr-tertiary;
+				background-color: $theme-clr-tertiary !important;
 				span{
-					color: #fff;
+					color: #fff !important;
 				}
 			}
 		}

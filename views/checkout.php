@@ -27,6 +27,9 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <!-- INCLUIR SWEET ALERT 2 -->
   <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <!-- INCLUIR SELECT 2 -->
+  <link rel="stylesheet" href="node_modules/select2/dist/css/select2.min.css">
+  <script type="text/javascript" src="node_modules/select2/dist/js/select2.min.js"></script>
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
@@ -80,18 +83,25 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                         <label for="chck-address" class="form-label">Dirección</label>
                         <input type="text" class="form-control" name="chck-address" id="chck-address" placeholder="" required>
                       </div>
+                      <!-- 
                       <div class="mb-2">
                         <div class="form-group">
                           <label for="chck-location">Local</label>
                           <select class="form-control one-hidden" aria-required="true" name="chck-location" id="chck-location" required></select>
                         </div>
                       </div>
+                      -->
                       <div class="mb-2">
                         <div class="form-group">
                           <label for="chck-urbanization">Urbanización</label>
-                          <select class="form-control one-hidden" aria-required="true" name="chck-urbanization" id="chck-urbanization" required>
-                            <option value="">--- Seleccione un local ---</option>
+                          <select class="form-control c-select_urbanization one-hidden" aria-required="true" name="chck-urbanization[]" id="chck-urbanization" required>
+                            <!-- <option value="">--- Seleccione un local ---</option> -->
                           </select>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div class="contact-map">
+                          <div id="map"></div>
                         </div>
                       </div>
                       <div class="mb-3">
@@ -290,6 +300,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <?php require_once 'includes/inc_footer.php';?>
   <?php require_once 'includes/inc_mobile-tabs-links-footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNJBL9QHv2HlNc-EUv2Vc_a1e2LYxdgc&sensor=true"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/actions/checkout.js"></script>
 </body>
 </html>
