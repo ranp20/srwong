@@ -2,6 +2,7 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }else{
@@ -9,15 +10,26 @@ if(!isset($_SESSION['usr-logg_srwong'])){
     header("Location: ./");
   }else{
     require_once '../model/categories.php';
+    require_once '../model/customer_addresses.php';
     $categories = new Categories();
+    
+    $llastestone = $dmlCustomerAddress->listlastestaddressbyIdClient($_SESSION['usr-logg_srwong']['id']);
+    $user_delivery_telphone = $llastestone[0]['contact_person_number'];
+    $user_delivery_address = $llastestone[0]['address'];
+    $user_delivery_person_name = $llastestone[0]['contact_person_name'];
+    $user_delivery_n_dni = $llastestone[0]['n_dni'];
+    
+    $usr_phone = (isset($_SESSION['usr-logg_srwong']['phone']) && $_SESSION['usr-logg_srwong']['phone'] != "") ? $_SESSION['usr-logg_srwong']['phone'] : '';
+    $usr_name = (isset($_SESSION['usr-logg_srwong']['f_name']) && $_SESSION['usr-logg_srwong']['f_name'] != "" && isset($_SESSION['usr-logg_srwong']['l_name']) && $_SESSION['usr-logg_srwong']['l_name'] != "") ? $_SESSION['usr-logg_srwong']['f_name'] . " " . $_SESSION['usr-logg_srwong']['l_name'] : '';
+    $usr_n_dni = (isset($_SESSION['usr-logg_srwong']['n_doc']) && $_SESSION['usr-logg_srwong']['n_doc'] != "" && $_SESSION['usr-logg_srwong']['n_doc'] != "No especificado" && $_SESSION['usr-logg_srwong']['n_doc'] != 0) ? $_SESSION['usr-logg_srwong']['n_doc'] : '';
   }
 }
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>    
+<head>
+  <title>Señor Wong - Checkout</title>
   <?php require_once 'includes/inc_header_links.php';?>
-  <title>SrWong - Detalle del pedido</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
@@ -33,6 +45,37 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
+    <style type="text/css">
+        .chcksel-reg-tab-list{
+            display: flex;
+            flex-flow: wrap row;
+            align-items: flex-start;
+            justify-content: center;
+            margin-bottom: 40px !important;
+            flex: 0 0 100%;
+            margin-left: auto;
+            margin-right: auto;
+            row-gap: 1rem;
+        }
+        .select2-container{
+            width: 100% !important;
+        }
+        .grand-totall{
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .cl-wrap_total-title{
+            padding-top: 20px !important;
+            padding-bottom: 0 !important;
+            border-top: none !important;
+            border-bottom: none !important;
+        }
+        .notif-alert_mssgipt{
+            color: red;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
     <div class="breadcrumb-area gray-bg">
     <div class="container">
       <div class="breadcrumb-content">
@@ -43,11 +86,19 @@ if(!isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
+  <?php
+    /*
+    echo "<pre>";
+    print_r($llastestone);
+    echo "</pre>";
+    echo $_SESSION['usr-logg_srwong']['id'];
+    */
+  ?>
   <!-- checkout-area start -->
   <div class="checkout-area pb-80 pt-50">
     <div class="container">
       <div class="row">
-        <div class="ml-auto mr-auto col-lg-9">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-12">
           <div class="checkout-wrapper">
             <div class="chcksel-frm-cont">
               <div class="chcksel-reg-tab-list nav">
@@ -70,18 +121,27 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                   <div class="chcksel-register-form">
                     <form action="./payment" method="POST" id="frm_1-Log">
                       <div>
+                        <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="ss_vlidcsrf" id="ss_vlidcsrdeliv1" value="0">
+                      </div>
+                      <div>
                         <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="clxt2_chck-ffil" id="clxt2_chck-ffil1" value="<?= (isset($_POST) && isset($_POST['cx1chk_crt-sess'])) ? $_POST['cx1chk_crt-sess'] : "";?>">
+                      </div>
+                      <div>
+                        <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="clxt2_chck-ffilpyy" id="clxt2_chck-ffilpyy1" value="<?= (isset($_POST) && isset($_POST['cx1chk_crt-sess'])) ? $_POST['cx1chk_crt-sess'] : "";?>">
                       </div>
                       <div>
                         <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="clxt2_chck-ffil_ortype" id="clxt2_chck-ffil_ortype1" value="typ-A_or-del_10">
                       </div>
+                      <div>
+                        <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="chck-location" id="chck-location" value="0">
+                      </div>
                       <div class="mb-2">
                         <label for="chck-telephone" class="form-label">Teléfono/Celular</label>
-                        <input type="text" class="form-control" name="chck-telephone" id="chck-telephone" placeholder="" required>
+                        <input type="text" class="form-control" name="chck-telephone" id="chck-telephone" value="<?= $usr_phone; ?>" placeholder="" required>
                       </div>
                       <div class="mb-2">
                         <label for="chck-address" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" name="chck-address" id="chck-address" placeholder="" required>
+                        <input type="text" class="form-control" name="chck-address" id="chck-address" value="<?= $user_delivery_address; ?>" placeholder="" required>
                       </div>
                       <!-- 
                       <div class="mb-2">
@@ -94,7 +154,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                       <div class="mb-2">
                         <div class="form-group">
                           <label for="chck-urbanization">Urbanización</label>
-                          <select class="form-control c-select_urbanization one-hidden" aria-required="true" name="chck-urbanization" id="chck-urbanization" required>
+                          <select class="form-control c-select_urbanization one-hidden" aria-required="true" name="chck-urbanization[]" id="chck-urbanization" required>
                             <!-- <option value="">--- Seleccione un local ---</option> -->
                           </select>
                         </div>
@@ -157,11 +217,11 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                                   <div class="page-subtitle">
                                     <div class="mb-2">
                                       <label for="chck-t_delivery_name" class="form-label">NOMBRE</label>
-                                      <input type="text" class="form-control" name="chck-t_delivery_name" id="chck-t_delivery_name" placeholder="" required>
+                                      <input type="text" class="form-control" name="chck-t_delivery_name" id="chck-t_delivery_name" value="<?= $usr_name; ?>" placeholder="" required>
                                     </div>
                                     <div class="mb-2">
                                       <label for="chck-t_delivery_dni" class="form-label">DNI</label>
-                                      <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni" placeholder="" required>
+                                      <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni" value="<?= $usr_n_dni; ?>" placeholder="" required>
                                     </div>
                                   </div>
                                 </div>
@@ -180,7 +240,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                                 <a href="javascript:void(0);" class="active">
                                   <div class="custom-control custom-radio">
                                     <input type="radio" id="t_payinfo1" name="t_payinfochk" class="custom-control-input" checked="checked" value="tinfochk_1-srwng">
-                                    <label class="custom-control-label" for="t_payinfo1">Pago con targeta</label>
+                                    <label class="custom-control-label" for="t_payinfo1">Pago con tarjeta</label>
                                   </div>
                                 </a>
                               </li>
@@ -198,7 +258,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                                 <div class="wrapper wrapper-white">
                                   <div class="page-subtitle">
                                     <div class="button-box talign-r">
-                                      <button type="submit"><span>IR A PAGAR</span></button>
+                                      <button type="submit"><span>PAGAR</span></button>
                                     </div>
                                   </div>
                                 </div>
@@ -218,11 +278,15 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                     <div class="mb-4">
                       <form action="./payment" method="POST" id="frm_2-Reg">
                         <div>
+                            <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="ss_vlidcsrf" id="ss_vlidcsrdeliv2" value="0">
+                        </div>
+                        <div>
                           <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="clxt2_chck-ffil" id="clxt2_chck-ffil2" value="<?= (isset($_POST) && isset($_POST['cx1chk_crt-sess'])) ? $_POST['cx1chk_crt-sess'] : "";?>">
                         </div>
                         <div>
                           <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="clxt2_chck-ffil_ortype" id="clxt2_chck-ffil_ortype2" value="typ-B_or-del_10">
                         </div>
+                      <!--
                         <div class="mb-3">
                           <div class="control-pls-search">
                             <span class="la-icon-ref">
@@ -234,56 +298,17 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                             </span>
                           </div>
                         </div>
+                        
+                        
+                        -->
                         <div class="chcksel-list-result mb-3" id="chcksel-list-result">
                           
                         </div>
 
                         <hr class="mt-4 mb-4">
-
-                        <div class="mb-2">
-                          <label for="chck-reference" class="form-label mb-3">Información de facturación</label>
-                          <div class="form-floating">
-                            <div class="">
-                              <ul class="mb-3" id="chk_infofact">
-                                <li class="mb-2">
-                                  <a href="javascript:void(0);" class="active">
-                                    <div class="custom-control custom-radio">
-                                      <input type="radio" id="info_fact3" name="info_facture" class="custom-control-input" checked="checked" value="inffac_1-srwng">
-                                      <label class="custom-control-label" for="info_fact3">Pago con boleta</label>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li class="mb-2">
-                                  <a href="javascript:void(0);">
-                                    <div class="custom-control custom-radio">
-                                      <input type="radio" id="info_fact4" name="info_facture" class="custom-control-input" value="inffac_2-srwng">
-                                      <label class="custom-control-label" for="info_fact4">Pago con factura</label>
-                                    </div>
-                                  </a>
-                                </li>
-                              </ul>
-                              <div class="tab-content">
-                                <div class="container-tab active" id="type_2deliverysel">
-                                  <div class="wrapper wrapper-white">
-                                    <div class="page-subtitle">
-                                      <div class="mb-2">
-                                        <label for="chck-t_delivery_name1" class="form-label">NOMBRE</label>
-                                        <input type="text" class="form-control" name="chck-t_delivery_name" id="chck-t_delivery_name1" placeholder="" required>
-                                      </div>
-                                      <div class="mb-2">
-                                        <label for="chck-t_delivery_dni2" class="form-label">DNI</label>
-                                        <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni2" placeholder="" required>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="button-box talign-r">
-                          <button type="submit"><span>IR A PAGAR</span></button>
+                        
+                        <div id="chk_sellistlocation">
+                            
                         </div>
 
                       </form>
@@ -294,13 +319,23 @@ if(!isset($_SESSION['usr-logg_srwong'])){
             </div>
           </div>
         </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="grand-totall">
+            <!--
+            <div class="title-wrap">
+              <h4 class="cart-bottom-title section-bg-gary-cart">Total</h4>
+            </div>
+            -->
+            <div class="cl-wrap_total" id="c-xtt_tochck"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <?php require_once 'includes/inc_footer.php';?>
   <?php require_once 'includes/inc_mobile-tabs-links-footer.php';?>
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNJBL9QHv2HlNc-EUv2Vc_a1e2LYxdgc&sensor=true"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNJBL9QHv2HlNc-EUv2Vc_a1e2LYxdgc"></script>
   <script type="text/javascript" src="<?= $url;?>assets/js/actions/checkout.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ require_once '../model/db/ext_connection.php';
 class Urbanizations extends Connection{
 	function listAll(){
 		try{
-			$sql = "SELECT id, id_branch, name FROM urbanizations ORDER BY id ASC";
+			$sql = "SELECT id, id_branch, name, urb_latitud, urb_longitud FROM urbanizations ORDER BY id ASC";
 			$stm = $this->con->prepare($sql);
 			$stm->execute();
 			$data = $stm->fetchAll(PDO::FETCH_ASSOC);

@@ -1,5 +1,14 @@
 <?php 	
 class Connection{
+
+  // CONFIGURACIÓN - LOCALHOST
+	protected $con = null;
+	private $host = "localhost";
+	private $dbname = "db_srwong";
+	private $username = "root";
+	private $password = "";
+	private $charset = "utf8";
+    
 	// CONFIGURACIÓN - SERVIDOR (SERVIDOR TEMPORAL)
   /*
 	protected $con = null;
@@ -9,8 +18,9 @@ class Connection{
 	private $password = "VK}?YO]@F,(V";
 	private $charset = "utf8";
   */
-	/*
+
 	// CONFIGURACIÓN - SERVIDOR DE SRWONG(OFICIAL)
+	/*
 	protected $con = null;
 	private $host = "108.160.152.119";
 	private $dbname = "srwong_base23er";
@@ -18,15 +28,6 @@ class Connection{
 	private $password = "^an9%oN&ErP!";
 	private $charset = "utf8";
 	*/
-  // CONFIGURACIÓN - LOCALHOST
-	
-	protected $con = null;
-	private $host = "localhost";
-	private $dbname = "db_srwong";
-	private $username = "root";
-	private $password = "";
-	private $charset = "utf8";
-    
 
 	public function __construct(){
 		try{

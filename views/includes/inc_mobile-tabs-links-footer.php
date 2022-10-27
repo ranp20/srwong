@@ -1,6 +1,28 @@
+
+  
 <div class="mbtbslinks">
 	<div class="mbtbslinks__c">
-		<div class="mbtbslinks__c__cont">
+		<div class="mbtbslinks__c__cont" style="padding: 0px;">
+		    <div class="menuinfer">
+      <div class="col-lg-3 bloc-as">
+        
+        <p class="icono-text-aq"><a href="../category/70">PROMOCIONES</a></p>
+      </div>
+      <div class="col-lg-3  bloc-as"> 
+        
+        <p class="icono-text-aqq"><a href="../category/69">COMBOS PERSONALES</a></p>
+      </div>
+      <div class="col-lg-3  bloc-as"> 
+        
+        <p class="icono-text-aq"><a href="../category/71">DUOS</a></p>
+      </div>
+      <div class="col-lg-3  bloc-as"> 
+        
+        <p class="icono-text-aq"><a href="../category/72" >BANQUETES</a></p>
+      </div>
+    </div>
+		    
+		    
 			<div class="mbtbslinks__c__cont__m">
 				<div class="mbtbslinks__c__cont__m__i active">
 					<a href="./" title="Inicio">
@@ -54,3 +76,67 @@
 		</div>
 	</div>
 </div>
+
+
+<style>
+.menuinfer {
+    background: #f60015;
+    position: relative;
+    width: 100%;
+    float: left;
+   
+}  
+.col-lg-3.bloc-as {
+    width: 25%;
+    float: left;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+p.icono-text-aq a {
+    color: #fff !important;
+    font-size: 10px;
+    text-align: center;
+    line-height: 16px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+}
+p.icono-text-aqq {
+    margin: 0px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding-top: 9px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+p.icono-text-aqq a {
+    color: #fff !important;
+    font-size: 10px;
+    text-align: center;
+    line-height: 16px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+}
+p.icono-text-aq {
+    margin: 0px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding-top: 16px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.mbtbslinks__c__cont__m {
+    width: 100%;
+}
+</style>

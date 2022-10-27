@@ -2,13 +2,14 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 require_once '../model/categories.php';
 $categories = new Categories();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>SrWong - Lista de productos ( GRID )</title>
+    <title>Señor Wong - Locales</title>
     <?php require_once 'includes/inc_header_links.php';?>
     <!-- INCLUIR MEANMENU -->
     <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
@@ -36,7 +37,7 @@ $categories = new Categories();
     <div class="container">
       <div class="row flex-row-reverse mb-20">
         <div class="col-12">
-          <h3 class="category-title" style="font-size: 20px;">TODOS LOS LOCALES</h3>
+          <h3 class="category-title" style="font-size: 20px;">NUESTROS LOCALES</h3>
         </div>
       </div>
       <div class="row flex-row-reverse c_clistBranches">

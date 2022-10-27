@@ -6,6 +6,20 @@ namespace Composer\Autoload;
 
 class ComposerStaticInita533575f38cf5856d644a14c6bce22df
 {
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+    );
+
     public static $fallbackDirsPsr4 = array (
         0 => __DIR__ . '/..' . '/lyracom/rest-php-sdk/src',
     );
@@ -17,6 +31,8 @@ class ComposerStaticInita533575f38cf5856d644a14c6bce22df
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInita533575f38cf5856d644a14c6bce22df::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita533575f38cf5856d644a14c6bce22df::$prefixDirsPsr4;
             $loader->fallbackDirsPsr4 = ComposerStaticInita533575f38cf5856d644a14c6bce22df::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInita533575f38cf5856d644a14c6bce22df::$classMap;
 

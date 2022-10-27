@@ -1,5 +1,6 @@
 {
     "require": {
-        "lyracom/rest-php-sdk": "4.0.*"
+        "lyracom/rest-php-sdk": "4.0.*",
+        "phpmailer/phpmailer": "^6.6"
     }
 }

@@ -2,6 +2,7 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 if(isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./");
 }else{
@@ -12,7 +13,7 @@ if(isset($_SESSION['usr-logg_srwong'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>SrWong - Iniciar sesión | Registrarse</title>
+  <title>Señor Wong - Iniciar sesión | Registrarse</title>
   <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
@@ -60,20 +61,22 @@ if(isset($_SESSION['usr-logg_srwong'])){
                   <div class="login-register-form">
                     <form action="" method="POST" id="frm_1-Log">
                       <div class="mb-3">
-                        <input class="form-control mb-0" type="text" id="u-email" name="u-email" placeholder="Email" required>
+                        <input class="form-control mb-0" type="text" id="u-email" name="u-email" placeholder="E-mail" required>
                         <span class="ml-1 txt-noti-req"></span>
                       </div>
                       <div class="mb-3">
-                        <input class="form-control mb-0" type="password" id="u-password" name="u-password" placeholder="Password" required>
+                        <input class="form-control mb-0" type="password" id="u-password" name="u-password" placeholder="Contraseña" required>
                         <span class="ml-1 txt-noti-req"></span>
                       </div>
                       <div class="button-box">
                         <div class="login-toggle-btn">
                           <input type="checkbox">
                           <label>Recuérdame</label>
-                          <a href="javascript:void(0);">Has olvidado tu contraseña?</a>
+                          <a href="./recover-password">Has olvidado tu contraseña?</a>
                         </div>
-                        <button type="submit"><span>Iniciar sesión</span></button>
+                        <button type="submit" class="d-block talign-r">
+                            <span>Iniciar sesión</span>
+                        </button>
                       </div>
                     </form>
                   </div>
@@ -100,7 +103,9 @@ if(isset($_SESSION['usr-logg_srwong'])){
                         <span class="ml-1 txt-noti-req"></span>
                       </div>
                       <div class="button-box">
-                        <button type="submit"><span>Registrarme</span></button>
+                        <button type="submit" class="d-block talign-r">
+                            <span>Registrarme</span>
+                        </button>
                       </div>
                     </form>
                   </div>

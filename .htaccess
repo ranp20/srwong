@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteBase /srwong/
+RewriteBase /srwong
 
 ############ PAGES USERS
 RewriteRule ^/?$ index.php
@@ -20,6 +20,7 @@ RewriteRule ^shop-list?$ views/shop-list.php
 RewriteRule ^checkout?$ views/checkout.php
 RewriteRule ^payment?$ views/payment.php
 RewriteRule ^confirm?$ views/confirm.php
+RewriteRule ^confirm-delivery?$ views/confirm-delivery.php
 RewriteRule ^contact?$ views/contact.php
 RewriteRule ^cart-page?$ views/cart-page.php
 RewriteRule ^blog-details?$ views/blog-details.php
@@ -28,8 +29,15 @@ RewriteRule ^blog-details-video?$ views/blog-details-video.php
 RewriteRule ^blog-rightsidebar?$ views/blog-rightsidebar.php
 RewriteRule ^checkout-data?$ controllers/prcss_checkout-data.php
 RewriteRule ^payment-data?$ controllers/prcss_payment-data.php
+RewriteRule ^prcss-deli?$ controllers/prcss_checkout-upondelivery.php
 RewriteRule ^savesettingsuser?$ controllers/prcss_savesettingsuser.php
 RewriteRule ^logout?$ controllers/prcss_logout-user.php
+RewriteRule ^recover-password?$ views/recover-password.php
+RewriteRule ^restore-password?$ views/restore-password.php
+
+RewriteRule ^privacy-policies?$ views/privacy-policies.php
+RewriteRule ^terms-and-conditions?$ views/terms-and-conditions.php
+RewriteRule ^complaints-book?$ views/complaints-book.php
 
 ############ PAGES ADMIN
 #RewriteRule admin?$ admin/index.php

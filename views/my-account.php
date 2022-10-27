@@ -2,6 +2,7 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }else{
@@ -15,7 +16,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>SrWong - Mi Cuenta</title>
+  <title>Señor Wong - Mi Cuenta</title>
   <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
