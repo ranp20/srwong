@@ -36,7 +36,7 @@
 						    text-align: center;
 						    font-size: 1rem;
 						    line-height: 30px;
-						    font-weight: 400;
+						    font-weight: 600;
 						    display: flex;
 						    align-items: center;
 						    justify-content: center;
@@ -78,6 +78,9 @@
 								justify-content: flex-start;
 								flex-flow: wrap row;
 								max-width: 150px;
+								img{
+									display: table;
+								}
 							}
 						}
 					}
@@ -135,6 +138,7 @@
 							justify-content: center;
 							.wishlist-text{
 								.pedido{
+									font-family: "Days One";
 							    font-weight: 700;
 							    font-size: 17px;
 								}
@@ -244,8 +248,8 @@
 		a{
 			outline: medium none;
 			color: $theme-clr-tertiary;
-	    font-size: 19px;
-	    font-weight: 800;
+	    font-size: 15px;
+	    font-weight: 600;
 		}
 	}
 }

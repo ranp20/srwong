@@ -1,5 +1,5 @@
 <?php 
-  $p_pathimg = "./admin/storage/app/public/product/".$l_details['p_photo'];
+  $p_pathimg = "../admin/storage/app/public/product/".$l_details['p_photo'];
   $p_name = substr($l_details["p_name"], 0, 60);
   $p_desc = ($l_details["p_desc"] != "") ? substr($l_details["p_desc"], 0, 500) : "No especificado";
   $p_price_old = number_format($l_details['p_price'], 2, '.', ' '); 
@@ -25,35 +25,14 @@
 <div class='product-details pt-100 pb-90'>
   <div class='container'>
     <div class='row'>
-      <div class='col-lg-6 col-md-12'>
+      <div class='col-lg-7 col-md-12' id="c-pdetail__imgzoom">
         <div class='product-details-img'>
-          <img class='foto-producto' src='<?= $p_pathimg;?>' data-zoom-image='<?= $p_pathimg;?>' alt='zoom'/>
-          <!-- 
-          <div id="gallery" class="mt-20 product-dec-slider owl-carousel">
-            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
-              <img src="<?= $p_pathimg;?>" alt="">
-            </a>
-            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
-              <img src="<?= $p_pathimg;?>" alt="">
-            </a>
-            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
-              <img src="<?= $p_pathimg;?>" alt="">
-            </a>
-            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
-              <img src="<?= $p_pathimg;?>" alt="">
-            </a>
-            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
-              <img src="<?= $p_pathimg;?>" alt="">
-            </a>
-            <a data-image="<?= $p_pathimg;?>" data-zoom-image="<?= $p_pathimg;?>">
-              <img src="<?= $p_pathimg;?>" alt="">
-            </a>
-          </div>
-           -->
+          <img class='foto-producto small-preview img-fluid' src='<?= $p_pathimg;?>' data-zoom-image='<?= $p_pathimg;?>' alt='zoom'/>
           <?= $tmpDiscount;?>
+          <div class="zoomed-image"></div>
         </div>
       </div>
-      <div class='col-lg-6 col-md-12'>
+      <div class='col-lg-5 col-md-12'>
         <div class='product-details-content'>
           <h4><?= $p_name;?></h4>
           <div class='in-offer'>
