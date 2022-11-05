@@ -3719,6 +3719,95 @@ h4.shop-sidebar-title {
 .product-dec-slider a.active.slick-active:before {
     opacity: .0000001;
 }
+/* HEADER TOP */
+.shopping-cart-content{
+  height: auto !important;
+}
+.shopping-cart-btn a{
+  background-color: #e02c2b !important;
+  color: #fff !important;
+}
+.shopping-cart-btn a:hover{
+  background-color: #454545 !important;
+}
+.shopping-cart-btn a .c_count-small{
+  background-color: #fff;
+  color: #000 !important;
+  max-width: 18px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 .25rem 0 0;
+  vertical-align: middle;
+  position: relative;
+  text-align: center;
+}
+.shopping-cart-btn a .c_count-small > span,
+.shopping-cart-btn a .c_count-small > small{
+  position: relative;
+  top: -3px;
+}
+.shopping-cart-btn a .c_listsubtotal-cart > span{
+  font-weight: 600 !important;
+}
+#fr-fm_04chkcrtpg button.btn_link{
+  background-color: #e02c2b !important;
+  color: #fff !important;
+}
+#fr-fm_04chkcrtpg button.btn_link:hover{
+  background-color: #454545 !important;
+}
+#fr-fm_04chkcrtpg button.btn_link .c-cart_count-small{
+  background-color: #fff;
+  color: #000 !important;
+  max-width: 21px;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 .25rem 0 0;
+  vertical-align: middle;
+  position: relative;
+  text-align: center;
+}
+#fr-fm_04chkcrtpg button.btn_link .c-cart_count-small span,
+#fr-fm_04chkcrtpg button.btn_link .c-cart_count-small small{
+  position: relative;
+  top: 3px;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+#fr-fm_04chkcrtpg button.btn_link .c-cart_listsubtotal-cart > span{
+  font-weight: 600 !important;
+}
+.cl-wrap_total-title{
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  border-top: none !important;
+  border-bottom: thin solid #ebebeb !important;
+}
+.c_title-total{
+  padding: 1rem 0 !important;
+  margin: 1rem 0 0 0 !important;
+  border-bottom: thin solid #ebebeb !important;
+}
+#c-listCartU ul{
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 206px;
+}
+@media (min-width: 650px){
+  #c-listCartU ul{
+      max-height: 225px;   
+  }
+}
+@media (min-width: 991px){
+  #c-listCartU ul{
+      max-height: 323px;   
+  }
+}
+
 /* DETALLE DEL PRODUCTO */
 #c-pdetail__imgzoom{
     position: relative;
@@ -6045,7 +6134,80 @@ h5.panel-title span {
 .owl-carousel .owl-item img{
   display: table !important;
 }
+/* FOOTER STYLES */
+.footer-bottom-area{
+  padding-bottom: 5rem !important;
+}
+@media (min-width: 650px){
+  .footer-bottom-area{
+    padding-bottom: 24px !important;
+  }
+}
+.hpbannerhom__sec__c {
+  max-height: 100% !important;
+  height: 100%;
+}
 /* ESTILOS AGREGADOS DESDE EL SERVIDOR */
+.menuinfer {
+  background: #f60015;
+  position: relative;
+  width: 100%;
+  float: left;
+ 
+}  
+.col-lg-3.bloc-as {
+  width: 25%;
+  float: left;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+p.icono-text-aq a {
+  color: #fff !important;
+  font-size: 10px;
+  text-align: center;
+  line-height: 16px;
+  font-weight: 600;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 100%;
+}
+p.icono-text-aqq {
+  margin: 0px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding-top: 9px;
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+p.icono-text-aqq a {
+  color: #fff !important;
+  font-size: 10px;
+  text-align: center;
+  line-height: 16px;
+  font-weight: 600;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 100%;
+}
+p.icono-text-aq {
+  margin: 0px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding-top: 16px;
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.mbtbslinks__c__cont__m {
+  width: 100%;
+}
 @media screen and (max-width: 900px){  
   .tablink--fill span:nth-child(2){
     font-size: 0.5rem;
@@ -6122,9 +6284,6 @@ p.pedido {
 .product-wrapper .product-content{
   text-align: center;
 }
-.hphom__sec.header-middle.reduxheight{
-  position: relative !important;
-}
 .button-box button, .button-box a{
   font-weight: 600;
   font-family: arial;
@@ -6177,9 +6336,6 @@ p.mensaje-a {
   .tablink--fill span:nth-child(2){
     font-size: 0.5rem;
     font-weight: 700;
-  }
-  .footer-title.mb-22{
-    text-align: center;
   }
   .category-content.six_slider_title h4{
     font-size: 10px !important;

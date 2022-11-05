@@ -35,11 +35,7 @@
         </span>
       </div>
       <div class="categories-list-home owl-carousel owl-theme row">
-        <!-- LIST ALL CATEGORIES -->
-        <?php 
-          echo $dmlCategories->getCategoriesCarousel();
-        ?>
-        <!-- LIST ALL CATEGORIES -->
+        <?php echo $dmlCategories->getCategoriesCarousel();?>
       </div>
       <div class="cxhm_category__cBtnIconSlide ps-x-right">
         <span class="slider-arrow-right">

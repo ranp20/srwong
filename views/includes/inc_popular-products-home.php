@@ -10,9 +10,7 @@
     <div class="tab-content jump">
       <div class="tab-pane active">
         <div class="owl-popular-products-home owl-carousel owl-theme row">
-          <?php
-            echo $dmlProducts->getMasPopulares();
-          ?>
+          <?php echo $dmlProducts->getMasPopulares();?>
         </div>
       </div>
     </div>

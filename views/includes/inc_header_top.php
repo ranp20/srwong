@@ -1,96 +1,6 @@
 <div class="loader-in">
   <span class="loader-in--loader"></span>
 </div>
-<style type="text/css">
-    .shopping-cart-content{
-        height: auto !important;
-    }
-    .shopping-cart-btn a{
-        background-color: #e02c2b !important;
-        color: #fff !important;
-    }
-    .shopping-cart-btn a:hover{
-        background-color: #454545 !important;
-    }
-    .shopping-cart-btn a .c_count-small{
-        background-color: #fff;
-        color: #000 !important;
-        max-width: 18px;
-        width: 18px;
-        height: 18px;
-        display: inline-block;
-        border-radius: 50%;
-        margin: 0 .25rem 0 0;
-        vertical-align: middle;
-        position: relative;
-        text-align: center;
-    }
-    .shopping-cart-btn a .c_count-small > span,
-    .shopping-cart-btn a .c_count-small > small{
-        position: relative;
-        top: -3px;
-    }
-    .shopping-cart-btn a .c_listsubtotal-cart > span{
-        font-weight: 600 !important;
-    }
-    #fr-fm_04chkcrtpg button.btn_link{
-        background-color: #e02c2b !important;
-        color: #fff !important;
-    }
-    #fr-fm_04chkcrtpg button.btn_link:hover{
-        background-color: #454545 !important;
-    }
-    #fr-fm_04chkcrtpg button.btn_link .c-cart_count-small{
-        background-color: #fff;
-        color: #000 !important;
-        max-width: 21px;
-        width: 21px;
-        height: 21px;
-        display: inline-block;
-        border-radius: 50%;
-        margin: 0 .25rem 0 0;
-        vertical-align: middle;
-        position: relative;
-        text-align: center;
-    }
-    #fr-fm_04chkcrtpg button.btn_link .c-cart_count-small span,
-    #fr-fm_04chkcrtpg button.btn_link .c-cart_count-small small{
-        position: relative;
-        top: 3px;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-    }
-    #fr-fm_04chkcrtpg button.btn_link .c-cart_listsubtotal-cart > span{
-        font-weight: 600 !important;
-    }
-    .cl-wrap_total-title{
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-        border-top: none !important;
-        border-bottom: thin solid #ebebeb !important;
-    }
-    .c_title-total{
-        padding: 1rem 0 !important;
-        margin: 1rem 0 0 0 !important;
-        border-bottom: thin solid #ebebeb !important;
-    }
-    #c-listCartU ul{
-        overflow-x: hidden;
-        overflow-y: auto;
-        max-height: 206px;
-    }
-    @media (min-width: 650px){
-        #c-listCartU ul{
-            max-height: 225px;   
-        }
-    }
-    @media (min-width: 991px){
-        #c-listCartU ul{
-            max-height: 323px;   
-        }
-    }
-</style>
-
 <header class="header-area">
   <div class="header-top black-bg hphom__sec">
     <div class="hphom__sec--cBnnadd">
@@ -245,7 +155,6 @@
                 <li class="mega-menu-position top-hover">
                   <a style="color:#2f333a;" href="./branch">LOCALES</i></a>
                 </li>
-                
               </ul>
             </nav>
           </div>

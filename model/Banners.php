@@ -37,7 +37,7 @@ class Banners extends Connection
               </div>";
         */
         $resultHTML.= "<div class='single-slider hpbannerhom__sec__c'>
-            <img src='{$banner_pathimg}' class='img-fluid' alt='$data[2]'/> 
+            <img src='{$banner_pathimg}' class='img-fluid' alt='$data[2]' width='100' height='100'/> 
           </div>";        
       }
       return $resultHTML;
