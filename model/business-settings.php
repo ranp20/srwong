@@ -80,6 +80,7 @@ class BusinessSettings extends Connection
       return $e->getMessage();
     }
   }
+<<<<<<< HEAD
   // -------------- OBTENER EL HORARIO SEMANAL
   public function getTimeSchedule(){
     try{
@@ -92,5 +93,7 @@ class BusinessSettings extends Connection
       return $e->getMessage();
     } 
   }
+=======
+>>>>>>> 97bce2061a4f49847ad529954f981a41e1e6f3e8
 }
 $dmlBusinessSettings = new BusinessSettings();
