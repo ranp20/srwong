@@ -14,7 +14,7 @@ $(() => {
     e.preventDefault();
     $(this).parent().find('.shopping-cart-content').slideToggle('medium');
   })
-
+/*
   // ------------ MENU STICK
   var header = $('.transparent-bar');
   var win = $(window);
@@ -27,6 +27,7 @@ $(() => {
       header.addClass('stick');
     }
   });
+  */
 
   // ------------ jQuery MeanMenu
   $('#mobile-menu-active').meanmenu({

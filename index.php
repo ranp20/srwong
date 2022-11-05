@@ -18,10 +18,6 @@ require_once './model/footer-settings.php';
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
   <!-- INCLUIR CRYPTO-JS -->
   <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
-  <!-- INCLUIR SLICK -->
-  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick.css">
-  <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/slick/slick-theme.css">
-  <script type="text/javascript" src="<?= $url;?>assets/js/plugins/slick/slick.min.js"></script>
   <!-- INCLUIR OWL CAROUSEL 2 -->
   <link rel="stylesheet" href="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/assets/owl.carousel.min.css">
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/OwlCarousel2/dist/owl.carousel.min.js"></script>
