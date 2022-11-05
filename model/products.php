@@ -195,7 +195,7 @@ class Products extends Connection
       $resultHTML="";
       foreach($stm as $data){
         $p_name = substr($data["name"], 0, 60);
-        $p_pathimg = "./admin/storage/app/public/product/".$data['image'];
+        $p_pathimg = "../admin/storage/app/public/product/".$data['image'];
         $p_price_old = number_format($data['price'], 2, '.', ' '); 
         $p_price_new = floatval($data['price']) - floatval($data['discount']);
         $p_price_new = number_format($p_price_new, 2, '.', ' ');

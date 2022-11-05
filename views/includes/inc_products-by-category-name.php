@@ -3,8 +3,8 @@
   $cat = new Categories();
   $l_byName = $cat->getCategoriesByIdCategory($_GET['cat']);
   $cat_id = $l_byName[0]['id'];
-  $cat_banner = "./admin/storage/app/public/category/".$l_byName[0]['image'];
-  $cat_banner = "./admin/storage/app/public/category/banner/".$l_byName[0]['banner_image'];
+  $cat_banner = "../admin/storage/app/public/category/".$l_byName[0]['image'];
+  $cat_banner = "../admin/storage/app/public/category/banner/".$l_byName[0]['banner_image'];
   require_once '../model/products.php';
   $products=new Products();
 ?>
