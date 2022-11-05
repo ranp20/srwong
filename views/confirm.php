@@ -2,6 +2,7 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }else{
@@ -13,7 +14,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 <html lang="es">
 <head>    
   <?php require_once 'includes/inc_header_links.php';?>
-  <title>SrWong - Confirmaci贸n de compra</title>
+  <title>Señor Wong - Confirmaci贸n de compra</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
@@ -21,6 +22,29 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <!-- INCLUIR CRYPTO-JS -->
   <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
 </head>
+<style type="text/css">
+    .btn-theme__link{
+        background-color: #e41a25 !important;
+        color: #fff !important;
+        padding: 18px 10px 19px !important;
+        max-width: 400px !important;
+        width: 95% !important;
+        margin: 0 auto !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        display: block !important;
+        line-height: 1 !important;
+        border-radius: 3px !important;
+        text-align: center !important;
+        text-transform: uppercase !important;
+        transition: all ease-in-out .2s !important;
+    }
+    .btn-theme__link:hover {
+        background-color: #242424 !important;
+        color: #fff !important;
+    }
+</style>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
     <div class="breadcrumb-area gray-bg">

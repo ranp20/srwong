@@ -2,6 +2,7 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 require_once '../model/categories.php';
 $categories = new Categories();
 ?>

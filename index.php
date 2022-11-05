@@ -5,6 +5,7 @@ session_start();
 
 require_once './model/products.php';
 require_once './model/categories.php';
+require_once './model/footer-settings.php';
 $products = new Products();
 $categories = new Categories();
 $l_products = $products->getAll();
@@ -13,7 +14,8 @@ $l_products = $products->getAll();
 <html lang="es">
 <head>
   <?php require_once 'views/includes/inc_header_links.php';?>
-  <title>SrWong - Deliveries y Pedidos</title>
+  <title>Señor Wong - Deliveries y Pedidos</title>
+  <meta name="description" content="Venta de comida china"/>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->

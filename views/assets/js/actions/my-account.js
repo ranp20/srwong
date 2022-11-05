@@ -1,3 +1,20 @@
+// ------------ AGREGAR DOS DECIMALES 
+function addTwoDecimals(n){
+  output_final = "";
+  if(n != "0" || n != 0){
+    output_num = n.toString().split(".");
+    if(output_num[1] == "undefined" || output_num[1] == null || output_num[1] == ""){
+	  output_final = n + ".00";
+    }else	if(output_num[1] != "undefined" && output_num[1].length < 2){
+	  output_final = output_num[0] + "." + output_num[1] + "0";
+    }else{
+	  output_final = output_num[0] + "." + output_num[1];
+    }
+  }else{
+    output_final = n;
+  }
+  return output_final;
+}
 // ------------ ENCRIPTAR DATOS DE INPUTS
 function encryptValuesIpts(valueipt){
   let ciphertext = CryptoJS.AES.encrypt(valueipt, 'CML_KEYSYSTEM').toString();
@@ -32,7 +49,7 @@ $(() => {
         success : function(e){
           if(e != "" && e != "[]"){
             let tmpList = "";
-            tmpList += `<ul style='max-height: 335px;overflow-x: hidden;overflow-y: auto;'>`;
+            tmpList += `<ul>`;
             // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
             let filtered = Object.entries(e);
             // let totalpay = filtered.reduce(function(sum, v){
@@ -44,10 +61,8 @@ $(() => {
             });
             // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
             var tpay_wzero = Number(totalpay);
-            var res = totalpay.toString().split(".");
-            if(res.length == 1 || (res[1].length < 3)) {
-              tpay_wzero = tpay_wzero.toFixed(2);
-            }
+            var total_pay = addTwoDecimals(tpay_wzero)
+            var total_pay_format = parseFloat(total_pay).toFixed(2);
             $("#c-totcart").html(`
               <div class="header-icon-style">
                 <i class="icon-handbag icons"></i>
@@ -55,7 +70,7 @@ $(() => {
               </div>
               <div class="cart-text">
                 <span class="digit">Mi Carrito</span>
-                <span class="cart-digit-bold">S/. ${tpay_wzero}</span>
+                <span class="cart-digit-bold">S/. ${total_pay_format}</span>
               </div>
             `);
             $.each(e, function(i,v){
@@ -80,7 +95,7 @@ $(() => {
             tmpList += `</ul>`;
             tmpList += `
               <div class="shopping-cart-total">
-                <h4>Total : <span class="shop-total">S/. ${tpay_wzero}</span></h4>
+                <h4>Total : <span class="shop-total">S/. ${total_pay_format}</span></h4>
               </div>
               <div class="shopping-cart-btn">
                 <a href="cart-page" id="lk_cart">Ver Carrito</a>
@@ -144,6 +159,12 @@ $(() => {
   }
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
+  $(document).on("keypress keyup","#prf_usval-telf",function(v){
+    let thisval = v.target.value;
+    if(thisval.length > 9){
+      $(this).val(thisval.replace(/\D+/g, '').replace(/(\d{9})/, '$1').slice(0, 9));
+    }
+  });
   $(document).on("keypress keyup","#prf_usval-ndoc",function(v){
     let thisval = v.target.value;
     // maxlengthchar = 8;
@@ -269,9 +290,6 @@ $(() => {
           let tmp = "";
           // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
           let filtered = Object.entries(e);
-          // let totalpay = e.reduce(function(sum, v){
-          //   return sum + parseFloat(v.tmp_subtotal)
-          // }, 0);
           let totalpay = 0;
           $.each(e, function(i,v){
             totalpay += parseFloat(v.tmp_subtotal);
@@ -293,7 +311,7 @@ $(() => {
             let p_name_limit = (p_name.length >= 31) ? p_name.substring(31, 0) + "..." : p_name;
             let or_status = v.tmp_status;
             let tmp_ordstatus = "";
-            if(or_status == "confirmed" || or_status == "COMPLETED"){
+            if(or_status == "confirmed" || or_status == "completed"){
               tmp_ordstatus = `<span class='badge st_confirm'><span class='legend-indicator bg-info'></span><span>Completado</span></span>`;
             }else{
               tmp_ordstatus = `<span class='badge st_pending'><span class='legend-indicator bg-danger'></span><span>Pendiente</span></span>`;

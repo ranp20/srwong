@@ -2,7 +2,7 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
-
+require_once '../model/footer-settings.php';
 if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
   require_once '../model/categories.php';
   $categories = new Categories();
@@ -14,7 +14,7 @@ if(isset($_GET['cat']) && !empty($_GET) && is_numeric($_GET['cat'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>    
-  <title>SrWong - Categoría <?= (isset($liById[0]['name']) && $liById[0]['name'] != "") ? $liById[0]['name'] : "";?></title>
+  <title>Señor Wong - Categoría <?= (isset($liById[0]['name']) && $liById[0]['name'] != "") ? $liById[0]['name'] : "";?></title>
   <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>

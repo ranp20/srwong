@@ -1,17 +1,23 @@
 <?php 
   $p_pathimg = "../admin/storage/app/public/product/".$l_details['p_photo'];
   $p_name = substr($l_details["p_name"], 0, 60);
-  $p_desc = ($l_details["p_desc"] != "") ? substr($l_details["p_desc"], 0, 120) : "No especificado";
+  $p_desc = ($l_details["p_desc"] != "") ? substr($l_details["p_desc"], 0, 500) : "No especificado";
   $p_price_old = number_format($l_details['p_price'], 2, '.', ' '); 
-  $p_price_new = $l_details['p_price'] - $l_details['p_discount'];
+  $p_price_new = floatval($l_details['p_price']) - floatval($l_details['p_discount']);
   $p_price_new = number_format($p_price_new, 2, '.', ' ');
   $p_status = ($l_details["p_status"] == 1) ? "Disponible" : "No disponible";
   $p_discount_type = $l_details['p_discount_type'];
   $p_discount = $l_details['p_discount'];
+  
   $tmpDiscount = "";
-  if($p_discount_type == "percent"){
+  $tmp_priceOld = "";
+  if($p_discount_type == "percent" || $p_discount_type == "amount"){        
     if($p_discount != 0 || $p_discount != 0.00 || $p_discount != "0.00"){
       $tmpDiscount = "<span>-{$p_discount}%</span>";
+      $tmp_priceOld = "<span class='prod_price-old'>{$p_price_old}</span>";
+    }else{
+      $tmpDiscount = "";
+      $tmp_priceOld = "";
     }
   }
 
@@ -50,20 +56,29 @@
       <div class='col-lg-6 col-md-12'>
         <div class='product-details-content'>
           <h4><?= $p_name;?></h4>
-          <span>S/. <?= $p_price_new;?></span>
+          <div class='in-offer'>
+              <span>S/. <?= $p_price_new;?></span>
+              <?= $tmp_priceOld; ?>
+          </div>
           <div class='in-stock'>
             <p>Estado: <span><?= $p_status;?></span></p>
           </div>
           <p><?= $p_desc;?></p>
+          
           <div class='pro-dec-feature'>
+          <!--
             <ul>
-              <?php 
+              <?php
+                /*
                 foreach(json_decode($l_details['p_add_ons']) as $k => $v){
                   echo $dmlProducts->getAddOns($v);
                 }
+                */
               ?>
             </ul>
+            -->
           </div>
+          
           <div class='pro-details-cart-wrap'>
             <div class='product-details-wishlist'>
               <a title='Add To Cart' href='javascript:void(0);' class='a__tocart'
@@ -93,14 +108,7 @@
               <li><a href='javascript:void(0);'> French Fries,</a></li>
             </ul>
           </div> -->
-          <div class='pro-dec-social'>
-            <ul>
-              <li><a class='tweet' href='javascript:void(0);'><i class='ion-social-twitter'></i> Tweet</a></li>
-              <li><a class='share' href='javascript:void(0);'><i class='ion-social-facebook'></i> Share</a></li>
-              <li><a class='google' href='javascript:void(0);'><i class='ion-social-googleplus-outline'></i> Google+</a></li>
-              <li><a class='pinterest' href='javascript:void(0);'><i class='ion-social-pinterest'></i> Pinterest</a></li>
-            </ul>
-          </div>
+          
         </div>
       </div>
     </div>

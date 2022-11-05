@@ -35,18 +35,19 @@ class Products extends Connection
       $stm->execute();
       $res = $stm->fetchAll();
       $resultHTML = "";
-      foreach ($res as $data){      
-        
+      foreach ($res as $data){
         $p_name = substr($data["name"], 0, 60);
         $p_pathimg = "./admin/storage/app/public/product/".$data['image'];
         $p_price_old = number_format($data['price'], 2, '.', ' '); 
-        $p_price_new = $data['price'] - $data['discount'];
+        $p_price_new = floatval($data['price']) - floatval($data['discount']);
         $p_price_new = number_format($p_price_new, 2, '.', ' ');
         $htmlDiscount = "";
-        if($data['discount'] > 0){
-          $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
-        }else{
-          $htmlDiscount = "";
+        if($data['discount_type'] == "percent" || $data['discount_type'] == "amount"){        
+          if($data['discount'] != "0" && $data['discount'] != "0.00"){
+            $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
+          }else{
+            $htmlDiscount = "";
+          }
         }
 
         $resultHTML .= "
@@ -54,7 +55,7 @@ class Products extends Connection
             <div class='product-wrapper mb-25'>
               <div class='product-img'>
                 <a href='./product-details/{$data['id']}' class='product-img__linkprods'>
-                  <img src='{$p_pathimg}' alt='{$p_name}'>
+                  <img src='{$p_pathimg}' alt='{$p_name}' class='img-fluid'>
                 </a>
                 <div class='product-action product-img__contentprods'>
                   <div class='pro-action-left'>
@@ -65,7 +66,7 @@ class Products extends Connection
                       dt-srwg_id='{$data['id']}'
                     >
                       <i class='ion-android-cart'></i>
-                      <span> Agregar al carrito</span>
+                      <span> Agregar</span>
                     </a>
                   </div>
                 </div>
@@ -98,15 +99,17 @@ class Products extends Connection
       $resultHTML = "";
       foreach ($res as $data) {
         $p_name = substr($data["name"], 0, 60);
-        $p_pathimg = "./admin/storage/app/public/product/".$data['image'];
+        $p_pathimg = "../admin/storage/app/public/product/".$data['image'];
         $p_price_old = number_format($data['price'], 2, '.', ' '); 
-        $p_price_new = $data['price'] - $data['discount'];
+        $p_price_new = floatval($data['price']) - floatval($data['discount']);
         $p_price_new = number_format($p_price_new, 2, '.', ' ');
         $htmlDiscount = "";
-        if($data['discount'] > 0){
-          $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
-        }else{
-          $htmlDiscount = "";
+        if($data['discount_type'] == "percent" || $data['discount_type'] == "amount"){        
+          if($data['discount'] != "0" && $data['discount'] != "0.00"){
+            $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
+          }else{
+            $htmlDiscount = "";
+          }
         }
          
        $resultHTML.= "
@@ -114,7 +117,7 @@ class Products extends Connection
             <div class='product-wrapper mb-25'>
               <div class='product-img'>
                 <a href='./product-details/{$data['id']}' class='product-img__linkprods'>
-                  <img src='{$p_pathimg}' alt='{$p_name}'>
+                  <img src='{$p_pathimg}' alt='{$p_name}' class='img-fluid'>
                 </a>
                 <div class='product-action product-img__contentprods'>
                   <div class='pro-action-left'>
@@ -194,20 +197,22 @@ class Products extends Connection
         $p_name = substr($data["name"], 0, 60);
         $p_pathimg = "../admin/storage/app/public/product/".$data['image'];
         $p_price_old = number_format($data['price'], 2, '.', ' '); 
-        $p_price_new = $data['price'] - $data['discount'];
+        $p_price_new = floatval($data['price']) - floatval($data['discount']);
         $p_price_new = number_format($p_price_new, 2, '.', ' ');
         $htmlDiscount = "";
-        if($data['discount'] > 0){
-          $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
-        }else{
-          $htmlDiscount = "";
+        if($data['discount_type'] == "percent" || $data['discount_type'] == "amount"){        
+          if($data['discount'] != "0" && $data['discount'] != "0.00"){
+            $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
+          }else{
+            $htmlDiscount = "";
+          }
         }
         $resultHTML .= "
         <div class='product-width col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 mb-30'>
           <div class='product-wrapper'>
             <div class='product-img'>
               <a href='../product-details/{$data['id']}' class='product-img__linkprods'>
-                <img src='{$p_pathimg}' alt='{$p_name}'>
+                <img src='{$p_pathimg}' alt='{$p_name}' class='img-fluid'>
               </a>
               <div class='product-action product-img__contentprods'>
                 <div class='pro-action-left'>
@@ -229,7 +234,7 @@ class Products extends Connection
               </h4>
               <div class='product-price-wrapper'>
                 <span>S/ {$p_price_new}</span>
-                <span class='product-price-old'>S/. {$p_price_old} </span>
+                {$htmlDiscount}
               </div>
             </div>
           </div>
@@ -250,15 +255,14 @@ class Products extends Connection
       foreach($res as $data){
          $dataProductarr = json_decode($data[0]);
       }
-      //              //recorriendo el array obtenido de categries id del producto para obtener el nombre
-                foreach ($dataProductarr as $key=>$value) {
-                    foreach ($value as $keyId => $valId) {
-                        if ($keyId=="id") { 
-                            $arrCats=[$valId];
-                        }
-                    }
-
-                }
+      // recorriendo el array obtenido de categries id del producto para obtener el nombre
+      foreach ($dataProductarr as $key=>$value) {
+        foreach ($value as $keyId => $valId) {
+          if ($keyId=="id") { 
+            $arrCats=[$valId];
+          }
+        }
+      }
       return $arrCats;
     }catch(PDOException $e){
       return $e->getMessage();
@@ -335,11 +339,11 @@ class Products extends Connection
         $p_name = substr($data["name"], 0, 60);
         $p_pathimg = "../admin/storage/app/public/product/".$data['image'];
         $p_price_old = number_format($data['price'], 2, '.', ' '); 
-        $p_price_new = $data['price'] - $data['discount'];
+        $p_price_new = floatval($data['price']) - floatval($data['discount']);
         $p_price_new = number_format($p_price_new, 2, '.', ' ');
         $htmlDiscount = "";
-        if($data['discount_type'] == "percent"){        
-          if($data['discount'] != 0 || $data['discount'] != 0.00 || $data['discount'] != "0.00"){
+        if($data['discount_type'] == "percent" || $data['discount_type'] == "amount"){        
+          if($data['discount'] != "0" && $data['discount'] != "0.00"){
             $htmlDiscount = "<span class='product-price-old'>S/ {$p_price_old}</span>";
           }else{
             $htmlDiscount = "";
@@ -349,7 +353,7 @@ class Products extends Connection
         <div class='product-wrapper'>
           <div class='product-img'>
             <a href='../product-details/{$data['id']}' class='product-img__linkprods'>
-              <img src='{$p_pathimg}' alt='{$p_name}'>
+              <img src='{$p_pathimg}' alt='{$p_name}' class='img-fluid'>
             </a>
             <div class='product-action product-img__contentprods'>
               <div class='pro-action-left'>
@@ -371,7 +375,7 @@ class Products extends Connection
             </h4>
             <div class='product-price-wrapper'>
               <span>S/ {$p_price_new}</span>
-              <span class='product-price-old'>S/. {$p_price_old} </span>
+              {$htmlDiscount}
             </div>
           </div>
         </div>";

@@ -2,23 +2,24 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 require_once '../model/categories.php';
 $categories = new Categories();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>SrWong - Sobre nosotros</title>
+  <title>Señor Wong - Sobre nosotros</title>
   <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/scrollUp/jquery.scrollUp.min.js"></script>
-  <!-- INCLUIR WAYPOINTS -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-  <!-- INCLUIR COUNTER-UP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+  <!-- INCLUIR CRYPTO-JS -->
+  <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
+  <!-- INCLUIR SWEET ALERT 2 -->
+  <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
+  <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
     <?php require_once 'includes/inc_header_top.php';?>
@@ -32,6 +33,24 @@ $categories = new Categories();
           </div>
       </div>
   </div>
+  <?php
+    /*
+    require_once '../model/business-settings.php';
+    $buss_settings = new BusinessSettings();
+    $list_schedule = $buss_settings->getTimeSchedule();
+    $messagealert = "";
+    date_default_timezone_set('America/Lima');
+    echo date('H:i:s');
+    foreach($list_schedule as $k => $v){
+        $open_t = $v['open_time'];
+        $clos_t = $v['closing_time'];
+        if (date('H') > $clos_t) {
+           $messagealert = "Lo sentimos, en estos momentos nos encontramos fuera del horario de trabajo.";
+        }
+    }
+    echo $messagealert;
+    */
+  ?>
   <div class="about-us-area pt-100 pb-100">
       <div class="container">
           <div class="row">
@@ -44,13 +63,11 @@ $categories = new Categories();
               </div>
               <div class="col-lg-6 col-md-7 d-flex align-items-center">
                   <div class="overview-content-2">
-                      <h2>Bienvenidos a la tienda <span>Señor Wong</span>!</h2>
-                      <p class="peragraph-blog">
-
-Somos un restaurante dedicado a la preparación de platos provenientes de diferentes regiones del Perú.
-
-Nuestro principal propósito es dar un servicio de calidad, brindando una experiencia amigable y distinta en cada visita.
-</p>
+                      <?php 
+        require_once '../model/business-settings.php';
+        echo $dmlBusinessSettings->getAboutUs();
+      ?>
+                     
                       
                   </div>
               </div>

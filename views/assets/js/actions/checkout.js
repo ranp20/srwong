@@ -1,3 +1,20 @@
+// ------------ AGREGAR DOS DECIMALES 
+function addTwoDecimals(n){
+  output_final = "";
+  if(n != "0" || n != 0){
+    output_num = n.toString().split(".");
+    if(output_num[1] == "undefined" || output_num[1] == null || output_num[1] == ""){
+	  output_final = n + ".00";
+    }else	if(output_num[1] != "undefined" && output_num[1].length < 2){
+	  output_final = output_num[0] + "." + output_num[1] + "0";
+    }else{
+	  output_final = output_num[0] + "." + output_num[1];
+    }
+  }else{
+    output_final = n;
+  }
+  return output_final;
+}
 // ------------ MARCAR LA URBANIZACIÓN SELECCIONADA EN EL MAPA
 function init() {
   var mapOptions = {
@@ -13,12 +30,13 @@ function init() {
   var marker = new google.maps.Marker({
     position: new google.maps.LatLng(-12.0672896, -77.0359179),
     map: map,
-    icon: './views/assets/img/icon-img/map.png',
+    icon: '../views/assets/img/icon-img/map.png',
     animation:google.maps.Animation.BOUNCE,
     title: 'Snazzy!'
   });
 }
 google.maps.event.addDomListener(window, 'load', init);
+
 
 // ------------ ENCRIPTAR DATOS DE INPUTS
 function encryptValuesIpts(valueipt){
@@ -34,12 +52,17 @@ function decryptValuesIpts(valueipt){
 // ------------ COMPROBAR SI ES NUMÉRICO
 function isNumeric(variable){return !isNaN(parseInt(variable));}
 $(() => {
-	// ------------ ENCRIPTACIÓN DE INPUTS
+  // ------------ ENCRIPTACIÓN DE INPUTS
   var encrypt_sess_idcli = $("#u-s_regclient-sis").val(encryptValuesIpts($("#u-s_regclient-sis").val()));
+  var encrypt_valpayment_chck = $("#clxt2_chck-ffilpyy1").val(encryptValuesIpts($("#clxt2_chck-ffilpyy1").val()));
+  // ------------ AGREGAR A LAS VARIBLES DEL CHECKOUT
+  $("input[name=ss_vlidcsrf]").val(encrypt_sess_idcli.val());
   // ------------ DESENCRIPTACIÓN DE INPUTS
   var sess_idcli = decryptValuesIpts(encrypt_sess_idcli.val());
-	// ------------ LISTAR LOS PRODUCTOS EN EL CARRITO DE DICHO CLIENTE
+  var valpayment_chck = decryptValuesIpts(encrypt_valpayment_chck.val());
+  // ------------ LISTAR LOS PRODUCTOS EN EL CARRITO DE DICHO CLIENTE
   listCartList();
+  listTempCartListOnlyTotal();
   listBranchLocations();
   // ------------ LISTAR EL CARRITO DE COMPRAS
   function listCartList(){
@@ -54,7 +77,7 @@ $(() => {
         success : function(e){
           if(e != "" && e != "[]"){
             let tmpList = "";
-            tmpList += `<ul style='max-height: 335px;overflow-x: hidden;overflow-y: auto;'>`;
+            tmpList += `<ul>`;
             // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
             let filtered = Object.entries(e);
             // let totalpay = filtered.reduce(function(sum, v){
@@ -66,10 +89,8 @@ $(() => {
             });
             // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
             var tpay_wzero = Number(totalpay);
-            var res = totalpay.toString().split(".");
-            if(res.length == 1 || (res[1].length < 3)) {
-              tpay_wzero = tpay_wzero.toFixed(2);
-            }
+            var total_pay = addTwoDecimals(tpay_wzero)
+            var total_pay_format = parseFloat(total_pay).toFixed(2);
             $("#c-totcart").html(`
               <div class="header-icon-style">
                 <i class="icon-handbag icons"></i>
@@ -77,7 +98,7 @@ $(() => {
               </div>
               <div class="cart-text">
                 <span class="digit">Mi Carrito</span>
-                <span class="cart-digit-bold">S/. ${tpay_wzero}</span>
+                <span class="cart-digit-bold">S/. ${total_pay_format}</span>
               </div>
             `);
             $.each(e, function(i,v){
@@ -102,7 +123,7 @@ $(() => {
             tmpList += `</ul>`;
             tmpList += `
               <div class="shopping-cart-total">
-                <h4>Total : <span class="shop-total">S/. ${tpay_wzero}</span></h4>
+                <h4>Total : <span class="shop-total">S/. ${total_pay_format}</span></h4>
               </div>
               <div class="shopping-cart-btn">
                 <a href="cart-page" id="lk_cart">Ver Carrito</a>
@@ -164,6 +185,188 @@ $(() => {
       `);
     }
   }
+  // ------------ LISTAR LOS PRODUCTOS AGREGADOS AL CARRITO
+  function listTempCartListOnlyTotal(){  
+    $.ajax({
+      url: "./controllers/prcss_checkout-list-byIdTempCart.php",
+      method: "POST",
+      dataType: 'JSON',
+      contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+      data: { idcli : sess_idcli},
+      beforeSend: function(){
+        $("#c-xtt_tochck").html(`
+            <div class="l_anyitms">
+            <div class="l_anyitms__cImg">
+              <img src="./views/assets/img/utilities/loader.gif" alt="" class="img-fluid" width="100" height="100">
+            </div>
+            <div class="l_anyitms__cTxt">
+              <p>Cargando...</p>
+            </div>
+          </div>
+        `);
+      },
+      success : function(e){
+        if(e != "" && e != "[]"){
+          let tmp = "";
+          // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
+          let filtered = Object.entries(e);
+          // let totalpay = e.reduce(function(sum, v){
+          //   return sum + parseFloat(v.tmp_subtotal)
+          // }, 0);
+          // ------------ VARIABLES PARA LA IMPRESIÓN DEL TOTAL
+          let totalpay = 0;
+          var vl_s_delivery_charge = 0;
+          var total_sum_delivery = 0;
+          $.each(e, function(i,v){
+            totalpay += parseFloat(v.tmp_subtotal);
+            vl_s_delivery_charge = parseFloat(v.chk_delivery_charge).toFixed(2);
+          });
+          // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
+          var tpay_wzero = Number(totalpay);
+          var total_pay = addTwoDecimals(tpay_wzero)
+          var total_pay_format = parseFloat(total_pay).toFixed(2);
+          
+          let tmptotal_encp = total_pay_format;
+          total_sum_delivery = parseFloat(total_pay_format) + parseFloat(vl_s_delivery_charge);
+          
+          let tmpl_total = "";
+          tmpl_total = `
+            <div>
+            <h5 class="c_title-total">
+              <span class="row_cll">Subtotal </span>
+              <span class="row_cll">
+                <span>S/. </span>
+                <span>${total_pay_format}</span>
+              </span>
+            </h5>
+            <h5 class="c_title-total">
+              <span class="row_cll">Delivery </span>
+              <span class="row_cll">
+                <span>S/. </span>
+                <span>${vl_s_delivery_charge}</span>
+              </span>
+            </h5>
+            <h4 class="cl-wrap_total-title">
+              <span class="row_cll">Total a pagar</span>
+              <span class="row_cll">
+                <span>S/. </span>
+                <span>${addTwoDecimals(total_sum_delivery)}</span>
+              </span>
+            </h4>
+            </div>
+            `;
+            $("#c-xtt_tochck").html(tmpl_total);
+            
+            if(Object.keys(e).length === 0){
+                tmpl_total = '';
+                $("#c-xtt_tochck").html(tmpl_total);
+            }
+            
+            // ------------ VALIDAR LA OPCIÓN DE TIPO DE ENTREGA (DELIVERY Y RECOJO EN TIENDA)
+            $(document).on("click",".chcksel-reg-tab-list a",function(e){
+                e.preventDefault();
+                var vl_linkhref = $(this).attr("href");
+                if(vl_linkhref == "#chck1"){
+                    tmpl_total = `
+                    <div>
+                    <h5 class="c_title-total">
+                      <span class="row_cll">Subtotal </span>
+                      <span class="row_cll">
+                        <span>S/. </span>
+                        <span>${total_pay_format}</span>
+                      </span>
+                    </h5>
+                    <h5 class="c_title-total">
+                      <span class="row_cll">Delivery </span>
+                      <span class="row_cll">
+                        <span>S/. </span>
+                        <span>${vl_s_delivery_charge}</span>
+                      </span>
+                    </h5>
+                    <h4 class="cl-wrap_total-title">
+                      <span class="row_cll">Total a pagar</span>
+                      <span class="row_cll">
+                        <span>S/. </span>
+                        <span>${addTwoDecimals(total_sum_delivery)}</span>
+                      </span>
+                    </h4>
+                    </div>
+                    `;
+                    $("#c-xtt_tochck").html(tmpl_total);
+                }else if(vl_linkhref == "#chck2"){
+                    tmpl_total = `
+                    <div>
+                    <h5 class="c_title-total">
+                      <span class="row_cll">Subtotal </span>
+                      <span class="row_cll">
+                        <span>S/. </span>
+                        <span>${total_pay_format}</span>
+                      </span>
+                    </h5>
+                    <h4 class="cl-wrap_total-title">
+                      <span class="row_cll">Total a pagar</span>
+                      <span class="row_cll">
+                        <span>S/. </span>
+                        <span>${total_pay_format}</span>
+                      </span>
+                    </h4>
+                    </div>
+                    `;
+                    $("#c-xtt_tochck").html(tmpl_total);
+                }else{
+                    $("#c-xtt_tochck").html("");
+                }
+            });
+            
+            // ------------ VALIDAR LA ENTRADA DEL CAMPO : CONTRAENTREGA
+              $(document).on("keyup keypress input","#chck-t_payinfochck",function(e){
+                let val = e.target.value;
+                this.value = $.trim(this.value);
+                if(this.value != ""){
+                    let val_formatNumber = val.toString().replace(/[^\d.]/g, "").replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3').replace(/\.(\d{2})\d+/, '.$1').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $(this).val(val_formatNumber);
+                    let val_withoutcomas = val_formatNumber.replace(/,/g, "");
+                    let valamounttotal = parseFloat(val_withoutcomas);
+                    
+                    // SUMAR EL TOTAL + DELIVERY
+                    //let totalSumDelivery = total_sum_delivery;
+                    
+                    let tpaychckbtn = "";
+                    if(val_formatNumber != "" && val_formatNumber != " " && val_formatNumber != "." && val_formatNumber != "0" && val_formatNumber != "0.0" && val_formatNumber != ".00" && val_formatNumber != "0." && val_formatNumber != "0.00" && val_formatNumber != "00.00" && val_formatNumber != "0,00"){    
+                      if(Number(val_formatNumber) != 0 && Number(val_formatNumber) != 0 && parseFloat(val_formatNumber) != 0){
+                        if(valamounttotal >= total_sum_delivery){
+                            $("#notif-alert_mssgiptchk").text("");
+                            tpaychckbtn = `
+                            <div class="button-box talign-r">
+                              <button type="submit" id="ord-chkl_1fxt" title="ORDENAR">
+                                <span>ORDENAR</span>
+                              </button>
+                            </div>`;   
+                        }else{
+                            $("#notif-alert_mssgiptchk").text("* El monto es menor al TOTAL A PAGAR.");
+                            tpaychckbtn = "";
+                        }
+                      }else{
+                          $("#notif-alert_mssgiptchk").text("");
+                        tpaychckbtn = "";
+                      }
+                    }else{
+                        $("#notif-alert_mssgiptchk").text("");
+                      tpaychckbtn = "";
+                    }
+                    $("#tv-01cfbvalfrm").html(tpaychckbtn);   
+                }
+              });
+            
+        }else{
+          $("#c-xtt_tochck").html("");
+        }
+      },
+      error : function(xhr, status){
+        console.log('Disculpe, existió un problema');
+      }
+    });
+  }
   // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
   $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
   // ------------ CONVERTIR A FORMATO DE 12 HORAS
@@ -208,6 +411,7 @@ $(() => {
             tmpList += `
               <div class="l-item" id="loc_${v.id}">
                 <input  tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_branchcrt-sess" id="chk-sbranch_${i}_crtclient-sis" value="${v.id}" readonly="readonly">
+                
                 <div class="l-item-title">
                   <h4>${b_name_limit}</h4>
                 </div>
@@ -245,6 +449,53 @@ $(() => {
               $(this).parent().siblings().remove();
               $(this).parent().css({"border":"4px solid red"});
               $(this).remove();
+              
+              $("#chk_sellistlocation").html(`
+                <div class="mb-2">
+                  <label for="chck-reference" class="form-label mb-3">Información de facturación</label>
+                  <div class="form-floating">
+                    <div class="">
+                      <ul class="mb-3" id="chk_infofact">
+                        <li class="mb-2">
+                          <a href="javascript:void(0);" class="active">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="info_fact3" name="info_facture" class="custom-control-input" checked="checked" value="inffac_1-srwng">
+                              <label class="custom-control-label" for="info_fact3">Pago con boleta</label>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="mb-2">
+                          <a href="javascript:void(0);">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="info_fact4" name="info_facture" class="custom-control-input" value="inffac_2-srwng">
+                              <label class="custom-control-label" for="info_fact4">Pago con factura</label>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="container-tab active" id="type_2deliverysel">
+                          <div class="wrapper wrapper-white">
+                            <div class="page-subtitle">
+                              <div class="mb-2">
+                                <label for="chck-t_delivery_name1" class="form-label">NOMBRE</label>
+                                <input type="text" class="form-control" name="chck-t_delivery_name" id="chck-t_delivery_name1" placeholder="" required>
+                              </div>
+                              <div class="mb-2">
+                                <label for="chck-t_delivery_dni2" class="form-label">DNI</label>
+                                <input type="text" class="form-control" name="chck-t_delivery_dni" id="chck-t_delivery_dni2" placeholder="" required>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-box talign-r">
+                  <button type="submit"><span>IR A PAGAR</span></button>
+                </div>
+              `);
             });
           });
           tmpList += `</div>`;
@@ -325,7 +576,7 @@ $(() => {
         $.each(e, function(i,v){
           let b_name = v.name;
           let b_nameupper = b_name[0].toUpperCase() + b_name.substring(1);
-          tmpList += `<option value="${v.id}" required>${b_nameupper}</option>`;
+          tmpList += `<option value="${v.id}" data-idbranch="${v.id_branch}" data-lat=${v.urb_latitud} data-long=${v.urb_longitud} required>${b_nameupper}</option>`;
         });
         $("#chck-urbanization").html(tmpList);
       }else{
@@ -342,67 +593,33 @@ $(() => {
   chk_listurbanizations.on("select2:select", function (e){
     var data = $(this).select2('data');
     var searchbytext = data[0].text;
-    /*
-    var results = document.querySelector("#map");
-
-    var autocomplete = new google.maps.places.Autocomplete((searchbytext), {
-      types: ['geocode'],
-      // componentRestrictions: {
-      //  country: "USA"
-      // }
-    });
-    google.maps.event.addListener(autocomplete, 'place_changed', function () {
-      var near_place = autocomplete.getPlace();
-    });
-    */
-    /*
-    autocomplete = new google.maps.places.Autocomplete(
-      searchbytext
-    );
-    */
-    // searchbytext.focus();
-    // autocomplete.addListener('place_changed',onPlaceChangedNeighborhood);
-    var geocoder = new google.maps.Geocoder();
-    /*
-    geocoder.geocode({'address': searchbytext}, function(results, status) {
-      if (status === 'OK') {
-        
-        // map.setCenter(results[0].geometry.location);
-        // var marker = new google.maps.Marker({
-        //   map: map,
-        //   position: results[0].geometry.location
-        // });
-        
-
-        var mapOptions = {
-          zoom: 17,
-          center: results[0].geometry.location,
-          disableDefaultUI: true
-        };
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-        var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-        });
-
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-    */
-    geocoder.geocode( { 'address': searchbytext}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map, 
-            position: results[0].geometry.location
-        });
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-    
+    var serachbylat = $(this).select2().find(":selected").data("lat");
+    var serachbylong = $(this).select2().find(":selected").data("long");
+    var selidbranch = $(this).select2().find(":selected").data("idbranch");
+    var iptidbranch = document.querySelector("#chck-location");
+    iptidbranch.value = selidbranch;
+    generateMapByLatandLong(serachbylat, serachbylong)
+  
   });
+  // ------------ GENERAR MAPA DE GOOGLE MAPS EN BASE A LA LATITUD Y LONGITUD
+  function generateMapByLatandLong(urb_lat, urb_long){
+      var mapadiv = document.getElementById("map");
+      var c_mapOptions = {
+        zoom: 15,
+        scrollwheel: true,
+        center: new google.maps.LatLng(urb_lat, urb_long),
+        styles: 
+        [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#f53651"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"},{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45},{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road.highway.controlled_access","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#dddddd"},{"visibility":"on"}]}]
+      };
+      var c_map = new google.maps.Map(mapadiv, c_mapOptions);
+      var c_marker = new google.maps.Marker({
+        position: new google.maps.LatLng(urb_lat, urb_long),
+        map: c_map,
+        icon: '../views/assets/img/icon-img/map.png',
+        animation: google.maps.Animation.BOUNCE,
+        title: 'SeñorWong!'
+      });
+  }
   // ------------  LISTAR LAS URBANIZACIONES POR SUCURSAL
   $(document).on("change","#chck-location",function(e){
     let idbranch = e.target.value;
@@ -515,7 +732,7 @@ $(() => {
       tmptpaychck = `
       <div class="wrapper wrapper-white">
         <div class="page-subtitle">
-          <div class="button-box">
+          <div class="button-box talign-r">
             <button type="submit">
               <span>IR A PAGAR</span>
             </button>
@@ -525,7 +742,7 @@ $(() => {
       `;
       $("#type_paymentsel").html(tmptpaychck);
     }else if(linkiptname2 == "t_payinfo2"){
-      $("#frm_1-Log").attr("action", "");
+      $("#frm_1-Log").attr("action", "./prcss-deli");
       tmptpaychck = `
       <div class="wrapper wrapper-white">
         <div class="page-subtitle">
@@ -533,6 +750,7 @@ $(() => {
             <label for="chck-t_payinfo_chk" class="form-label">INGRESE EL MONTO</label>
             <input type="text" class="form-control" name="chck-t_payinfo_chk" id="chck-t_payinfochck" placeholder="" min="1" max="9999999" maxlength="11" required>
           </div>
+          <span class="notif-alert_mssgipt" id="notif-alert_mssgiptchk"></span>
         </div>
       </div>`;
       $("#type_paymentsel").html(tmptpaychck);
@@ -540,6 +758,7 @@ $(() => {
        console.log('Se intentó vincular al enlace : Tipo de pago');
     }
   });
+  /*
   // ------------ VALIDAR LA ENTRADA DEL CAMPO : CONTRAENTREGA
   $(document).on("keyup keypress input","#chck-t_payinfochck",function(e){
     let val = e.target.value;
@@ -563,58 +782,5 @@ $(() => {
     }
     $("#tv-01cfbvalfrm").html(tpaychckbtn);
   });
-  // ------------ VALIDAR EL BOTÓN PARA CONTRAENTREGA
-  $(document).on("submit","#frm_1-Log",function(e){
-    e.preventDefault();
-    var formdata = $(this).serializeArray();
-    $.ajax({
-      url: "./controllers/prcss_checkout-upondelivery.php",
-      method: "POST",
-      dataType: 'JSON',
-      contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
-      data: formdata,
-      success : function(e){
-        if(e != "" && e != "[]"){
-          if(e.r == "true"){
-            Swal.fire({
-              title: '',
-              html: `<div class="alertSwal">
-                      <div class="alertSwal__cTitle">
-                        <h3>¡Éxito!</h3>
-                      </div>
-                      <div class="alertSwal__cText">
-                        <p>Su orden ha sido aceptada y esta siendo procesada.</strong></p>
-                      </div>
-                      <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
-                    </div>`,
-              icon: 'success',
-              showCancelButton: false,
-              showConfirmButton: false,
-              confirmButtonColor: '#3085d6',
-              confirmButtonText: 'Aceptar',
-              allowOutsideClick: false,
-              allowEscapeKey:false,
-              allowEnterKey:true,
-              timer: 3500
-            });
-            $(document).on('click', '.SwalBtn1', function() {
-              swal.clickConfirm();
-              window.location.href = "./confirm";
-            });
-            setTimeout(function(){
-              window.location.href = "./confirm";
-            }, 3500);
-            // window.location.href = "./confirm";
-          }else{
-            console.log('Lo sentimos, ocurrió un error');
-          }
-        }else{
-          console.log('Lo sentimos, ocurrió un error');
-        }
-      },
-      error : function(xhr, status){
-        console.log('Disculpe, existió un problema');
-      }
-    });
-  });
+  */
 });

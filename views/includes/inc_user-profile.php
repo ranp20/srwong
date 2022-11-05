@@ -74,11 +74,45 @@
           </div>
         </div>
       </div>
+      <!--
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h5 class="panel-title"><span>2</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-2" class="cprf-link_collapse">Mis Pedidos </a></h5>
+          <h5 class="panel-title"><span>2</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-2" class="cprf-link_collapse">Mis Direcciones </a></h5>
         </div>
         <div id="my-account-2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <form action="" method="POST" class="profile-cont__prfusval--frm" id="clx-frm_usval-info">
+              <div class="profile-information-wrapper">
+                <div class="account-info-wrapper">
+                  <h4><strong>LISTA DE DIRECCIONES</strong></h4>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12">
+                    <div class="profile-info">
+                      <label>Dirección 1</label>
+                      <input type="text" name="prf_usval-addresss-1" id="prf_usval-addresss-1" placeholder="Ingresa tu dirección n°1" value="<?= $uprof_name;?>" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-back-btn">
+                  <div class="profile-back">
+                    <a href="#"><i class="ion-arrow-up-c"></i> VOLVER</a>
+                  </div>
+                  <div class="profile-btn">
+                    <button type="submit" name="prf-profile_dataperinfo">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h5 class="panel-title"><span>3</span> <a data-toggle="collapse" data-parent="#faq" href="#my-account-3" class="cprf-link_collapse">Mis Pedidos </a></h5>
+        </div>
+        <div id="my-account-3" class="panel-collapse collapse">
           <div class="panel-body">
             <form action="" method="POST" class="profile-cont__prfusval--frm">
               <div class="profile-information-wrapper">

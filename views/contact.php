@@ -2,13 +2,14 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 require_once '../model/categories.php';
 $categories = new Categories();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>    
-  <title>SrWong - Contacto</title>
+  <title>Señor Wong - Contacto</title>
   <?php require_once 'includes/inc_header_links.php';?>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>

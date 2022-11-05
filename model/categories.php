@@ -62,7 +62,7 @@ class Categories extends Connection
               </div>
               <div class='category-content six_slider_title'>
                 <h4 class='text-center'>
-                  <a href='./category/$data[1]'>{$catg_name}</a>
+                  <a href='./category/$data[0]' title='$catg_name'>{$catg_name}</a>
                 </h4>
               </div>
             </div>
@@ -94,7 +94,7 @@ class Categories extends Connection
               </div>
               <div class='product-content'>
                 <h4>
-                  <a href='./category/$data[1]'>{$catg_name}</a>
+                  <a href='./category/$data[0]' title='$catg_name'>{$catg_name}</a>
                 </h4>
               </div>
             </div>

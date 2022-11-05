@@ -114,5 +114,69 @@ class Users extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- GUARDAR EL TOKEN MOMENTANEO GENERADO
+  function generate_uniqid($arr_recovpass){
+    try {
+      $sql = "UPDATE {$this->table} SET _token_recoverpass = :_token_recoverpass WHERE email = :email";
+      $stm = $this->con->prepare($sql);
+      foreach ($arr_recovpass as $key => $value){
+        $stm->bindValue($key, $value);
+      }
+      $stm->execute();
+      return $stm->rowCount() > 0 ? "true" : "false";
+    } catch (PDOException $e){
+      return $e->getMessage();
+    }
+  }
+  // -------------- OBTENER DATOS DEL CLIENTE SEGÚN EL EMAIL
+  function get_client_by_email($email){
+      try{
+          $sql = "SELECT username, f_name, l_name, _token_recoverpass FROM {$this->table} WHERE email = :email ORDER BY id DESC LIMIT 1";
+          $stm = $this->con->prepare($sql);
+          $stm->bindValue(":email", $email);
+          $stm->execute();
+          return $stm->fetchAll(PDO::FETCH_ASSOC);
+      }catch(PDOException $e){
+          return $e->getMessage();
+      }
+  }
+  // -------------- LISTAR LOS DATOS DEL USUARIO POR EL TOKEN
+  function list_password_bytoken($token){
+    try {
+      $sql = "SELECT id FROM {$this->table} WHERE _token_recoverpass = :token ORDER BY id DESC LIMIT 1";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":token", $token);
+      $stm->execute();
+      return $stm->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      return $e->getMessage();
+    }
+  }
+  // -------------- ACTUALIZAR EL TOKEN A "NULL" POR EL ID DEL USUARIO
+  function update_token_byid($id){
+    try {
+      $sql = "UPDATE {$this->table} SET _token_recoverpass = NULL WHERE id = :id";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":id", $id);
+      $stm->execute();
+      return $stm->rowCount() > 0 ? "true" : "false";
+    } catch (PDOException $e) {
+      return $e->getMessage();
+    }
+  }
+  // -------------- ACTUALIZAR LA CONTRASEÑA DEL USUARIO POR EL ID
+  function update_password_byid($arr_update_pass){
+    try {
+      $sql = "UPDATE {$this->table} SET password = :password WHERE id = :id";
+      $stm = $this->con->prepare($sql);
+      foreach ($arr_update_pass as $key => $value) {
+        $stm->bindValue($key, $value);  
+      }
+      $stm->execute();
+      return $stm->rowCount() > 0 ? "true" : "false";
+    } catch (PDOException $e) {
+      return $e->getMessage();
+    }
+  }
 }
 $dmlUsers = new Users();

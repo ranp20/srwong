@@ -1,3 +1,20 @@
+// ------------ AGREGAR DOS DECIMALES 
+function addTwoDecimals(n){
+  output_final = "";
+  if(n != "0" || n != 0){
+    output_num = n.toString().split(".");
+    if(output_num[1] == "undefined" || output_num[1] == null || output_num[1] == ""){
+	  output_final = n + ".00";
+    }else	if(output_num[1] != "undefined" && output_num[1].length < 2){
+	  output_final = output_num[0] + "." + output_num[1] + "0";
+    }else{
+	  output_final = output_num[0] + "." + output_num[1];
+    }
+  }else{
+    output_final = n;
+  }
+  return output_final;
+}
 // ------------ ENCRIPTAR DATOS DE INPUTS
 function encryptValuesIpts(valueipt){
   // PRIMER MÉTODO
@@ -51,7 +68,7 @@ $(() => {
         success : function(e){
           if(e != "" && e != "[]"){
             let tmpList = "";
-            tmpList += `<ul style='max-height: 335px;overflow-x: hidden;overflow-y: auto;'>`;
+            tmpList += `<ul>`;
             // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
             let filtered = Object.entries(e);
             // let totalpay = filtered.reduce(function(sum, v){
@@ -63,10 +80,9 @@ $(() => {
             });
             // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
             var tpay_wzero = Number(totalpay);
-            var res = totalpay.toString().split(".");
-            if(res.length == 1 || (res[1].length < 3)) {
-              tpay_wzero = tpay_wzero.toFixed(2);
-            }
+            var total_pay = addTwoDecimals(tpay_wzero)
+            var total_pay_format = parseFloat(total_pay).toFixed(2);
+            
             $("#c-totcart").html(`
               <div class="header-icon-style">
                 <i class="icon-handbag icons"></i>
@@ -74,7 +90,7 @@ $(() => {
               </div>
               <div class="cart-text">
                 <span class="digit">Mi Carrito</span>
-                <span class="cart-digit-bold">S/. ${tpay_wzero}</span>
+                <span class="cart-digit-bold">S/. ${total_pay_format}</span>
               </div>
             `);
             $.each(e, function(i,v){
@@ -99,7 +115,7 @@ $(() => {
             tmpList += `</ul>`;
             tmpList += `
               <div class="shopping-cart-total">
-                <h4>Total : <span class="shop-total">S/. ${tpay_wzero}</span></h4>
+                <h4>Total : <span class="shop-total">S/. ${total_pay_format}</span></h4>
               </div>
               <div class="shopping-cart-btn">
                 <a href="cart-page" id="lk_cart">Ver Carrito</a>
@@ -130,6 +146,7 @@ $(() => {
                 <a href='./cart-page' id='logg-lk_cart-s'>Carrito</a>
               </div>
             `);
+            $("#c-xtt_tochck").html("");
           }
         },
         error : function(xhr, status){
@@ -159,6 +176,7 @@ $(() => {
           <a href='./cart-page' id='logg-lk_cart-s'>Carrito</a>
         </div>
       `);
+      $("#c-xtt_tochck").html("");
     }
   }
   // ------------ LISTAR LOS PRODUCTOS AGREGADOS AL CARRITO
@@ -198,11 +216,10 @@ $(() => {
             totalpay += parseFloat(v.tmp_subtotal);
           });
           // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
-          var tpay_wzero = Number(totalpay); // SUBTOTAL DEL PRODUCTO
-          var r1 = totalpay.toString().split(".");
-          if(r1.length == 1 || (r1[1].length < 3)){
-            tpay_wzero = tpay_wzero.toFixed(2);
-          }
+          var tpay_wzero = Number(totalpay);
+          var total_pay = addTwoDecimals(tpay_wzero)
+          var total_pay_format = parseFloat(total_pay).toFixed(2);
+            
           $.each(e, function(i,v){
             var p_price = Number(v.tmp_price); // PRECIO DEL PRODUCTO
             var r2 = p_price.toString().split(".");
@@ -248,30 +265,51 @@ $(() => {
           });
           $("#c-xtbl_cartcli").html(tmp);
           // ---------- ENVIAR EL TOTAL ENCRIPTADO
-          // let tmptotal_encp = encryptValuesIpts(tpay_wzero);
-          let tmptotal_encp = tpay_wzero;
+          // let tmptotal_encp = encryptValuesIpts(total_pay_format);
+          let tmptotal_encp = total_pay_format;
           let tmpl_total = "";
           tmpl_total += `
           <form action="./checkout" method="POST" id="fr-fm_04chkcrtpg">
             <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_crt-sess" id="chk-s_crtclient-sis" value="${tmptotal_encp}" readonly="readonly">
             <h5 class="c_title-total">
-              <span class="row_cll">Total productos </span>
+              <span class="row_cll">Subtotal </span>
               <span class="row_cll">
                 <span>S/. </span>
-                <span>${tpay_wzero}</span>
+                <span>${total_pay_format}</span>
+              </span>
+            </h5>
+            <h5 class="c_title-total">
+              <span class="row_cll">Delivery </span>
+              <span class="row_cll">
+                <span>S/. </span>
+                <span>0.00</span>
               </span>
             </h5>
             <h4 class="cl-wrap_total-title">
-              <span class="row_cll">Total Final</span>
+              <span class="row_cll">Total a Pagar</span>
               <span class="row_cll">
                 <span>S/. </span>
-                <span>${tpay_wzero}</span>
+                <span>${total_pay_format}</span>
               </span>
             </h4>
-            <button type="submit" class='btn_link'>Pasar por caja</button>
+            <button type="submit" class='btn_link d-flex align-items-center justify-content-between text-center'>
+                <span class="c-cart_count-small">
+                    <small>${filtered.length}</small>
+                </span>
+                <span class="text-center ml-auto mr-auto">Ir a pagar</span>
+                <span class="c-cart_listsubtotal-cart">
+                    <span>S/. ${total_pay_format}</span>
+                </span>
+            </button>
           </form>
           `;
           $("#c-xtt_tochck").html(tmpl_total);
+          
+          if(Object.keys(e).length === 0){
+            tmpl_total = '';
+            $("#c-xtt_tochck").html(tmpl_total);
+          }
+          
         }else{
           $("#c-xtbl_cartcli").html(`
             <tr>

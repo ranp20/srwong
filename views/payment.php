@@ -2,6 +2,7 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 if(!isset($_SESSION['usr-logg_srwong'])){
   header("Location: ./login-register");
 }else{
@@ -14,10 +15,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 }
 
 require_once '../vendor/autoload.php';
-require_once '../model/keys.php';
-require_once '../model/helpers.php';
 
-$client = new Lyra\Client();
 
 /*
 echo "<pre>";
@@ -43,35 +41,75 @@ function addTwoDecimals($number){
   return $output_final;
 }
 
+require_once '../model/business-settings.php';
+$bssiness_payment = new BusinessSettings;
+$l_delivery_charge = $bssiness_payment->getDeliveryCharge();
+$l_delivery_charge_value = $l_delivery_charge[0]['value'];
+
 $postamount = floatval($_POST['clxt2_chck-ffil']);
 $u_type_order = "";
+$del_charge = "";
 if($_POST['clxt2_chck-ffil_ortype'] == "typ-A_or-del_10"){
-  $u_type_order = "delivery";
+    $u_type_order = "delivery";
+    $del_charge = floatval($l_delivery_charge_value);
 }else if($_POST['clxt2_chck-ffil_ortype'] == "typ-B_or-del_10"){
-  $u_type_order = "TIENDA";
+    $u_type_order = "tienda";
+    $del_charge = "0.00";
 }else{
-  $u_type_order = "No especificado";
+    $u_type_order = "No especificado";
+    $del_charge = "0.00";
 }
+
+$u_sum_or_not = $postamount + $del_charge;
+$u_amount =  floatval(addTwoDecimals($u_sum_or_not)) * 100;
+/*
+echo $u_sum_or_not . "<br>";
+echo $u_amount;
+exit();
+*/
+
 $u_email = $_SESSION['usr-logg_srwong']['email'];
 $u_reference = (isset($_POST['chck-reference']) && $_POST['chck-reference'] != "") ? $_POST['chck-reference'] : "No especificado";
 $u_address = (isset($_POST['chck-address']) && $_POST['chck-address'] != "") ? $_POST['chck-address'] : "No especificado";
 $u_branchid = "";
 if(isset($_POST['chck-location']) && $_POST['chck-location'] != ""){
   $u_branchid = $_POST['chck-location'];
+}else if(isset($_POST['cx1chk_branchcrt-sess']) && $_POST['cx1chk_branchcrt-sess'] != ""){
+  $u_branchid = $_POST['cx1chk_branchcrt-sess'];
 }else{
   $u_branchid = "0";
 }
 
+/*
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+echo $u_branchid;
+exit();
+*/
+
+if($u_branchid == 1){
+    //echo "Las flores";
+    require_once '../model/keys_2.php';
+    require_once '../model/helpers.php';
+}else if($u_branchid == 11){
+    //echo "Los Jasminez";
+    require_once '../model/keys.php';
+    require_once '../model/helpers.php';
+}else{
+    header("Location: ./");
+}
+
+$client = new Lyra\Client();
+
 $u_urbanization = "";
 if(isset($_POST['chck-urbanization']) && $_POST['chck-urbanization'] != ""){
-  $u_urbanization = $_POST['chck-urbanization'];
+  $u_urbanization = $_POST['chck-urbanization'][0];
 }else{
   $u_urbanization = "0";
 }
 
 $u_telephone = (isset($_POST['chck-telephone']) && $_POST['chck-telephone'] != "") ? $_POST['chck-telephone'] : "";
-$u_amount =  $postamount * 100;
-
 $u_type_delivery = (isset($_POST['type_delivery']) && $_POST['type_delivery'] != "") ? $_POST['type_delivery'] : "No especificado";
 $u_type_delivery_format = "";
 if($u_type_delivery == "tdeliv_1-srwg"){
@@ -88,11 +126,11 @@ if($u_type_delivery == "tdeliv_1-srwg"){
 $u_info_facture = (isset($_POST['info_facture']) && $_POST['info_facture'] != "") ? $_POST['info_facture'] : "No especificado";
 $u_info_facture_format = "";
 if($u_info_facture == "inffac_1-srwng"){
-  $u_info_facture_format = "Pago con boleta";
+  $u_info_facture_format == "Pago con boleta";
 }else if($u_info_facture == "inffac_2-srwng"){
-  $u_info_facture_format = "Pago con factura";
+  $u_info_facture_format == "Pago con factura";
 }else{
-  $u_info_facture_format = "No especificado";
+  $u_info_facture_format == "No especificado";
 }
 
 $u_delivery_name = (isset($_POST['chck-t_delivery_name']) && $_POST['chck-t_delivery_name'] != "") ? $_POST['chck-t_delivery_name'] : "No especificado";
@@ -103,7 +141,7 @@ $u_delivery_razonsocial = (isset($_POST['chck-t_delivery_razonsocial']) && $_POS
 $u_t_payinfochk = (isset($_POST['t_payinfochk']) && $_POST['t_payinfochk'] != "") ? $_POST['t_payinfochk'] : "No especificado";
 $u_t_payinfochk_format = "";
 if($u_t_payinfochk == "tinfochk_1-srwng"){
-  $u_t_payinfochk_format = "Pago con targeta";
+  $u_t_payinfochk_format = "Pago con tarjeta";
 }else if($u_t_payinfochk == "tinfochk_2-srwng"){
   $u_t_payinfochk_format = "Contraentrega";
 }else{
@@ -114,10 +152,36 @@ $u_chcktpayinfo_chk = (isset($_POST['chck-t_payinfo_chk']) && $_POST['chck-t_pay
 $u_chcktpayinfo_chk_format = str_replace(",", "", $u_chcktpayinfo_chk);
 $u_chcktpayinfo_chk_format_1 = addTwoDecimals($u_chcktpayinfo_chk_format);
 
+
+function genCodeRandom(){
+    $format = 'xxxxxxxxy';
+    return preg_replace_callback('/[xy]/', function($match) {
+        $pattern = '1234567890';
+        if($match[0] === 'x'){
+            return substr($pattern, mt_rand(0, strlen($pattern)), 1);
+        }else{
+            return substr(date('y'), -2);
+        }
+    }, "SRWONG-".$format);
+}
+
+mt_srand(3);
+$orderIdGenFirst = genCodeRandom();
+
+
+$orderIdGen = (isset($_POST['ss_vlidcsrf']) && $_POST['ss_vlidcsrf'] != "") ? $_POST['ss_vlidcsrf'] . $orderIdGenFirst : "0";
+/*
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+echo $orderIdGen;
+exit();
+*/
+
 $store = array(
   "amount" => $u_amount,
   "currency" => "PEN", 
-  "orderId" => uniqid("MyOrderId"),
+  "orderId" => $orderIdGen,
   "customer" => array(
     "email" => $u_email,
     "reference" => $u_reference,
@@ -155,13 +219,19 @@ $formToken = $response["answer"]["formToken"];
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <title>Señor Wong - Página de pago</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+
   <?php require_once 'includes/inc_header_links.php';?>
-  <title>SrWong - Página de pago</title>
+  
   <!-- INTEGRACIÓN IZZIPAY -->
 
   <script 
    src="<?php echo $client->getClientEndpoint();?>/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
    kr-public-key="<?php echo $client->getPublicKey();?>"
+   kr-language="es-ES"
    kr-post-url-success="./payment-data">
   </script>
 
@@ -205,7 +275,12 @@ $formToken = $response["answer"]["formToken"];
       <div class="row">
         <div class="ml-auto mr-auto col-lg-8">
           <div class="payment-wrapper">
-            <div class="c-frmpayment_dmss">
+            <div class="c-frmpayment_dmss" style="border: 1px solid #e3e3e3;border-radius: 14px;padding: 10px;">
+                
+                <div class="logo-aps" style="width: 50%;">
+                <img alt="" src="https://srwong.pe/views/assets/img/logo/logo.png">
+                <p class="mensaje-a" style="text-align: center;font-weight: 700;font-size: 18px;line-height: 20px;">ZONA SEGURA</p>
+              </div>
               <!-- FORMULARIO INCRUSTADO (INICIO) -->
               
               <div class="kr-embedded"  kr-form-token="<?php echo $formToken; ?>">
@@ -232,6 +307,11 @@ $formToken = $response["answer"]["formToken"];
                 <div class="kr-form-error"></div>
               </div>
             -->
+            
+            <div class="logo-aps" style="width: 50%;padding: 25px;">
+                <img alt="" src="https://srwong.pe/views/assets/img/tarjetas.png">
+                
+              </div>
             </div>
           </div>
         </div>

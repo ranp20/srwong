@@ -1,3 +1,20 @@
+// ------------ AGREGAR DOS DECIMALES 
+function addTwoDecimals(n){
+  output_final = "";
+  if(n != "0" || n != 0){
+    output_num = n.toString().split(".");
+    if(output_num[1] == "undefined" || output_num[1] == null || output_num[1] == ""){
+	  output_final = n + ".00";
+    }else	if(output_num[1] != "undefined" && output_num[1].length < 2){
+	  output_final = output_num[0] + "." + output_num[1] + "0";
+    }else{
+	  output_final = output_num[0] + "." + output_num[1];
+    }
+  }else{
+    output_final = n;
+  }
+  return output_final;
+}
 // ------------ ENCRIPTAR DATOS DE INPUTS
 function encryptValuesIpts(valueipt){
   let ciphertext = CryptoJS.AES.encrypt(valueipt, 'CML_KEYSYSTEM').toString();
@@ -406,7 +423,7 @@ $(() => {
         success : function(e){
           if(e != "" && e != "[]"){
             let tmpList = "";
-            tmpList += `<ul style='max-height: 335px;overflow-x: hidden;overflow-y: auto;'>`;
+            tmpList += `<ul>`;
             // ------------ SUMAR LOS SUBTOTALES DE TODOS LOS PRODUCTOS
             let filtered = Object.entries(e);
             // let totalpay = filtered.reduce(function(sum, v){
@@ -418,10 +435,8 @@ $(() => {
             });
             // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
             var tpay_wzero = Number(totalpay);
-            var res = totalpay.toString().split(".");
-            if(res.length == 1 || (res[1].length < 3)) {
-              tpay_wzero = tpay_wzero.toFixed(2);
-            }
+            var total_pay = addTwoDecimals(tpay_wzero)
+            var total_pay_format = parseFloat(total_pay).toFixed(2);
             $("#c-totcart").html(`
               <div class="header-icon-style">
                 <i class="icon-handbag icons"></i>
@@ -429,7 +444,7 @@ $(() => {
               </div>
               <div class="cart-text">
                 <span class="digit">Mi Carrito</span>
-                <span class="cart-digit-bold">S/. ${tpay_wzero}</span>
+                <span class="cart-digit-bold">S/. ${total_pay_format}</span>
               </div>
             `);
             $.each(e, function(i,v){
@@ -454,10 +469,22 @@ $(() => {
             tmpList += `</ul>`;
             tmpList += `
               <div class="shopping-cart-total">
-                <h4>Total : <span class="shop-total">S/. ${tpay_wzero}</span></h4>
+                <h4>Total : <span class="shop-total">S/. ${total_pay_format}</span></h4>
               </div>
               <div class="shopping-cart-btn">
-                <a href="cart-page" id="lk_cart">Ver Carrito</a>
+                <a href="cart-page" id="lk_cart" class="d-flex align-items-center justify-content-between text-center">
+                    <!--
+                    <span class="c_count-small">
+                        <small>${filtered.length}</small>
+                    </span>
+                    -->
+                    <span class="text-center ml-auto mr-auto">Ver Carrito</span>
+                    <!--
+                    <span class="c_listsubtotal-cart">
+                        <span>S/. ${total_pay_format}</span>
+                    </span>
+                    -->
+                </a>
                 <!-- <a href="checkout" id="lk_checkout">checkout</a> -->
               </div>
             `;

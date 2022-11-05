@@ -2,14 +2,15 @@
 //COMPRIMIR ARCHIVOS DE TEXTO...
 (substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
 session_start();
+require_once '../model/footer-settings.php';
 require_once '../model/categories.php';
 $categories = new Categories();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <title>Señor Wong - Carrito de compras</title>
   <?php require_once 'includes/inc_header_links.php';?>
-  <title>SrWong - Carrito de compras</title>
   <!-- INCLUIR MEANMENU -->
   <script type="text/javascript" src="<?= $url;?>assets/js/plugins/meanmenu/jquery.meanmenu.min.js"></script>
   <!-- INCLUIR SCROLLUP -->
@@ -20,6 +21,24 @@ $categories = new Categories();
   <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
+<style type="text/css">
+    .table-content table td.product-thumbnail a img{
+        min-width: 74.22px;
+    }
+    .table-content table td.product-name a,
+    .table-content table td.product-remove a{
+        transition: all .1s ease-out 0s !important;
+    }
+    .table-content table td.product-name a:hover{
+        color: #e02c2b !important;
+    }
+    .table-content table td.product-remove a:hover{
+        color: #e02c2b !important;
+    }
+    .grand-totall{
+        padding-top: 1rem;
+    }
+</style>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
   <div class="breadcrumb-area gray-bg">
@@ -73,24 +92,33 @@ $categories = new Categories();
             </div>
             <div class="row">
               <div class="col-lg-12">
+                  <!--
                 <div class="cart-shiping-update-wrapper">
                   <div class="cart-clear">
                     <a href="javascript:void(0);" id="cart-clear" title="Borrar listado de compras">Borrar listado</a>
                   </div>
-                  <div class="cart-shiping-update">
-                    <a href="./" title="Seguir comprando">Seguir comprando</a>
-                  </div>
                 </div>
+                  -->
+                
               </div>
             </div>
           </form>
         </div>
         <div class="col-lg-4 col-md-12">
           <div class="grand-totall">
+            <!--
             <div class="title-wrap">
-              <h4 class="cart-bottom-title section-bg-gary-cart">Total del carrito</h4>
+              <h4 class="cart-bottom-title section-bg-gary-cart">Total</h4>
             </div>
+            -->
             <div class="cl-wrap_total" id="c-xtt_tochck"></div>
+            <div class="cart-shiping-update" style="border: 1px solid #e3e3e3;margin-top: 10px;margin-bottom: 10px;">
+                    <a href="./" title="Seguir comprando" style=" padding: 19px 36px;margin: 0px;width: 100%;text-align: center;">Seguir comprando</a>
+                    
+                    
+              
+                    
+                  </div>
           </div>
         </div>
       </div>
