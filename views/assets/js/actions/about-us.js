@@ -35,10 +35,7 @@ $(() => {
     var sess_idcli = decryptValuesIpts(encrypt_sess_idcli.val());
 	// ------------ LISTAR LOS PRODUCTOS EN EL CARRITO DE DICHO CLIENTE
     listCartList();
-<<<<<<< HEAD
     messageTimeSchedule();
-=======
->>>>>>> 97bce2061a4f49847ad529954f981a41e1e6f3e8
     // ------------ LISTAR EL CARRITO DE COMPRAS
     function listCartList(){
     if(isNumeric(sess_idcli) == true || isNumeric(sess_idcli) == "true"){
@@ -162,7 +159,6 @@ $(() => {
   }
     // ------------ IR HACIA LA PÁGINA - CART LIST (VALIDAR LA SESIÓN)
     $(document).on("click","#logg-lk_cart-s",function(){window.location.href = "./";});
-<<<<<<< HEAD
     // ------------ VALIDAR EL HORARIO SEMANAL
     function messageTimeSchedule(){
         $.ajax({
@@ -194,6 +190,4 @@ $(() => {
             alert("It's 10am!");
         }, millisegundos);
     }
-=======
->>>>>>> 97bce2061a4f49847ad529954f981a41e1e6f3e8
 });
