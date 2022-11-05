@@ -14,7 +14,7 @@
 	      <div class="col-lg-3  bloc-as"> 
 	        <p class="icono-text-aq"><a href="../category/72" >BANQUETES</a></p>
 	      </div>
-    	</div>		    
+    	</div>
 			<div class="mbtbslinks__c__cont__m">
 				<div class="mbtbslinks__c__cont__m__i active">
 					<a href="./" title="Inicio">

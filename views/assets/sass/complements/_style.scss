@@ -3809,6 +3809,17 @@ h4.shop-sidebar-title {
 }
 
 /* DETALLE DEL PRODUCTO */
+.in-offer span:first-child{
+  font-size: 24px;
+}
+.in-offer span:nth-child(2){
+  font-size: 18px;
+}
+.prod_price-old{
+  color: #e02c2b;
+  margin-left: 12px;
+  text-decoration: line-through;
+}
 #c-pdetail__imgzoom{
     position: relative;
 }
@@ -6136,7 +6147,7 @@ h5.panel-title span {
 }
 /* FOOTER STYLES */
 .footer-bottom-area{
-  padding-bottom: 5rem !important;
+  padding-bottom: 8rem !important;
 }
 @media (min-width: 650px){
   .footer-bottom-area{
@@ -6147,43 +6158,63 @@ h5.panel-title span {
   max-height: 100% !important;
   height: 100%;
 }
+/* FOOTER MOBILE */
+.top-menuinf{
+  background-color: red;
+  @media (min-width: 690px){
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    user-select: none;
+    width: 0;
+    height: 0;
+  }
+}
+/* SOBRE NOSOTROS */
+.about-us-area p{
+  font-size: 1rem;
+  font-weight: 400;
+}
 /* ESTILOS AGREGADOS DESDE EL SERVIDOR */
 .menuinfer {
   background: #f60015;
   position: relative;
   width: 100%;
   float: left;
- 
 }  
-.col-lg-3.bloc-as {
+.col-lg-3.bloc-as{
   width: 25%;
   float: left;
   color: #fff;
   padding-left: 5px;
   padding-right: 5px;
 }
-p.icono-text-aq a {
-  color: #fff !important;
-  font-size: 10px;
-  text-align: center;
-  line-height: 16px;
-  font-weight: 600;
-  margin: 0px;
-  padding: 0px;
-  float: left;
-  width: 100%;
-}
-p.icono-text-aqq {
+p.icono-text-aqq{
   margin: 0px;
   border: 1px solid #fff;
   border-radius: 5px;
-  padding-top: 9px;
   height: 50px;
   margin-top: 5px;
   margin-bottom: 5px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-
+p.icono-text-aq {
+  margin: 0px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 p.icono-text-aqq a {
   color: #fff !important;
   font-size: 10px;
@@ -6195,15 +6226,16 @@ p.icono-text-aqq a {
   float: left;
   width: 100%;
 }
-p.icono-text-aq {
-  margin: 0px;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  padding-top: 16px;
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+p.icono-text-aq a {
+  color: #fff !important;
+  font-size: 10px;
   text-align: center;
+  line-height: 16px;
+  font-weight: 600;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 100%;
 }
 .mbtbslinks__c__cont__m {
   width: 100%;

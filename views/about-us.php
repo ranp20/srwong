@@ -22,16 +22,16 @@ $categories = new Categories();
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
-    <?php require_once 'includes/inc_header_top.php';?>
+  <?php require_once 'includes/inc_header_top.php';?>
   <div class="breadcrumb-area gray-bg">
-      <div class="container">
-          <div class="breadcrumb-content">
-              <ul>
-                  <li><a href="./">Home</a></li>
-                  <li class="active">Nosotros </li>
-              </ul>
-          </div>
+    <div class="container">
+      <div class="breadcrumb-content">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li class="active">Nosotros </li>
+        </ul>
       </div>
+    </div>
   </div>
   <?php
     /*
@@ -52,33 +52,27 @@ $categories = new Categories();
     */
   ?>
   <div class="about-us-area pt-100 pb-100">
-      <div class="container">
-          <div class="row">
-             <div class="col-lg-6 col-md-5">
-                  <div class="overview-img text-center">
-                      <a href="#">
-                          <img src="<?= $url;?>assets/img/background.jpg" alt="">
-                      </a>
-                  </div>
-              </div>
-              <div class="col-lg-6 col-md-7 d-flex align-items-center">
-                  <div class="overview-content-2">
-                      <?php 
-        require_once '../model/business-settings.php';
-        echo $dmlBusinessSettings->getAboutUs();
-      ?>
-                     
-                      
-                  </div>
-              </div>
-              
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-5">
+          <div class="overview-img text-center">
+            <a href="./">
+              <img src="<?= $url;?>assets/img/background.jpg" alt="">
+            </a>
           </div>
+        </div>
+        <div class="col-lg-6 col-md-7 d-flex align-items-center">
+          <div class="overview-content-2">
+          <?php 
+            require_once '../model/business-settings.php';
+            echo $dmlBusinessSettings->getAboutUs();
+          ?>              
+          </div>
+        </div>          
       </div>
+    </div>
   </div>
-
-
-
-    <?php require_once 'includes/inc_footer.php';?>
+  <?php require_once 'includes/inc_footer.php';?>
   </div>
 	<!-- all js here -->
   <script type="text/javascript" src="<?= $url;?>assets/js/main.js"></script>

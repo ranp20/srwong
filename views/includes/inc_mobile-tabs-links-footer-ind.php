@@ -1,30 +1,20 @@
-<div class="top-menuinf">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 bloc">
-        
-        <p class="icono-text-aq"><a href="../category/70">PROMOCIONES</a></p>
-      </div>
-      <div class="col-lg-3  bloc"> 
-        
-        <p class="icono-text-aq"><a href="../category/69">COMBOS PERSONALES</a></p>
-      </div>
-      <div class="col-lg-3  bloc"> 
-        
-        <p class="icono-text-aq"><a href="../category/71">DUOS</a></p>
-      </div>
-      <div class="col-lg-3  bloc"> 
-        
-        <p class="icono-text-aq"><a href="../category/72">BANQUETES</a></p>
-      </div>
-    </div>
-  </div>  
-</div>
-
-
 <div class="mbtbslinks">
 	<div class="mbtbslinks__c">
-		<div class="mbtbslinks__c__cont">
+		<div class="mbtbslinks__c__cont" style="padding: 0px;">
+			<div class="menuinfer">
+	      <div class="col-lg-3 bloc-as">
+	        <p class="icono-text-aq"><a href="../category/70">PROMOCIONES</a></p>
+	      </div>
+	      <div class="col-lg-3  bloc-as"> 
+	        <p class="icono-text-aqq"><a href="../category/69">COMBOS PERSONALES</a></p>
+	      </div>
+	      <div class="col-lg-3  bloc-as"> 
+	        <p class="icono-text-aq"><a href="../category/71">DUOS</a></p>
+	      </div>
+	      <div class="col-lg-3  bloc-as"> 
+	        <p class="icono-text-aq"><a href="../category/72" >BANQUETES</a></p>
+	      </div>
+    	</div>
 			<div class="mbtbslinks__c__cont__m">
 				<div class="mbtbslinks__c__cont__m__i active">
 					<a href="../" title="Inicio">

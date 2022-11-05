@@ -36,19 +36,6 @@ if(isset($_GET['prod']) && !empty($_GET) && is_numeric($_GET['prod'])){
   <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
   <script type="text/javascript" src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
-<style>
-    .in-offer span:first-child{
-        font-size: 24px;
-    }
-    .in-offer span:nth-child(2){
-        font-size: 18px;
-    }
-    .prod_price-old{
-        color: #e02c2b;
-        margin-left: 12px;
-        text-decoration: line-through;
-    }
-</style>
 <body>
   <?php require_once 'includes/inc_header_top-ind.php';?>
   <div class="breadcrumb-area gray-bg">
