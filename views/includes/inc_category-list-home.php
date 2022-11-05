@@ -2,25 +2,25 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 bloc">
-        <p class="icono-top"><a href="../category/70"><img src="<?= $url;?>assets/img/icono-1.jpg" clas="icono-as"></a></p>
+        <p class="icono-top"><a href="../category/70"><img src="<?= $url;?>assets/img/icono-1.jpg" clas="icono-as img-fluid"></a></p>
         <p class="icono-text"><a href="../category/70">PROMOCIONES</a></p>
       </div>
       <div class="col-lg-3  bloc"> 
-        <p class="icono-top"><a href="../category/69"><img src="<?= $url;?>assets/img/icono2.jpg" clas="icono-as"></a></p>
+        <p class="icono-top"><a href="../category/69"><img src="<?= $url;?>assets/img/icono2.jpg" clas="icono-as img-fluid"></a></p>
         <p class="icono-text"><a href="../category/69">COMBOS PERSONALES</a></p>
       </div>
       <div class="col-lg-3  bloc"> 
-        <p class="icono-top"><a href="../category/71"><img src="<?= $url;?>assets/img/icono3.jpg" clas="icono-as"></a></p>
+        <p class="icono-top"><a href="../category/71"><img src="<?= $url;?>assets/img/icono3.jpg" clas="icono-as img-fluid"></a></p>
         <p class="icono-text"><a href="../category/71">DUOS</a></p>
       </div>
       <div class="col-lg-3  bloc"> 
-        <p class="icono-top"><a href="../category/72"><img src="<?= $url;?>assets/img/icono4.jpg" clas="icono-as"></a></p>
+        <p class="icono-top"><a href="../category/72"><img src="<?= $url;?>assets/img/icono4.jpg" clas="icono-as img-fluid"></a></p>
         <p class="icono-text"><a href="../category/72">BANQUETES</a></p>
       </div>
     </div>
   </div>  
 </div> 
-  <div class="container hrsec-separator-home catghome">
+  <div class="container catghome">
     <div class="product-tab-list-wrap text-center mb-40 catghome__sec">
       <div class="row catghome__sec__c">
         <div class="col-lg-12 catghome__sec__c--cTitle">      

@@ -1,5 +1,5 @@
 <div class="product-area pb-70">
-  <div class="container hrsec-separator-home lprodpopularhome">
+  <div class="container hrsec-separ-home-top lprodpopularhome">
     <div class="product-tab-list-wrap text-center mb-40 lprodpopularhome__sec">
       <div class="row lprodpopularhome__sec__c">
         <div class="col-lg-12 lprodpopularhome__sec__c--cTitle">      
