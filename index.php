@@ -5,9 +5,6 @@ session_start();
 require_once './model/products.php';
 require_once './model/categories.php';
 require_once './model/footer-settings.php';
-$products = new Products();
-$categories = new Categories();
-$l_products = $products->getAll();
 ?>
 <!DOCTYPE html>
 <html lang="es">

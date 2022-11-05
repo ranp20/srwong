@@ -1,5 +1,5 @@
 <?php 
-  $lisShortList = $categories->getAll();
+  $lisShortList = $dmlCategories->getAll();
   $shortListCatg = array_slice($lisShortList, 0, 5);
 ?>
 <div class="footer-area black-bg-2 pt-70">

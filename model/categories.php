@@ -107,4 +107,4 @@ class Categories extends Connection
    }
   }
 }
-$dmlCategories=new Categories();
+$dmlCategories = new Categories();
