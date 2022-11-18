@@ -212,7 +212,7 @@ class Products extends Connection
           <div class='product-wrapper'>
             <div class='product-img'>
               <a href='../product-details/{$data['id']}' class='product-img__linkprods'>
-                <img src='{$p_pathimg}' alt='{$p_name}' class='img-fluid'>
+                <img loading='lazy' src='{$p_pathimg}' alt='{$p_name}' class='img-fluid' width='100' height='100'>
               </a>
               <div class='product-action product-img__contentprods'>
                 <div class='pro-action-left'>
@@ -353,7 +353,7 @@ class Products extends Connection
         <div class='product-wrapper'>
           <div class='product-img'>
             <a href='../product-details/{$data['id']}' class='product-img__linkprods'>
-              <img src='{$p_pathimg}' alt='{$p_name}' class='img-fluid'>
+              <img loading='lazy' src='{$p_pathimg}' alt='{$p_name}' class='img-fluid' width='100' height='100'>
             </a>
             <div class='product-action product-img__contentprods'>
               <div class='pro-action-left'>

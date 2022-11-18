@@ -22,29 +22,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <!-- INCLUIR CRYPTO-JS -->
   <script type="text/javascript" src="node_modules/crypto-js/crypto-js.js"></script>
 </head>
-<style type="text/css">
-    .btn-theme__link{
-        background-color: #e41a25 !important;
-        color: #fff !important;
-        padding: 18px 10px 19px !important;
-        max-width: 400px !important;
-        width: 95% !important;
-        margin: 0 auto !important;
-        font-size: 1.1rem !important;
-        font-weight: 600 !important;
-        border: none !important;
-        display: block !important;
-        line-height: 1 !important;
-        border-radius: 3px !important;
-        text-align: center !important;
-        text-transform: uppercase !important;
-        transition: all ease-in-out .2s !important;
-    }
-    .btn-theme__link:hover {
-        background-color: #242424 !important;
-        color: #fff !important;
-    }
-</style>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
     <div class="breadcrumb-area gray-bg">
@@ -61,19 +38,41 @@ if(!isset($_SESSION['usr-logg_srwong'])){
   <div class="checkout-area pb-80 pt-50">
     <div class="container">
       <div class="row">
-        <div class="ml-auto mr-auto col-lg-8">
-          <div class="checkout-wrapper">
-            <div style="text-align: center;">            
-              <h1>Ã‰XITO!</h1>
-              <p>Su compra ha sido procesada correctamente.</p>
-              <div class="col-xl-6 m-auto">
-                <a href="./" class="btn-theme__link" title="Ir al inicio">
-                  <span>IR AL INICIO</span>
-                </a>
-              </div>
+      
+        <div class="c-cofrm__c__ct--ccont">
+          <div class="c-cofrm__c__ct--ccont__c">
+            <div class="c-cofrm__c__ct--ccont__c--cTitle">
+              <?php
+                
+                $srwong_usr_name = "";
+                if(isset($_SESSION['usr-logg_srwong']['f_name']) && $_SESSION['usr-logg_srwong']['f_name'] != "" && $_SESSION['usr-logg_srwong']['f_name'] != "No especificado" && isset($_SESSION['usr-logg_srwong']['l_name']) && $_SESSION['usr-logg_srwong']['l_name'] != "" && $_SESSION['usr-logg_srwong']['l_name'] != "No especificado"){
+                  $srwong_usr_originname = explode(" ", $_SESSION['usr-logg_srwong']['f_name']);
+                  $srwong_usr_name = $srwong_usr_originname[0];
+                }else if(isset($_SESSION['usr-logg_srwong']['username']) && $_SESSION['usr-logg_srwong']['username'] != "" && $_SESSION['usr-logg_srwong']['username'] != "No especificado"){
+                  $srwong_usr_name = $_SESSION['usr-logg_srwong']['username'];
+                }else{
+                  $srwong_usr_name = "estimad@ client@";
+                }
+                
+              ?>
+              <h2>¡Hola <?= $srwong_usr_name; ?>!</h2>
+              <span class="c-cofrm__c__ct--ccont__c--cTitle__cIcon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m307.15 324.84 141.5-133.52c25.906-23.914 61.781 13.949 35.871 37.863l-159.43 151.46c-9.9648 9.9648-27.898 9.9648-37.863-1.9922l-83.699-85.695c-23.914-23.914 13.949-59.785 37.863-35.871l65.766 67.758z" fill-rule="evenodd"/><path d="m351 0c153.45 0 279 125.55 279 281 0 153.45-125.55 279-279 279-155.45 0-281-125.55-281-279 0-155.45 125.55-281 281-281zm0 508.18c125.55 0 227.19-101.64 227.19-227.19 0-127.54-101.64-229.18-227.19-229.18-127.54 0-229.18 101.64-229.18 229.18 0 125.55 101.64 227.19 229.18 227.19z" fill-rule="evenodd"/></g></svg>
+              </span>
+            </div>
+            <div class="c-cofrm__c__ct--ccont__c--cMssg">
+              <p>Nuestros cocineros ya están preparando tu pedido.</p>
+              <p><strong>Tiempo estimado de entrega: 60 minutos aproximadamente.</strong></p>
+              <p>Tu pedido podría demorar unos minutos más, ya que cuidamos con cumplir al 100% todos los protocolos de salubridad para que disfrutes tu Bembos con total seguridad. Agradecemos tu comprensión.</p>
+            </div>
+            <div class="col-xl-6 m-auto">
+              <a href="./" class="btn-theme__link" title="Ir al inicio">
+                <span>IR AL INICIO</span>
+              </a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>

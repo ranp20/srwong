@@ -57,7 +57,7 @@ class Categories extends Connection
             <div class='category-wrapper mb-25'>
               <div class='category-img'>
                 <a href='./category/$data[0]' class='category-img__linkcateg six_slider' title='{$catg_name}'>
-                  <img src='./admin/storage/app/public/category/$data[2]' alt='./admin/storage/app/public/category/$data[1]'>
+                  <img loading='lazy' src='./admin/storage/app/public/category/$data[2]' alt='./admin/storage/app/public/category/$data[1]' class='img-fluid' width='100' height='100'>
                 </a>
               </div>
               <div class='category-content six_slider_title'>
@@ -89,7 +89,7 @@ class Categories extends Connection
             <div class='product-wrapper'>
               <div class='product-img'>
                 <a href='./category/$data[0]' class='product-img__linkprods' title='{$catg_name}'>
-                  <img src='./admin/storage/app/public/category/$data[2]' alt='catg_{$catg_name}'>
+                  <img loading='lazy' src='./admin/storage/app/public/category/$data[2]' alt='catg_{$catg_name}' class='img-fluid' width='100' height='100'>
                 </a>
               </div>
               <div class='product-content'>

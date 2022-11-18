@@ -1,7 +1,7 @@
 <div class="product-area pb-70">
   <div class="container hrsec-separ-home-top lprodpopularhome">
     <div class="product-tab-list-wrap text-center mb-40 lprodpopularhome__sec">
-      <div class="row lprodpopularhome__sec__c">
+      <div class="row lprodpopularhome__sec__c ml-0 mr-0">
         <div class="col-lg-12 lprodpopularhome__sec__c--cTitle">      
           <h3 class="lprodpopularhome__sec__c--cTitle__title">PRODUCTOS MÁS POPULARES</h3>
         </div>

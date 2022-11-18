@@ -1,0 +1,97 @@
+.btn-theme__link{
+  background-color: #e41a25 !important;
+  color: #fff !important;
+  padding: 18px 10px 19px !important;
+  max-width: 400px !important;
+  width: 95% !important;
+  margin: 0 auto !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border: none !important;
+  display: block !important;
+  line-height: 1 !important;
+  border-radius: 3px !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  transition: all ease-in-out .2s !important;
+}
+.btn-theme__link:hover {
+  background-color: #242424 !important;
+  color: #fff !important;
+}
+.c-cofrm__c__ct--ccont{
+  max-width: 650px;
+  width: 95%;
+  margin: 0 auto;
+  &__c{
+    text-align: center;
+    &--cTitle{
+      font-size: 2.3rem;
+      h1, h2, h3, h4, h5, h6{
+        font-size: 1.85rem;
+        margin-bottom: 1.2rem;
+      }
+      &__cIcon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 95px;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        svg{
+          max-width: 95px;
+          width: 100%;
+          height: 100%;
+          fill: #8bd860;
+        }
+      }
+    }
+    &--cMssg{
+      margin-bottom: 1rem;
+      p{
+        font-weight: 600;
+        font-size: .9rem;
+        line-height: 1.3;
+        strong{
+          color: red;
+        }
+      }
+    }
+    @media (min-width: 768px){
+      &--cTitle{        
+        h1, h2, h3, h4, h5, h6{
+          font-size: 2.3rem;
+        }
+        &__cIcon{        
+          max-width: 110px;
+          svg{
+            max-width: 110px;
+          }
+        }
+      }
+    }
+    @media (min-width: 991px){
+      &--cTitle{        
+        h1, h2, h3, h4, h5, h6{
+          font-size: 2.3rem;
+        }
+        &__cIcon{        
+          max-width: 140px;
+          svg{
+            max-width: 140px;
+          }
+        }
+      }
+      &--cMssg{
+        p{
+          font-size: 1.2rem;
+          strong{
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

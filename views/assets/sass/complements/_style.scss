@@ -2313,6 +2313,7 @@ textarea:focus {
     }
 }
 .product-img .product-img__linkprods img{
+    display: table;
     border-radius: unset;
     object-fit: fill;
     object-position: center;
@@ -3233,7 +3234,10 @@ product-quantity {
 -----------------------------*/
 
 .breadcrumb-area {
+  padding: 1rem 0;
+  @media (min-width: 991px){
     padding: 21px 0 22px;
+  }
 }
 .breadcrumb-content li {
     color: $theme-clr-links-primary;

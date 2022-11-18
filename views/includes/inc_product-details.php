@@ -27,7 +27,7 @@
     <div class='row'>
       <div class='col-lg-7 col-md-12' id="c-pdetail__imgzoom">
         <div class='product-details-img'>
-          <img class='foto-producto small-preview img-fluid' src='<?= $p_pathimg;?>' data-zoom-image='<?= $p_pathimg;?>' alt='zoom'/>
+          <img loading='lazy' class='foto-producto small-preview img-fluid' src='<?= $p_pathimg;?>' data-zoom-image='<?= $p_pathimg;?>' alt='zoom' width='100' height='100'/>
           <?= $tmpDiscount;?>
           <div class="zoomed-image"></div>
         </div>
