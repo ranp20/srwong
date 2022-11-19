@@ -23,22 +23,30 @@ class Banners extends Connection
           $url_def = "./product-details/".$data[1];
         }
         $banner_pathimg = "./admin/storage/app/public/banner/".$data[3];
-        /*
-        $resultHTML.= "<div class='single-slider pt-210 pb-220 bg-img' style='background-image:url({$banner_pathimg});'>
-                  <div class='container'>
-                      <div class='slider-content slider-animated-1'>
-                          <h1 class='animated'>$data[2]</h1>
+        
+        $resultHTML.= "<div class='single-slider hpbannerhom__sec__c pt-210 pb-220 bg-img' style='background-image: url({$banner_pathimg});'>
+                  <!--<img class='hpbannerhom__sec__c--cImg' src='{$banner_pathimg}' alt='{$data[2]}' width='100' height='100'>-->
+                  <div class='hpbannerhom__sec__c--cTxt'>
+                    <div class='container'>
+                      <div class='hpbannerhom__sec__c--ct'>
+                        <div class='slider-content slider-animated-1 hpbannerhom__sec__c--ct__cDsc'>
+                          <h1 class='animated hpbannerhom__sec__c--ct__cDsc--cTitle'>{$data[2]}</h1>
                           <!--h3 class='animated'>Fresh Heathy and Organic.</h3-->
-                          <div class='slider-btn mt-90'>
-                              <a class='animated' href='{$url_def}'>Ordenar Ahora</a>
+                          <div class='slider-btn hpbannerhom__sec__c--ct__cDsc--cLink'>
+                            <a class='animated' href='{$url_def}' title='Ordenar ahora'>
+                              <span>Ordenar ahora</span>
+                            </a>
                           </div>
+                        </div>
                       </div>
+                    </div>
                   </div>
               </div>";
-        */
+        /*
         $resultHTML.= "<div class='single-slider hpbannerhom__sec__c'>
             <img src='{$banner_pathimg}' class='img-fluid' alt='$data[2]' width='100' height='100'/> 
           </div>";        
+          */
       }
       return $resultHTML;
     }catch(PDOException $e){
