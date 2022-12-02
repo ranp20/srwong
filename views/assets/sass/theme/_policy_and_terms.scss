@@ -1,0 +1,44 @@
+/* POLÍTICAS DE PRIVACIDAD */
+/* TÉRMINOS Y CONDICIONES */
+#c_terms-and-conditions,
+#c_privacy-policies{
+	div{
+		h1,h2,h3,h4,h5,h6{
+		  display: block;
+		  text-align:center;
+		  font-size: 2.05rem;
+		  margin-bottom: 1rem;
+			@media (min-width: 991px){
+		    font-size: 2.313rem;
+		    margin-bottom: 2rem;
+			}
+		}
+	}
+	p{	
+	  font-size: 1rem;
+	  font-weight: 500;
+	  line-height: 24px;
+	  color: #242424;
+	  margin-bottom: 15px;
+	  font-family: sans-serif;
+	}
+	ul, menu, dir{
+  	list-style: disc;
+		display: block;
+		list-style-type: disc;
+		-webkit-margin-before: 1em;
+		-webkit-margin-after: 1em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		-webkit-padding-start: 40px;
+	}
+	li{
+		list-style: disc;
+	  font-size: 1rem;
+	  font-weight: 500;
+	  line-height: 24px;
+	  color: #242424;
+	  margin-bottom: 15px;
+	  font-family: sans-serif;
+	}
+}

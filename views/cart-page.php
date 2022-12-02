@@ -21,24 +21,6 @@ $categories = new Categories();
   <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
-<style type="text/css">
-    .table-content table td.product-thumbnail a img{
-        min-width: 74.22px;
-    }
-    .table-content table td.product-name a,
-    .table-content table td.product-remove a{
-        transition: all .1s ease-out 0s !important;
-    }
-    .table-content table td.product-name a:hover{
-        color: #e02c2b !important;
-    }
-    .table-content table td.product-remove a:hover{
-        color: #e02c2b !important;
-    }
-    .grand-totall{
-        padding-top: 1rem;
-    }
-</style>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
   <div class="breadcrumb-area gray-bg">

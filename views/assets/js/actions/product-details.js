@@ -325,10 +325,8 @@ $(() => {
   // ------------ ZOOM INTO PRODUCT
   (function(ventana){
     function define_library(){
-      // Cree el objeto de biblioteca y todas sus propiedades y métodos. 
       var vanillaZoom = {};
       vanillaZoom.init = function(galleryId){
-        // La lógica de nuestra biblioteca va aquí.
         var container = document.querySelector(galleryId);
 
         if(!container){
@@ -348,7 +346,6 @@ $(() => {
           console.error('Agregue imágenes con la clase .small-preview a su galería.');
           return;
         }else{
-          // Establece la fuente de la imagen ampliada. 
           zoomedImage.style.backgroundImage = 'url(' + firstSmallImage.src + ')';
         }
 
@@ -367,18 +364,14 @@ $(() => {
 
         zoomedImage.addEventListener('mousemove', function(e){
 
-          // getBoundingClientReact nos brinda información variada sobre la posición del elemento. 
           var dimentions = this.getBoundingClientRect ();
 
-          // Calcular la posición del cursor dentro del elemento (en píxeles). 
           var x = e.clientX - dimentions.left;
           var y = e.clientY - dimentions.top;
 
-          // Calcular la posición del cursor como un porcentaje del tamaño total del elemento. 
           var xpercent = Math.round( 100 / (dimentions.width / x));
           var ypercent = Math.round( 100 / (dimentions.height / y));
 
-          // Actualiza la posición de fondo de la imagen. 
           this.style.backgroundPosition = xpercent + '%' + ypercent + '%' ;
 
         }, false);
@@ -392,7 +385,6 @@ $(() => {
       return vanillaZoom;
     }
 
-    // Agregue el objeto vanillaZoom al ámbito global si aún no está definido. 
     if( typeof (vanillaZoom) === 'undefined'){
       window.vanillaZoom = define_library();
     }else{

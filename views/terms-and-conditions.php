@@ -21,62 +21,6 @@ $categories = new Categories();
     <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
     <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
-<style type="text/css">
-    #c_terms-and-conditions > div > h1,
-    #c_terms-and-conditions > div > h2,
-    #c_terms-and-conditions > div > h3,
-    #c_terms-and-conditions > div > h4,
-    #c_terms-and-conditions > div > h5,
-    #c_terms-and-conditions > div > h6{
-        display: block;
-        text-align:center;
-        font-size: 2.05rem;
-        margin-bottom: 1rem;
-    }
-    @media (min-width: 991px){
-        #c_terms-and-conditions > div > h1,
-        #c_terms-and-conditions > div > h2,
-        #c_terms-and-conditions > div > h3,
-        #c_terms-and-conditions > div > h4,
-        #c_terms-and-conditions > div > h5,
-        #c_terms-and-conditions > div > h6{
-            display: block;
-            text-align:center;
-            font-size: 2.313rem;
-            margin-bottom: 2rem;
-        }   
-    }
-    #c_terms-and-conditions p{
-        font-size: 1rem;
-        font-weight: 500;
-        line-height: 24px;
-        color: #242424;
-        margin-bottom: 15px;
-        font-family: sans-serif;
-    }
-    #c_terms-and-conditions ul,
-    #c_terms-and-conditions li{
-        list-style: disc;
-    }
-    #c_terms-and-conditions li{
-        font-size: 1rem;
-        font-weight: 500;
-        line-height: 24px;
-        color: #242424;
-        margin-bottom: 15px;
-        font-family: sans-serif;
-    }
-    #c_terms-and-conditions ul, menu, dir {
-       display: block;
-       list-style-type: disc;
-       -webkit-margin-before: 1em;
-       -webkit-margin-after: 1em;
-       -webkit-margin-start: 0px;
-       -webkit-margin-end: 0px;
-       -webkit-padding-start: 40px;
-    }
-    
-</style>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
   <div class="breadcrumb-area gray-bg">
