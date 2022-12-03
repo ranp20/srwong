@@ -1,0 +1,112 @@
+.c_complaints-book{}
+.c_complaints-book__c{}
+.c_complaints-book__c--cTitle{
+  display: block;
+  font-size: 28px;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.data-company p {
+  font-size: 12px;
+  color: #222;
+  line-height: 20px;
+}
+.c_complaints-book__c--cContent{}
+.c_complaints-book__c--cContent form h4{
+  font-size: 1rem;
+}
+.spn-help_usr {
+  color: red;
+  font-size: 12px;
+}
+.text-descripcion{
+  min-height: 110px;
+  height: 110px;
+}
+.data-company{
+  margin-bottom: 1rem;
+}
+.data-company p{
+  color: red;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+@media (min-width: 991px){
+  .data-company p{
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .data-company p:hover{
+    color: red;
+  }
+}
+.button button{
+  background-color: #e02c2b;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 18px 10px 19px;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 300px;
+  width: 100%;
+  border: none;
+  transition: all ease-in-out .2s;
+  margin: 0 auto;
+}
+.button button:hover{
+  background-color: #242424 !important;
+}
+#c_complaints-book span em{
+  color: red !important;
+}
+span.pos-top-0 svg{
+  top: 0 !important;
+}
+.input-group .input-group-prepend .input-group-text {
+  background-color: transparent !important;
+  border-top: 0px solid #ebebeb;
+  border-bottom: thin solid #ebebeb;
+  border-left: 0px solid #ebebeb;
+  position: relative !important;
+  padding-left: 0px !important;
+  border-right: 0px solid #ebebeb;
+}
+.chcksel-frm-cont select {
+  border-top: 0px solid #ebebeb;
+  border-radius: 5px;
+  color: #242424;
+  height: calc(1.2rem + 14px) !important;
+  padding: 0 0 15px 0;
+  border-left: 0px !important;
+  border-bottom: 1px solid #ebebeb;
+  border-right: 0px solid #ebebeb;
+}
+.chcksel-frm-cont input {
+  height: 35px;
+}
+.c_complaints-book__c--cContent form label {
+  display: inline-block;
+  margin-bottom: .1rem !important;
+  font-size: 12px !important;
+}
+.input-group .form-control {
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+}
+.input-group .input-group-prepend .input-group-text svg{
+  fill: #949494 !important;
+  position: relative;
+  top: 1px;
+}
+.input-group input.form-control{
+  /*border-left: 0 !important;*/
+}
+.data-wky_frmtcode{
+  color: red;
+  margin-bottom: 1rem;
+}

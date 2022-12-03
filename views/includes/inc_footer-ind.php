@@ -60,7 +60,7 @@
             </div>
           <div class="blod">
             <img src="<?= $url;?>assets/img/tarjetas.png" alt="" style="width: 80%;text-align: center;padding-top: 5px;padding-bottom: 15px;">
-            <a href="https://srwong.pe/complaints-book">
+            <a href="./complaints-book">
             <img src="<?= $url;?>assets/img/libro-de-e.png" alt="" style="padding-top: 5px;padding-bottom: 5px;background: #ffffff8f;margin-bottom: 5px;border-radius: 10px;">
             </a>
           </div>

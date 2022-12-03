@@ -63,6 +63,18 @@ class Branches extends Connection
       return $e->getMessage();
     }
   }
+  // -------------- LISTAR TODOS LOS LOCALES
+  function listAllBranches(){
+    try{
+      $sql = "SELECT * FROM {$this->table} ORDER BY id LIMIT 2";
+      $stm = $this->con->prepare($sql);
+      $stm->execute();
+      $res = $stm->fetchAll(PDO::FETCH_ASSOC);
+      return $res;
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
   
 }
 $dmlBranches=new Branches();
