@@ -97,6 +97,8 @@ if(isset($_POST) && $_POST != "" && count($_POST) > 0){
 	  $u_t_payinfochk_format = "Pago con targeta";
 	}else if($u_t_payinfochk == "tinfochk_2-srwng"){
 	  $u_t_payinfochk_format = "Contraentrega";
+	}else if($u_t_payinfochk == "tinfochk_3-srwng"){
+		$u_t_payinfochk_format = "POS";
 	}else{
 	  $u_t_payinfochk_format = "No especificado";
 	}

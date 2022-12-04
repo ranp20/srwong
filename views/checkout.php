@@ -221,7 +221,7 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                               <li class="mb-2">
                                 <a href="javascript:void(0);">
                                   <div class="custom-control custom-radio custom-radio-a">
-                                    <input type="radio" id="t_payinfo3" name="t_payinfochk" class="custom-control-input" value="tinfochk_2-srwng">
+                                    <input type="radio" id="t_payinfo3" name="t_payinfochk" class="custom-control-input" value="tinfochk_3-srwng">
                                     <label class="custom-control-label" for="t_payinfo3">
                                       <p>Pagos POS</p>
                                       <p>Aceptamos todas las tarjetas</p>

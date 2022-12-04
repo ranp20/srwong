@@ -144,6 +144,8 @@ if($u_t_payinfochk == "tinfochk_1-srwng"){
   $u_t_payinfochk_format = "Pago con tarjeta";
 }else if($u_t_payinfochk == "tinfochk_2-srwng"){
   $u_t_payinfochk_format = "Contraentrega";
+}else if($u_t_payinfochk == "tinfochk_3-srwng"){
+  $u_t_payinfochk_format = "POS";
 }else{
   $u_t_payinfochk_format = "No especificado";
 }
