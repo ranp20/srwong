@@ -7,6 +7,7 @@
   $cat_banner = "../admin/storage/app/public/category/banner/".$l_byName[0]['banner_image'];
   require_once '../model/products.php';
   $products=new Products();
+  $countAllProds = $products->getCountProductsForCategories($_GET['cat']);
 ?>
 <div class="category-banner">
   <div class="col-12 p-0">
@@ -23,7 +24,7 @@
   <div class="container">
     <div class="row flex-row-reverse mb-20">
       <div class="col-12">
-        <div class="category-title" style="font-size: 20px;">RESULTADOS</div>
+        <div class="category-title" style="font-size: 20px;">RESULTADOS <?= (isset($countAllProds) && count($countAllProds) > 0) ? ' ('.$countAllProds[0]['total'].')' : ''; ?></div>
       </div>
     </div>
     <div class="row flex-row-reverse">

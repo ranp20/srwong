@@ -5,7 +5,7 @@ session_start();
 require_once '../model/footer-settings.php';
 require_once '../model/categories.php';
 $categories = new Categories();
-
+$allCategs = $categories->getAll();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,7 +41,7 @@ $categories = new Categories();
     <div class="container">
       <div class="row flex-row-reverse mb-20">
         <div class="col-12">
-          <h3 class="category-title" style="font-size: 20px;">TODAS LAS CATEGORÍAS</h3>
+          <h3 class="category-title" style="font-size: 20px;">TODAS LAS CATEGORÍAS <?= (isset($allCategs) && count($allCategs) > 0) ? ' ('.count($allCategs).')' : '';?></h3>
         </div>
       </div>
       <div class="row flex-row-reverse">

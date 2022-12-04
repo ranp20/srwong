@@ -185,6 +185,18 @@ class Products extends Connection
       return $e->getMessage();
     }
   }
+  //----------------MOSTRAR CANTIDAD DE PRODUCTOS POR IDCATEGORIA
+  public function getCountProductsForCategories($idCategories){
+    $idCategories="%".$idCategories."%";
+    try{
+      $sql = "SELECT COUNT(*) as 'total' FROM products WHERE products.category_ids LIKE ? ORDER BY created_at DESC";
+      $stm = $this->con->prepare($sql);
+      $stm->execute([$idCategories]);
+      return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+      return $e->getMessage();
+    }
+  }
   //----------------MOSTRAR PRODUCTOS POR CATEGORIAS
   public function getProductsForCategories($idCategories){
     $idCategories="%".$idCategories."%"; 
