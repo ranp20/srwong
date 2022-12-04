@@ -45,37 +45,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
-    <style type="text/css">
-        .chcksel-reg-tab-list{
-            display: flex;
-            flex-flow: wrap row;
-            align-items: flex-start;
-            justify-content: center;
-            margin-bottom: 40px !important;
-            flex: 0 0 100%;
-            margin-left: auto;
-            margin-right: auto;
-            row-gap: 1rem;
-        }
-        .select2-container{
-            width: 100% !important;
-        }
-        .grand-totall{
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-        }
-        .cl-wrap_total-title{
-            padding-top: 20px !important;
-            padding-bottom: 0 !important;
-            border-top: none !important;
-            border-bottom: none !important;
-        }
-        .notif-alert_mssgipt{
-            color: red;
-            font-size: 12px;
-            font-weight: 600;
-        }
-    </style>
     <div class="breadcrumb-area gray-bg">
     <div class="container">
       <div class="breadcrumb-content">
@@ -86,14 +55,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
       </div>
     </div>
   </div>
-  <?php
-    /*
-    echo "<pre>";
-    print_r($llastestone);
-    echo "</pre>";
-    echo $_SESSION['usr-logg_srwong']['id'];
-    */
-  ?>
   <!-- checkout-area start -->
   <div class="checkout-area pb-80 pt-50">
     <div class="container">
@@ -110,7 +71,6 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                 </a>
                 <a class="tablink--fill" data-toggle="tab" href="#chck2">
                   <span class="">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m161.7 50.402-4.8984 7.5234-72.801 112-2.8008 4.1992v33.074c0 26.961 16.125 50.398 39.199 61.074v224.53c0.003906 4.457 1.7734 8.7305 4.9219 11.879 3.1523 3.1523 7.4258 4.9219 11.879 4.9219h425.6c4.4531 0 8.7266-1.7695 11.879-4.9219 3.1484-3.1484 4.918-7.4219 4.9219-11.879v-224.52c23.074-10.676 39.199-34.113 39.199-61.074v-33.074l-2.8008-4.1992-72.801-112-4.8984-7.5234h-376.6zm18.023 33.602h340.55l64.926 99.922v23.273c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602h-33.602c0 18.906-14.695 33.602-33.602 33.602s-33.602-14.695-33.602-33.602v-23.273l64.926-99.926zm19.078 166.25c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c12.355 14.441 30.039 24.148 50.398 24.148s38.047-9.7109 50.398-24.148c11.207 13.098 26.805 22.375 44.801 23.977v201.77h-212.8v-162.4h0.007813c0-4.457-1.7695-8.7305-4.9219-11.879-3.1484-3.1523-7.4219-4.9219-11.879-4.9219h-112c-4.4531 0-8.7266 1.7695-11.879 4.9219-3.1484 3.1484-4.918 7.4219-4.918 11.879v162.4h-33.602v-201.77c17.996-1.5977 33.594-10.879 44.801-23.977zm173.6 46.551h-0.003906c-4.4531 0-8.7266 1.7695-11.879 4.9219-3.1484 3.1484-4.918 7.4219-4.918 11.879v78.398c0 4.457 1.7695 8.7266 4.918 11.879 3.1523 3.1523 7.4258 4.9219 11.879 4.9219h123.2c4.4531 0 8.7266-1.7695 11.879-4.9219 3.1484-3.1523 4.918-7.4219 4.918-11.879v-78.398c0-4.457-1.7695-8.7305-4.918-11.879-3.1523-3.1523-7.4258-4.9219-11.879-4.9219zm-151.2 33.602h78.398v145.6h-78.398zm168 0h89.602v44.801h-89.602z"/></g></svg> -->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px" height="70px" version="1.1" viewBox="0 0 700 700"><g xmlns="http://www.w3.org/2000/svg"><path d="m352.8 66.641c-81.762 0-148.4 66.641-148.4 148.4 0 81.762 148.4 283.92 148.4 283.92s148.4-202.16 148.4-283.92c0-81.758-66.641-148.4-148.4-148.4zm0 225.12c-42.559 0-76.719-34.16-76.719-76.719 0-42.559 34.16-76.719 76.719-76.719 42.559 0 76.719 34.16 76.719 76.719 0 42.559-34.16 76.719-76.719 76.719z"/></g></svg>
                   </span>
                   <span>RECOJO EN TIENDA</span>
@@ -238,17 +198,34 @@ if(!isset($_SESSION['usr-logg_srwong'])){
                             <ul class="mb-3" id="tpayinfo_chk">
                               <li class="mb-2">
                                 <a href="javascript:void(0);" class="active">
-                                  <div class="custom-control custom-radio">
+                                  <div class="custom-control custom-radio custom-radio-a">
                                     <input type="radio" id="t_payinfo1" name="t_payinfochk" class="custom-control-input" checked="checked" value="tinfochk_1-srwng">
-                                    <label class="custom-control-label" for="t_payinfo1">Pago con tarjeta</label>
+                                    <label class="custom-control-label" for="t_payinfo1">
+                                      <p>Pagos con tarjetas Débito/Credito</p>
+                                      <p>Aceptamos todas las tarjetas</p>
+                                    </label>
                                   </div>
                                 </a>
                               </li>
                               <li class="mb-2">
                                 <a href="javascript:void(0);">
-                                  <div class="custom-control custom-radio">
+                                  <div class="custom-control custom-radio custom-radio-a">
                                     <input type="radio" id="t_payinfo2" name="t_payinfochk" class="custom-control-input" value="tinfochk_2-srwng">
-                                    <label class="custom-control-label" for="t_payinfo2">Contraentrega</label>
+                                    <label class="custom-control-label" for="t_payinfo2">
+                                      <p>Pagos presencial Efectivo Soles</p>
+                                      <p>Aceptamos efectivo</p>
+                                    </label>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="mb-2">
+                                <a href="javascript:void(0);">
+                                  <div class="custom-control custom-radio custom-radio-a">
+                                    <input type="radio" id="t_payinfo3" name="t_payinfochk" class="custom-control-input" value="tinfochk_2-srwng">
+                                    <label class="custom-control-label" for="t_payinfo3">
+                                      <p>Pagos POS</p>
+                                      <p>Aceptamos todas las tarjetas</p>
+                                    </label>
                                   </div>
                                 </a>
                               </li>

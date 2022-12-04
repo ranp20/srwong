@@ -729,6 +729,7 @@ $(() => {
     var tmptpaychck = "";
     if(linkiptname2 == "t_payinfo1"){
       $("#frm_1-Log").attr("action", "./payment");
+      tpaychckbtn = "";
       tmptpaychck = `
       <div class="wrapper wrapper-white">
         <div class="page-subtitle">
@@ -741,6 +742,7 @@ $(() => {
       </div>
       `;
       $("#type_paymentsel").html(tmptpaychck);
+      $("#tv-01cfbvalfrm").html(tpaychckbtn);
     }else if(linkiptname2 == "t_payinfo2"){
       $("#frm_1-Log").attr("action", "./prcss-deli");
       tmptpaychck = `
@@ -754,6 +756,17 @@ $(() => {
         </div>
       </div>`;
       $("#type_paymentsel").html(tmptpaychck);
+    }else if(linkiptname2 == "t_payinfo3"){
+      $("#frm_1-Log").attr("action", "./prcss-deli");
+      tmptpaychck = "";
+      $("#type_paymentsel").html(tmptpaychck);
+      tpaychckbtn = `
+      <div class="button-box talign-r">
+        <button type="submit" id="ord-chkl_1fxt" title="ORDENAR">
+          <span>ORDENAR</span>
+        </button>
+      </div>`;
+      $("#tv-01cfbvalfrm").html(tpaychckbtn);
     }else{
        console.log('Se intentó vincular al enlace : Tipo de pago');
     }

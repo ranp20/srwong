@@ -57,7 +57,8 @@ $url_admin = $actual_link . "/admin/";
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
  -->
 <!-- GOOGLE FONTS 2 -->
-
+<!--
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+-->
