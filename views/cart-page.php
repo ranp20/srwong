@@ -4,7 +4,9 @@
 session_start();
 require_once '../model/footer-settings.php';
 require_once '../model/categories.php';
+require_once '../model/business-settings.php';
 $categories = new Categories();
+$min_order_val = (isset($dmlBusinessSettings->getValueByNameReg("minimum_order_value")[0]['value']) && $dmlBusinessSettings->getValueByNameReg("minimum_order_value")[0]['value'] != "" && $dmlBusinessSettings->getValueByNameReg("minimum_order_value")[0]['value'] != 0) ? $dmlBusinessSettings->getValueByNameReg("minimum_order_value")[0]['value'] : 0;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,6 +22,7 @@ $categories = new Categories();
   <!-- INCLUIR SWEET ALERT 2 -->
   <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
   <script type="text/javascript" src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_crt-ord-min-sess" id="cx1chk_crt-ord-min-sess" value="<?= $min_order_val;?>" readonly="readonly">
 </head>
 <body>
   <?php require_once 'includes/inc_header_top.php';?>
@@ -39,7 +42,7 @@ $categories = new Categories();
       <h3 class="page-title">Tu lista de compras</h3>
       <div class="row">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-          <form action="#">
+          <form action="#" autocomplete="off">
             <div class="table-content table-responsive">
               <table>
                 <thead>

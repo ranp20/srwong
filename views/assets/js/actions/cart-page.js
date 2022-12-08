@@ -48,10 +48,10 @@ function isNumeric(variable){return !isNaN(parseInt(variable));}
 $(() => {
 	// ------------ ENCRIPTACIÓN DE INPUTS
   var encrypt_sess_idcli = $("#u-s_regclient-sis").val(encryptValuesIpts($("#u-s_regclient-sis").val()));
+  var encrypt_sess_ordermin = $("#cx1chk_crt-ord-min-sess").val(encryptValuesIpts($("#cx1chk_crt-ord-min-sess").val()));
   // ------------ DESENCRIPTACIÓN DE INPUTS
   var sess_idcli = decryptValuesIpts(encrypt_sess_idcli.val());
-  // console.log(encrypt_sess_idcli);
-  // console.log(sess_idcli);
+  var sess_ordermin = decryptValuesIpts(encrypt_sess_ordermin.val());
 	// ------------ LISTAR FUNCIONES
   listCartList(); // LISTAR LOS PRODUCTOS EN EL CARRITO DE DICHO CLIENTE
   listTempCartList(); // LISTAR LOS PRODUCTOS EN LA TABLA DE LISTADO DE PRODUCTOS DE TEMP_CART
@@ -217,9 +217,14 @@ $(() => {
           });
           // ------------ AGREGAR DOS CEROS AL FINAL DE CADA NÚMERO SIN UNO O DOS CEROS
           var tpay_wzero = Number(totalpay);
-          var total_pay = addTwoDecimals(tpay_wzero)
+          var total_pay = addTwoDecimals(tpay_wzero);
           var total_pay_format = parseFloat(total_pay).toFixed(2);
-            
+
+          var total_pay_Float = parseFloat(total_pay);
+          var order_min_Float = parseFloat(sess_ordermin);
+          var order_min_AddTwoDecimals = addTwoDecimals(sess_ordermin);
+          var order_min_FloatFixed2 = parseFloat(order_min_AddTwoDecimals).toFixed(2);
+
           $.each(e, function(i,v){
             var p_price = Number(v.tmp_price); // PRECIO DEL PRODUCTO
             var r2 = p_price.toString().split(".");
@@ -268,41 +273,106 @@ $(() => {
           // let tmptotal_encp = encryptValuesIpts(total_pay_format);
           let tmptotal_encp = total_pay_format;
           let tmpl_total = "";
-          tmpl_total += `
-          <form action="./checkout" method="POST" id="fr-fm_04chkcrtpg">
-            <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_crt-sess" id="chk-s_crtclient-sis" value="${tmptotal_encp}" readonly="readonly">
-            <h5 class="c_title-total">
-              <span class="row_cll">Subtotal </span>
-              <span class="row_cll">
-                <span>S/. </span>
-                <span>${total_pay_format}</span>
-              </span>
-            </h5>
-            <h5 class="c_title-total">
-              <span class="row_cll">Delivery </span>
-              <span class="row_cll">
-                <span>S/. </span>
-                <span>0.00</span>
-              </span>
-            </h5>
-            <h4 class="cl-wrap_total-title">
-              <span class="row_cll">Total a Pagar</span>
-              <span class="row_cll">
-                <span>S/. </span>
-                <span>${total_pay_format}</span>
-              </span>
-            </h4>
-            <button type="submit" class='btn_link d-flex align-items-center justify-content-between text-center'>
-                <span class="c-cart_count-small">
-                    <small>${filtered.length}</small>
+
+          if(total_pay_Float < order_min_Float){
+            tmpl_total += `
+            <div id="fr-fm_066chkcrtpg">
+              <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_crt-sess" id="chk-s_crtclient-sis" value="${tmptotal_encp}" readonly="readonly">
+              <h5 class="c_title-total">
+                <span class="row_cll">Subtotal </span>
+                <span class="row_cll">
+                  <span>S/. </span>
+                  <span>${total_pay_format}</span>
                 </span>
-                <span class="text-center ml-auto mr-auto">Ir a pagar</span>
-                <span class="c-cart_listsubtotal-cart">
-                    <span>S/. ${total_pay_format}</span>
+              </h5>
+              <h5 class="c_title-total">
+                <span class="row_cll">Delivery </span>
+                <span class="row_cll">
+                  <span>S/. </span>
+                  <span>0.00</span>
                 </span>
-            </button>
-          </form>
-          `;
+              </h5>
+              <h4 class="cl-wrap_total-title">
+                <span class="row_cll">Total a Pagar</span>
+                <span class="row_cll">
+                  <span>S/. </span>
+                  <span>${total_pay_format}</span>
+                </span>
+              </h4>
+              <div class='btn_link d-flex align-items-center justify-content-between text-center'>
+                  <span class="c-cart_count-small">
+                      <small>${filtered.length}</small>
+                  </span>
+                  <span class="text-center ml-auto mr-auto">Ir a pagar</span>
+                  <span class="c-cart_listsubtotal-cart">
+                      <span>S/. ${total_pay_format}</span>
+                  </span>
+              </div>
+            </div>
+            `;
+            $(document).on("click", "#fr-fm_066chkcrtpg div.btn_link", function(e){
+              Swal.fire({
+                title: '',
+                html: `<div class="alertSwal">
+                        <div class="alertSwal__cTitle">
+                          <h3>¡Monto mínimo!</h3>
+                        </div>
+                        <div class="alertSwal__cText">
+                          <p>El monto del total a pagar debe ser mayor a S/. ${order_min_FloatFixed2}.</p>
+                        </div>
+                        <button type="button" role="button" tabindex="0" class="SwalBtn1 customSwalBtn">Aceptar</button>
+                      </div>`,
+                icon: 'error',
+                showCancelButton: false,
+                showConfirmButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Aceptar',
+                allowOutsideClick: false,
+                allowEscapeKey:false,
+                allowEnterKey:true
+              });
+              $(document).on('click', '.SwalBtn1', function() {
+                swal.clickConfirm();
+              });
+            });
+          }else{
+            tmpl_total += `
+            <form action="./checkout" method="POST" id="fr-fm_04chkcrtpg">
+              <input tabindex="-1" placeholder="" type="hidden" width="0" height="0" autocomplete="off" spellcheck="false" f-hidden="aria-hidden" class="non-visvalipt h-alternative-shwnon s-fkeynone-step" name="cx1chk_crt-sess" id="chk-s_crtclient-sis" value="${tmptotal_encp}" readonly="readonly">
+              <h5 class="c_title-total">
+                <span class="row_cll">Subtotal </span>
+                <span class="row_cll">
+                  <span>S/. </span>
+                  <span>${total_pay_format}</span>
+                </span>
+              </h5>
+              <h5 class="c_title-total">
+                <span class="row_cll">Delivery </span>
+                <span class="row_cll">
+                  <span>S/. </span>
+                  <span>0.00</span>
+                </span>
+              </h5>
+              <h4 class="cl-wrap_total-title">
+                <span class="row_cll">Total a Pagar</span>
+                <span class="row_cll">
+                  <span>S/. </span>
+                  <span>${total_pay_format}</span>
+                </span>
+              </h4>
+              <button type="submit" class='btn_link d-flex align-items-center justify-content-between text-center'>
+                  <span class="c-cart_count-small">
+                      <small>${filtered.length}</small>
+                  </span>
+                  <span class="text-center ml-auto mr-auto">Ir a pagar</span>
+                  <span class="c-cart_listsubtotal-cart">
+                      <span>S/. ${total_pay_format}</span>
+                  </span>
+              </button>
+            </form>
+            `;
+          }
+
           $("#c-xtt_tochck").html(tmpl_total);
           
           if(Object.keys(e).length === 0){

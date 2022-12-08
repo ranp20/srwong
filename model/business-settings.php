@@ -7,6 +7,19 @@ class BusinessSettings extends Connection
   {
     parent::__construct();
   }
+  // -------------- OBTENER EL VALOR DE ATRIBUTO POR NOMBRE DE REGISTRO
+  public function getValueByNameReg($name){
+    try{
+      $sql = "SELECT `value` FROM {$this->table} WHERE `key` = :name ORDER BY id ASC LIMIT 100";
+      $stm = $this->con->prepare($sql);
+      $stm->bindValue(":name", $name);
+      $stm->execute();
+      $res = $stm->fetchAll(PDO::FETCH_ASSOC);
+      return $res;
+    }catch(PDOException $e){
+      return $e->getMessage();
+    } 
+  }
   // -------------- MOSTRAR LAS POLÍTICAS DE PRIVACIDAD
   public function getPrivacyPolicies(){
     try{
